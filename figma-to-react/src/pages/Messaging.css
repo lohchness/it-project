@@ -1,0 +1,899 @@
+.navigation-bar-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color-gray-700);
+  width: 1501px;
+  height: 59.05px;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+}
+.calender {
+  position: absolute;
+  top: 14px;
+  left: 520px;
+  display: inline-block;
+  width: 141.32px;
+  height: 31.48px;
+  cursor: pointer;
+}
+.dashboard2,
+.profile2 {
+  top: 13px;
+  cursor: pointer;
+}
+.profile2 {
+  position: absolute;
+  left: 414px;
+  display: inline-block;
+  width: 141.32px;
+  height: 31.48px;
+}
+.dashboard2 {
+  left: 125px;
+  color: var(--color-white);
+  width: 185.18px;
+  height: 35.11px;
+}
+.connections2,
+.dashboard2,
+.messenger {
+  position: absolute;
+  display: inline-block;
+}
+.connections2 {
+  top: 13px;
+  left: 254px;
+  width: 209.55px;
+  height: 35.11px;
+  cursor: pointer;
+}
+.messenger {
+  top: 14px;
+  left: 667px;
+  color: var(--color-lightseagreen-100);
+  width: 103.19px;
+  height: 27.97px;
+}
+.dashboard-icon2 {
+  position: absolute;
+  top: 12px;
+  left: 109px;
+  width: 20.85px;
+  height: 20.72px;
+  overflow: hidden;
+  mix-blend-mode: color-dodge;
+}
+.navigation-bar2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1501px;
+  height: 59.05px;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  color: var(--color-snow);
+  font-family: var(--font-poppins);
+}
+.username-inner {
+  position: absolute;
+  top: 8.29px;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslategray-100);
+  width: 116.74px;
+  height: 25.9px;
+  mix-blend-mode: lighten;
+}
+.vector-icon2 {
+  position: absolute;
+  height: 16.96%;
+  width: 7.58%;
+  top: 47.5%;
+  right: 37.73%;
+  bottom: 35.54%;
+  left: 54.69%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.username3 {
+  position: absolute;
+  top: 8.29px;
+  left: 0;
+  line-height: 150%;
+  display: inline-block;
+  width: 93.81px;
+  height: 24.86px;
+}
+.mask-group-icon2,
+.username2 {
+  position: absolute;
+  height: 41.44px;
+}
+.mask-group-icon2 {
+  top: 0;
+  left: 136.55px;
+  width: 41.69px;
+  object-fit: cover;
+}
+.username2 {
+  top: 8.29px;
+  left: 1238.33px;
+  width: 178.24px;
+  text-align: right;
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}
+.messaging-child {
+  position: absolute;
+  top: 105px;
+  left: 596px;
+  border-radius: var(--br-6xl);
+  width: 808px;
+  height: 832px;
+}
+.messaging-item {
+  position: absolute;
+  top: 135px;
+  left: 643px;
+  border-radius: 50%;
+  width: 65px;
+  height: 61px;
+  object-fit: cover;
+}
+.messaging-inner {
+  position: absolute;
+  top: 846px;
+  left: 612px;
+  border-radius: var(--br-6xl);
+  background-color: rgba(239, 246, 252, 0.87);
+  width: 681px;
+  height: 63px;
+}
+.messaging-child1 {
+  position: absolute;
+  top: 844px;
+  left: 1314px;
+  border-radius: var(--br-xl);
+  background-color: var(--color-lightseagreen-100);
+  width: 66px;
+  height: 62px;
+}
+.fluentcamera-24-regular-icon {
+  position: absolute;
+  top: 862px;
+  left: 1239px;
+  width: 34px;
+  height: 31px;
+}
+.fluentemoji-laugh-16-regular-icon {
+  position: absolute;
+  top: 860px;
+  left: 1181px;
+  width: 36px;
+  height: 37px;
+}
+.ant-designpaper-clip-outlined-icon {
+  position: absolute;
+  top: 861px;
+  left: 631px;
+  width: 37px;
+  height: 36px;
+}
+.anil,
+.online-last,
+.today-830pm {
+  position: absolute;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+.anil {
+  top: 140px;
+  left: 708px;
+  font-size: var(--font-size-13xl);
+  font-weight: 600;
+  color: var(--color-white);
+  width: 77px;
+  height: 25px;
+}
+.online-last,
+.today-830pm {
+  font-weight: 300;
+  height: 21px;
+}
+.online-last {
+  top: 173px;
+  left: 708px;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  width: 301px;
+}
+.today-830pm {
+  top: 368px;
+  left: 648px;
+}
+.today-830pm,
+.today-833pm,
+.today-834pm,
+.today-836pm {
+  font-size: var(--font-size-xl);
+  background: linear-gradient(#fff, #fff), #707070;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 150px;
+}
+.today-836pm {
+  position: absolute;
+  top: 688px;
+  left: 647px;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  display: inline-block;
+  height: 19px;
+}
+.today-833pm,
+.today-834pm {
+  left: 1217px;
+}
+.today-833pm {
+  position: absolute;
+  top: 471px;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  display: inline-block;
+  height: 19px;
+}
+.today-834pm {
+  top: 570px;
+  height: 22px;
+}
+.today-834pm,
+.today-858pm,
+.type-your-message {
+  position: absolute;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  display: inline-block;
+}
+.today-858pm {
+  top: 780px;
+  left: 1217px;
+  font-size: var(--font-size-xl);
+  background: linear-gradient(#fff, #fff), #707070;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 150px;
+  height: 22px;
+}
+.type-your-message {
+  top: 868px;
+  left: 693px;
+  font-size: var(--font-size-5xl);
+  width: 303px;
+  height: 20px;
+}
+.line-div {
+  position: absolute;
+  top: 214.5px;
+  left: 616.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 762px;
+  height: 1px;
+}
+.bithree-dots-vertical-icon {
+  position: absolute;
+  top: 148px;
+  left: 1356px;
+  width: 32px;
+  height: 32px;
+}
+.ciphone-outline-icon {
+  position: absolute;
+  top: 147px;
+  left: 1223px;
+  width: 35px;
+  height: 37px;
+}
+.bimic-fill-icon,
+.fluentvideo-16-regular-icon {
+  position: absolute;
+  top: 145px;
+  left: 1289px;
+  width: 43px;
+  height: 41px;
+}
+.bimic-fill-icon {
+  top: 859px;
+  left: 1333px;
+  width: 33px;
+  height: 33px;
+}
+.messaging-child2,
+.messaging-child3,
+.messaging-child4 {
+  position: absolute;
+  top: 244px;
+  left: 631px;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-gainsboro-100);
+  width: 191px;
+  height: 48px;
+}
+.messaging-child3,
+.messaging-child4 {
+  top: 313px;
+  left: 628px;
+  width: 234px;
+  height: 47px;
+}
+.messaging-child4 {
+  top: 605px;
+  width: 506px;
+  height: 76px;
+}
+.messaging-child5,
+.messaging-child6,
+.messaging-child7 {
+  position: absolute;
+  top: 418px;
+  left: 1202px;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-lightseagreen-100);
+  width: 158px;
+  height: 44px;
+}
+.messaging-child6,
+.messaging-child7 {
+  top: 517px;
+  left: 987px;
+  width: 373px;
+  height: 47px;
+}
+.messaging-child7 {
+  top: 726px;
+  left: 1184px;
+  width: 176px;
+  height: 49px;
+}
+.ellipse-div,
+.messaging-child8,
+.messaging-child9 {
+  position: absolute;
+  top: 287px;
+  left: 617px;
+  border-radius: 50%;
+  background-color: var(--color-gainsboro-100);
+  width: 17px;
+  height: 15px;
+}
+.messaging-child8,
+.messaging-child9 {
+  top: 356px;
+  width: 16px;
+}
+.messaging-child9 {
+  top: 675px;
+  height: 14px;
+}
+.messaging-child10,
+.messaging-child11,
+.messaging-child12 {
+  position: absolute;
+  top: 455px;
+  left: 1362px;
+  border-radius: 50%;
+  background-color: var(--color-lightseagreen-100);
+  width: 16px;
+  height: 15px;
+}
+.messaging-child11,
+.messaging-child12 {
+  top: 557px;
+  height: 13px;
+}
+.messaging-child12 {
+  top: 764px;
+  height: 15px;
+}
+.hello,
+.hey-there,
+.how-are-you,
+.i-am-doing,
+.i-am-fine,
+.yes-sure {
+  position: absolute;
+  top: 255px;
+  left: 658px;
+  font-size: var(--font-size-7xl);
+  letter-spacing: 0.05em;
+  display: inline-block;
+  width: 195px;
+  height: 22px;
+}
+.hello,
+.how-are-you,
+.i-am-doing,
+.i-am-fine,
+.yes-sure {
+  top: 322px;
+  left: 649px;
+  width: 181px;
+}
+.hello,
+.i-am-doing,
+.i-am-fine,
+.yes-sure {
+  top: 617px;
+  left: 662px;
+  width: 470px;
+  height: 46px;
+}
+.hello,
+.i-am-fine,
+.yes-sure {
+  top: 425px;
+  left: 1266px;
+  color: var(--color-white);
+  width: 116px;
+  height: 21px;
+}
+.i-am-fine,
+.yes-sure {
+  top: 527px;
+  left: 1005px;
+  width: 394px;
+}
+.yes-sure {
+  top: 738px;
+  left: 1228px;
+  width: 120px;
+  height: 20px;
+}
+.messaging-child13,
+.messaging-child14,
+.messaging-child15 {
+  position: absolute;
+  top: 112px;
+  left: 41px;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 5px 2px rgba(121, 197, 239, 0.38);
+  width: 522px;
+  height: 64px;
+}
+.messaging-child14,
+.messaging-child15 {
+  top: 201px;
+  width: 516px;
+  height: 259px;
+}
+.messaging-child15 {
+  top: 491px;
+  height: 443px;
+}
+.ellipse-icon,
+.messaging-child16,
+.messaging-child17,
+.messaging-child18 {
+  position: absolute;
+  top: 262px;
+  left: 95px;
+  border-radius: 50%;
+  width: 43px;
+  height: 42px;
+  object-fit: cover;
+}
+.messaging-child16,
+.messaging-child17,
+.messaging-child18 {
+  top: 566px;
+  left: 104px;
+  height: 40px;
+}
+.messaging-child17,
+.messaging-child18 {
+  top: 775px;
+  left: 103px;
+  height: 38px;
+}
+.messaging-child18 {
+  top: 330px;
+  left: 95px;
+  height: 41px;
+}
+.messaging-child19,
+.messaging-child20,
+.messaging-child21,
+.messaging-child22 {
+  position: absolute;
+  top: 703px;
+  left: 104px;
+  border-radius: 50%;
+  width: 43px;
+  height: 42px;
+  object-fit: cover;
+}
+.messaging-child20,
+.messaging-child21,
+.messaging-child22 {
+  top: 840px;
+  left: 103px;
+  height: 41px;
+}
+.messaging-child21,
+.messaging-child22 {
+  top: 402px;
+  left: 95px;
+  height: 39px;
+}
+.messaging-child22 {
+  top: 634px;
+  left: 104px;
+  height: 42px;
+}
+.charmtick-double-icon {
+  position: absolute;
+  top: 589px;
+  left: 501px;
+  width: 22px;
+  height: 20px;
+}
+.charmtick-double-icon1 {
+  position: absolute;
+  top: 866px;
+  left: 502px;
+  width: 23px;
+  height: 21px;
+}
+.phnumber-circle-five-fill-icon {
+  position: absolute;
+  top: 794px;
+  left: 501px;
+  width: 26px;
+  height: 23px;
+}
+.phnumber-circle-four-fill-icon {
+  position: absolute;
+  top: 282px;
+  left: 490px;
+  width: 27px;
+  height: 24px;
+}
+.phnumber-circle-one-fill-icon {
+  position: absolute;
+  top: 659px;
+  left: 501px;
+  width: 26px;
+  height: 24px;
+}
+.bxsearch-icon,
+.phnumber-circle-one-fill-icon1 {
+  position: absolute;
+  top: 728px;
+  left: 501px;
+  width: 26px;
+  height: 25px;
+}
+.bxsearch-icon {
+  top: 126px;
+  left: 70px;
+  width: 38px;
+  height: 35px;
+}
+.friends-forever,
+.search {
+  position: absolute;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+.search {
+  top: 129px;
+  left: 125px;
+  font-size: 28px;
+  color: var(--color-gray-300);
+  width: 166px;
+  height: 27px;
+}
+.friends-forever {
+  top: 268px;
+  left: 175px;
+  width: 165px;
+}
+.anil1,
+.bill-gates,
+.friends-forever {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  height: 19px;
+}
+.anil1 {
+  position: absolute;
+  top: 568px;
+  left: 175px;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  width: 101px;
+}
+.bill-gates {
+  top: 778px;
+  left: 173px;
+  width: 160px;
+}
+.april-fools-day,
+.bill-gates,
+.hahahahah,
+.mary-maam,
+.nevermind-bro {
+  position: absolute;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+.mary-maam {
+  top: 701px;
+  left: 173px;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  width: 181px;
+  height: 18px;
+}
+.april-fools-day,
+.hahahahah,
+.nevermind-bro {
+  top: 291px;
+  left: 175px;
+  font-weight: 300;
+  width: 136px;
+  height: 15px;
+}
+.april-fools-day,
+.nevermind-bro {
+  top: 588px;
+  width: 171px;
+  height: 16px;
+}
+.nevermind-bro {
+  top: 797px;
+  height: 15px;
+}
+.today-1211pm,
+.today-240pm,
+.today-952pm,
+.today-952pm1,
+.wednesday-1112am,
+.wednesday-912am,
+.yesterday-1231pm,
+.yesterday-1231pm1 {
+  position: absolute;
+  top: 270px;
+  left: 413px;
+  letter-spacing: 0.01em;
+  font-weight: 300;
+  color: var(--color-gray-300);
+  display: inline-block;
+  width: 94px;
+  height: 16px;
+}
+.today-1211pm,
+.today-240pm,
+.today-952pm1,
+.wednesday-1112am,
+.wednesday-912am,
+.yesterday-1231pm,
+.yesterday-1231pm1 {
+  top: 572px;
+}
+.today-1211pm,
+.today-240pm,
+.wednesday-1112am,
+.wednesday-912am,
+.yesterday-1231pm,
+.yesterday-1231pm1 {
+  top: 708px;
+  width: 92px;
+  height: 14px;
+}
+.today-1211pm,
+.wednesday-1112am,
+.wednesday-912am,
+.yesterday-1231pm,
+.yesterday-1231pm1 {
+  top: 335px;
+  left: 415px;
+  width: 125px;
+  height: 15px;
+}
+.today-1211pm,
+.wednesday-1112am,
+.wednesday-912am,
+.yesterday-1231pm1 {
+  top: 640px;
+  left: 410px;
+  width: 102px;
+  height: 16px;
+}
+.wednesday-1112am,
+.wednesday-912am,
+.yesterday-1231pm1 {
+  top: 774px;
+  left: 411px;
+  width: 126px;
+  height: 17px;
+}
+.wednesday-1112am,
+.wednesday-912am {
+  top: 403px;
+  left: 412px;
+  width: 128px;
+  height: 16px;
+}
+.wednesday-1112am {
+  top: 842px;
+  left: 411px;
+  width: 137px;
+}
+.baag,
+.its-not-going,
+.kyuuuuu,
+.okay-brother-lets,
+.you-have-to {
+  position: absolute;
+  top: 356px;
+  left: 175px;
+  letter-spacing: 0.05em;
+  font-weight: 300;
+  display: inline-block;
+  width: 191px;
+  height: 16px;
+}
+.baag,
+.its-not-going,
+.okay-brother-lets,
+.you-have-to {
+  top: 656px;
+  width: 83px;
+  height: 15px;
+}
+.its-not-going,
+.okay-brother-lets,
+.you-have-to {
+  top: 863px;
+  left: 173px;
+  width: 189px;
+}
+.its-not-going,
+.you-have-to {
+  top: 426px;
+  left: 175px;
+  width: 221px;
+  height: 16px;
+}
+.you-have-to {
+  top: 726px;
+  left: 176px;
+  width: 200px;
+}
+.chuuthiya,
+.mera-gang,
+.victoria-h {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  height: 19px;
+}
+.mera-gang {
+  position: absolute;
+  top: 333px;
+  left: 175px;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  width: 153px;
+}
+.chuuthiya,
+.victoria-h {
+  left: 173px;
+}
+.chuuthiya {
+  position: absolute;
+  top: 631px;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  width: 149px;
+}
+.victoria-h {
+  top: 839px;
+  width: 131px;
+}
+.groups,
+.hiking,
+.people,
+.victoria-h {
+  position: absolute;
+  letter-spacing: 0.05em;
+  display: inline-block;
+}
+.hiking {
+  top: 403px;
+  left: 175px;
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  width: 112px;
+  height: 18px;
+}
+.groups,
+.people {
+  top: 215px;
+  left: 88px;
+  font-size: var(--font-size-11xl);
+  width: 118px;
+  height: 28px;
+}
+.people {
+  top: 516px;
+  left: 109px;
+  width: 178px;
+  height: 29px;
+}
+.messaging-child23,
+.messaging-child24,
+.messaging-child25,
+.messaging-child26,
+.messaging-child27 {
+  position: absolute;
+  top: 384.5px;
+  left: 94.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+  width: 423px;
+  height: 1px;
+}
+.messaging-child24,
+.messaging-child25,
+.messaging-child26,
+.messaging-child27 {
+  top: 688.5px;
+  left: 108.5px;
+}
+.messaging-child25,
+.messaging-child26,
+.messaging-child27 {
+  top: 894.5px;
+  width: 422px;
+}
+.messaging-child26,
+.messaging-child27 {
+  top: 316.5px;
+  left: 94.5px;
+  width: 423px;
+}
+.messaging-child27 {
+  top: 618.5px;
+  left: 108.5px;
+}
+.line-icon,
+.messaging-child28 {
+  position: absolute;
+  width: 422px;
+  height: 1px;
+}
+.messaging-child28 {
+  top: 824.5px;
+  left: 108.5px;
+  border-top: 1px solid var(--color-darkgray);
+  box-sizing: border-box;
+}
+.line-icon {
+  top: 756.5px;
+  left: 111px;
+}
+.messaging {
+  position: relative;
+  background-color: var(--color-gray-400);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-darkslategray-200);
+  font-family: var(--font-roboto);
+}
