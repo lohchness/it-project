@@ -1,0 +1,132 @@
+.rectangle {
+  position: absolute;
+  top: 59px;
+  left: 371px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-steelblue);
+  width: 699px;
+  height: 907px;
+}
+.sign-up1 {
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: center;
+}
+.sign-up-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs);
+  background-color: var(--color-lightseagreen);
+  position: absolute;
+  top: 546px;
+  left: 174px;
+  border-radius: var(--br-xl);
+  width: 145px;
+  height: 64px;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+.confirm-password-field,
+.email-field,
+.first-name-field,
+.last-name-field,
+.password-field {
+  border: 5px solid var(--color-lavender-200);
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xl);
+  background-color: transparent;
+  position: absolute;
+  top: 395px;
+  left: -5px;
+  border-radius: var(--br-8xs);
+  box-sizing: border-box;
+  width: 530px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.email-field,
+.first-name-field,
+.last-name-field,
+.password-field {
+  top: 295px;
+}
+.email-field,
+.first-name-field,
+.last-name-field {
+  top: 195px;
+}
+.first-name-field,
+.last-name-field {
+  top: 95px;
+}
+.first-name-field {
+  top: -5px;
+}
+.sign-up-form,
+.sign-up2 {
+  position: absolute;
+  top: 236px;
+  left: 463px;
+  width: 520px;
+  height: 610px;
+}
+.sign-up2 {
+  top: 119px;
+  left: 538px;
+  display: inline-block;
+  width: 358px;
+  height: 65px;
+}
+.dont-have-an,
+.sign-up3 {
+  position: relative;
+  display: inline-block;
+  width: 312px;
+  height: 65px;
+  flex-shrink: 0;
+  z-index: 0;
+}
+.sign-up3 {
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  left: 298px;
+  color: var(--color-lightseagreen);
+  width: 125px;
+  height: 39px;
+  z-index: 1;
+}
+.login-redirect {
+  position: absolute;
+  top: 887px;
+  left: 511px;
+  display: flex;
+  flex-direction: row;
+  padding: 0 5px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+}
+.sign-up {
+  position: relative;
+  background-color: var(--color-lavender-100);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-31xl);
+  color: var(--color-lightseagreen);
+  font-family: var(--font-inter);
+}

@@ -1,0 +1,207 @@
+.rectangle4 {
+  position: absolute;
+  top: 142px;
+  left: 379px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-steelblue);
+  width: 693px;
+  height: 784px;
+}
+.dont-have-an1,
+.sign-up4 {
+  position: relative;
+  display: inline-block;
+  width: 283px;
+  height: 65px;
+  flex-shrink: 0;
+  z-index: 0;
+}
+.sign-up4 {
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  left: 274px;
+  color: var(--color-lightseagreen);
+  width: 125px;
+  height: 39px;
+  z-index: 1;
+}
+.sign-up-redirect {
+  position: absolute;
+  top: 814px;
+  left: 522px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.facebook-login-button-child {
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 150px;
+  height: 50px;
+  z-index: 0;
+}
+.bifacebook-icon {
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  border-radius: var(--br-21xl);
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+.facebook-login-button,
+.github-login-button,
+.google-login-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 40px;
+  left: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.github-login-button,
+.google-login-button {
+  left: 175px;
+}
+.google-login-button {
+  left: 0;
+}
+.or-continue-with {
+  position: absolute;
+  top: calc(50% - 45px);
+  left: calc(50% - 51px);
+}
+.third-party-login {
+  position: absolute;
+  top: 687px;
+  left: 470px;
+  width: 500px;
+  height: 90px;
+  text-align: left;
+  font-size: 14px;
+}
+.forgot-your-password {
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  top: 520px;
+  left: 805px;
+  font-size: 16px;
+  display: inline-block;
+  font-style: italic;
+  color: inherit;
+  width: 193px;
+  height: 29px;
+}
+.login1 {
+  position: relative;
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-inter);
+  color: var(--color-gray);
+  text-align: center;
+}
+.login-button,
+.password-field1 {
+  box-sizing: border-box;
+  display: flex;
+}
+.login-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-3xs);
+  background-color: var(--color-lightseagreen);
+  position: absolute;
+  top: 280px;
+  left: 180px;
+  border-radius: var(--br-xl);
+  width: 145px;
+  height: 64px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.password-field1 {
+  border: 5px solid var(--color-lavender-200);
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xl);
+  top: 95px;
+  left: -5px;
+  border-radius: var(--br-8xs);
+  width: 530px;
+  height: 80px;
+}
+.email-field3,
+.password-field1,
+.password-field2 {
+  background-color: transparent;
+  position: absolute;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.password-field2 {
+  border: 0;
+  top: 99px;
+  left: 0;
+  width: 520px;
+  height: 70px;
+  display: none;
+}
+.email-field3 {
+  border: 5px solid var(--color-lavender-200);
+  font-family: var(--font-inter);
+  font-size: var(--font-size-xl);
+  top: -5px;
+  left: -5px;
+  border-radius: var(--br-8xs);
+  box-sizing: border-box;
+  width: 530px;
+  height: 80px;
+  display: flex;
+}
+.log-in,
+.login-form {
+  position: absolute;
+  top: 319px;
+  left: 468px;
+  width: 520px;
+  height: 344px;
+}
+.log-in {
+  top: 201px;
+  left: 543px;
+  font-size: var(--font-size-31xl);
+  color: var(--color-lightseagreen);
+  display: inline-block;
+  width: 358px;
+  height: 65px;
+}
+.login {
+  position: relative;
+  background-color: var(--color-lavender-100);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-6xl);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}
