@@ -32,14 +32,14 @@ const ForgotPassword = () => {
             
             {passwordResetStep == 1 && (
                 <form className="reset-password-form"  method="post" onSubmit={handleSubmit}>
-                    <input className="form-field" placeholder="email" type="email" required/>
+                    <input className="form-field" placeholder="Email" type="email" required/>
                     <button className="continue-button" type="submit">Continue</button>
                 </form>
             )}
 
             {passwordResetStep == 2 && (
                 <form className="reset-password-form"  method="post" onSubmit={handleSubmit}>
-                    <input className="form-field" placeholder="confirmation code" type="text" required/>
+                    <input className="form-field" placeholder="Confirmation code" type="text" required/>
                     <button className="continue-button" type="submit">Continue</button>
                 </form>
             )}
@@ -47,8 +47,8 @@ const ForgotPassword = () => {
             {passwordResetStep == 3 && (
                 <form className="reset-password-form"  method="post" onSubmit={handleSubmit}>
                     <input className="form-field email" value="example@email.com" type="email" readOnly/>
-                    <input className="form-field new-password" placeholder="new password" type="password" required/>
-                    <input className="form-field confirm-password" placeholder="confirm new password" type="password" required/>
+                    <input className="form-field new-password" placeholder="New password" type="password" required/>
+                    <input className="form-field confirm-password" placeholder="Vonfirm new password" type="password" required/>
                     <button className="continue-button" type="submit">Continue</button>
                 </form>
             )}

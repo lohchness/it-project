@@ -33,8 +33,8 @@ const Login = () => {
     <div className="login-container">
         <h1 className="title log-in">Log in</h1>
         <form className="login-form" method="post" onSubmit={handleSubmit}>
-            <input className="form-field" placeholder="email" type="email" required/>
-            <input className="form-field" placeholder="password" type="password" required/>
+            <input className="form-field" placeholder="Email" type="email" required/>
+            <input className="form-field" placeholder="Password" type="password" required/>
             <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
                 Forgot your password?
             </Link>

@@ -113,6 +113,11 @@ button {
   z-index: 1;
 }
 
+textarea {
+    font-family: inherit;
+    resize: none;
+}
+
 /* Third party login */
 /* .third-party-login {
     text-align: left;
