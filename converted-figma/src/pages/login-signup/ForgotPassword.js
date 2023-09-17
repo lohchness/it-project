@@ -48,7 +48,7 @@ const ForgotPassword = () => {
                 <form className="reset-password-form"  method="post" onSubmit={handleSubmit}>
                     <input className="form-field email" value="example@email.com" type="email" readOnly/>
                     <input className="form-field new-password" placeholder="New password" type="password" required/>
-                    <input className="form-field confirm-password" placeholder="Vonfirm new password" type="password" required/>
+                    <input className="form-field confirm-password" placeholder="Confirm new password" type="password" required/>
                     <button className="continue-button" type="submit">Continue</button>
                 </form>
             )}
