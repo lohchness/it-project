@@ -1,15 +1,8 @@
-import {
-  Routes,
-  Route,
-  useNavigationType,
-  useLocation,
-} from "react-router-dom";
-import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
-import ForgotPasswordPage3 from "./pages/ForgotPasswordPage3";
-import ForgotPasswordPage2 from "./pages/ForgotPasswordPage2";
-import ForgotPasswordPage1 from "./pages/ForgotPasswordPage1";
-import { useEffect } from "react";
+import {React, useEffect } from "react";
+import {Routes, Route, useNavigationType, useLocation} from "react-router-dom";
+import Login from "./pages/login-signup/Login";
+import SignUp from "./pages/login-signup/SignUp";
+import ForgotPassword from "./pages/login-signup/ForgotPassword";
 
 function App() {
   const action = useNavigationType();
@@ -31,19 +24,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/forgot-password-page-3":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/forgot-password-page-2":
-        title = "";
-        metaDescription = "";
-        break;
-      case "/forgot-password-page-1":
+      case "/forgot-password":
         title = "";
         metaDescription = "";
         break;
@@ -63,14 +44,13 @@ function App() {
     }
   }, [pathname]);
 
-  return (
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/" element={<SignUp />} />
-      <Route path="/forgot-password-page-3" element={<ForgotPasswordPage3 />} />
-      <Route path="/forgot-password-page-2" element={<ForgotPasswordPage2 />} />
-      <Route path="/forgot-password-page-1" element={<ForgotPasswordPage1 />} />
-    </Routes>
-  );
+    return (
+        <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/sign-up" element={<SignUp />} />
+            <Route path="/forgot-password" element={<ForgotPassword/>}/>
+        </Routes>
+    );
 }
 export default App;
