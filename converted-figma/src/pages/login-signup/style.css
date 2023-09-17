@@ -14,10 +14,15 @@ body {
 .login-container, .sign-up-container, .forgot-password-container {
     margin: 1rem auto;
     padding: 1rem 3rem;
-    width: 100%;
+    width: 30%;
     border-radius: var(--br-3xs);
     background-color: var(--color-steelblue);
     justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1 {
