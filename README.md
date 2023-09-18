@@ -1,28 +1,10 @@
-# mern-stack-example
-Mern Stack code for the [Mern Tutorial](https://www.mongodb.com/languages/mern-stack-tutorial)
 
-[![CI](https://github.com/mongodb-developer/mern-stack-example/actions/workflows/main.yaml/badge.svg)](https://github.com/mongodb-developer/mern-stack-example/actions/workflows/main.yaml)
+  # Comp30022
 
-## How To Run
-Create the file `mern/server/config.env` with your Atlas URI and the server port:
-```
-ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/
-```
+  Note: Please ensure you have installed <code><a href="https://nodejs.org/en/download/">nodejs</a></code>
 
-Start server:
-```
-cd mern/server
-npm install
-npm start
-```
-
-Start Web server
-```
-cd mern/client
-npm install
-npm start
-```
-
-## Disclaimer
-
-Use at your own risk; not a supported MongoDB product
+  To preview and run the project on your device:
+  1) Open project folder in <a href="https://code.visualstudio.com/download">Visual Studio Code</a>
+  2) In the terminal, run `npm install`
+  3) Run `npm start` to view project in browser
+  

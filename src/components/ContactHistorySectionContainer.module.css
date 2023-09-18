@@ -1,0 +1,97 @@
+.contactHistorySectionChild {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 741px;
+  height: 176px;
+  object-fit: cover;
+  z-index: 0;
+}
+.headerChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-slategray);
+  width: 726px;
+  height: 25px;
+  mix-blend-mode: normal;
+}
+.contactHistory {
+  position: absolute;
+  top: 3px;
+  left: calc(50% - 351px);
+  display: inline-block;
+  width: 142px;
+  height: 22px;
+}
+.groupIcon {
+  position: relative;
+  width: 14px;
+  height: 11px;
+  object-fit: cover;
+}
+.historyButton {
+  position: absolute;
+  top: 5px;
+  left: 700px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-11xs) var(--padding-12xs);
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  position: absolute;
+  margin: 0 !important;
+  top: 6px;
+  left: 7px;
+  width: 726px;
+  height: 25px;
+  z-index: 3;
+}
+.description,
+.type {
+  top: 0;
+  display: inline-block;
+  width: 170px;
+}
+.type {
+  position: absolute;
+  left: 0;
+  height: 24px;
+}
+.description {
+  left: 274px;
+}
+.date,
+.description,
+.detailBar {
+  position: absolute;
+  height: 24px;
+}
+.date {
+  top: 0;
+  left: 139px;
+  display: inline-block;
+  width: 170px;
+}
+.detailBar {
+  margin: 0 !important;
+  top: 44px;
+  left: 62px;
+  width: 444px;
+  z-index: 4;
+}
+.contactHistorySection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-size-smi);
+  color: var(--color-gray-600);
+  font-family: var(--font-open-sans);
+}

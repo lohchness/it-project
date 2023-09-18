@@ -1,0 +1,108 @@
+.experienceSectionChild {
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-lightslategray);
+  width: 360px;
+  height: 407px;
+  z-index: 0;
+}
+.workedHereFor {
+  margin: 0;
+  padding-left: var(--padding-smi);
+}
+.header2,
+.text2 {
+  position: absolute;
+  display: inline-block;
+}
+.text2 {
+  top: 25px;
+  left: 1px;
+  letter-spacing: 0.01em;
+  line-height: 142.02%;
+  width: 253px;
+  height: 33px;
+}
+.header2 {
+  top: 0;
+  left: calc(50% - 127px);
+  font-size: var(--font-size-3xs);
+  font-family: var(--font-open-sans);
+  color: var(--color-gray-600);
+  width: 199px;
+  height: 15px;
+}
+.experience2 {
+  position: absolute;
+  margin: 0 !important;
+  top: 123px;
+  left: 24px;
+  width: 254px;
+  height: 58px;
+  z-index: 2;
+}
+.headerChild {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-slategray);
+  width: 350px;
+  height: 22px;
+  mix-blend-mode: normal;
+}
+.experiences1 {
+  margin: 0;
+}
+.experiences {
+  position: absolute;
+  top: 2px;
+  left: calc(50% - 163px);
+  display: inline-block;
+  width: 91px;
+  height: 18.78px;
+}
+.groupIcon {
+  position: relative;
+  width: 14px;
+  height: 13px;
+  object-fit: cover;
+}
+.addExperienceButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0 var(--padding-12xs);
+  background-color: transparent;
+  position: absolute;
+  top: 4px;
+  left: 327px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  position: absolute;
+  margin: 0 !important;
+  top: 8px;
+  left: 5px;
+  width: 350px;
+  height: 22px;
+  z-index: 3;
+  font-size: var(--font-size-smi);
+  color: var(--color-gray-600);
+  font-family: var(--font-open-sans);
+}
+.experienceSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-inherit);
+  color: var(--color-white);
+  font-family: var(--font-inherit);
+}

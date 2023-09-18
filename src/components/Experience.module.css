@@ -1,0 +1,39 @@
+.workedHereFor {
+  margin: 0;
+  padding-left: var(--padding-smi);
+}
+.header1,
+.text1 {
+  position: absolute;
+  display: inline-block;
+}
+.text1 {
+  top: 25px;
+  left: 1px;
+  letter-spacing: 0.01em;
+  line-height: 142.02%;
+  width: 253px;
+  height: 33px;
+}
+.header1 {
+  top: 0;
+  left: calc(50% - 127px);
+  font-size: var(--font-size-3xs);
+  font-family: var(--font-open-sans);
+  color: var(--color-gray-600);
+  width: 199px;
+  height: 15px;
+}
+.experience1 {
+  position: absolute;
+  margin: 0 !important;
+  top: 48px;
+  left: 24px;
+  width: 254px;
+  height: 58px;
+  z-index: 1;
+  text-align: left;
+  font-size: var(--font-inherit);
+  color: var(--color-white);
+  font-family: var(--font-inherit);
+}

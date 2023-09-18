@@ -1,0 +1,40 @@
+.discussedHowTo {
+  margin: 0;
+  padding-left: var(--padding-smi);
+}
+.text1 {
+  top: 25px;
+  left: calc(50% - 138.52px);
+  letter-spacing: 0.01em;
+  line-height: 142.02%;
+  display: inline-block;
+  width: 277.04px;
+  height: 29.07px;
+}
+.date1,
+.note1,
+.text1 {
+  position: absolute;
+}
+.date1 {
+  top: 0;
+  left: calc(50% - 138.52px);
+  font-size: var(--font-size-3xs);
+  display: inline-block;
+  font-family: var(--font-open-sans);
+  color: var(--color-gray-600);
+  width: 65.72px;
+  height: 15px;
+}
+.note1 {
+  margin: 0 !important;
+  top: 52px;
+  left: calc(50% - 152.68px);
+  width: 277.04px;
+  height: 54.07px;
+  z-index: 2;
+  text-align: left;
+  font-size: var(--font-inherit);
+  color: var(--color-white);
+  font-family: var(--font-inherit);
+}
