@@ -9,18 +9,22 @@ import RecordList from "./components/recordList";
 import Edit from "./components/edit";
 import Create from "./components/create";
 
+import Login from "./pages/login-signup/Login";
+import SignUp from "./pages/login-signup/SignUp";
+import ForgotPassword from "./pages/login-signup/ForgotPassword";
+
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <div style={{ margin: 20 }}>
       <Routes>
-        <Route exact path="/" element={<RecordList />} />
+        <Route exact path="/record-list" element={<RecordList />} />
         <Route path="/edit/:id" element={<Edit />} />
         <Route path="/create" element={<Create />} />
+        
+        <Route path="/" element={<Login />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/forgot-password" element={<ForgotPassword/>}/>
       </Routes>
-      </div>
-    </div>
   );
 };
 

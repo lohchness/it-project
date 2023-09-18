@@ -1,0 +1,205 @@
+body {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    font-family: var(--font-inter);
+    color: var(--color-white);
+    background-color: var(--color-lavender-100);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.login-container, .sign-up-container, .forgot-password-container {
+    margin: 1rem auto;
+    padding: 1rem 3rem;
+    width: 40%;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-steelblue);
+    justify-content: center;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #1CBABD;
+    font-weight: 400;
+    margin: 30px;
+}
+
+form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-field {
+    border: 3px solid var(--color-lavender-200);
+    border-radius: 5px;
+    width: 85%;
+    text-align: left;
+    padding: 15px;
+    color: rgb(255, 248, 240);
+    margin: 5px;
+    background-color: transparent;
+    font-size: 0.8rem;
+    cursor: text;
+}
+
+.form-field:focus {
+    outline: 2px solid #67799d;
+}
+
+.forgot-password-link-container {
+    width: 95%;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.forgot-password-link {
+    text-align: right;
+    font-size: 0.6rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-style: italic;
+    color: #dddeec;
+}
+
+
+.forgot-password-link:hover {
+    color: white;
+}
+
+button {
+    cursor: pointer;
+}
+
+.login-button, .sign-up-button, .continue-button {
+    background-color: #1CBABD;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 10px;
+    margin-top: 20px;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.login-button {
+    width: 70px;
+}
+
+.sign-up-button {
+    width: 80px;
+}
+
+.continue-button {
+    width: 95px;
+}
+
+.login-button:hover, .sign-up-button:hover, .continue-button:hover {
+    background-color: #1bdcd2cf;
+}
+
+.sign-up-redirect, .login-redirect {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-3xs);
+  }
+
+.sign-up-link, .login-link {
+  text-decoration: none;
+  color: var(--color-lightseagreen);
+  z-index: 1;
+}
+
+.sign-up-link:hover, .login-link:hover {
+    color: #1bdcd2cf;
+    z-index: 1;
+  }
+
+textarea {
+    font-family: inherit;
+    resize: none;
+}
+
+/* Third party login */
+/* .third-party-login {
+    text-align: left;
+    font-size: 0.88rem;
+  }
+
+.or-continue-with {
+    text-align: center;
+  }
+
+.facebook-login-button-child {
+  border-radius: var(--br-3xs);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-silver);
+  box-sizing: border-box;
+  width: 9.38rem;
+  height: 3.13rem;
+  z-index: 0;
+}
+.bifacebook-icon {
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 12px);
+  left: calc(50% - 12px);
+  border-radius: var(--br-21xl);
+  width: 1.5rem;
+  height: 1.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+  z-index: 1;
+}
+.facebook-login-button {
+  left: 21.88rem;
+}
+.facebook-login-button,
+.github-login-button,
+.google-login-button {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.github-login-button {
+  left: 10.94rem;
+}
+.google-login-button {
+  left: 0;
+} */
