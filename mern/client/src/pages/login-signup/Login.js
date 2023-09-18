@@ -12,11 +12,6 @@ const Login = () => {
     navigate("/forgot-password");
   }, [navigate]);
 
-  const onLoginButtonClick = useCallback(() => {
-    // If email & password are correct, go to dashboard
-    // Otherwise display text saying "Incorrect email or password"
-  }, []);
-
   // for submitting api requests to backend - logging in, signing up, etc.
   function handleSubmit(e) {
     // Prevent the browser from reloading the page
@@ -35,9 +30,11 @@ const Login = () => {
         <form className="login-form" method="post" onSubmit={handleSubmit}>
             <input className="form-field" placeholder="Email" type="email" required/>
             <input className="form-field" placeholder="Password" type="password" required/>
-            <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
-                Forgot your password?
-            </Link>
+            <div className="forgot-password-link-container">
+                <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
+                    Forgot your password?
+                </Link>
+            </div>
             <button className="login-button" type="submit">
                 Login
             </button>

@@ -7,10 +7,6 @@ const SignUp = () => {
   const navigate = useNavigate();
   const [signUpStep, setSignUpStep] = useState(1);
 
-  const onSignUpButtonClick = useCallback(() => {
-    navigate("/login");
-  }, [navigate]);
-
   const onSignUpClick = useCallback(() => {
     navigate("/login");
   }, [navigate]);
