@@ -1,0 +1,103 @@
+.tasks {
+  position: absolute;
+  top: 137px;
+  left: 899px;
+  align-items: flex-start;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-200);
+  font-family: var(--font-inter);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  z-index: 3;
+}
+
+.tasks-background {
+  position: absolute;
+  border-radius: var(--br-3xs);
+  width: 395px;
+  height: 450px;
+  z-index: -1;
+}
+
+.tasks-heading {
+  position: relative;
+  top: 7px;
+  left: 7px;
+  width: 380px;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-slategray);
+  padding: var(--padding-11xs) var(--padding-mid);
+  box-sizing: border-box;
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-400);
+  font-family: var(--font-poppins);
+}
+
+.my-tasks {
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+}
+
+.tasks table {
+  position: absolute;
+  table-layout:fixed;
+  border-spacing: 10px 10px;
+}
+
+.row-wrapper{
+  position:relative;
+  background-color: white;
+  border-radius: 15px;
+  margin-bottom: 8px;
+  vertical-align: middle;
+}
+
+.tick-task-done {
+  position: relative;
+  top: 8px;
+  width: 13px;
+  height: 13px;
+  object-fit: cover;
+}
+
+.delete-icon {
+  position: relative;
+  width: 13px;
+  height: 14.02px;
+  object-fit: cover;
+}
+.delete-button {
+  background-color: white;
+  border:none;
+}
+
+.tasks tbody {
+  position: absolute;
+  width: 370px;
+  top: 50px;
+  left: 11px;
+  padding: var(--padding-xxs);
+  align-items: center;
+}
+
+.add-task {
+  position: relative;
+  font-size: var(--font-size-sm);
+  line-height: 150%;
+  color: var(--color-white);
+  text-align: right;
+  font-family: var(--font-poppins);
+}
+
+.add-task-container {
+  position: absolute;
+  width: 90px;
+  top: 415px;
+  left: 11px;
+  cursor: pointer;
+  background-color: var(--color-lightseagreen);
+  border-radius: 5px;
+  border:none;
+}
