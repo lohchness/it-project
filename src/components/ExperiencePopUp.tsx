@@ -10,7 +10,7 @@ const ExperiencePopUp: FunctionComponent<ExperiencePopUpType> = ({
 }) => {
   return (
     <div className={styles.experiencePopup}>
-      <div className={styles.popup} />
+      <div className={styles.expPopBackground} />
       <input
         className={styles.experience}
         placeholder="Experience"

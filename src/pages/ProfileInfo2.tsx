@@ -1,11 +1,9 @@
 import { FunctionComponent, useCallback } from "react";
-import NotesSection from "../components/NotesSection";
 import ContactHistorySectionContainer from "../components/ContactHistorySectionContainer";
+import NoteSectionContainer from "../components/NoteSectionContainer";
 import ExperienceSection from "../components/ExperienceSection";
 import UpcomingEventsSectionContainer from "../components/UpcomingEventsSectionContainer";
-import ProfilePic from "../components/ProfilePic";
-import ContactInfo from "../components/ContactInfo";
-import AboutMe from "../components/AboutMe";
+import ContactFormContainer from "../components/ContactFormContainer";
 import { useNavigate } from "react-router-dom";
 import styles from "./ProfileInfo2.module.css";
 
@@ -18,10 +16,6 @@ const ProfileInfo2: FunctionComponent = () => {
 
   const onEventButton3Click = useCallback(() => {
     // Please sync "Calendar" to the project
-  }, []);
-
-  const onContactNameButtonClick = useCallback(() => {
-    // Please sync "Messaging" to the project
   }, []);
 
   const onDashboardTextClick = useCallback(() => {
@@ -45,7 +39,7 @@ const ProfileInfo2: FunctionComponent = () => {
   }, []);
 
   return (
-    <div className={styles.profileInfo2}>
+    <div className={styles.profile}>
       <div className={styles.profilecrmFrame}>
         <div className={styles.profileCrmContainer}>
           <span>Profile</span>
@@ -53,11 +47,11 @@ const ProfileInfo2: FunctionComponent = () => {
           <span className={styles.crm}>{`> CRM`}</span>
         </div>
       </div>
-      <div className={styles.noteFrame}>
-        <NotesSection />
-      </div>
       <div className={styles.historyFrame}>
         <ContactHistorySectionContainer />
+      </div>
+      <div className={styles.noteFrame}>
+        <NoteSectionContainer />
       </div>
       <div className={styles.experienceFrame}>
         <ExperienceSection />
@@ -67,43 +61,15 @@ const ProfileInfo2: FunctionComponent = () => {
       </div>
       <div className={styles.detailFrame}>
         <div className={styles.detailsSection}>
-          <div className={styles.frameParent}>
-            <div className={styles.profilePicParent}>
-              <ProfilePic
-                profilePic="/undefined10.png"
-                nameLastName="Name LastName"
-                jobPosition="Job position"
-              />
-              <ContactInfo
-                email="blah@email.com"
-                phoneNumber="+12 34567890"
-                address="house, street, city"
-              />
-            </div>
-            <div className={styles.aboutMeParent}>
-              <AboutMe
-                aboutMeMore="awdkmakwdka wdaw daw da wd awd a wd"
-                aboutMe1="wdawfjkafnjkenjfnejfknakjenfjnajkefjkajfaefnkajefjanfjkanfkjanjkfnajkfnjakfnfjaejv ak vak vakejkavnajevnajkv aev aej va jekvja vaj vja vak"
-                mainApp="MAIN APP"
-              />
-              <button
-                className={styles.contactNameButton}
-                autoFocus={true}
-                disabled={false}
-                onClick={onContactNameButtonClick}
-              >
-                <b className={styles.contactName}>Contact ...Name</b>
-              </button>
-            </div>
-          </div>
+          <ContactFormContainer />
         </div>
       </div>
       <div className={styles.navFrame}>
         <div className={styles.nav}>
           <button className={styles.hamburgermenu}>
-            <img className={styles.vectorIcon} alt="" src="/undefined23.png" />
-            <img className={styles.vectorIcon1} alt="" src="/undefined24.png" />
-            <img className={styles.vectorIcon2} alt="" src="/undefined23.png" />
+            <img className={styles.vectorIcon} alt="" src="/vector11.svg" />
+            <img className={styles.vectorIcon1} alt="" src="/vector12.svg" />
+            <img className={styles.vectorIcon2} alt="" src="/vector11.svg" />
           </button>
           <nav className={styles.pages}>
             <div className={styles.dashboard} onClick={onDashboardTextClick}>
@@ -115,7 +81,7 @@ const ProfileInfo2: FunctionComponent = () => {
             >
               Connections
             </div>
-            <div className={styles.profile} onClick={onProfileTextClick}>
+            <div className={styles.profile1} onClick={onProfileTextClick}>
               Profile
             </div>
             <div className={styles.connections} onClick={onCalenderTextClick}>

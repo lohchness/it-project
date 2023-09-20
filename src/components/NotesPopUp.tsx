@@ -8,7 +8,7 @@ type NotesPopUpType = {
 const NotesPopUp: FunctionComponent<NotesPopUpType> = ({ onClose }) => {
   return (
     <div className={styles.notesPopup}>
-      <div className={styles.popup} />
+      <div className={styles.notePopBackground} />
       <input className={styles.notes} placeholder="Note header" type="text" />
       <input
         className={styles.description}

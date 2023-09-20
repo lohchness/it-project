@@ -13,13 +13,13 @@ const UpcomingEventsSectionContainer: FunctionComponent = () => {
 
   return (
     <div className={styles.upcomingEventsSection}>
-      <div className={styles.background} />
-      <img className={styles.dividerIcon} alt="" src="/undefined6.png" />
+      <div className={styles.eveBackground} />
+      <img className={styles.dividerIcon} alt="" src="/divider.svg" />
       <div className={styles.header}>
         <div className={styles.headerChild} />
         <b className={styles.headingText}>{`Upcoming Events `}</b>
         <div className={styles.eventsButton}>
-          <img className={styles.groupIcon} alt="" src="/undefined7.png" />
+          <img className={styles.groupIcon} alt="" src="/group4.svg" />
         </div>
       </div>
       <EventInfo

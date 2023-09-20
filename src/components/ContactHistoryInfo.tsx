@@ -32,7 +32,7 @@ const ContactHistoryInfo: FunctionComponent<ContactHistoryInfoType> = ({
       <div className={styles.date1}>{date}</div>
       <div className={styles.description1}>{description}</div>
       <div className={styles.historyButton1}>
-        <img className={styles.groupIcon} alt="" src="/undefined3.png" />
+        <img className={styles.groupIcon} alt="" src="/group.svg" />
       </div>
     </div>
   );

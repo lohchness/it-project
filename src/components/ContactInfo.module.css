@@ -8,7 +8,6 @@
   left: calc(50% - 57.3px);
   width: 16.56px;
   height: 11.79px;
-  object-fit: cover;
 }
 .div,
 .email,
@@ -28,13 +27,10 @@
 .iconCall,
 .phoneNumber {
   position: absolute;
-  height: 15px;
-}
-.iconCall {
   top: 0;
   left: calc(50% - 51.3px);
   width: 16.56px;
-  object-fit: cover;
+  height: 15px;
 }
 .phoneNumber {
   top: 74px;
@@ -51,13 +47,10 @@
 .address,
 .iconLocationSharp {
   position: absolute;
-  height: 18px;
-}
-.iconLocationSharp {
   top: 0;
   left: calc(50% - 85.5px);
   width: 14.2px;
-  object-fit: cover;
+  height: 18px;
 }
 .address {
   top: 33px;

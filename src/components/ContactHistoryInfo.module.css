@@ -25,12 +25,12 @@
 .description1 {
   left: 329px;
   width: 365px;
+  height: 13px;
 }
 .groupIcon {
   position: relative;
   width: 14px;
   height: 11px;
-  object-fit: cover;
 }
 .historyButton1 {
   position: absolute;

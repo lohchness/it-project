@@ -48,7 +48,7 @@ const EventInfo: FunctionComponent<EventInfoType> = ({
         </div>
       </div>
       <div className={styles.eventButton2} onClick={onEventButton2Click}>
-        <img className={styles.groupIcon} alt="" src="/undefined8.png" />
+        <img className={styles.groupIcon} alt="" src="/group5.svg" />
       </div>
     </div>
   );

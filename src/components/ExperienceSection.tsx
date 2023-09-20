@@ -18,22 +18,8 @@ const ExperienceSection: FunctionComponent = () => {
   return (
     <>
       <section className={styles.experienceSection}>
-        <div className={styles.experienceSectionChild} />
-        <Experience
-          description="Worked here for ............................., learn ...................... this will help ............"
-          header="Experience Title"
-        />
-        <div className={styles.experience2}>
-          <div className={styles.text2}>
-            <ul className={styles.workedHereFor}>
-              Worked here for ............................., learn
-              ...................... this will help ............
-            </ul>
-          </div>
-          <b className={styles.header2}>The place worked at</b>
-        </div>
+        <div className={styles.expBackground} />
         <div className={styles.header}>
-          <div className={styles.headerChild} />
           <b className={styles.experiences}>
             <p className={styles.experiences1}>Experiences</p>
           </b>
@@ -41,8 +27,18 @@ const ExperienceSection: FunctionComponent = () => {
             className={styles.addExperienceButton}
             onClick={openExperiencePopUp}
           >
-            <img className={styles.groupIcon} alt="" src="/undefined5.png" />
+            <img className={styles.groupIcon} alt="" src="/group3.svg" />
           </button>
+        </div>
+        <div className={styles.individualExperiences}>
+          <Experience
+            description="Worked here for ............................., learn ...................... this will help ..........."
+            header="Experience Title"
+          />
+          <Experience
+            description="Worked here for ............................., learn ...................... this will help ............"
+            header="The place worked at"
+          />
         </div>
       </section>
       {isExperiencePopUpOpen && (

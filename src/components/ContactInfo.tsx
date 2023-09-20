@@ -16,18 +16,18 @@ const ContactInfo: FunctionComponent<ContactInfoType> = ({
     <div className={styles.contactInfo}>
       <div className={styles.email}>
         <div className={styles.blahemailcom}>{email}</div>
-        <img className={styles.iconMail} alt="" src="/undefined19.png" />
+        <img className={styles.iconMail} alt="" src="/-icon-mail.svg" />
       </div>
       <div className={styles.phoneNumber}>
         <div className={styles.div}>{phoneNumber}</div>
-        <img className={styles.iconCall} alt="" src="/undefined20.png" />
+        <img className={styles.iconCall} alt="" src="/-icon-call.svg" />
       </div>
       <div className={styles.address}>
         <div className={styles.houseStreetCity}>{address}</div>
         <img
           className={styles.iconLocationSharp}
           alt=""
-          src="/undefined21.png"
+          src="/-icon-location-sharp.svg"
         />
       </div>
       <div className={styles.header}>
