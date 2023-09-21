@@ -1,11 +1,13 @@
 import { React, useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form"
 
 import "./style.css";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const [signUpStep, setSignUpStep] = useState(1);
+  const { register, watch, handleSubmit, formState: { errors } } = useForm();
 
   const onSignUpClick = useCallback(() => {
     navigate("/login");
@@ -13,7 +15,7 @@ const SignUp = () => {
   
 
   // for submitting api requests to backend - logging in, signing up, etc.
-  function handleSubmit(e) {
+  const onSubmit = (e) => {
     // Prevent the browser from reloading the page
     e.preventDefault();
 
@@ -37,12 +39,58 @@ const SignUp = () => {
         
         {signUpStep == 1 && (
             <>
-                <form className="sign-up-form" method="post" onSubmit={handleSubmit}>
-                    <input className="form-field" placeholder="First name" type="text" required/>
-                    <input className="form-field" placeholder="Last name" type="text" required/>
-                    <input className="form-field" placeholder="Email" type="email" required/>
-                    <input className="form-field" placeholder="Password" type="password" required/>
-                    <input className="form-field" placeholder="Confirm password" type="password" required/>
+                <form className="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
+                    {errors.firstName && <label className="form-input-error-text">First name is too long (max 20 characters)</label>}
+                    <input
+                        className="form-field" 
+                        placeholder="First name" 
+                        type="text" 
+                        {...register("firstName", { 
+                            required: true, 
+                            maxLength: 20 })}
+                    required/>
+
+                    {errors.lastName && <label className="form-input-error-text">Last name is too long (max 20 characters)</label>}
+                    <input 
+                        className="form-field" 
+                        placeholder="Last name" 
+                        type="text" {...register("lastName", { 
+                            required: true, 
+                            maxLength: 20 })}
+                    required/>
+
+                    {errors.email && <label className="form-input-error-text">Email is not of the correct format</label>}
+                    <input 
+                        className="form-field" 
+                        placeholder="Email" 
+                        type="email" 
+                        {...register("email", { 
+                            required: true})}
+                    required/>
+
+                    {errors.password && <label className="form-input-error-text">Password is too short (minimum 5 characters)</label>}
+                    <input 
+                        className="form-field" 
+                        placeholder="Password" 
+                        type="password" 
+                        {...register("password", { 
+                            required: true, minLength: 5 })}
+                    required/>
+
+                    {errors.confirmPassword && <label className="form-input-error-text">Passwords do not match</label>}
+                    <input 
+                        className="form-field" 
+                        placeholder="Confirm password" 
+                        type="password" 
+                        {...register("confirmPassword", { 
+                            required: true, 
+                            validate: (val) => {
+                                if (watch('password') != val) {
+                                    return "Your passwords do not match";
+                                }
+                            }, 
+                        })}
+                    required/>
                     <button className="continue-button" type="submit">
                         Continue
                     </button>
@@ -58,7 +106,7 @@ const SignUp = () => {
 
         {signUpStep == 2 && (
             <>
-                 <form className="sign-up-form" method="post" onSubmit={handleSubmit}>
+                 <form className="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
                     <textarea className="form-field" placeholder="About (optional)" type="text"/>
                     <input className="form-field" placeholder="Phone number (optional)" type="tel"/>
                     <button className="sign-up-button" type="submit">
