@@ -118,6 +118,10 @@ button {
 .login-button:hover, .sign-up-button:hover, .continue-button:hover {
     background-color: #1bdcd2cf;
 }
+::placeholder {
+  color:#FFF8F0;
+  opacity: 0.6;
+}
 
 .sign-up-redirect, .login-redirect {
     margin-top: 1rem;
