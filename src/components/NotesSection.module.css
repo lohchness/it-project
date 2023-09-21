@@ -1,0 +1,107 @@
+.notesSectionChild {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 364px;
+  height: 407px;
+  object-fit: cover;
+  z-index: 0;
+}
+.headerBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-slategray);
+  width: 353.89px;
+  height: 24px;
+  mix-blend-mode: normal;
+}
+.notes {
+  position: absolute;
+  top: 3px;
+  left: calc(50% - 167.84px);
+  display: inline-block;
+  width: 39.43px;
+  height: 18.69px;
+}
+.groupIcon {
+  position: relative;
+  width: 14px;
+  height: 13px;
+  object-fit: cover;
+}
+.addNoteButton {
+  position: absolute;
+  top: 5px;
+  left: 331.64px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--padding-12xs);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.header {
+  position: absolute;
+  margin: 0 !important;
+  top: 8px;
+  left: 5.06px;
+  width: 353.89px;
+  height: 24px;
+  z-index: 1;
+  font-size: var(--font-size-smi);
+  color: var(--color-gray-600);
+  font-family: var(--font-open-sans);
+}
+.discussedHowTo {
+  margin: 0;
+  padding-left: var(--padding-smi);
+}
+.text2 {
+  position: absolute;
+  top: 26px;
+  left: calc(50% - 138.52px);
+  letter-spacing: 0.01em;
+  line-height: 142.02%;
+  display: inline-block;
+  width: 277.04px;
+  height: 29.07px;
+}
+.span {
+  font-size: var(--font-size-2xs);
+}
+.date2,
+.note2 {
+  position: absolute;
+}
+.date2 {
+  top: 0;
+  left: calc(50% - 138.52px);
+  display: inline-block;
+  font-family: var(--font-open-sans);
+  color: var(--color-gray-600);
+  width: 48.53px;
+  height: 15.57px;
+  font-size: var(--font-size-3xs);
+}
+.note2 {
+  margin: 0 !important;
+  top: 126px;
+  left: calc(50% - 152.68px);
+  width: 277.04px;
+  height: 55.07px;
+  z-index: 3;
+}
+.notesSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-inherit);
+  color: var(--color-white);
+  font-family: var(--font-inherit);
+}

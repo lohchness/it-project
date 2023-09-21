@@ -1,0 +1,156 @@
+.maskGroupIcon {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+}
+.jobPosition,
+.nameLastname {
+  position: relative;
+  font-weight: 600;
+}
+.jobPosition {
+  font-size: var(--font-size-3xs);
+  font-weight: 300;
+  font-family: var(--font-inter);
+  color: var(--color-whitesmoke);
+}
+.maskGroupParent,
+.nameLastnameParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nameLastnameParent {
+  overflow: hidden;
+  padding: 0 var(--padding-6xs);
+  gap: var(--gap-11xs);
+}
+.maskGroupParent {
+  gap: var(--gap-3xs);
+}
+.vectorIcon {
+  position: relative;
+  width: 16px;
+  height: 15.9px;
+}
+.facebookButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.vectorIcon1 {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+}
+.vectorIcon2,
+.vectorIcon3 {
+  position: absolute;
+  margin: 0 !important;
+  height: 12.5%;
+  width: 12.5%;
+  top: 16.67%;
+  right: 16.67%;
+  bottom: 70.83%;
+  left: 70.83%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 1;
+}
+.vectorIcon3 {
+  height: 50%;
+  width: 50%;
+  top: 25%;
+  right: 25%;
+  bottom: 25%;
+  left: 25%;
+  z-index: 2;
+}
+.instagramButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: var(--gap-3xs);
+}
+.vectorIcon4 {
+  position: relative;
+  width: 16px;
+  height: 13.6px;
+}
+.facebookButtonParent,
+.frameParent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-7xl);
+}
+.frameParent {
+  position: absolute;
+  top: 10px;
+  left: calc(50% - 54px);
+  width: 123px;
+  height: 167px;
+  flex-direction: column;
+  gap: var(--gap-base);
+}
+.vectorIcon5 {
+  position: relative;
+  width: 27px;
+  height: 27px;
+  z-index: 0;
+}
+.vectorIcon6,
+.vectorIcon7 {
+  position: absolute;
+  margin: 0 !important;
+  height: 42.31%;
+  width: 42.31%;
+  top: 17.31%;
+  right: 28.85%;
+  bottom: 40.38%;
+  left: 28.85%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  z-index: 1;
+}
+.vectorIcon7 {
+  height: 22.3%;
+  width: 69.54%;
+  top: 67.32%;
+  right: 15.23%;
+  bottom: 10.38%;
+  left: 15.23%;
+  z-index: 2;
+}
+.editProfileButton {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-3xs);
+}
+.profilePic {
+  position: relative;
+  width: 138px;
+  height: 177px;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-100);
+  font-family: var(--font-open-sans);
+}
