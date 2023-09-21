@@ -1,0 +1,48 @@
+.usernameChild {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-darkslategray);
+  width: 112px;
+  height: 25px;
+  mix-blend-mode: lighten;
+}
+.vectorIcon {
+  position: absolute;
+  height: 17.04%;
+  width: 7.85%;
+  top: 41.25%;
+  right: 13.4%;
+  bottom: 41.71%;
+  left: 78.75%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.username,
+.username1 {
+  position: absolute;
+  top: 8px;
+}
+.username1 {
+  left: 0;
+  font-size: var(--font-size-base);
+  line-height: 150%;
+  font-family: var(--font-poppins);
+  color: var(--color-white-100);
+  text-align: right;
+  display: inline-block;
+  width: 90px;
+  height: 24px;
+}
+.username {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  left: 1188px;
+  width: 120px;
+  height: 40px;
+}

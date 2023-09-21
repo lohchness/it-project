@@ -1,0 +1,16 @@
+.maskGroupIcon,
+.profilePicture {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+.maskGroupIcon {
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+.profilePicture {
+  text-decoration: none;
+  top: 8px;
+  left: 1319px;
+}

@@ -1,0 +1,8 @@
+.showing8Out {
+  position: absolute;
+  top: 862px;
+  left: 235px;
+  line-height: 150%;
+  font-weight: 500;
+  color: var(--color-white-100);
+}

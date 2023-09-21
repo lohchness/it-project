@@ -1,9 +1,11 @@
 import { useCallback } from "react";
+
 import ContactHistorySectionContainer from "../../components/profile/ContactHistorySectionContainer";
 import NoteSectionContainer from "../../components/profile/NoteSectionContainer";
 import ExperienceSection from "../../components/profile/ExperienceSection";
 import UpcomingEventsSectionContainer from "../../components/profile/UpcomingEventsSectionContainer";
 import ContactFormContainer from "../../components/profile/ContactFormContainer";
+
 import Header from "../../components/Header";
 import styles from "./ProfileInfo2.module.css";
 

@@ -15,6 +15,7 @@ import ForgotPassword from "./pages/login-signup/ForgotPassword";
 import Dashboard from "./pages/dashboard-calendar/Dashboard";
 import Calendar from "./pages/dashboard-calendar/Calendar";
 import Profile from "./pages/profile/ProfileInfo2";
+import Connections from "./pages/connections/Connections";
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/calendar" element={<Calendar/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/connections" element={<Connections/>}/>
         
       </Routes>
   );
