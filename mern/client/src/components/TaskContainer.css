@@ -1,30 +1,20 @@
 .tasks {
   position: absolute;
-  top: 137px;
-  left: 899px;
+  top: 17.2%;
+  left: 63%;
+  height: 56.3%;
+  width: 28%;
   align-items: flex-start;
   font-size: var(--font-size-sm);
   color: var(--color-gray-200);
   font-family: var(--font-inter);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  z-index: 3;
-}
-
-.tasks-background {
-  position: absolute;
-  border-radius: var(--br-3xs);
-  width: 395px;
-  height: 450px;
-  z-index: -1;
+  background-color: var(--color-lightslategray);
+  border-radius: 15px;
 }
 
 .tasks-heading {
   position: relative;
-  top: 7px;
-  left: 7px;
-  width: 380px;
+  margin: 7px;
   border-radius: var(--br-3xs);
   background-color: #656C86;
   padding: var(--padding-11xs) var(--padding-mid);
@@ -35,15 +25,19 @@
 }
 
 .my-tasks {
+  color:white;
   position: relative;
   line-height: 150%;
   font-weight: 500;
 }
 
 .tasks table {
-  position: absolute;
+  position: relative;
   table-layout:fixed;
   border-spacing: 10px 10px;
+  display: block;
+  height: 80%;
+  overflow:scroll;
 }
 
 .row-wrapper{
@@ -74,10 +68,7 @@
 }
 
 .tasks tbody {
-  position: absolute;
-  width: 370px;
-  top: 50px;
-  left: 11px;
+  position: relative;
   padding: var(--padding-xxs);
   align-items: center;
   color: black;
@@ -88,17 +79,17 @@
   font-size: var(--font-size-sm);
   line-height: 150%;
   color: var(--color-white);
-  text-align: right;
+  text-align:center;
   font-family: var(--font-poppins);
 }
 
 .add-task-container {
-  position: absolute;
-  width: 90px;
-  top: 415px;
-  left: 11px;
+  margin-top: 10px;
+  margin-left: 10px;
+  position: relative;
   cursor: pointer;
   background-color: var(--color-lightseagreen);
   border-radius: 5px;
   border:none;
+  z-index: 3;
 }

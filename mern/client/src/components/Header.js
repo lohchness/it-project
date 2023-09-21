@@ -12,7 +12,7 @@ const Header = () => {
   }, [navigate]);
 
   const onProfileTextClick = useCallback(() => {
-    navigate("/profile-info-2");
+    navigate("/profile");
   }, [navigate]);
 
   const onCalenderTextClick = useCallback(() => {

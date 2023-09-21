@@ -7,8 +7,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="dashboard-crm-container">
-        <span>Dashboard</span>
-        <span className="span">{` `}</span>
+        <span className="span">{` Dashboard `}</span>
         <span className="crm">{`> CRM`}</span>
       </div>
       <TaskContainer />

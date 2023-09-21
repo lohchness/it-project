@@ -77,6 +77,8 @@
 }
 .last-contact1,
 .name9 {
+  color:white;
+  opacity: 0.8;
   position: relative;
   line-height: 150%;
   font-weight: 500;
@@ -103,6 +105,8 @@
 }
 .tag1,
 .touch1 {
+  color:white;
+  opacity: 0.8;
   position: relative;
   line-height: 150%;
   font-weight: 500;
@@ -198,6 +202,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-3xs);
+  color:#656C86;
 }
 .contact-history-11 {
   top: 347px;
@@ -235,6 +240,7 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--gap-3xs);
+  color:#656C86;
 }
 .contact-history-6 {
   margin: 0 !important;

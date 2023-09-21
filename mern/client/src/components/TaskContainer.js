@@ -81,7 +81,6 @@ export default function TaskContainer() {
   return (
     <div>
       <div className="tasks">
-        <img className="tasks-background" alt="" src="/Background1.png" />
         <div className="tasks-heading">
           <div className="my-tasks">My Tasks</div>
         </div>
@@ -89,8 +88,8 @@ export default function TaskContainer() {
           <tbody>{TaskContainer()}</tbody>
         </table>
         <button className="add-task-container" onClick={openAddTaskPopUp}>
-              <div className="add-task">+ Add Task</div>
-          </button>
+          <div className="add-task">+ Add Task</div>
+        </button>
       </div>
       {isAddTaskPopUpOpen && (
         <PortalPopup
