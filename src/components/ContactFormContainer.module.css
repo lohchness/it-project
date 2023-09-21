@@ -1,0 +1,63 @@
+.aboutMeWrapper,
+.profilePicParent {
+  position: absolute;
+  left: 0;
+  width: 360px;
+  display: flex;
+  align-items: center;
+}
+.profilePicParent {
+  top: 0;
+  height: 198px;
+  flex-direction: row;
+  justify-content: center;
+  gap: var(--gap-5xs);
+}
+.aboutMeWrapper {
+  top: 198px;
+  height: 601px;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: var(--font-size-smi);
+  color: var(--color-gray-600);
+}
+.contactName {
+  position: relative;
+  font-size: var(--font-size-mini);
+  font-family: var(--font-open-sans);
+  color: var(--color-gray-600);
+  text-align: left;
+}
+.contactNameButton,
+.frameParent {
+  position: absolute;
+  border-radius: var(--br-3xs);
+}
+.contactNameButton {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-2xs) var(--padding-9xl);
+  background-color: var(--color-lightseagreen);
+  top: 718px;
+  left: 91.5px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+.contactNameButton:hover {
+  background-color: var(--color-darkcyan);
+}
+.frameParent {
+  margin: 0 !important;
+  top: 0;
+  left: 0;
+  background-color: var(--color-lightslategray);
+  width: 360px;
+  height: 799px;
+  z-index: 0;
+  text-align: left;
+  font-size: var(--font-size-xs);
+  color: var(--color-gray-100);
+  font-family: var(--font-open-sans);
+}

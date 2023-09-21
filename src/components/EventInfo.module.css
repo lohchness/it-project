@@ -1,0 +1,92 @@
+.roomTourWith {
+  top: 14.67px;
+  left: 85px;
+  width: 175.92px;
+}
+.alanGilbertBuilding,
+.pm430pm,
+.roomTourWith {
+  position: absolute;
+  line-height: 150%;
+  display: inline-block;
+  height: 16.63px;
+}
+.pm430pm {
+  top: 14.67px;
+  left: 365.38px;
+  font-family: var(--font-poppins);
+  width: 103.19px;
+}
+.alanGilbertBuilding {
+  top: 12.71px;
+  left: 542.99px;
+  width: 159.01px;
+}
+.date2Child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gray-400);
+  width: 50px;
+  height: 48.9px;
+}
+.b {
+  line-height: 150%;
+}
+.aug,
+.p {
+  margin: 0;
+}
+.aug {
+  line-height: 120%;
+}
+.date1,
+.date2 {
+  position: absolute;
+}
+.date1 {
+  top: 3.91px;
+  left: 12px;
+  display: inline-block;
+  width: 27px;
+  height: 35.21px;
+}
+.date2 {
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 48.9px;
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+.groupIcon {
+  position: relative;
+  width: 17.71px;
+  height: 17.35px;
+}
+.eventButton2 {
+  position: absolute;
+  top: 11.74px;
+  left: 702px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-12xs);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.event2 {
+  position: absolute;
+  margin: 0 !important;
+  top: 56.73px;
+  left: 5px;
+  width: 720.71px;
+  height: 48.9px;
+  z-index: 3;
+  text-align: left;
+  font-size: var(--font-size-2xs);
+  color: var(--color-white);
+  font-family: var(--font-inter);
+}

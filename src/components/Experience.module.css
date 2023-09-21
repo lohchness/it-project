@@ -1,0 +1,77 @@
+.workedHereFor {
+  margin: 0;
+  padding-left: var(--padding-mini);
+}
+.header1,
+.text1 {
+  position: absolute;
+  display: inline-block;
+}
+.text1 {
+  top: 25px;
+  left: 1px;
+  letter-spacing: 0.01em;
+  line-height: 142.02%;
+  width: 253px;
+}
+.header1 {
+  top: 0;
+  left: calc(50% - 157.95px);
+  font-size: var(--font-size-3xs);
+  font-family: var(--font-open-sans);
+  color: var(--color-gray-600);
+  width: 199px;
+}
+.vectorIcon,
+.vectorIcon1,
+.vectorIcon2 {
+  position: absolute;
+  height: 68.59%;
+  width: 82.75%;
+  top: 34.98%;
+  right: 8.63%;
+  bottom: -3.57%;
+  left: 8.62%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vectorIcon1,
+.vectorIcon2 {
+  height: 7.14%;
+  width: 107.75%;
+  top: 19.62%;
+  right: -3.88%;
+  bottom: 73.23%;
+  left: -3.88%;
+}
+.vectorIcon2 {
+  height: 30.18%;
+  width: 49.42%;
+  top: -3.57%;
+  right: 25.62%;
+  bottom: 73.39%;
+  left: 24.96%;
+}
+.delete {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 24.56%;
+  width: 4.08%;
+  top: 43.86%;
+  right: 0;
+  bottom: 31.58%;
+  left: 95.92%;
+}
+.experience1 {
+  position: relative;
+  width: 315.9px;
+  height: 57px;
+  text-align: left;
+  font-size: var(--font-inherit);
+  color: var(--color-white);
+  font-family: var(--font-inherit);
+}
