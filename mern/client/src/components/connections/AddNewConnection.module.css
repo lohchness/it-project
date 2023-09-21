@@ -1,0 +1,34 @@
+.vectorIcon {
+  position: absolute;
+  height: 81.55%;
+  width: 10.29%;
+  top: 9.23%;
+  right: 89.98%;
+  bottom: 9.23%;
+  left: -0.26%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.addNewConnection1 {
+  position: absolute;
+  top: 0;
+  left: 29.29px;
+  font-size: var(--font-size-base);
+  line-height: 150%;
+  font-family: var(--font-inter);
+  color: var(--color-gainsboro);
+  text-align: left;
+}
+.addNewConnection {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 810px;
+  left: 286.71px;
+  width: 190.29px;
+  height: 24px;
+}
