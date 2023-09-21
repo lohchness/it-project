@@ -1,11 +1,10 @@
 import { useCallback } from "react";
-import ContactHistorySectionContainer from "/Users/a1/Downloads/it-project/mern/client/src/components/ContactHistorySectionContainer";
-import NoteSectionContainer from "/Users/a1/Downloads/it-project/mern/client/src/components/NoteSectionContainer";
-import ExperienceSection from "/Users/a1/Downloads/it-project/mern/client/src/components/ExperienceSection";
-import UpcomingEventsSectionContainer from "/Users/a1/Downloads/it-project/mern/client/src/components/UpcomingEventsSectionContainer";
-import ContactFormContainer from "/Users/a1/Downloads/it-project/mern/client/src/components/ContactFormContainer";
-import { useNavigate } from "react-router-dom";
-import Header from "/Users/a1/Downloads/it-project/mern/client/src/components/Header";
+import ContactHistorySectionContainer from "../../components/profile/ContactHistorySectionContainer";
+import NoteSectionContainer from "../../components/profile/NoteSectionContainer";
+import ExperienceSection from "../../components/profile/ExperienceSection";
+import UpcomingEventsSectionContainer from "../../components/profile/UpcomingEventsSectionContainer";
+import ContactFormContainer from "../../components/profile/ContactFormContainer";
+import Header from "../../components/Header";
 import styles from "./ProfileInfo2.module.css";
 
 const ProfileInfo2 = () => {

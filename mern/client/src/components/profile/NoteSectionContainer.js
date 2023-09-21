@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import NotesPopUp from "./NotesPopUp";
-import PortalPopup from "./PortalPopup";
+import PortalPopup from "../PortalPopup";
 import Note from "./Note 1";
 import styles from "./NoteSectionContainer.module.css";
 

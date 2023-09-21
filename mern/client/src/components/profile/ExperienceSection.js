@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import ExperiencePopUp from "./ExperiencePopUp";
-import PortalPopup from "./PortalPopup";
+import PortalPopup from "../PortalPopup";
 import Experience from "./Experience";
 import styles from "./ExperienceSection.module.css";
 

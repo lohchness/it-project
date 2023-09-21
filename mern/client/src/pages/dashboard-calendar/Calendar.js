@@ -1,6 +1,6 @@
-import CalendarContainer from "/Users/a1/Downloads/it-project/mern/client/src/components/CalendarContainer";
-import AddActivityForm from "/Users/a1/Downloads/it-project/mern/client/src/components/AddActivityForm";
-import Header from "/Users/a1/Downloads/it-project/mern/client/src/components/Header";
+import CalendarContainer from "../../components/calendar/CalendarContainer";
+import AddActivityForm from "../../components/calendar/AddActivityForm";
+import Header from "../../components/Header";
 
 //import "./Calendar.css";
 const Calendar = () => {

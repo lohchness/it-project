@@ -1,7 +1,7 @@
-import TaskContainer from "/Users/a1/Downloads/it-project/mern/client/src/components/TaskContainer";
-import UpcomingEventsContainer from "/Users/a1/Downloads/it-project/mern/client/src/components/UpcomingEventsContainer";
-import ConnectionsForm from "/Users/a1/Downloads/it-project/mern/client/src/components/ConnectionsForm";
-import Header from "/Users/a1/Downloads/it-project/mern/client/src/components/Header";
+import TaskContainer from "../../components/dashboard/TaskContainer";
+import UpcomingEventsContainer from "../../components/dashboard/UpcomingEventsContainer";
+import ConnectionsForm from "../../components/dashboard/ConnectionsForm";
+import Header from "../../components/Header";
 import "./Dashboard.css";
 const Dashboard = () => {
   return (
