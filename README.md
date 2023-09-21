@@ -12,24 +12,26 @@ Other tools used:
 - [Locofy.ai](https://www.locofy.ai/) - tool for speeding up the conversion of Figma UI design to React front-end code
 
 ## How To Run
-### Client
-```
-cd mern/client
-npm install
-npm start
+
 ```
 
-### Server
-Create the file `mern/server/config.env` with your Atlas URI and the server port:
+### 1. Server
+Create the file `mern/server/config.env` to include the Atlas URI:
 ```
-ATLAS_URI=mongodb+srv://<username>:<password>@sandbox.jadwj.mongodb.net/
+ATLAS_URI=mongodb+srv://zycheng:password_123@itproject.dvbimbn.mongodb.net/?retryWrites=true&w=majority
 ```
 
 Start server:
 ```
 cd mern/server
 npm install
-npm start
+node server.mjs
 ```
+
+### 2. Client
+```
+cd mern/client
+npm install
+npm start
 
 Base project template adapted from [Mern Tutorial](https://www.mongodb.com/languages/mern-stack-tutorial).
