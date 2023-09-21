@@ -1,11 +1,6 @@
-import { FunctionComponent } from "react";
 import styles from "./NotesPopUp.module.css";
 
-type NotesPopUpType = {
-  onClose?: () => void;
-};
-
-const NotesPopUp: FunctionComponent<NotesPopUpType> = ({ onClose }) => {
+const NotesPopUp = ({ onClose }) => {
   return (
     <div className={styles.notesPopup}>
       <div className={styles.notePopBackground} />

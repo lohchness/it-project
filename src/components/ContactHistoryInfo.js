@@ -1,24 +1,14 @@
-import { FunctionComponent, useMemo, type CSSProperties } from "react";
+import { useMemo } from "react";
 import styles from "./ContactHistoryInfo.module.css";
 
-type ContactHistoryInfoType = {
-  date?: string;
-  contactType?: string;
-  description?: string;
-
-  /** Style props */
-  contactHistory1Top?: CSSProperties["top"];
-  contactHistory1ZIndex?: CSSProperties["zIndex"];
-};
-
-const ContactHistoryInfo: FunctionComponent<ContactHistoryInfoType> = ({
+const ContactHistoryInfo = ({
   date,
   contactType,
   description,
   contactHistory1Top,
   contactHistory1ZIndex,
 }) => {
-  const contactHistory1Style: CSSProperties = useMemo(() => {
+  const contactHistory1Style = useMemo(() => {
     return {
       top: contactHistory1Top,
       zIndex: contactHistory1ZIndex,

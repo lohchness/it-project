@@ -1,17 +1,6 @@
-import { FunctionComponent } from "react";
 import styles from "./AboutMe.module.css";
 
-type AboutMeType = {
-  aboutMeMore?: string;
-  aboutMe1?: string;
-  mainApp?: string;
-};
-
-const AboutMe: FunctionComponent<AboutMeType> = ({
-  aboutMeMore,
-  aboutMe1,
-  mainApp,
-}) => {
+const AboutMe = ({ aboutMeMore, aboutMe1, mainApp }) => {
   return (
     <div className={styles.aboutMe}>
       <div className={styles.header}>

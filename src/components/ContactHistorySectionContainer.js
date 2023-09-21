@@ -1,8 +1,7 @@
-import { FunctionComponent } from "react";
 import ContactHistoryInfo from "./ContactHistoryInfo";
 import styles from "./ContactHistorySectionContainer.module.css";
 
-const ContactHistorySectionContainer: FunctionComponent = () => {
+const ContactHistorySectionContainer = () => {
   return (
     <div className={styles.contactHistorySection}>
       <div className={styles.contactHistorySectionChild} />

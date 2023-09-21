@@ -1,10 +1,10 @@
-import { FunctionComponent, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import ExperiencePopUp from "./ExperiencePopUp";
 import PortalPopup from "./PortalPopup";
 import Experience from "./Experience";
 import styles from "./ExperienceSection.module.css";
 
-const ExperienceSection: FunctionComponent = () => {
+const ExperienceSection = () => {
   const [isExperiencePopUpOpen, setExperiencePopUpOpen] = useState(false);
 
   const openExperiencePopUp = useCallback(() => {

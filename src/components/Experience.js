@@ -1,15 +1,6 @@
-import { FunctionComponent } from "react";
 import styles from "./Experience.module.css";
 
-type ExperienceType = {
-  description?: string;
-  header?: string;
-};
-
-const Experience: FunctionComponent<ExperienceType> = ({
-  description,
-  header,
-}) => {
+const Experience = ({ description, header }) => {
   return (
     <div className={styles.experience1}>
       <div className={styles.text1}>

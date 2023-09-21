@@ -1,17 +1,6 @@
-import { FunctionComponent } from "react";
 import styles from "./ContactInfo.module.css";
 
-type ContactInfoType = {
-  email?: string;
-  phoneNumber?: string;
-  address?: string;
-};
-
-const ContactInfo: FunctionComponent<ContactInfoType> = ({
-  email,
-  phoneNumber,
-  address,
-}) => {
+const ContactInfo = ({ email, phoneNumber, address }) => {
   return (
     <div className={styles.contactInfo}>
       <div className={styles.email}>

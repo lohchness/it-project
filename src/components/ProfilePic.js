@@ -1,19 +1,9 @@
-import { FunctionComponent, useState, useCallback } from "react";
+import { useState, useCallback } from "react";
 import AboutMeEditPopUp from "./AboutMeEditPopUp";
 import PortalPopup from "./PortalPopup";
 import styles from "./ProfilePic.module.css";
 
-type ProfilePicType = {
-  profilePic?: string;
-  nameLastName?: string;
-  jobPosition?: string;
-};
-
-const ProfilePic: FunctionComponent<ProfilePicType> = ({
-  profilePic,
-  nameLastName,
-  jobPosition,
-}) => {
+const ProfilePic = ({ profilePic, nameLastName, jobPosition }) => {
   const [isAboutMeEditPopUpOpen, setAboutMeEditPopUpOpen] = useState(false);
 
   const openAboutMeEditPopUp = useCallback(() => {

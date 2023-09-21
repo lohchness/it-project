@@ -1,13 +1,6 @@
-import { FunctionComponent } from "react";
 import styles from "./AboutMeEditPopUp.module.css";
 
-type AboutMeEditPopUpType = {
-  onClose?: () => void;
-};
-
-const AboutMeEditPopUp: FunctionComponent<AboutMeEditPopUpType> = ({
-  onClose,
-}) => {
+const AboutMeEditPopUp = ({ onClose }) => {
   return (
     <div className={styles.aboutMeEditPopUp}>
       <div className={styles.aboutMeBackground} />

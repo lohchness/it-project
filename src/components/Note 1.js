@@ -1,12 +1,6 @@
-import { FunctionComponent } from "react";
 import styles from "./Note.module.css";
 
-type NoteType = {
-  description?: string;
-  date?: string;
-};
-
-const Note: FunctionComponent<NoteType> = ({ description, date }) => {
+const Note = ({ description, date }) => {
   return (
     <div className={styles.note1}>
       <div className={styles.text1}>

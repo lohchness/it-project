@@ -1,10 +1,10 @@
-import { FunctionComponent, useCallback } from "react";
+import { useCallback } from "react";
 import ProfilePic from "./ProfilePic";
 import ContactInfo from "./ContactInfo";
 import AboutMe from "./AboutMe";
 import styles from "./ContactFormContainer.module.css";
 
-const ContactFormContainer: FunctionComponent = () => {
+const ContactFormContainer = () => {
   const onContactNameButtonClick = useCallback(() => {
     // Please sync "Messaging" to the project
   }, []);

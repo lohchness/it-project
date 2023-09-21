@@ -1,22 +1,7 @@
-import { FunctionComponent, useMemo, type CSSProperties } from "react";
+import { useMemo } from "react";
 import styles from "./EventInfo.module.css";
 
-type EventInfoType = {
-  dateDay?: string;
-  dateMonth?: string;
-  description1?: string;
-  time1?: string;
-  location1?: string;
-
-  /** Style props */
-  event2Top?: CSSProperties["top"];
-  event2ZIndex?: CSSProperties["zIndex"];
-
-  /** Action props */
-  onEventButton2Click?: () => void;
-};
-
-const EventInfo: FunctionComponent<EventInfoType> = ({
+const EventInfo = ({
   dateDay,
   dateMonth,
   description1,
@@ -26,7 +11,7 @@ const EventInfo: FunctionComponent<EventInfoType> = ({
   event2ZIndex,
   onEventButton2Click,
 }) => {
-  const event2Style: CSSProperties = useMemo(() => {
+  const event2Style = useMemo(() => {
     return {
       top: event2Top,
       zIndex: event2ZIndex,

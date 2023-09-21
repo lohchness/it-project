@@ -1,13 +1,6 @@
-import { FunctionComponent } from "react";
 import styles from "./ExperiencePopUp.module.css";
 
-type ExperiencePopUpType = {
-  onClose?: () => void;
-};
-
-const ExperiencePopUp: FunctionComponent<ExperiencePopUpType> = ({
-  onClose,
-}) => {
+const ExperiencePopUp = ({ onClose }) => {
   return (
     <div className={styles.experiencePopup}>
       <div className={styles.expPopBackground} />

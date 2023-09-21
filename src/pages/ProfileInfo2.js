@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from "react";
+import { useCallback } from "react";
 import ContactHistorySectionContainer from "../components/ContactHistorySectionContainer";
 import NoteSectionContainer from "../components/NoteSectionContainer";
 import ExperienceSection from "../components/ExperienceSection";
@@ -7,7 +7,7 @@ import ContactFormContainer from "../components/ContactFormContainer";
 import { useNavigate } from "react-router-dom";
 import styles from "./ProfileInfo2.module.css";
 
-const ProfileInfo2: FunctionComponent = () => {
+const ProfileInfo2 = () => {
   const navigate = useNavigate();
 
   const onEventButton2Click = useCallback(() => {

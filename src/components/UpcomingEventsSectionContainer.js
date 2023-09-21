@@ -1,8 +1,8 @@
-import { FunctionComponent, useCallback } from "react";
+import { useCallback } from "react";
 import EventInfo from "./EventInfo";
 import styles from "./UpcomingEventsSectionContainer.module.css";
 
-const UpcomingEventsSectionContainer: FunctionComponent = () => {
+const UpcomingEventsSectionContainer = () => {
   const onEventButton2Click = useCallback(() => {
     // Please sync "Calendar" to the project
   }, []);
