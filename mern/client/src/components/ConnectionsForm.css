@@ -1,0 +1,252 @@
+.connections-child {
+  position: relative;
+  border-radius: var(--br-3xs);
+  width: 487px;
+  height: 450px;
+  object-fit: cover;
+  z-index: 0;
+}
+.connections7 {
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+}
+.search-bar1,
+.tasks-heading1 {
+  margin: 0 !important;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tasks-heading1 {
+  top: 7px;
+  left: 5px;
+  border-radius: var(--br-3xs);
+  background-color: #656C86;
+  width: 476px;
+  padding: var(--padding-11xs) var(--padding-6xs);
+  z-index: 1;
+  text-align: right;
+  font-size: var(--font-size-lg);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}
+.search-bar1 {
+  border: 0;
+  font-family: var(--font-inter);
+  font-size: var(--font-size-sm);
+  background-color: white;
+  top: 14px;
+  left: 266px;
+  border-radius: var(--br-xl);
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
+  width: 185px;
+  padding: 0 var(--padding-7xs);
+  z-index: 2;
+}
+.interface-calendar-blank-cale-icon1 {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.show-more3 {
+  position: relative;
+  cursor: pointer;
+}
+.show-more2 {
+  text-decoration: none;
+  margin: 0 !important;
+  position: absolute;
+  top: 407px;
+  left: 28px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-2xs);
+  z-index: 3;
+  font-size: var(--font-size-smi);
+  color: var(--color-white);
+  font-family: var(--font-open-sans);
+}
+.last-contact1,
+.name9 {
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+  display: inline-block;
+  width: 44px;
+  flex-shrink: 0;
+}
+.last-contact1 {
+  width: 100px;
+}
+.interface-page-controller-scro-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.last-contact-parent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.tag1,
+.touch1 {
+  position: relative;
+  line-height: 150%;
+  font-weight: 500;
+  display: inline-block;
+  width: 58px;
+  flex-shrink: 0;
+}
+.tag1 {
+  width: 46px;
+}
+.bar1 {
+  margin: 0 !important;
+  position: absolute;
+  top: 47px;
+  left: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-27xl);
+  z-index: 4;
+  text-align: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-400);
+  font-family: var(--font-poppins);
+}
+.rectangle8 {
+  position: relative;
+  border-radius: var(--br-3xs);
+  background-color: var(--color-gray-100);
+  width: 446px;
+  height: 45px;
+  z-index: 0;
+}
+.lastcontact,
+.name10,
+.touchstatus {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 14.4px;
+  flex-shrink: 0;
+}
+.lastcontact,
+.touchstatus {
+  width: 60.38px;
+  height: 14.32px;
+}
+.touchstatus {
+  width: 58px;
+  height: 14.4px;
+}
+.name-parent {
+  margin: 0 !important;
+  position: absolute;
+  top: 13px;
+  left: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: var(--gap-45xl);
+  z-index: 1;
+}
+.touchstatus1 {
+  position: relative;
+}
+.touchstatus-wrapper {
+  margin: 0 !important;
+  position: absolute;
+  top: 10px;
+  left: 360px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-lightseagreen);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-9xs) var(--padding-sm);
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  color: var(--color-white);
+}
+.contact-history-11,
+.contact-history-21,
+.contact-history-3,
+.contact-history-4 {
+  margin: 0 !important;
+  position: absolute;
+  left: 21px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.contact-history-11 {
+  top: 347px;
+  height: 45px;
+  z-index: 5;
+}
+.contact-history-21,
+.contact-history-3,
+.contact-history-4 {
+  top: 293px;
+  z-index: 6;
+}
+.contact-history-3,
+.contact-history-4 {
+  top: 239px;
+  align-items: flex-start;
+  z-index: 7;
+}
+.contact-history-4 {
+  top: 185px;
+  z-index: 8;
+}
+.contact-history-5 {
+  margin: 0 !important;
+  top: 131px;
+  left: 21px;
+  z-index: 9;
+}
+.connections6,
+.contact-history-5,
+.contact-history-6 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
+.contact-history-6 {
+  margin: 0 !important;
+  top: 77px;
+  left: 21px;
+  z-index: 10;
+}
+.connections6 {
+  top: 135px;
+  left: 150px;
+  text-align: left;
+  font-size: var(--font-size-2xs);
+  color: var(--color-gray-200);
+  font-family: var(--font-inter);
+}
