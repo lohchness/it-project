@@ -146,23 +146,23 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #4a547b;
+  background-color: var(--color-steelblue-200);
   width: 1440px;
   height: 55px;
   display: flex;
   flex-direction: column;
-  padding: 14px 178px;
+  padding: var(--padding-sm) var(--padding-159xl);
   box-sizing: border-box;
   align-items: flex-start;
   justify-content: center;
 }
 .profile {
   position: relative;
-  background-color: #dddeec;
+  background-color: var(--color-lavender-100);
   width: 100%;
   height: 1024px;
   text-align: right;
-  font-size: 20px;
+  font-size: var(--font-size-xl);
   color: var(--color-lightseagreen);
   font-family: var(--font-poppins);
 }

@@ -1,15 +1,18 @@
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import EventInfo from "./EventInfo";
 import styles from "./UpcomingEventsSectionContainer.module.css";
 
 const UpcomingEventsSectionContainer = () => {
+  const navigate = useNavigate();
+
   const onEventButton2Click = useCallback(() => {
-    // Please sync "Calendar" to the project
-  }, []);
+    navigate("/calendar");
+  }, [navigate]);
 
   const onEventButton3Click = useCallback(() => {
-    // Please sync "Calendar" to the project
-  }, []);
+    navigate("/calendar");
+  }, [navigate]);
 
   return (
     <div className={styles.upcomingEventsSection}>

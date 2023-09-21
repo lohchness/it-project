@@ -2,18 +2,21 @@ import { useCallback } from "react";
 import ProfilePic from "./ProfilePic";
 import ContactInfo from "./ContactInfo";
 import AboutMe from "./AboutMe";
+import { useNavigate } from "react-router-dom";
 import styles from "./ContactFormContainer.module.css";
 
 const ContactFormContainer = () => {
+  const navigate = useNavigate();
+
   const onContactNameButtonClick = useCallback(() => {
-    // Please sync "Messaging" to the project
-  }, []);
+    navigate("/messaging");
+  }, [navigate]);
 
   return (
     <div className={styles.frameParent}>
       <div className={styles.profilePicParent}>
         <ProfilePic
-          profilePic="/undefined10.png"
+          profilePic="/mask-group@2x.png"
           nameLastName="Name LastName"
           jobPosition="Job position"
         />

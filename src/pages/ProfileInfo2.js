@@ -1,42 +1,42 @@
 import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import ContactHistorySectionContainer from "../components/ContactHistorySectionContainer";
 import NoteSectionContainer from "../components/NoteSectionContainer";
 import ExperienceSection from "../components/ExperienceSection";
 import UpcomingEventsSectionContainer from "../components/UpcomingEventsSectionContainer";
 import ContactFormContainer from "../components/ContactFormContainer";
-import { useNavigate } from "react-router-dom";
 import styles from "./ProfileInfo2.module.css";
 
 const ProfileInfo2 = () => {
   const navigate = useNavigate();
 
   const onEventButton2Click = useCallback(() => {
-    // Please sync "Calendar" to the project
-  }, []);
+    navigate("/calendar");
+  }, [navigate]);
 
   const onEventButton3Click = useCallback(() => {
-    // Please sync "Calendar" to the project
-  }, []);
+    navigate("/calendar");
+  }, [navigate]);
 
   const onDashboardTextClick = useCallback(() => {
-    // Please sync "Dashboard" to the project
-  }, []);
+    navigate("/dashboard");
+  }, [navigate]);
 
   const onConnectionsTextClick = useCallback(() => {
-    // Please sync "Connections" to the project
-  }, []);
+    navigate("/connections");
+  }, [navigate]);
 
   const onProfileTextClick = useCallback(() => {
     navigate("/");
   }, [navigate]);
 
   const onCalenderTextClick = useCallback(() => {
-    // Please sync "Calendar" to the project
-  }, []);
+    navigate("/calendar");
+  }, [navigate]);
 
   const onMessengerTextClick = useCallback(() => {
-    // Please sync "Messaging" to the project
-  }, []);
+    navigate("/messaging");
+  }, [navigate]);
 
   return (
     <div className={styles.profile}>
