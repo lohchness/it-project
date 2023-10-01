@@ -1,11 +1,15 @@
-import { React, useCallback } from "react";
+import { React, useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 import "./style.css";
 
 const Login = () => {
     const navigate = useNavigate();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
 
     const onSignUpClick = useCallback(() => {

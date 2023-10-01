@@ -1,39 +1,84 @@
 import { React, useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 import "./style.css";
 
 const SignUp = () => {
     const navigate = useNavigate();
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [signedUp, setSignedUp] = useState(false);
     const [signUpStep, setSignUpStep] = useState(1);
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
 
     const isValidEmail = email =>
-    // eslint-disable-next-line no-useless-escape
+        // eslint-disable-next-line no-useless-escape
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-        email
-    );
+            email
+        );
 
     const onSignUpClick = useCallback(() => {
         navigate("/login");
     }, [navigate]);
 
     const onSubmit = (e) => {
-
-        // Read the form data
-        const form = e.target;
-        const formData = new FormData(form);
+        let configuration;
 
         if (signUpStep < 2) {
-            setSignUpStep(signUpStep + 1);
+            configuration = {
+                method: "post",
+                url: "http://localhost:5050/auth/register",
+                data: {
+                    firstName,
+                    lastName,
+                    email,
+                    password,
+                },
+            };
+
+            console.log(configuration);
+
+            // make the API call
+            axios(configuration)
+                .then((result) => {
+                    console.log(result);
+                    setSignedUp(true);
+                    setSignUpStep(signUpStep + 1);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
         else {
-            console.log("signed up");
+            // configuration = {
+            //     method: "post",
+            //     url: "http://localhost:5050/auth/register",
+            //     data: {
+            //         phoneNumber,
+            //         about
+            //     },
+            // };
+
+            // console.log("signed up");
+            // console.log(configuration);
+
+            // // make the API call
+            // axios(configuration)
+            //     .then((result) => {
+            //         setSignedUp(true);
+            //     })
+            //     .catch((error) => {
+            //         error = new Error();
+            //     });
+
             navigate("/login");
         }
-    }
+    };
 
 
     return (
@@ -45,7 +90,7 @@ const SignUp = () => {
                     <form className="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
 
                         <input
-                            className={`form-field ${errors.firstName ? 'error-form-field':''}`}
+                            className={`form-field ${errors.firstName ? 'error-form-field' : ''}`}
                             placeholder="First name"
                             type="text"
                             {...register("firstName", {
@@ -53,43 +98,51 @@ const SignUp = () => {
                                 minLength: 2,
                                 maxLength: 20
                             })}
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
                             required />
                         {errors.firstName && <label className="form-input-error-text">First name must be between 2 and 20 characters long</label>}
 
                         <input
-                            className={`form-field ${errors.lastName ? 'error-form-field':''}`}
+                            className={`form-field ${errors.lastName ? 'error-form-field' : ''}`}
                             placeholder="Last name"
                             type="text" {...register("lastName", {
                                 required: true,
                                 minLength: 2,
                                 maxLength: 20
                             })}
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
                             required />
                         {errors.lastName && <label className="form-input-error-text">Last name must be between 2 and 20 characters long</label>}
 
                         <input
-                            className={`form-field ${errors.email ? 'error-form-field':''}`}
+                            className={`form-field ${errors.email ? 'error-form-field' : ''}`}
                             placeholder="Email"
                             type="email"
                             {...register("email", {
                                 required: true,
                                 validate: isValidEmail
                             })}
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required />
                         {errors.email && <label className="form-input-error-text">Email is not valid</label>}
 
                         <input
-                            className={`form-field ${errors.password ? 'error-form-field':''}`}
+                            className={`form-field ${errors.password ? 'error-form-field' : ''}`}
                             placeholder="Password"
                             type="password"
                             {...register("password", {
                                 required: true, minLength: 5
                             })}
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                             required />
                         {errors.password && <label className="form-input-error-text">Password is too short (minimum 5 characters)</label>}
 
                         <input
-                            className={`form-field ${errors.confirmPassword ? 'error-form-field':''}`}
+                            className={`form-field ${errors.confirmPassword ? 'error-form-field' : ''}`}
                             placeholder="Confirm password"
                             type="password"
                             {...register("confirmPassword", {
@@ -102,6 +155,8 @@ const SignUp = () => {
                             })}
                             required />
                         {errors.confirmPassword && <label className="form-input-error-text">Passwords do not match</label>}
+                        
+                        {/* {!signedUp && <div className="form-input-error-text">Error signing up: email is already in use </div>} */}
 
                         <button className="continue-button" type="submit">
                             Continue

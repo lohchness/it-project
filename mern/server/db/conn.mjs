@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const connectionString = process.env.ATLAS_URI || "";
 
  // Connect to database
-async function connect() {
+async function connectToDB() {
     mongoose
       .connect(
           connectionString,
@@ -12,7 +12,7 @@ async function connect() {
           // Options to ensure that the connection is done properly
           useNewUrlParser: true,
           useUnifiedTopology: true,
-          useCreateIndex: true,
+          dbName: 'CRM',
         }
       )
       .then(() => {
@@ -24,7 +24,7 @@ async function connect() {
       });
   }
 
-export default connect;
+export default connectToDB;
 
 // const client = new MongoClient(connectionString);
 

@@ -1,47 +1,57 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from 'body-parser';
-import bcrypt from "bcrypt";
+import bcrypt, { hash } from "bcrypt";
 import jwt from "jsonwebtoken";
 
-import db from "../db/conn.mjs";
+import connectToDB from "../db/conn.mjs";
 import User from "../models/User.mjs"
 
 const router = express.Router();
 
+connectToDB();
+
 // Registration endpoint
 router.post("/register", async (req, res) => {
-    bcrypt
-        .hash(req.body.password)
-        .then((hashedPassword) => {
-            // Create new user using request data
-            const user = new User({
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
-                email: req.body.email,
-                password: hashedPassword,
-            });
+    console.log(req.body);
 
-            user
-                .save()
-                .then((result) => {
-                    res.status(201).send({
-                        message: "User created", 
-                        result,
+    bcrypt
+        .genSalt(10, (err, salt) => {
+            bcrypt
+                .hash(req.body.password, salt, (err, hashedPassword) => {
+                    console.log(hashedPassword);
+                    // Create new user using request data
+                    const user = new User({
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName,
+                        email: req.body.email,
+                        password: hashedPassword,
                     });
+
+                    user
+                        .save()
+                        .then((result) => {
+                            console.log("user created");
+                            res.status(201).send({
+                                message: "User created",
+                                result,
+                            });
+                        })
+                        .catch((error) => {
+                            console.log("error creating user");
+                            res.status(500).send({
+                                message: "Error creating user",
+                                error,
+                            });
+                        });
                 })
-                .catch((error) => {
-                    res.status(500).send({
-                        message: "Error creating user", 
-                        error,
-                    });
-                });
-        })
-        .catch((e) => {
-            res.status(500).send({
-                message: "Password was not hashed successfully", 
-                e,
-            });
+                // .catch((err) => {
+                //     console.log("password not hashed successfully");
+                //     res.status(500).send({
+                //         message: "Password was not hashed successfully",
+                //         e,
+                //     });
+                // });
         });
 });
 
@@ -56,7 +66,7 @@ router.post("/login", async (req, res) => {
                 .then((passwordCheck) => {
                     if (!passwordCheck) {
                         return res.status(400).send({
-                            message: "Passwords do not match", 
+                            message: "Passwords do not match",
                             error,
                         });
                     }
@@ -94,13 +104,14 @@ router.post("/login", async (req, res) => {
                 e,
             });
         });
+        
 });
 
 // free endpoint
 router.get("/free-endpoint", async (req, res) => {
     res.json({ message: "You are free to access me anytime" });
-  });
-  
+});
+
 //   // authentication endpoint
 // router.get("/auth-endpoint", auth, (request, response) => {
 //     response.send({ message: "You are authorized to access me" });
