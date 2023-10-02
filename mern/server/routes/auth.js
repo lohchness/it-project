@@ -58,6 +58,7 @@ router.post("/register", async (req, res) => {
 // Login endpoint
 router.post("/login", async (req, res) => {
     // Check if email exists
+    console.log(req.body.email);
     User.findOne({ email: req.body.email })
         .then((user) => {
             // Compare entered password with hashed password stored for the email
@@ -99,7 +100,7 @@ router.post("/login", async (req, res) => {
 
         // Catch error if email does not exist
         .catch((e) => {
-            res.status(404).send({
+            res.status(500).send({
                 message: "Email not found",
                 e,
             });

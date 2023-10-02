@@ -2,13 +2,17 @@ import { React, useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import Cookies from "universal-cookie";
 
 import "./style.css";
 
 const Login = () => {
     const navigate = useNavigate();
+    const cookies = new Cookies();
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loggedIn, setLoggedIn] = useState(false);
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
 
@@ -21,8 +25,35 @@ const Login = () => {
     }, [navigate]);
 
     function onSubmit(e) {
-        console.log("logged in");
-        alert("logged in");
+        // set configurations
+        const configuration = {
+            method: "post",
+            url: "http://localhost:5050/auth/login",
+            data: {
+                email,
+                password,
+            },
+        };
+
+        // make the API call
+        axios(configuration)
+            .then((result) => {
+                // set the cookie
+                cookies.set("TOKEN", result.data.token, {
+                    path: "/",
+                });
+
+                console.log("logged in");
+                alert("logged in");
+                
+                // // Redirect to dashboard
+                // window.location.href = "/dashboard";
+
+                setLoggedIn(true);
+            })
+            .catch((error) => {
+                error = new Error();
+            });
 
         // Read the form data
         const form = e.target;
@@ -40,6 +71,8 @@ const Login = () => {
                     {...register("email", {
                         required: true,
                     })}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     required />
 
                 <input
@@ -49,9 +82,11 @@ const Login = () => {
                     {...register("password", {
                         required: true,
                     })}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     required />
                 {(errors.email || errors.password) && <label className="form-input-error-text">Incorrect email address or password</label>}
-                
+
                 <div className="forgot-password-link-container">
                     <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
                         Forgot your password?
