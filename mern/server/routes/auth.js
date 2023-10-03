@@ -44,15 +44,24 @@ router.post("/register", async (req, res) => {
                                 error,
                             });
                         });
-                })
-                // .catch((err) => {
-                //     console.log("password not hashed successfully");
-                //     res.status(500).send({
-                //         message: "Password was not hashed successfully",
-                //         e,
-                //     });
-                // });
+                });
         });
+});
+
+// Extra endpoint for the optional 'about' and 'phone number' details in the registration process
+router.post("/register-additional-info", async (req, res) => {
+    console.log(req.body);
+
+    await User.findOneAndUpdate(
+        {email: req.body.email}, 
+        {'phoneNumber': req.body.phoneNumber, 'about': req.body.about}
+    ).then(
+        res.status(200).send({
+            message: "User info updated",
+    }));
+
+    
+
 });
 
 // Login endpoint

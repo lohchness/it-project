@@ -11,6 +11,8 @@ const SignUp = () => {
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [about, setAbout] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
     const [signedUp, setSignedUp] = useState(false);
     const [signUpStep, setSignUpStep] = useState(1);
 
@@ -55,28 +57,29 @@ const SignUp = () => {
                 });
         }
         else {
-            // configuration = {
-            //     method: "post",
-            //     url: "http://localhost:5050/auth/register",
-            //     data: {
-            //         phoneNumber,
-            //         about
-            //     },
-            // };
+            let configuration;
 
-            // console.log("signed up");
-            // console.log(configuration);
+            configuration = {
+                method: "post",
+                url: "http://localhost:5050/auth/register-additional-info",
+                data: {
+                    email,
+                    about,
+                    phoneNumber
+                },
+            };
 
-            // // make the API call
-            // axios(configuration)
-            //     .then((result) => {
-            //         setSignedUp(true);
-            //     })
-            //     .catch((error) => {
-            //         error = new Error();
-            //     });
+            console.log(configuration);
 
-            navigate("/login");
+            // make the API call
+            axios(configuration)
+                .then((result) => {
+                    console.log(result);
+                    navigate("/login");
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     };
 
@@ -174,8 +177,19 @@ const SignUp = () => {
             {signUpStep == 2 && (
                 <>
                     <form className="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
-                        <textarea className="form-field" placeholder="About (optional)" type="text" />
-                        <input className="form-field" placeholder="Phone number (optional)" type="tel" />
+                        <textarea 
+                            className="form-field" 
+                            placeholder="About (optional)" 
+                            type="text" 
+                            value={about}
+                            onChange={(e) => setAbout(e.target.value)}
+                        />
+                        <input 
+                            className="form-field" 
+                            placeholder="Phone number (optional)" type="tel" 
+                            value={phoneNumber}
+                            onChange={(e) => setPhoneNumber(e.target.value)}
+                        />
                         <button className="sign-up-button" type="submit">
                             Sign up
                         </button>
