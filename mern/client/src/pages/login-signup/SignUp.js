@@ -12,8 +12,8 @@ const SignUp = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [about, setAbout] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
-    const [signedUp, setSignedUp] = useState(false);
+    const [phoneNumber, setPhoneNumber] = useState(null);
+    const [error, setError] = useState(null);
     const [signUpStep, setSignUpStep] = useState(1);
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
@@ -49,10 +49,10 @@ const SignUp = () => {
             axios(configuration)
                 .then((result) => {
                     console.log(result);
-                    setSignedUp(true);
                     setSignUpStep(signUpStep + 1);
                 })
                 .catch((error) => {
+                    setError(true);
                     console.log(error);
                 });
         }
@@ -131,6 +131,7 @@ const SignUp = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required />
                         {errors.email && <label className="form-input-error-text">Email is not valid</label>}
+                        {error && <label className="form-input-error-text">Email is already in use</label>}
 
                         <input
                             className={`form-field ${errors.password ? 'error-form-field' : ''}`}
@@ -158,8 +159,6 @@ const SignUp = () => {
                             })}
                             required />
                         {errors.confirmPassword && <label className="form-input-error-text">Passwords do not match</label>}
-                        
-                        {/* {!signedUp && <div className="form-input-error-text">Error signing up: email is already in use </div>} */}
 
                         <button className="continue-button" type="submit">
                             Continue

@@ -12,7 +12,7 @@ const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [error, setError] = useState(null);
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
 
@@ -46,13 +46,11 @@ const Login = () => {
                 console.log("logged in");
                 alert("logged in");
                 
-                // // Redirect to dashboard
-                // window.location.href = "/dashboard";
-
-                setLoggedIn(true);
+                // Redirect to dashboard
             })
             .catch((error) => {
                 error = new Error();
+                setError(true);
             });
 
         // Read the form data
@@ -72,7 +70,7 @@ const Login = () => {
                         required: true,
                     })}
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {setEmail(e.target.value); setError(false)}}
                     required />
 
                 <input
@@ -83,15 +81,18 @@ const Login = () => {
                         required: true,
                     })}
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => {setPassword(e.target.value); setError(false)}}
                     required />
-                {(errors.email || errors.password) && <label className="form-input-error-text">Incorrect email address or password</label>}
+                
 
                 <div className="forgot-password-link-container">
                     <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
                         Forgot your password?
                     </Link>
                 </div>
+
+                {error && <div className="form-input-error-text login-error">Incorrect email address or password</div>}
+
                 <button className="login-button" type="submit">
                     Login
                 </button>

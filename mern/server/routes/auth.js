@@ -117,10 +117,10 @@ router.post("/login", async (req, res) => {
         
 });
 
-// free endpoint
-router.get("/free-endpoint", async (req, res) => {
-    res.json({ message: "You are free to access me anytime" });
-});
+// // free endpoint
+// router.get("/free-endpoint", async (req, res) => {
+//     res.json({ message: "You are free to access me anytime" });
+// });
 
 //   // authentication endpoint
 // router.get("/auth-endpoint", auth, (request, response) => {
