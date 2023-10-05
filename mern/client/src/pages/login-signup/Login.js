@@ -1,45 +1,103 @@
-import { React, useCallback } from "react";
+import { React, useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import Cookies from "universal-cookie";
+
 import "./style.css";
+
 const Login = () => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    const cookies = new Cookies();
 
-  const onSignUpClick = useCallback(() => {
-    navigate("/");
-  }, [navigate]);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
 
-  const onForgotPasswordClick = useCallback(() => {
-    navigate("/forgot-password");
-  }, [navigate]);
+    const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
 
-  // for submitting api requests to backend - logging in, signing up, etc.
-  function handleSubmit(e) {
-    // Prevent the browser from reloading the page
-    e.preventDefault();
-    console.log("logged in");
-    alert("logged in");
+    const onSignUpClick = useCallback(() => {
+        navigate("/");
+    }, [navigate]);
 
-    // Read the form data
-    const form = e.target;
-    const formData = new FormData(form);
-  }
+    const onForgotPasswordClick = useCallback(() => {
+        navigate("/forgot-password");
+    }, [navigate]);
 
-  return (
-    <div className="login-container">
-        <h1 className="title log-in">Log in</h1>
-        <form className="login-form" method="post" onSubmit={handleSubmit}>
-            <input className="form-field" placeholder="Email" type="email" required/>
-            <input className="form-field" placeholder="Password" type="password" required/>
-            <div className="forgot-password-link-container">
-                <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
-                    Forgot your password?
-                </Link>
-            </div>
-            <button className="login-button" type="submit">
-                Login
-            </button>
-        </form>
-        {/* <div className="third-party-login-container">
+    function onSubmit(e) {
+        // set configurations
+        const configuration = {
+            method: "post",
+            url: "http://localhost:5050/auth/login",
+            data: {
+                email,
+                password,
+            },
+        };
+
+        // make the API call
+        axios(configuration)
+            .then((result) => {
+                // set the cookie
+                cookies.set("TOKEN", result.data.token, {
+                    path: "/",
+                });
+
+                console.log("logged in");
+                alert("logged in");
+                
+                // Redirect to dashboard
+            })
+            .catch((error) => {
+                error = new Error();
+                setError(true);
+            });
+
+        // Read the form data
+        const form = e.target;
+        const formData = new FormData(form);
+    }
+
+    return (
+        <div className="login-container">
+            <h1 className="title log-in">Log in</h1>
+            <form className="login-form" method="post" onSubmit={handleSubmit(onSubmit)}>
+                <input
+                    className={`form-field ${errors.email ? 'error-form-field' : ''}`}
+                    placeholder="Email"
+                    type="email"
+                    {...register("email", {
+                        required: true,
+                    })}
+                    value={email}
+                    onChange={(e) => {setEmail(e.target.value); setError(false)}}
+                    required />
+
+                <input
+                    className={`form-field ${errors.password ? 'error-form-field' : ''}`}
+                    placeholder="Password"
+                    type="password"
+                    {...register("password", {
+                        required: true,
+                    })}
+                    value={password}
+                    onChange={(e) => {setPassword(e.target.value); setError(false)}}
+                    required />
+                
+
+                <div className="forgot-password-link-container">
+                    <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
+                        Forgot your password?
+                    </Link>
+                </div>
+
+                {error && <div className="form-input-error-text login-error">Incorrect email address or password</div>}
+
+                <button className="login-button" type="submit">
+                    Login
+                </button>
+            </form>
+            {/* <div className="third-party-login-container">
             <div className="or-continue-with">or continue with</div>
             {/* <button className="facebook-login-button">
                 <div className="facebook-login-button-child" />
@@ -54,14 +112,14 @@ const Login = () => {
                 <img className="bifacebook-icon" alt="" src="/google-icon.png" />
             </button> 
              </div> */}
-        <div className="sign-up-redirect">
-            Don't have an account?
-            <Link className="sign-up-link" to="/sign-up" onClick={onSignUpClick}>
-                Sign up.
-            </Link>
+            <div className="sign-up-redirect">
+                Don't have an account?
+                <Link className="sign-up-link" to="/sign-up" onClick={onSignUpClick}>
+                    Sign up.
+                </Link>
+            </div>
         </div>
-    </div>
-  )
+    )
 };
 
 export default Login;
