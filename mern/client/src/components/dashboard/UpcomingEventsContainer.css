@@ -183,8 +183,8 @@
   font-family: var(--font-poppins);
 }
 .upcoming-events {
-  top: 605px;
-  left: 148px;
+  top: 77%;
+  left: 10.5%;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap-3xs);

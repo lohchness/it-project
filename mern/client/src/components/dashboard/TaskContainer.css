@@ -33,15 +33,15 @@
 
 .tasks table {
   position: relative;
-  table-layout:fixed;
+  height:80%;
   border-spacing: 10px 10px;
   display: block;
-  height: 80%;
   overflow:scroll;
 }
 
 .row-wrapper{
   position:relative;
+  width: 100%;
   background-color: white;
   border-radius: 15px;
   margin-bottom: 8px;

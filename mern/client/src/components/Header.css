@@ -1,27 +1,11 @@
 .nav-bar-wrapper {
   position: absolute;
-  top: 0;
   left: 0;
   background-color: #4A547B;
   width: 100%;
-  height: 55px;
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-sm) var(--padding-159xl);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: center;
+  padding: 14px 178px;
 }
-.nav-bar {
-  align-self: stretch;
 
-@media screen and (max-width: 960px) {
-  .hamburgermenu,
-  .pages5 {
-    display: flex;
-  }
-}
-}
 .pages-wrapper {
   margin: 0;
   text-align: center;
@@ -33,8 +17,6 @@
 .pages-wrapper {
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
   gap: var(--gap-11xl);
 }
 .hamburgermenu {

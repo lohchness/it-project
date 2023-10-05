@@ -249,8 +249,11 @@
   z-index: 10;
 }
 .connections6 {
-  top: 135px;
-  left: 150px;
+  position:absolute;
+  top: 17.2%;
+  left: 10.5%;
+  height: 56.3%;
+  width: 35%;
   text-align: left;
   font-size: var(--font-size-2xs);
   color: var(--color-gray-200);

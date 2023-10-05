@@ -8,6 +8,7 @@ import "./Dashboard.css";
 const Dashboard = () => {
   return (
     <div className="dashboard">
+      <Header />
       <div className="dashboard-crm-container">
         <span className="span">{` Dashboard `}</span>
         <span className="crm">{`> CRM`}</span>
@@ -23,7 +24,6 @@ const Dashboard = () => {
       </div>
       <UpcomingEventsContainer />
       <ConnectionsForm />
-      <Header />
     </div>
   );
 };
