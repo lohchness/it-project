@@ -12,7 +12,7 @@ const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState(null);
+    const [loginError, setLoginError] = useState(null);
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
 
@@ -50,12 +50,9 @@ const Login = () => {
             })
             .catch((error) => {
                 error = new Error();
-                setError(true);
+                setLoginError(true);
             });
 
-        // Read the form data
-        const form = e.target;
-        const formData = new FormData(form);
     }
 
     return (
@@ -70,7 +67,7 @@ const Login = () => {
                         required: true,
                     })}
                     value={email}
-                    onChange={(e) => {setEmail(e.target.value); setError(false)}}
+                    onChange={(e) => {setEmail(e.target.value); setLoginError(false)}}
                     required />
 
                 <input
@@ -81,7 +78,7 @@ const Login = () => {
                         required: true,
                     })}
                     value={password}
-                    onChange={(e) => {setPassword(e.target.value); setError(false)}}
+                    onChange={(e) => {setPassword(e.target.value); setLoginError(false)}}
                     required />
                 
 
@@ -91,7 +88,7 @@ const Login = () => {
                     </Link>
                 </div>
 
-                {error && <div className="form-input-error-text login-error">Incorrect email address or password</div>}
+                {loginError && <div className="form-input-error-text login-error">Incorrect email address or password</div>}
 
                 <button className="login-button" type="submit">
                     Login

@@ -80,7 +80,8 @@ form {
 }
 
 .login-error {
-    margin: 0px;
+    font-size: 0.8rem;
+    margin-top: 10px;
     text-align: center;
 }
 
@@ -96,7 +97,7 @@ form {
     text-align: right;
     font-size: 0.6rem;
     margin: 0.5rem;
-    margin-top: 0rem;
+    margin-top: 0.2rem;
     cursor: pointer;
     text-decoration: none;
     font-size: 0.8rem;
