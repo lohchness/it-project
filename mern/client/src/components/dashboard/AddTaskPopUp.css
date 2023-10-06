@@ -1,7 +1,7 @@
 .add-task-popup {
   position: relative;
+  padding: 10px;
   border-radius: var(--br-3xs);
-  gap: var(--gap-3xs);
   max-width: 100%;
   max-height: 100%;
   overflow: auto;
@@ -9,6 +9,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-white);
   font-family: var(--font-poppins);
+  z-index: 3;
 }
 .popup {
   position: relative;

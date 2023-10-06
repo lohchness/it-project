@@ -6,11 +6,7 @@
   object-fit: cover;
   z-index: 0;
 }
-.connections7 {
-  position: relative;
-  line-height: 150%;
-  font-weight: 500;
-}
+
 .search-bar1,
 .tasks-heading1 {
   margin: 0 !important;
@@ -231,7 +227,6 @@
   left: 21px;
   z-index: 9;
 }
-.connections6,
 .contact-history-5,
 .contact-history-6 {
   position: absolute;
@@ -256,6 +251,7 @@
   width: 35%;
   text-align: left;
   font-size: var(--font-size-2xs);
-  color: var(--color-gray-200);
+  background-color: var(--color-lightslategray);
+  border-radius: 15px;
   font-family: var(--font-inter);
 }
