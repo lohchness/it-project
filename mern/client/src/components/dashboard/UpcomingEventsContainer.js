@@ -10,7 +10,6 @@ const UpcomingEventsContainer = () => {
 
   return (
     <div className="upcoming-events">
-      <img className="upcoming-events-child" alt="" src="/undefined6.png" />
       <a className="show-more">
         <img
           className="interface-calendar-blank-cale-icon"

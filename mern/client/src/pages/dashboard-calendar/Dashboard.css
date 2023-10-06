@@ -91,6 +91,7 @@ TaskContainer {
 }
 ConnectionsForm {
   position:absolute;
+  height: 56.3%;
   top:40%;
   left:20%;
 }

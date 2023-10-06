@@ -10,7 +10,6 @@ const ConnectionsForm = () => {
 
   return (
     <div className="connections6">
-      <img className="connections-child" alt="" src="/undefined9.png" />
       <div className="tasks-heading1">
         <div className="connections7">Connections</div>
       </div>
