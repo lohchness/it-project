@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { link } from "react-router-dom";
+//import { link } from "react-router-dom";
 import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
 
-const Note1 = (props) => (
-  <div className = "row-wrapper">
+const Note = (props) => (
+  <div className = "note-row-wrapper">
    <tr height = "30px">
      <td width = "80%">{props.note.description}</td>
      <td>{props.note.header}</td>
@@ -64,7 +64,7 @@ useEffect(() => {
 }
 
 // This method will map out the records on the table
-function noteContainer() {
+function NoteContainer() {
   return notes.map((note) => {
     return (
       <Note
