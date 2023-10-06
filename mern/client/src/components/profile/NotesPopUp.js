@@ -23,7 +23,7 @@ export default function NotesPopUp({ onClose }) {
     // When a post request is sent to the create url, we'll add a new record to the database.
     const newNote = { ...form };
   
-    await fetch("http://localhost:5050/task", {
+    await fetch("http://localhost:5050/note", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
