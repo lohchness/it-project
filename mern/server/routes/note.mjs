@@ -25,11 +25,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   let newDocument = {
     description: req.body.description,
-<<<<<<< HEAD
-    duedate: req.body.header,
-=======
-    duedate: req.body.duedate,
->>>>>>> 55cd154693179e5f0cd6951f84e09cec2879bb84
+    header: req.body.header,
   };
   let collection = await db.collection("notes");
   let result = await collection.insertOne(newDocument);
@@ -41,23 +37,14 @@ router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates =  {
     $set: {
-<<<<<<< HEAD
 
       description: req.body.description,
-      duedate: req.body.header
-=======
-      description: req.body.description,
-      duedate: req.body.duedate
->>>>>>> 55cd154693179e5f0cd6951f84e09cec2879bb84
+      header: req.body.header
     }
   };
 
   let collection = await db.collection("notes");
   let result = await collection.updateOne(query, updates);
-<<<<<<< HEAD
-
-=======
->>>>>>> 55cd154693179e5f0cd6951f84e09cec2879bb84
   res.send(result).status(200);
 });
 
