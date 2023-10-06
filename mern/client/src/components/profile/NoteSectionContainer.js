@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
+import { link } from "react-router-dom";
 import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
 
-const Note1 = (props) => (
+const Note = (props) => (
   <div className = "row-wrapper">
    <tr height = "30px">
      <img className="tick-Note-done" alt="" src="/GreenTick.png" />
@@ -50,8 +51,7 @@ useEffect(() => {
   }
 
   getNotes();
-  
-    return;
+  return;
 }, [notes.length]);
 
  // This method will delete a record
@@ -65,10 +65,10 @@ useEffect(() => {
 }
 
 // This method will map out the records on the table
-function NoteContainer() {
+function noteContainer() {
   return notes.map((note) => {
     return (
-      <Note1
+      <Note
         note={note}
         deleteNote={() => deleteNote(note._id)}
         key={note._id}
@@ -81,10 +81,11 @@ function NoteContainer() {
     <>
       <div className={styles.noteSection}>
       <div className={styles.header}>
-          <div className={styles.notes}>My Notes</div>
+      <div className={styles.headerBackground} />
+          <div className={styles.notes}>Notes</div>
         </div>
         <table>
-          <tbody>{NoteContainer()}</tbody>
+          <tbody>{noteContainer()}</tbody>
         </table>
         <button className={styles.addNoteButton} onClick={openNotesPopUp}>
           <div className={styles.groupIcon}>+ Add Note</div>
