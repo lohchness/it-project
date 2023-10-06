@@ -1,10 +1,30 @@
-import { useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
-import Note from "./Note 1";
 import styles from "./NoteSectionContainer.module.css";
 
-const NoteSectionContainer = () => {
+const Note1 = (props) => (
+  <div className = "row-wrapper">
+   <tr height = "30px">
+     <img className="tick-Note-done" alt="" src="/GreenTick.png" />
+     <td width = "80%">{props.note.description}</td>
+     <td>{props.note.duedate}</td>
+     <td>
+       <button className="delete-button"
+         onClick={() => {
+           props.deleteNote(props.note._id);
+          }}
+        >
+        <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+        </button>
+      </td>
+    </tr>
+  </div>
+);
+
+////////////////////////////
+export default function NoteSectionContainer() {
+  const [notes, setNotes] = useState([]);
   const [isNotesPopUpOpen, setNotesPopUpOpen] = useState(false);
 
   const openNotesPopUp = useCallback(() => {
@@ -15,27 +35,60 @@ const NoteSectionContainer = () => {
     setNotesPopUpOpen(false);
   }, []);
 
+useEffect(() => {
+  async function getNotes() {
+    const response = await fetch(`http://localhost:5050/note/`);
+
+    if (!response.ok) {
+      const message = `An error occurred: ${response.statusText}`;
+      window.alert(message);
+      return;
+    }
+
+    const notes = await response.json();
+    setNotes(notes);
+  }
+
+  getNotes();
+  
+    return;
+}, [notes.length]);
+
+ // This method will delete a record
+ async function deleteNote(id) {
+  await fetch(`http://localhost:5050/note/${id}`, {
+    method: "DELETE"
+  });
+
+  const newNotes = notes.filter((el) => el._id !== id);
+  setNotes(newNotes);
+}
+
+// This method will map out the records on the table
+function NoteContainer() {
+  return notes.map((note) => {
+    return (
+      <Note1
+        note={note}
+        deleteNote={() => deleteNote(note._id)}
+        key={note._id}
+      />
+    );
+  });
+}
+  
   return (
     <>
       <div className={styles.noteSection}>
-        <div className={styles.noteBackground} />
-        <div className={styles.header}>
-          <div className={styles.headerBackground} />
-          <b className={styles.notes}>Notes</b>
-          <div className={styles.addNoteButton} onClick={openNotesPopUp}>
-            <img className={styles.groupIcon} alt="" src="/group2.svg" />
-          </div>
+      <div className={styles.header}>
+          <div className={styles.notes}>My Notes</div>
         </div>
-        <div className={styles.individualNotes}>
-          <Note
-            description="Discussed how to ................................., suggested to .................... about the thing. "
-            date="Aug 2nd"
-          />
-          <Note
-            description="Discussed how to ................................., suggested to .................... about the thing. "
-            date="Sept 23rd "
-          />
-        </div>
+        <table>
+          <tbody>{NoteContainer()}</tbody>
+        </table>
+        <button className={styles.addNoteButton} onClick={openNotesPopUp}>
+          <div className={styles.groupIcon}>+ Add Note</div>
+        </button>
       </div>
       {isNotesPopUpOpen && (
         <PortalPopup
@@ -50,4 +103,3 @@ const NoteSectionContainer = () => {
   );
 };
 
-export default NoteSectionContainer;
