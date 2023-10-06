@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
