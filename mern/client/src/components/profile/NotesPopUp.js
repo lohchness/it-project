@@ -78,6 +78,5 @@ export default function NotesPopUp({ onClose }) {
       </form>
     </div>
   );
-
 }
 
