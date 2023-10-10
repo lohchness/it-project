@@ -52,10 +52,6 @@ const Login = () => {
                 error = new Error();
                 setError(true);
             });
-
-        // Read the form data
-        const form = e.target;
-        const formData = new FormData(form);
     }
 
     return (
