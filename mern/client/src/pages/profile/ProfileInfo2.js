@@ -1,9 +1,9 @@
 import { useCallback } from "react";
-import ContactHistorySectionContainer from "../components/ContactHistorySectionContainer";
-import NoteSectionContainer from "../components/NoteSectionContainer";
-import ExperienceSection from "../components/ExperienceSection";
-import UpcomingEventsSectionContainer from "../components/UpcomingEventsSectionContainer";
-import ContactFormContainer from "../components/ContactFormContainer";
+import ContactHistorySectionContainer from "../../components/profile/ContactHistorySectionContainer";
+import NoteSectionContainer from "../../components/profile/NoteSectionContainer";
+import ExperienceSection from "../../components/profile/ExperienceSection";
+import UpcomingEventsSectionContainer from "../../components/profile/UpcomingEventsSectionContainer";
+import ContactFormContainer from "../../components/profile/ContactFormContainer";
 import { useNavigate } from "react-router-dom";
 import styles from "./ProfileInfo2.module.css";
 

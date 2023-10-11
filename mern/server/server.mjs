@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 
 import "./loadEnvironment.mjs";
-import records from "./routes/record.mjs";
 import auth from "./routes/auth.js";
 
 const PORT = 5050;
@@ -27,7 +26,6 @@ app.use((req, res, next) => {
 app.use(express.json());
 
 app.use("/auth", auth);
-// app.use("/record", records);
 
 // start the Express server
 app.listen(PORT, () => {
