@@ -52,7 +52,6 @@ const Login = () => {
                 error = new Error();
                 setLoginError(true);
             });
-
     }
 
     return (

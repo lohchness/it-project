@@ -15,6 +15,7 @@ connectToDB();
 router.post("/register", async (req, res) => {
     console.log(req.body);
 
+    // Hash password
     bcrypt
         .genSalt(10, (err, salt) => {
             bcrypt
@@ -28,7 +29,8 @@ router.post("/register", async (req, res) => {
                         email: req.body.email,
                         password: hashedPassword,
                     });
-
+                    
+                    // Save new user to database
                     user
                         .save()
                         .then((result) => {
@@ -53,16 +55,14 @@ router.post("/register", async (req, res) => {
 router.post("/register-additional-info", async (req, res) => {
     console.log(req.body);
 
+    // Find user in database and update with additional info
     await User.findOneAndUpdate(
         {email: req.body.email}, 
-        {'phoneNumber': req.body.phoneNumber, 'about': req.body.about}
+        {phoneNumber: req.body.phoneNumber, about: req.body.about}
     ).then(
         res.status(200).send({
             message: "User info updated",
     }));
-
-    
-
 });
 
 // Login endpoint
@@ -72,7 +72,7 @@ router.post("/login", async (req, res) => {
     console.log(req.body.email);
     User.findOne({ email: req.body.email })
         .then((user) => {
-            
+
             // Compare entered password with hashed password stored for the email
             bcrypt
                 .compare(req.body.password, user.password)
@@ -120,14 +120,56 @@ router.post("/login", async (req, res) => {
         
 });
 
-// // free endpoint
-// router.get("/free-endpoint", async (req, res) => {
-//     res.json({ message: "You are free to access me anytime" });
-// });
+// Password reset request endpoint
+router.post("/request-password-reset", async (req, res) => {
+    console.log(req.body.email);
 
-//   // authentication endpoint
-// router.get("/auth-endpoint", auth, (request, response) => {
-//     response.send({ message: "You are authorized to access me" });
-//   });
+    // Check if email exists in the database
+    User.findOne({ email: req.body.email })
+    .then((user) => {
+        if (!user) {
+            res.status(500).send({
+                message: "Email not found",
+            });
+        } else {
+            // TODO: Send email containing verification code
+            res.status(200).send({
+                message: "Password reset email sent",
+            });
+        }
+    })
+});
+
+// verify confirmation code
+router.post("/verify-confirmation-code", async (req, res) => {
+    console.log(req.body.confirmationCode);
+
+   // TODO: Confirm verification code is valid
+    res.status(200).send({
+        message: "Confirmation code is valid",
+    });
+});
+
+// Password reset endpoint
+router.post("/reset-password", async (req, res) => {
+    console.log(req.body);
+
+    // Hash new password
+    bcrypt
+        .genSalt(10, (err, salt) => {
+            bcrypt
+                .hash(req.body.password, salt, (err, hashedPassword) => {
+
+                    // Find user in database and update their stored password hash
+                    User.findOneAndUpdate(
+                        {email: req.body.email}, 
+                        {password: hashedPassword}
+                    ).then(
+                        res.status(200).send({
+                            message: "Password reset successfully",
+                    }));
+                });
+        });
+});
 
 export default router;
