@@ -2,13 +2,10 @@ import express from "express";
 import cors from "cors";
 
 import "./loadEnvironment.mjs";
-<<<<<<< HEAD
-import records from "./routes/record.mjs";
-import tasks from "./routes/task.mjs";
-import notes from "./routes/note.mjs";
-=======
+
+import tasks from "./routes/task.js";
+import notes from "./routes/note.js";
 import auth from "./routes/auth.js";
->>>>>>> main
 
 const PORT = 5050;
 const app = express();
@@ -31,13 +28,9 @@ app.use((req, res, next) => {
   
 app.use(express.json());
 
-<<<<<<< HEAD
-app.use("/record", records);
 app.use("/task", tasks);
 app.use("/note", notes);
-=======
 app.use("/auth", auth);
->>>>>>> main
 
 // start the Express server
 app.listen(PORT, () => {

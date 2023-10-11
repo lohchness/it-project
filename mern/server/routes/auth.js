@@ -4,8 +4,8 @@ import bodyParser from 'body-parser';
 import bcrypt, { hash } from "bcrypt";
 import jwt from "jsonwebtoken";
 
-import connectToDB from "../db/conn.mjs";
-import User from "../models/User.mjs"
+import {connectToDB} from "../db/conn.mjs";
+import User from "../models/User.js"
 
 const router = express.Router();
 
@@ -20,6 +20,7 @@ router.post("/register", async (req, res) => {
             bcrypt
                 .hash(req.body.password, salt, (err, hashedPassword) => {
                     console.log(hashedPassword);
+
                     // Create new user using request data
                     const user = new User({
                         firstName: req.body.firstName,
@@ -66,10 +67,12 @@ router.post("/register-additional-info", async (req, res) => {
 
 // Login endpoint
 router.post("/login", async (req, res) => {
+
     // Check if email exists
     console.log(req.body.email);
     User.findOne({ email: req.body.email })
         .then((user) => {
+            
             // Compare entered password with hashed password stored for the email
             bcrypt
                 .compare(req.body.password, user.password)
