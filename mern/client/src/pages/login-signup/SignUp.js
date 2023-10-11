@@ -176,16 +176,16 @@ const SignUp = () => {
             {signUpStep == 2 && (
                 <>
                     <form className="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
-                        <textarea 
-                            className="form-field" 
-                            placeholder="About (optional)" 
-                            type="text" 
+                        <textarea
+                            className="form-field"
+                            placeholder="About (optional)"
+                            type="text"
                             value={about}
                             onChange={(e) => setAbout(e.target.value)}
                         />
-                        <input 
-                            className="form-field" 
-                            placeholder="Phone number (optional)" type="tel" 
+                        <input
+                            className="form-field"
+                            placeholder="Phone number (optional)" type="tel"
                             value={phoneNumber}
                             onChange={(e) => setPhoneNumber(e.target.value)}
                         />
