@@ -4,8 +4,8 @@ import bodyParser from 'body-parser';
 import bcrypt, { hash } from "bcrypt";
 import jwt from "jsonwebtoken";
 
-import connectToDB from "../db/conn.mjs";
-import User from "../models/User.mjs"
+import {connectToDB} from "../db/conn.mjs";
+import User from "../models/User.js"
 
 const router = express.Router();
 

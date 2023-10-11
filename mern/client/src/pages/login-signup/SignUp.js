@@ -13,7 +13,7 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const [about, setAbout] = useState("");
     const [phoneNumber, setPhoneNumber] = useState(null);
-    const [error, setError] = useState(null);
+    const [signUpError, setSignUpError] = useState(null);
     const [signUpStep, setSignUpStep] = useState(1);
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onBlur" });
@@ -52,7 +52,7 @@ const SignUp = () => {
                     setSignUpStep(signUpStep + 1);
                 })
                 .catch((error) => {
-                    setError(true);
+                    setSignUpError(true);
                     console.log(error);
                 });
         }
@@ -120,7 +120,7 @@ const SignUp = () => {
                         {errors.lastName && <label className="form-input-error-text">Last name must be between 2 and 20 characters long</label>}
 
                         <input
-                            className={`form-field ${errors.email ? 'error-form-field' : ''}`}
+                            className={`form-field ${(errors.email || signUpError) ? 'error-form-field' : ''}`}
                             placeholder="Email"
                             type="email"
                             {...register("email", {
@@ -131,7 +131,7 @@ const SignUp = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             required />
                         {errors.email && <label className="form-input-error-text">Email is not valid</label>}
-                        {error && <label className="form-input-error-text">Email is already in use</label>}
+                        {signUpError && <label className="form-input-error-text">Email is already in use</label>}
 
                         <input
                             className={`form-field ${errors.password ? 'error-form-field' : ''}`}

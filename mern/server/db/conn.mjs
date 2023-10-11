@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 const connectionString = process.env.ATLAS_URI || "";
 
  // Connect to database
-async function connectToDB() {
+export async function connectToDB() {
     mongoose
       .connect(
           connectionString,
@@ -24,18 +24,14 @@ async function connectToDB() {
       });
   }
 
-export default connectToDB;
+const client = new MongoClient(connectionString);
 
-// const client = new MongoClient(connectionString);
+let conn;
+try {
+    console.log("Connecting to MongoDB Atlas...");
+    conn = await client.connect();
+} catch (e) {
+    console.error(e);
+}
 
-// let conn;
-// try {
-//     console.log("Connecting to MongoDB Atlas...");
-//     conn = await client.connect();
-// } catch (e) {
-//     console.error(e);
-// }
-
-// let db = conn.db("sample_training");
-
-// export default db;
+export const db = conn.db("sample_training");

@@ -1,0 +1,106 @@
+.losingTouch,
+.thFeb2023 {
+  position: absolute;
+  top: 7px;
+  left: 252px;
+  line-height: 150%;
+}
+.losingTouch {
+  top: 8px;
+  left: 483px;
+}
+.name {
+  text-decoration: none;
+  position: absolute;
+  top: 10px;
+  left: 47px;
+  color: inherit;
+  text-align: left;
+  display: inline-block;
+  width: 211px;
+  height: 32px;
+}
+.connection2Child {
+  position: absolute;
+  top: 8px;
+  left: 718px;
+  border-radius: var(--br-8xs);
+  border: 1px solid var(--color-white-100);
+  box-sizing: border-box;
+  width: 118px;
+  height: 25px;
+}
+.landlord {
+  position: absolute;
+  top: 11px;
+  left: 743px;
+  text-align: left;
+}
+.connection2Item,
+.maskGroupIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.connection2Item {
+  top: 55.5px;
+  width: 855px;
+  height: 1px;
+}
+.vectorIcon,
+.vectorIcon1,
+.vectorIcon2 {
+  position: absolute;
+  height: 66.05%;
+  width: 80%;
+  top: 36.25%;
+  right: 10%;
+  bottom: -2.31%;
+  left: 10%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.vectorIcon1,
+.vectorIcon2 {
+  height: 4.61%;
+  width: 105%;
+  top: 20.89%;
+  right: -2.5%;
+  bottom: 74.5%;
+  left: -2.5%;
+}
+.vectorIcon2 {
+  height: 27.65%;
+  width: 46.67%;
+  top: -2.3%;
+  right: 27%;
+  bottom: 74.65%;
+  left: 26.33%;
+}
+.delete {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  height: 38.75%;
+  width: 2.17%;
+  top: 17.86%;
+  right: 0;
+  bottom: 43.39%;
+  left: 97.83%;
+}
+.connection2 {
+  position: relative;
+  width: 923px;
+  height: 56px;
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-white-100);
+  font-family: var(--font-inter);
+}
