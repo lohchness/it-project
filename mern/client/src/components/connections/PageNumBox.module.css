@@ -1,0 +1,33 @@
+.page1Child {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-lightseagreen);
+  width: 30px;
+  height: 30px;
+}
+.div,
+.page1,
+.page1Child {
+  position: absolute;
+}
+.div {
+  top: 5px;
+  left: 13px;
+  font-size: var(--font-size-sm);
+  line-height: 150%;
+  font-weight: 500;
+  font-family: var(--font-poppins);
+  color: var(--color-white-100);
+  text-align: left;
+}
+.page1 {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+}

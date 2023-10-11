@@ -23,6 +23,7 @@
   justify-content: flex-start;
 }
 .nameLastnameParent {
+  font-size: 12px;
   overflow: hidden;
   padding: 0 var(--padding-6xs);
   gap: var(--gap-11xs);

@@ -1,0 +1,110 @@
+.add-task-popup {
+  position: relative;
+  padding: 10px;
+  border-radius: var(--br-3xs);
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  text-align: right;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+  z-index: 3;
+}
+.popup {
+  position: relative;
+  background-color: var(--color-white);
+  border: none;
+  border-radius: var(--br-3xs);
+  box-sizing: border-box;
+  width: 221px;
+  height: 240px;
+  z-index: 0;
+}
+.duedate {
+  position:absolute;
+  top:6px;
+  left:10px;
+  width:200px;
+  display: flex;
+  flex-direction:row;
+  background-color: #D9D9D9;
+  box-sizing: border-box;
+  border:none;
+  border-radius: 10px;;
+  height:25px;
+  padding: 0 var(--padding-6xs);
+}
+.description-wrapper{
+  position:absolute;
+  top: 53px;
+  left:10px;
+  width:200px;
+  height: 133px;
+  background-color: #D9D9D9;
+  border-radius: 10px;
+  text-align: left;
+}
+.description-wrapper textarea {
+  width: 100%;
+  height: 133px;
+  padding: 2px 6px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+  font-size: 15px;
+  border:none;
+  resize: none;
+  font-family: var(--font-inter);
+}
+.confirm-control {
+  position: relative;
+  line-height: 150%;
+  background-color: #1CBABD;
+  color: white;
+  border:none;
+  font-family: var(--font-poppins);
+}
+.confirm-button {
+  margin: 0 !important;
+  position: absolute;
+  top: 206px;
+  left: 139px;
+  width:56px;
+  border-radius: var(--br-8xs);
+  background-color: var(--color-lightseagreen);
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-11xs) var(--padding-4xs);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 3;
+}
+.cancel {
+  position: relative;
+  font-size: var(--font-size-sm);
+  line-height: 150%;
+  font-family: var(--font-poppins);
+  color: var(--color-white);
+  text-align: right;
+}
+.add-task-popup,
+.cancel-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.cancel-button {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-11xs) var(--padding-smi);
+  background-color: var(--color-lightseagreen);
+  margin: 0 !important;
+  position: absolute;
+  top: 206px;
+  left: 6px;
+  border-radius: var(--br-8xs);
+  z-index: 4;
+}

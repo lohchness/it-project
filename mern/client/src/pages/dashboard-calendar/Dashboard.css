@@ -1,0 +1,102 @@
+.dashboard {
+  background-color: var(--color-lavender);
+  width: 100%;
+  height: 100%;
+  max-width: 1024px;
+  text-align: center;
+  overflow: scroll;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-white);
+  font-family: var(--font-poppins);
+}
+Header {
+  height:10%;
+}
+.dashboard-crm-container {
+  position: absolute;
+  top: 10%;
+  right:10%;
+  line-height: 150%;
+  text-align: right;
+  color: var(--color-lightseagreen);
+}
+.dashboard-crm-container .span {
+  color: var(--color-lightseagreen);
+}
+.dashboard-crm-container .crm {
+  color: var(--color-slategray);
+}
+.total-connections {
+  position: absolute;
+  top: 17.2%;
+  left: 46.7%;
+  border-radius: var(--br-3xs);
+  background-color: #8891B4;
+  height: 24%;
+  width:14.5%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-smi) var(--padding-base);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.total-connect {
+  position: relative;
+  font-size: var(--font-size-45xl);
+  font-family: var(--font-inter);
+  color: #38cdd0;
+  display: inline-block;
+  width: 127px;
+  height: 62px;
+  flex-shrink: 0;
+}
+.monthly-connections {
+  position: absolute;
+  top: 43.5%;
+  left: 46.7%;
+  border-radius: var(--br-3xs);
+  background-color: #8891B4;
+  height: 30%;
+  width:14.5%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-sm) var(--padding-base);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 28px;
+}
+.connections-made-this,
+.monthly-connect {
+  position: relative;
+  display: inline-block;
+  width: 179px;
+  height: 63px;
+  flex-shrink: 0;
+}
+.monthly-connect {
+  font-size: var(--font-size-45xl);
+  font-family: var(--font-inter);
+  width: 100px;
+  height: 62px;
+}
+TaskContainer {
+  position: absolute;
+  height: 56.3%;
+  width: 28%;
+  top:40%;
+  right:20%;
+}
+ConnectionsForm {
+  position:absolute;
+  height: 56.3%;
+  top:40%;
+  left:20%;
+}
+UpcomingEventsContainer {
+  position:absolute;
+  top:70%;
+  left:20%;
+}

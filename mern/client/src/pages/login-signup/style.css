@@ -145,6 +145,10 @@ button {
 .login-button:hover, .sign-up-button:hover, .continue-button:hover, .reset-password-button:hover {
     background-color: #1bdcd2cf;
 }
+.form-field::placeholder {
+  color:#FFF8F0;
+  opacity: 0.6;
+}
 
 .sign-up-redirect, .login-redirect {
     margin-top: 0.5rem;

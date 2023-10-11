@@ -1,0 +1,30 @@
+.pageChild {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-8xs);
+  border: 1px solid var(--color-white-100);
+  box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+}
+.div,
+.page,
+.pageChild {
+  position: absolute;
+}
+.div {
+  top: 5px;
+  left: 11px;
+  line-height: 150%;
+  font-weight: 500;
+}
+.page {
+  top: 0;
+  left: 72px;
+  width: 30px;
+  height: 30px;
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-white-100);
+  font-family: var(--font-poppins);
+}

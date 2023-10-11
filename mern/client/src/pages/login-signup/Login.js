@@ -10,9 +10,18 @@ const Login = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
 
+<<<<<<< HEAD
+  const onSignUpClick = useCallback(() => {
+    navigate("/");
+  }, [navigate]);
+  const onLoginClick = useCallback(() => {
+    navigate("/dashboard");
+  }, [navigate]);
+=======
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState(null);
+>>>>>>> main
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
 
@@ -24,6 +33,24 @@ const Login = () => {
         navigate("/forgot-password");
     }, [navigate]);
 
+<<<<<<< HEAD
+  return (
+    <div className="login-container">
+        <h1 className="title log-in">Log in</h1>
+        <form className="login-form" method="post" onSubmit={handleSubmit}>
+            <input className="form-field" placeholder="Email" type="email" required/>
+            <input className="form-field" placeholder="Password" type="password" required/>
+            <div className="forgot-password-link-container">
+                <Link className="forgot-password-link" to="/forgot-password" onClick={onForgotPasswordClick}>
+                    Forgot your password?
+                </Link>
+            </div>
+            <button className="login-button" type="submit" onClick={onLoginClick}>
+                Login
+            </button>
+        </form>
+        {/* <div className="third-party-login-container">
+=======
     function onSubmit(e) {
         // set configurations
         const configuration = {
@@ -95,6 +122,7 @@ const Login = () => {
                 </button>
             </form>
             {/* <div className="third-party-login-container">
+>>>>>>> main
             <div className="or-continue-with">or continue with</div>
             {/* <button className="facebook-login-button">
                 <div className="facebook-login-button-child" />

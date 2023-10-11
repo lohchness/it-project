@@ -53,6 +53,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  
 }
 .individualExperiences {
   margin: 0 !important;
@@ -69,6 +70,7 @@
   font-size: var(--font-inherit);
   color: var(--color-white);
   font-family: var(--font-inherit);
+  margin-left: 20px;
 }
 .experienceSection {
   border-radius: var(--br-3xs);
@@ -80,4 +82,5 @@
   font-size: var(--font-size-smi);
   color: var(--color-gray-600);
   font-family: var(--font-open-sans);
+  margin-left: 10px;
 }

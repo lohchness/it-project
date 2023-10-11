@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import AboutMeEditPopUp from "./AboutMeEditPopUp";
-import PortalPopup from "./PortalPopup";
+import PortalPopup from "../PortalPopup";
 import styles from "./ProfilePic.module.css";
 
 const ProfilePic = ({ profilePic, nameLastName, jobPosition }) => {

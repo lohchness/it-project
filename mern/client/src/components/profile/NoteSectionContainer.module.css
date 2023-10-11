@@ -1,3 +1,23 @@
+.header {
+  position: relative;
+  background-color: var(--color-slategray);
+  padding:2px;
+  border-radius: 10px;
+}
+.noteSection table {
+  position: relative;
+  height:80%;
+  border-spacing: 10px 10px;
+  display: block;
+  overflow:scroll;
+}
+.notes {
+  margin-left:5px;
+  font-weight:bold;
+}
+.noteTable {
+  position:relative;
+}
 .headerBackground,
 .noteBackground {
   position: absolute;
@@ -14,14 +34,7 @@
   height: 24px;
   mix-blend-mode: normal;
 }
-.notes {
-  position: absolute;
-  top: 3px;
-  left: calc(50% - 163px);
-  display: inline-block;
-  width: 39px;
-  height: 18.69px;
-}
+
 .groupIcon {
   position: relative;
   width: 14px;
@@ -29,8 +42,8 @@
 }
 .addNoteButton {
   position: absolute;
-  top: 5px;
-  left: 328px;
+  top: 9.5px;
+  left: 332px;
   width: 14.84px;
   overflow: hidden;
   display: flex;
@@ -41,7 +54,7 @@
   justify-content: center;
   cursor: pointer;
 }
-.header,
+
 .individualNotes {
   position: absolute;
   top: 6px;
@@ -74,4 +87,5 @@
   font-size: var(--font-size-smi);
   color: var(--color-gray-600);
   font-family: var(--font-open-sans);
+  margin: 10px;
 }

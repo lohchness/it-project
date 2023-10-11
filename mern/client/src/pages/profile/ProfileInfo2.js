@@ -1,9 +1,20 @@
 import { useCallback } from "react";
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
 import ContactHistorySectionContainer from "../../components/profile/ContactHistorySectionContainer";
 import NoteSectionContainer from "../../components/profile/NoteSectionContainer";
 import ExperienceSection from "../../components/profile/ExperienceSection";
 import UpcomingEventsSectionContainer from "../../components/profile/UpcomingEventsSectionContainer";
 import ContactFormContainer from "../../components/profile/ContactFormContainer";
+<<<<<<< HEAD
+
+import Header from "../../components/Header";
+import styles from "./ProfileInfo2.module.css";
+
+const ProfileInfo2 = () => {
+=======
 import { useNavigate } from "react-router-dom";
 import styles from "./ProfileInfo2.module.css";
 
@@ -37,6 +48,7 @@ const ProfileInfo2 = () => {
   const onMessengerTextClick = useCallback(() => {
     // Please sync "Messaging" to the project
   }, []);
+>>>>>>> main
 
   return (
     <div className={styles.profile}>
@@ -64,6 +76,10 @@ const ProfileInfo2 = () => {
           <ContactFormContainer />
         </div>
       </div>
+<<<<<<< HEAD
+      <Header />
+      
+=======
       <div className={styles.navFrame}>
         <div className={styles.nav}>
           <button className={styles.hamburgermenu}>
@@ -93,6 +109,7 @@ const ProfileInfo2 = () => {
           </nav>
         </div>
       </div>
+>>>>>>> main
     </div>
   );
 };
