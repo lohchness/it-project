@@ -2,7 +2,6 @@ import "./AddActivityForm.css";
 const AddActivityForm = () => {
   return (
     <div className="add-activity">
-      <img className="add-activity-child" alt="" src="/undefined16.png" />
       <div className="heading-wrapper">
         <div className="heading">Add Activity</div>
       </div>
