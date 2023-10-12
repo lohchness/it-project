@@ -6,6 +6,7 @@ import "./loadEnvironment.mjs";
 import tasks from "./routes/task.js";
 import notes from "./routes/note.js";
 import auth from "./routes/auth.js";
+import experience from "/routes/experience.js"
 
 const PORT = 5050;
 const app = express();
@@ -30,6 +31,7 @@ app.use(express.json());
 
 app.use("/task", tasks);
 app.use("/note", notes);
+app.use("/experience", experience)
 app.use("/auth", auth);
 
 // start the Express server
