@@ -13,12 +13,6 @@ const CalendarContainer = () => {
   const startDay = startDate.getDay();
   const endDay = 6 - endDate.getDay();
 
-  function prevMonth(value) {
-    return setCurrentDate((prev) => {
-      return { ...prev, ...value };
-    });
-  }
-
   return (
     <div className="calendar-wrapper">
       <div className="calendar-heading">
