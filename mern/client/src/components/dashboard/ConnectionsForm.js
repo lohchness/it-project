@@ -44,72 +44,8 @@ const ConnectionsForm = () => {
           />
         </div>
       </div>
-      <div className="contact-history-11">
-        <div className="rectangle8" />
-        <div className="name-parent">
-          <div className="name10">Name</div>
-          <div className="lastcontact">16/08/2022</div>
-          <div className="touchstatus">In touch</div>
-        </div>
-        <div className="touchstatus-wrapper">
-          <div className="touchstatus1">Student</div>
-        </div>
-      </div>
-      <div className="contact-history-21">
-        <div className="rectangle8" />
-        <div className="name-parent">
-          <div className="name10">Name</div>
-          <div className="lastcontact">16/08/2022</div>
-          <div className="touchstatus">In touch</div>
-        </div>
-        <div className="touchstatus-wrapper">
-          <div className="touchstatus1">Student</div>
-        </div>
-      </div>
-      <div className="contact-history-3">
-        <div className="rectangle8" />
-        <div className="name-parent">
-          <div className="name10">Name</div>
-          <div className="lastcontact">16/08/2022</div>
-          <div className="touchstatus">In touch</div>
-        </div>
-        <div className="touchstatus-wrapper">
-          <div className="touchstatus1">Student</div>
-        </div>
-      </div>
-      <div className="contact-history-4">
-        <div className="rectangle8" />
-        <div className="name-parent">
-          <div className="name10">Name</div>
-          <div className="lastcontact">16/08/2022</div>
-          <div className="touchstatus">In touch</div>
-        </div>
-        <div className="touchstatus-wrapper">
-          <div className="touchstatus1">Student</div>
-        </div>
-      </div>
-      <div className="contact-history-5">
-        <div className="rectangle8" />
-        <div className="name-parent">
-          <div className="name10">Name</div>
-          <div className="lastcontact">16/08/2022</div>
-          <div className="touchstatus">In touch</div>
-        </div>
-        <div className="touchstatus-wrapper">
-          <div className="touchstatus1">Student</div>
-        </div>
-      </div>
-      <div className="contact-history-6">
-        <div className="rectangle8" />
-        <div className="name-parent">
-          <div className="name10">Name</div>
-          <div className="lastcontact">16/08/2022</div>
-          <div className="touchstatus">In touch</div>
-        </div>
-        <div className="touchstatus-wrapper">
-          <div className="touchstatus1">Student</div>
-        </div>
-      </div>
+
+
     </div>
   );
 };

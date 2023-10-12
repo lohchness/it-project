@@ -10,6 +10,9 @@ const UpcomingEventsContainer = () => {
 
   return (
     <div className="upcoming-events">
+      <div className="header7">
+        <div className="time1">Upcoming Events</div>
+      </div>
       <a className="show-more">
         <img
           className="interface-calendar-blank-cale-icon"
@@ -29,7 +32,7 @@ const UpcomingEventsContainer = () => {
           Zoom URL: zoom.meeting/wiuefosjdkjashkdjfl
         </div>
         <div className="location3">
-          Supersupersupersupersupersupersuperlonglocat...
+          Supersupersupersupersupersuperlonglocat...
         </div>
       </div>
       <div className="times">
@@ -72,9 +75,6 @@ const UpcomingEventsContainer = () => {
           Video conference with Bunny Superlong...
         </div>
         <div className="location3">Event 3 Description blablabla</div>
-      </div>
-      <div className="header7">
-        <div className="time1">Upcoming Events</div>
       </div>
     </div>
   );

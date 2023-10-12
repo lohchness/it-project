@@ -70,6 +70,7 @@
 }
 .connections-made-this,
 .monthly-connect {
+  font-size: var(--font-size-base);
   position: relative;
   display: inline-block;
   width: 179px;

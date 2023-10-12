@@ -1,3 +1,15 @@
+.connections6 {
+  position:absolute;
+  top: 17.2%;
+  left: 10.5%;
+  height: 56.3%;
+  width: 35%;
+  text-align: left;
+  font-size: var(--font-size-2xs);
+  background-color: var(--color-lightslategray);
+  border-radius: 15px;
+  font-family: var(--font-inter);
+}
 .connections-child {
   position: relative;
   border-radius: var(--br-3xs);
@@ -18,11 +30,12 @@
   justify-content: flex-start;
 }
 .tasks-heading1 {
+  position:relative;
+  width: 97%;
   top: 7px;
   left: 5px;
   border-radius: var(--br-3xs);
   background-color: #656C86;
-  width: 476px;
   padding: var(--padding-11xs) var(--padding-6xs);
   z-index: 1;
   text-align: right;
@@ -36,10 +49,10 @@
   font-size: var(--font-size-sm);
   background-color: white;
   top: 14px;
-  left: 266px;
+  right: 20px;
   border-radius: var(--br-xl);
   box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
-  width: 185px;
+  width: 170px;
   padding: 0 var(--padding-7xs);
   z-index: 2;
 }
@@ -58,8 +71,8 @@
 .show-more2 {
   text-decoration: none;
   margin: 0 !important;
-  position: absolute;
-  top: 407px;
+  position: relative;
+  top: 83%;
   left: 28px;
   display: flex;
   flex-direction: row;
@@ -117,7 +130,7 @@
   margin: 0 !important;
   position: absolute;
   top: 47px;
-  left: 30px;
+  left: 20px;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -242,16 +255,4 @@
   top: 77px;
   left: 21px;
   z-index: 10;
-}
-.connections6 {
-  position:absolute;
-  top: 17.2%;
-  left: 10.5%;
-  height: 56.3%;
-  width: 35%;
-  text-align: left;
-  font-size: var(--font-size-2xs);
-  background-color: var(--color-lightslategray);
-  border-radius: 15px;
-  font-family: var(--font-inter);
 }
