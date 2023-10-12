@@ -1,4 +1,4 @@
-import { startOfMonth, endOfMonth, differenceInDays, subMonths, format } from "date-fns";
+import { startOfMonth, endOfMonth, differenceInDays, subMonths, addMonths } from "date-fns";
 import { useState } from "react";
 import "./CalendarContainer.css";
 
@@ -22,9 +22,9 @@ const CalendarContainer = () => {
   return (
     <div className="calendar-wrapper">
       <div className="calendar-heading">
-        <div >{`<`}</div>
-        <div className="heading">{currentDate.toLocaleDateString('en-us', { year:"numeric", month:"long"})}</div>
-        <div >{`>`}</div>
+        <div onClick={()=>setCurrentDate(subMonths(currentDate, 1))}>{`<`}</div>
+        <div className="heading">{currentDate.toLocaleDateString('en-us', { year:"numeric", month:"short"})}</div>
+        <div onClick={()=>setCurrentDate(addMonths(currentDate, 1))}>{`>`}</div>
       </div>
       <div className="grid-wrapper">
         {days.map((day) => <div >{day}</div>)}

@@ -16,14 +16,15 @@
   font-family: var(--font-poppins);
 }
 .calendar-heading .heading {
+  width:100%;
   position: relative;
   font-weight: 500;
 }
 .calendar-heading {
   position:relative;
-  margin: 0 !important;
   top: 5px;
   left: 5px;
+  width: 96%;
   border-radius: var(--br-3xs);
   background-color: #656C86;
   display: flex;
