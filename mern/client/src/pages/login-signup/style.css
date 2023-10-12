@@ -21,7 +21,7 @@ a:hover {
 
 .login-container, .sign-up-container, .forgot-password-container {
     margin: 1rem auto;
-    padding: 1rem 3rem;
+    padding: 0.5rem 3rem;
     width: 40%;
     border-radius: var(--br-3xs);
     background-color: var(--color-steelblue);
@@ -37,7 +37,7 @@ h1 {
     font-size: 2rem;
     color: #1CBABD;
     font-weight: 400;
-    margin: 30px;
+    margin: 20px;
 }
 
 form {
@@ -54,7 +54,8 @@ form {
     text-align: left;
     padding: 15px;
     color: rgb(255, 248, 240);
-    margin: 5px;
+    margin-bottom: 0.2rem;
+    margin-top: 0.5rem;
     background-color: transparent;
     font-size: 0.8rem;
     cursor: text;
@@ -62,6 +63,26 @@ form {
 
 .form-field:focus {
     outline: 2px solid #67799d;
+}
+
+.form-input-error-text {
+    text-align: left;
+    font-size: 0.7rem;
+    color: rgba(162, 0, 38, 0.823);
+    width: 90%;
+    padding: 0%;
+    margin-top: 0rem;
+}
+
+.error-form-field {
+    border: 3px solid rgba(162, 0, 38, 0.457);
+    color: rgba(162, 0, 38, 0.823);
+}
+
+.login-error {
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .forgot-password-link-container {
@@ -76,6 +97,7 @@ form {
     text-align: right;
     font-size: 0.6rem;
     margin: 0.5rem;
+    margin-top: 0.2rem;
     cursor: pointer;
     text-decoration: none;
     font-size: 0.8rem;
@@ -92,13 +114,14 @@ button {
     cursor: pointer;
 }
 
-.login-button, .sign-up-button, .continue-button {
+.login-button, .sign-up-button, .continue-button, .reset-password-button {
     background-color: #1CBABD;
+    font-size: 0.8rem;
     border: none;
     text-transform: uppercase;
     padding: 10px 10px;
-    margin-top: 20px;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
     border-radius: 10px;
     text-align: center;
 }
@@ -115,7 +138,11 @@ button {
     width: 95px;
 }
 
-.login-button:hover, .sign-up-button:hover, .continue-button:hover {
+.reset-password-button {
+    width: 140px;
+}
+
+.login-button:hover, .sign-up-button:hover, .continue-button:hover, .reset-password-button:hover {
     background-color: #1bdcd2cf;
 }
 .form-field::placeholder {
@@ -124,9 +151,9 @@ button {
 }
 
 .sign-up-redirect, .login-redirect {
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.7rem;
+    font-size: 0.8rem;
     text-align: center;
     display: flex;
     flex-direction: row;

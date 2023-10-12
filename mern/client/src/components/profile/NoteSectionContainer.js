@@ -7,6 +7,7 @@ import styles from "./NoteSectionContainer.module.css";
 const Note = (props) => (
   <div className = "note-row-wrapper">
    <tr height = "30px">
+     <img className="tick-task-done" alt="" src="/GreenTick.png" />
      <td width = "80%">{props.note.description}</td>
      <td>{props.note.header}</td>
      <td>
@@ -35,6 +36,7 @@ export default function NoteContainer() {
     setNotesPopUpOpen(false);
   }, []);
 
+// This method fetches the records from the database.
 useEffect(() => {
   async function getNotes() {
     const response = await fetch(`http://localhost:5050/note/`);
