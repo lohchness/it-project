@@ -42,8 +42,8 @@
 }
 .addNoteButton {
   position: absolute;
-  top: 9.5px;
-  left: 332px;
+  top: 3px;
+  left: 320px;
   width: 14.84px;
   overflow: hidden;
   display: flex;
@@ -81,11 +81,18 @@
 }
 .noteSection {
   position: relative;
-  width: 359px;
-  height: 406px;
+  width: 344px;
+  height: 386px;
   text-align: left;
   font-size: var(--font-size-smi);
   color: var(--color-gray-600);
   font-family: var(--font-open-sans);
   margin: 10px;
+}
+
+.deleteIcon {
+  position: relative;
+  width: 13px;
+  height: 14.02px;
+  object-fit: cover;
 }

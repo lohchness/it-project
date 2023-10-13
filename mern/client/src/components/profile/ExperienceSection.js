@@ -1,13 +1,13 @@
-import React, { usExperiencePopUpeEffect, useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ExperiencePopUp from "./ExperiencePopUp";
 import PortalPopup from "../PortalPopup";
 //import Experience from "./Experience";
-import styles from "./ExperienceSection.module.css";
+//import styles from "./ExperienceSection.module.css";
+import styles from "./NoteSectionContainer.module.css";
 
 const Experience = (props) => (
-  <div className = "row-wrapper">
+  //<div className = "row-wrapper">
     <tr height = "30px">
-      <img className="tick-task-done" alt="" src="/GreenTick.png" />
       <td width = "80%">{props.experience.description}</td>
       <td>{props.experience.experienceHeader}</td>
       <td>
@@ -20,7 +20,7 @@ const Experience = (props) => (
          </button>
        </td>
      </tr>
-   </div>
+   //</div>
  );
 
 ////////////////////////////
@@ -78,29 +78,29 @@ const Experience = (props) => (
   });
 }
 
-  return (
-    <>
-      <div className={styles.experienceSection}>
-      <div className={styles.header}>
-          <div className={styles.experiences}>My Experiences</div>
-        </div>
+return (
+  <>
+    <div className={styles.noteSection}>
+        <div className={styles.header}>
+          <b className={styles.notes}>Experience</b>
+          <button className={styles.addNoteButton} onClick={openExperiencePopUp}>
+            <div className={styles.groupIcon}>+</div>
+          </button>
+         </div>
         <table>
           <tbody>{ExperienceContainer()}</tbody>
         </table>
-        <button className={styles.addExperienceButton} onClick={openExperiencePopUp}>
-          <div className={styles.groupIcon}>+ Add Experience</div>
-        </button>
       </div>
-      {isExperiencePopUpOpen && (
-        <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
-          onOutsideClick={closeExperiencePopUp}
-        >
-          <ExperiencePopUp onClose={closeExperiencePopUp} />
-        </PortalPopup>
-      )}
-    </>
-  );
+    {isExperiencePopUpOpen && (
+      <PortalPopup
+        overlayColor="rgba(113, 113, 113, 0.3)"
+        placement="Centered"
+        onOutsideClick={closeExperiencePopUp}
+      >
+        <ExperiencePopUp onClose={closeExperiencePopUp} />
+      </PortalPopup>
+    )}
+  </>
+);
 };
 

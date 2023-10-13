@@ -5,22 +5,22 @@ import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
 
 const Note = (props) => (
-  <div className = "note-row-wrapper">
+  //<div className = "row-wrapper">
    <tr height = "30px">
-     <img className="tick-task-done" alt="" src="/GreenTick.png" />
-     <td width = "80%">{props.note.description}</td>
-     <td>{props.note.header}</td>
+    <td>{props.note.header}
+    <td width = "80%">{props.note.description}</td>
      <td>
        <button className="delete-button"
          onClick={() => {
            props.deleteNote(props.note._id);
           }}
         >
-        <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+         <img className={"delete-icon"} alt="" src="/DeleteIcon.png" />
         </button>
       </td>
-    </tr>
-  </div>
+    </td>
+  </tr>
+  //</div>
 );
 
 ////////////////////////////
@@ -81,15 +81,15 @@ function NoteContainer() {
   return (
     <>
       <div className={styles.noteSection}>
-      <div className={styles.header}>
-          <div className={styles.notes}>My Notes</div>
-        </div>
+        <div className={styles.header}>
+          <b className={styles.notes}>Notes</b>
+          <button className={styles.addNoteButton} onClick={openNotesPopUp}>
+            <div className={styles.groupIcon}>+</div>
+          </button>
+         </div>
         <table>
           <tbody>{NoteContainer()}</tbody>
         </table>
-        <button className={styles.addNoteButton} onClick={openNotesPopUp}>
-          <div className={styles.groupIcon}>+ Add Note</div>
-        </button>
       </div>
       {isNotesPopUpOpen && (
         <PortalPopup

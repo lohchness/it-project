@@ -26,8 +26,8 @@
 .vectorIcon1,
 .vectorIcon2 {
   position: absolute;
-  height: 68.59%;
-  width: 82.75%;
+  height: 20.59%;
+  width: 40.75%;
   top: 34.98%;
   right: 8.63%;
   bottom: -3.57%;
@@ -58,7 +58,7 @@
   border: 0;
   padding: 0;
   background-color: transparent;
-  position: absolute;
+  position: relative;
   height: 24.56%;
   width: 4.11%;
   top: 43.86%;
