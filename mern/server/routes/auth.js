@@ -9,6 +9,30 @@ import User from "../models/User.js"
 
 const router = express.Router();
 
+const authenticateToken = async (request, response, next) => {
+    try {
+      //   get the token from the authorization header
+      const token = await request.headers.authorization.split(" ")[1];
+  
+      //check if the token matches the supposed origin
+      const decodedToken = await jwt.verify(token, "USER-TOKEN");
+  
+      // retrieve the user details of the logged in user
+      const user = await decodedToken;
+  
+      // pass the user down to the endpoints here
+      request.user = user;
+  
+      // pass down functionality to the endpoint
+      next();
+      
+    } catch (error) {
+      response.status(401).json({
+        error: new Error("Invalid request!"),
+      });
+    }
+  };
+
 connectToDB();
 
 // Registration endpoint
@@ -90,8 +114,12 @@ router.post("/login", async (req, res) => {
                             userId: user._id,
                             userEmail: user.email,
                         },
-                        "RANDOM-TOKEN",
-                        { expiresIn: "24h" }
+                        "USER-TOKEN",
+                        { expiresIn: "7 days" },
+                        (err, token) => {
+                            if (err) throw err;
+                            res.json({ token });
+                          }
                     );
 
                     res.status(200).send({
@@ -172,5 +200,14 @@ router.post("/reset-password", async (req, res) => {
         });
 });
 
+// free endpoint
+router.get("/free-endpoint", async (req, res) => {
+    res.json({ message: "You are free to access me anytime" });
+  });
+  
+// authentication endpoint
+router.get("/auth-endpoint", authenticateToken, async (req, res) => {
+    res.json({ message: "You are authorized to access me" });
+  });
 
 export default router;
