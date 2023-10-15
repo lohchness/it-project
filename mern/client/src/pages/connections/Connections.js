@@ -8,7 +8,7 @@ import PageNumBox from "../../components/connections/Page1";
 import ConnectionComponent from "../../components/connections/ConnectionComponent";
 
 import styles from "./Connections.module.css";
-import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 
 const Connections = () => {
     const navigate = useNavigate();
@@ -29,7 +29,7 @@ const Connections = () => {
         return (
 
             <div className="connections">
-                <Header />
+                <Navbar />
                 <div className={styles.connectionsCrmContainer}>
                     <span className={styles.sortBy}>Connections</span>
                     <span className={styles.crm}>

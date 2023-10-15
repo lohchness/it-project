@@ -6,7 +6,7 @@ import TaskContainer from "../../components/dashboard/TaskContainer";
 import UpcomingEventsContainer from "../../components/dashboard/UpcomingEventsContainer";
 import ConnectionsForm from "../../components/dashboard/ConnectionsForm";
 
-import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 import "./Dashboard.css";
 
 const Dashboard = () => {
@@ -27,7 +27,7 @@ const Dashboard = () => {
     } else {
         return (
             <div className="dashboard">
-                <Header />
+                <Navbar />
                 <div className="dashboard-crm-container">
                     <span className="span">{` Dashboard `}</span>
                     <span className="crm">{`> CRM`}</span>

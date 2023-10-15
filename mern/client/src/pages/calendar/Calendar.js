@@ -4,7 +4,7 @@ import Cookies from "universal-cookie";
 
 import CalendarContainer from "../../components/calendar/CalendarContainer";
 import AddActivityForm from "../../components/calendar/AddActivityForm";
-import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 
 //import "./Calendar.css";
 const Calendar = () => {
@@ -32,7 +32,7 @@ const Calendar = () => {
                 </div>
                 <CalendarContainer />
                 <AddActivityForm />
-                <Header />
+                <Navbar />
             </div>
         );
     }

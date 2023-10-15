@@ -8,7 +8,7 @@ import ExperienceSection from "../../components/profile/ExperienceSection";
 import UpcomingEventsSectionContainer from "../../components/profile/UpcomingEventsSectionContainer";
 import ContactFormContainer from "../../components/profile/ContactFormContainer";
 
-import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
@@ -53,7 +53,7 @@ const Profile = () => {
                     <ContactFormContainer />
                 </div>
             </div>
-            <Header />
+            <Navbar />
 
         </div>
     );
