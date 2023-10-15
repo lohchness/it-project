@@ -9,7 +9,7 @@ import "./style.css";
 const ForgotPassword = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
-    const tokenValue = cookies.get("USER-TOKEN");
+    const tokenValue = cookies.get("token");
 
     const [email, setEmail] = useState("");
     const [confirmationCode, setConfirmationCode] = useState("");

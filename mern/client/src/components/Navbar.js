@@ -10,7 +10,7 @@ const Navbar = () => {
 
     const onLogoutClick = useCallback(() => {
         // clear jwt token
-        cookies.remove("USER-TOKEN");
+        cookies.remove("token");
         navigate("/login");
     }, [navigate]);
 

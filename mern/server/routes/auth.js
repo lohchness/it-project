@@ -9,13 +9,13 @@ import User from "../models/User.js"
 
 const router = express.Router();
 
-const authenticateToken = async (request, response, next) => {
+const authenticateWithToken = async (request, response, next) => {
     try {
       //   get the token from the authorization header
       const token = await request.headers.authorization.split(" ")[1];
   
       //check if the token matches the supposed origin
-      const decodedToken = await jwt.verify(token, "USER-TOKEN");
+      const decodedToken = await jwt.verify(token, "token");
   
       // retrieve the user details of the logged in user
       const user = await decodedToken;
@@ -114,12 +114,8 @@ router.post("/login", async (req, res) => {
                             userId: user._id,
                             userEmail: user.email,
                         },
-                        "USER-TOKEN",
+                        "token",
                         { expiresIn: "7 days" },
-                        (err, token) => {
-                            if (err) throw err;
-                            res.json({ token });
-                          }
                     );
 
                     res.status(200).send({
@@ -199,15 +195,5 @@ router.post("/reset-password", async (req, res) => {
                 });
         });
 });
-
-// free endpoint
-router.get("/free-endpoint", async (req, res) => {
-    res.json({ message: "You are free to access me anytime" });
-  });
-  
-// authentication endpoint
-router.get("/auth-endpoint", authenticateToken, async (req, res) => {
-    res.json({ message: "You are authorized to access me" });
-  });
 
 export default router;

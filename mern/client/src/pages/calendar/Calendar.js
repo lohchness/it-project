@@ -10,7 +10,7 @@ import Navbar from "../../components/Navbar";
 const Calendar = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
-    const tokenValue = cookies.get("USER-TOKEN");
+    const tokenValue = cookies.get("token");
 
     // If token does not exist, redirect to login page
     useEffect(() => {

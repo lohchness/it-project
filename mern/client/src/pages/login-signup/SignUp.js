@@ -9,7 +9,7 @@ import "./style.css";
 const SignUp = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
-    const tokenValue = cookies.get("USER-TOKEN");
+    const tokenValue = cookies.get("token");
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");

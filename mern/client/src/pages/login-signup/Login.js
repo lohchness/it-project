@@ -9,7 +9,7 @@ import "./style.css";
 const Login = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
-    const tokenValue = cookies.get("USER-TOKEN");
+    const tokenValue = cookies.get("token");
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -49,7 +49,7 @@ const Login = () => {
                 console.log("token: ", result.data.token);
 
                 // set the cookie
-                cookies.set("USER-TOKEN", result.data.token, {
+                cookies.set("token", result.data.token, {
                     path: "/",
                 });
                 
