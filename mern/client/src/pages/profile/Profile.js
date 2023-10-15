@@ -1,4 +1,6 @@
-import { useCallback } from "react";
+import { React, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 
 import ContactHistorySectionContainer from "../../components/profile/ContactHistorySectionContainer";
 import NoteSectionContainer from "../../components/profile/NoteSectionContainer";
@@ -6,11 +8,25 @@ import ExperienceSection from "../../components/profile/ExperienceSection";
 import UpcomingEventsSectionContainer from "../../components/profile/UpcomingEventsSectionContainer";
 import ContactFormContainer from "../../components/profile/ContactFormContainer";
 
-import Header from "../../components/Header";
+import Navbar from "../../components/Navbar";
 import styles from "./Profile.module.css";
 
 const Profile = () => {
+    const navigate = useNavigate();
+    const cookies = new Cookies();
+    const tokenValue = cookies.get("token");
 
+    // If token does not exist, redirect to login page
+    useEffect(() => {
+        if (!tokenValue) {
+            navigate("/login");
+        }
+    }, []);
+
+    // Check to see if JWT token exists before laoding page
+    if (!tokenValue) {
+        navigate("/login");
+    } 
     return (
         <div className={styles.profile}>
             <div className={styles.profilecrmFrame}>
@@ -37,7 +53,7 @@ const Profile = () => {
                     <ContactFormContainer />
                 </div>
             </div>
-            <Header />
+            <Navbar />
 
         </div>
     );

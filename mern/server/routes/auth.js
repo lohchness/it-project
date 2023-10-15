@@ -4,12 +4,36 @@ import bodyParser from 'body-parser';
 import bcrypt, { hash } from "bcrypt";
 import jwt from "jsonwebtoken";
 
-import {connectToDB} from "../db/conn.mjs";
+import { connectToDB } from "../db/conn.mjs";
 import User from "../models/User.js"
 
 const router = express.Router();
-
 connectToDB();
+
+export const decodeToken = async (request, response, next) => {
+    try {
+        //   get the token from the authorization header
+        const token = await request.headers.authorization.split(" ")[1];
+
+        //check if the token matches the supposed origin
+        const decodedToken = await jwt.verify(token, "token");
+
+        // retrieve the user details of the logged in user
+        const user = await decodedToken;
+
+        // pass the user down to the endpoints here
+        request.user = user;
+
+        response.status(200).json({
+            user
+        });
+
+    } catch (error) {
+        response.status(401).json({
+            error: new Error("Invalid request!"),
+        });
+    }
+};
 
 // Registration endpoint
 router.post("/register", async (req, res) => {
@@ -29,7 +53,7 @@ router.post("/register", async (req, res) => {
                         email: req.body.email,
                         password: hashedPassword,
                     });
-                    
+
                     // Save new user to database
                     user
                         .save()
@@ -57,12 +81,12 @@ router.post("/register-additional-info", async (req, res) => {
 
     // Find user in database and update with additional info
     await User.findOneAndUpdate(
-        {email: req.body.email}, 
-        {phoneNumber: req.body.phoneNumber, about: req.body.about}
+        { email: req.body.email },
+        { phoneNumber: req.body.phoneNumber, about: req.body.about }
     ).then(
         res.status(200).send({
             message: "User info updated",
-    }));
+        }));
 });
 
 // Login endpoint
@@ -90,8 +114,8 @@ router.post("/login", async (req, res) => {
                             userId: user._id,
                             userEmail: user.email,
                         },
-                        "RANDOM-TOKEN",
-                        { expiresIn: "24h" }
+                        "token",
+                        { expiresIn: "7 days" },
                     );
 
                     res.status(200).send({
@@ -117,7 +141,7 @@ router.post("/login", async (req, res) => {
                 e,
             });
         });
-        
+
 });
 
 // Password reset request endpoint
@@ -126,25 +150,25 @@ router.post("/request-password-reset", async (req, res) => {
 
     // Check if email exists in the database
     User.findOne({ email: req.body.email })
-    .then((user) => {
-        if (!user) {
-            res.status(500).send({
-                message: "Email not found",
-            });
-        } else {
-            // TODO: Send email containing verification code
-            res.status(200).send({
-                message: "Password reset email sent",
-            });
-        }
-    })
+        .then((user) => {
+            if (!user) {
+                res.status(500).send({
+                    message: "Email not found",
+                });
+            } else {
+                // TODO: Send email containing verification code
+                res.status(200).send({
+                    message: "Password reset email sent",
+                });
+            }
+        })
 });
 
 // verify confirmation code
 router.post("/verify-confirmation-code", async (req, res) => {
     console.log(req.body.confirmationCode);
 
-   // TODO: Confirm verification code is valid
+    // TODO: Confirm verification code is valid
     res.status(200).send({
         message: "Confirmation code is valid",
     });
@@ -162,15 +186,14 @@ router.post("/reset-password", async (req, res) => {
 
                     // Find user in database and update their stored password hash
                     User.findOneAndUpdate(
-                        {email: req.body.email}, 
-                        {password: hashedPassword}
+                        { email: req.body.email },
+                        { password: hashedPassword }
                     ).then(
                         res.status(200).send({
                             message: "Password reset successfully",
-                    }));
+                        }));
                 });
         });
 });
-
 
 export default router;
