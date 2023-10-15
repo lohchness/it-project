@@ -91,7 +91,8 @@ const ForgotPassword = () => {
 
         }
     }
-    // Check to see if JWT token exists
+    
+    // Check to see if JWT token exists before laoding page
     if (tokenValue) {
         navigate("/dashboard");
     } else {
