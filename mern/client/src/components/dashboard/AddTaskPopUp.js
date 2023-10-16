@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import "./AddTaskPopUp.css";
 
+import { SERVER_URL } from "../../index.js";
+
 export default function AddTask({onClose}) {
 
   const [form, setForm] = useState({
@@ -24,7 +26,7 @@ export default function AddTask({onClose}) {
   // When a post request is sent to the create url, we'll add a new record to the database.
   const newTask = { ...form };
 
-  await fetch("http://localhost:5050/task", {
+  await fetch(SERVER_URL + "/task", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

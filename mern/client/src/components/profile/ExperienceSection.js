@@ -4,6 +4,7 @@ import PortalPopup from "../PortalPopup";
 //import Experience from "./Experience";
 //import styles from "./ExperienceSection.module.css";
 import styles from "./NoteSectionContainer.module.css";
+import { SERVER_URL } from "../../index.js";
 
 const Experience = (props) => (
   //<div className = "row-wrapper">
@@ -39,7 +40,7 @@ const Experience = (props) => (
   // This method fetches the records from the database.
   useEffect(() => {
     async function getExperiences() {
-      const response = await fetch(`http://localhost:5050/experience/`);
+      const response = await fetch(SERVER_URL + `/experience/`);
   
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
@@ -57,7 +58,7 @@ const Experience = (props) => (
 
  // This method will delete a record
  async function deleteExperience(id) {
-  await fetch(`http://localhost:5050/experience/${id}`, {
+  await fetch(SERVER_URL + `/experience/${id}`, {
     method: "DELETE"
   });
 

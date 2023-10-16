@@ -3,6 +3,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
+import { SERVER_URL } from "../../index.js";
 
 const Note = (props) => (
   //<div className = "row-wrapper">
@@ -39,7 +40,7 @@ export default function NoteContainer() {
 // This method fetches the records from the database.
 useEffect(() => {
   async function getNotes() {
-    const response = await fetch(`http://localhost:5050/note/`);
+    const response = await fetch(SERVER_URL + `/note/`);
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -57,7 +58,7 @@ useEffect(() => {
 
  // This method will delete a record
  async function deleteNote(id) {
-  await fetch(`http://localhost:5050/note/${id}`, {
+  await fetch(SERVER_URL + `/note/${id}`, {
     method: "DELETE"
   });
 

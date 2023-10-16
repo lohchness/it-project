@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./ExperiencePopUp.module.css";
 
-
+import { SERVER_URL } from "../../index.js";
 
 export default function ExperiencePopUp({ onClose }) {
 
@@ -26,7 +26,7 @@ export default function ExperiencePopUp({ onClose }) {
   // When a post request is sent to the create url, we'll add a new record to the database.
   const newExperience = { ...form };
 
-  await fetch("http://localhost:5050/experience", {
+  await fetch(SERVER_URL + "/experience", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

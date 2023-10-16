@@ -2,6 +2,7 @@ import React, { useEffect, useState, useCallback } from "react";
 import AddTaskPopUp from "./AddTaskPopUp";
 import PortalPopup from "../PortalPopup";
 import "./TaskContainer.css";
+import { SERVER_URL } from "../../index.js";
 
 const Task = (props) => (
  <div className = "row-wrapper">
@@ -37,7 +38,7 @@ export default function TaskContainer() {
  // This method fetches the records from the database.
  useEffect(() => {
   async function getTasks() {
-    const response = await fetch(`http://localhost:5050/task/`);
+    const response = await fetch(SERVER_URL + "/task/");
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -56,7 +57,7 @@ export default function TaskContainer() {
 
  // This method will delete a record
  async function deleteTask(id) {
-  await fetch(`http://localhost:5050/task/${id}`, {
+  await fetch(SERVER_URL + `/task/${id}`, {
     method: "DELETE"
   });
 
