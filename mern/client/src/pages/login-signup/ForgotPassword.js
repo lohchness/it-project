@@ -5,6 +5,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 
 import "./style.css";
+import { SERVER_URL } from "../../index.js";
 
 const ForgotPassword = () => {
     const navigate = useNavigate();
@@ -40,7 +41,7 @@ const ForgotPassword = () => {
             if (passwordResetStep == 1) {
                 configuration = {
                     method: "post",
-                    url: "http://localhost:5050/auth/request-password-reset",
+                    url: SERVER_URL + "/auth/request-password-reset",
                     data: {
                         email
                     },
@@ -49,7 +50,7 @@ const ForgotPassword = () => {
             } else if (passwordResetStep == 2) {
                 configuration = {
                     method: "post",
-                    url: "http://localhost:5050/auth/verify-confirmation-code",
+                    url: SERVER_URL + "/auth/verify-confirmation-code",
                     data: {
                         confirmationCode
                     },
@@ -71,7 +72,7 @@ const ForgotPassword = () => {
         else {
             configuration = {
                 method: "post",
-                url: "http://localhost:5050/auth/reset-password",
+                url: SERVER_URL + "/auth/reset-password",
                 data: {
                     email,
                     password

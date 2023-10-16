@@ -5,6 +5,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 
 import "./style.css";
+import {SERVER_URL} from "../../index.js";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -36,7 +37,7 @@ const Login = () => {
         // set configurations
         const configuration = {
             method: "post",
-            url: "http://localhost:5050/auth/login",
+            url: SERVER_URL + "/auth/login",
             data: {
                 email,
                 password,

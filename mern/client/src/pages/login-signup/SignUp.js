@@ -5,6 +5,7 @@ import axios from "axios";
 import Cookies from "universal-cookie";
 
 import "./style.css";
+import {SERVER_URL} from "../../index.js";
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -45,7 +46,7 @@ const SignUp = () => {
         if (signUpStep < 2) {
             configuration = {
                 method: "post",
-                url: "http://localhost:5050/auth/register",
+                url: SERVER_URL + "/auth/register",
                 data: {
                     firstName,
                     lastName,
@@ -72,7 +73,7 @@ const SignUp = () => {
 
             configuration = {
                 method: "post",
-                url: "http://localhost:5050/auth/register-additional-info",
+                url: SERVER_URL + "/auth/register-additional-info",
                 data: {
                     email,
                     about,
