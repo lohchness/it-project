@@ -7,7 +7,7 @@
 }
 
 .pages-wrapper {
-    margin: 0px 5%;
+    margin: 0% -5%;
     text-align: center;
     font-size: var(--font-size-lg);
     color: var(--color-snow);
@@ -46,7 +46,7 @@
     border: none;
     color: var(--color-snow);
     margin-left: auto;
-    margin-right: 5%;
+    margin-right: 20%;
     float: right;
 }
 

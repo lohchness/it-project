@@ -89,7 +89,7 @@ export default function TaskContainer() {
         <button className="add-task" onClick={openAddTaskPopUp}>+ Add Task</button>
       {isAddTaskPopUpOpen && (
         <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.4)"
+          overlayColor="rgba(0, 0, 0, 0)"
           placement="Centered"
           onOutsideClick={closeAddTaskPopUp}
         >

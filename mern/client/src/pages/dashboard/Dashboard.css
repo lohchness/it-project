@@ -1,4 +1,5 @@
 .dashboard {
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
     margin: auto;

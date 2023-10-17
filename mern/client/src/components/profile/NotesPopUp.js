@@ -45,7 +45,7 @@ export default function NotesPopUp({ onClose }) {
   return (
     <div className={styles.NotesPopUp}>
       <form onSubmit={onSubmit}>
-        <div className="popup">
+        <div className="popup notes-popup">
         <input 
           className={styles.notes}
           placeholder="Note header" 
