@@ -9,6 +9,8 @@ import auth from "./routes/auth.js";
 import experience from "./routes/experience.js";
 import user from "./routes/user.js";
 import profile from "./routes/profile.js";
+import events from "./routes/event.js";
+import experience from "./routes/experience.js";
 
 const PORT = 5050;
 const app = express();
@@ -37,6 +39,8 @@ app.use("/auth", auth);
 app.use("/experience", experience);
 app.use("/profile", profile);
 app.use("/user", user)
+app.use("/event", events);
+app.use("/experience", experience);
 
 // start the Express server
 app.listen(PORT, () => {

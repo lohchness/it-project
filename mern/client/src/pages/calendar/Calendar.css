@@ -15,10 +15,19 @@
     background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255));
 }
 
+.calendar Header {
+  height:10%;
+}
 .calendar-crm-container {
     position: relative;
     text-align: right;
     color: var(--color-lightseagreen);
+  position: relative;
+  top: 10%;
+  right:10%;
+  line-height: 150%;
+  text-align: right;
+  color: var(--color-lightseagreen);
 }
 
 .calendar-crm-container .span {

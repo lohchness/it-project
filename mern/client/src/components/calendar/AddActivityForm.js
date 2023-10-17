@@ -1,52 +1,108 @@
 import "./AddActivityForm.css";
-const AddActivityForm = () => {
+import React, { useState } from "react";
+
+export default function AddActivityForm() {
+
+  const [form, setForm] = useState({
+    description: "",
+    date: "",
+    fromTime: "",
+    toTime: "",
+    location: "",
+  })
+
+  function updateForm(value) {
+    return setForm((prev) => {
+      return { ...prev, ...value};
+    })
+  }
+
+  async function onSubmit(e) {
+    e.preventDefault();
+    const newEvent = {...form};
+
+    await fetch("http://localhost:5050/event", {
+      method: "POST",
+      headers: {
+        "Content-Type" : "application/json",
+      },
+      body: JSON.stringify(newEvent),
+    })
+    .catch(error => {
+      window.alert(error);
+      return;
+    });
+
+    setForm({description:"", date:"", fromTime:"",toTime:"",location:""});
+    window.location.reload();
+  }
+
   return (
     <div className="add-activity">
-      <img className="add-activity-child" alt="" src="/undefined16.png" />
       <div className="heading-wrapper">
-        <div className="heading">Add Activity</div>
-      </div>
-      <div className="activity-type">
-        <div className="event">Type:</div>
-        <div className="event-button">
-          <div className="event">Event</div>
+          <div className="heading">Add Activity</div>
         </div>
-        <div className="task-button">
-          <div className="event">Task</div>
+        <div className="activity-type">
+          <div className="event">Type:</div>
+          <div className="event-button">
+            <div className="event">Event</div>
+          </div>
+          <div className="task-button">
+            <div className="event">Task</div>
+          </div>
         </div>
-      </div>
-      <textarea 
+      <form onSubmit={onSubmit}>  
+        <textarea 
           placeholder="Description" 
           type="text"
+          value={form.description}
+          onChange={(e) => updateForm({description: e.target.value})}
           />
-      <div className="date-wrapper">
-        <div className="date">Date:</div>
-        <input className="ddmmyy" placeholder="dd/mm/yyyy" type="text" />
-      </div>
-      <div className="time-wrapper">
-        <div>Time:</div>
-        <div className="input-wrapper">
-          <label>From:
-            <input className="time-input" type="text" />
-          </label>
-          <div/>
-          <label>To:
-            <input className="time-input" type="text" />
-          </label>
+        <div className="date-wrapper">
+          <div className="date">Date:</div>
+          <input 
+            className="ddmmyy" 
+            placeholder="dd/mm/yyyy" 
+            type="text"
+            value={form.date}
+            onChange={(e) => updateForm({date: e.target.value})}
+           />
         </div>
-      </div>
-      <div className="location-wrapper">
-        <div style={{marginTop:"15px"}}>Location:</div>
-        <textarea  
-          placeholder="location"
-          type="text"
+        <div className="time-wrapper">
+          <div>Time:</div>
+          <div className="input-wrapper">
+            <label>From:
+              <input 
+                className="time-input" 
+                type="text" 
+                value={form.fromTime}
+                onChange={(e) => updateForm({fromTime: e.target.value})}
+              />
+            </label>
+            <div/>
+            <label>To:
+              <input 
+                className="time-input" 
+                type="text" 
+                value={form.toTime}
+                onChange={(e) => updateForm({toTime: e.target.value})}
+              />
+            </label>
+          </div>
+        </div>
+        <div className="location-wrapper">
+          <div style={{marginTop:"15px"}}>Location:</div>
+          <textarea  
+           placeholder="location"
+           type="text"
+           value={form.location}
+           onChange={(e) => updateForm({location: e.target.value})}
           />
-      </div>
-      <button className="submit-button">
-        <div className="submit">Submit</div>
-      </button>
+        </div>
+        <button className="submit-button">
+          <div className="submit">Submit</div>
+        </button>
+      </form>
     </div>
   );
 };
-
-export default AddActivityForm;

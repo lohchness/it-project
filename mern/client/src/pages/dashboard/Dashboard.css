@@ -11,7 +11,7 @@
     color: var(--color-white);
     font-family: var(--font-poppins);
 }
-
+.dashboard 
 .dashboard-widget {
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
@@ -96,6 +96,31 @@
     color: #38cdd0;
     display: inline-block;
     flex-shrink: 0;
+}
+.monthly-connections {
+  position: absolute;
+  top: 43.5%;
+  left: 46.7%;
+  border-radius: var(--br-3xs);
+  background-color: #8891B4;
+  height: 30%;
+  width:14.5%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding-sm) var(--padding-base);
+  box-sizing: border-box;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 28px;
+}
+.connections-made-this,
+.monthly-connect {
+  font-size: var(--font-size-base);
+  position: relative;
+  display: inline-block;
+  width: 179px;
+  height: 63px;
+  flex-shrink: 0;
 }
 
 .monthly-connect {
