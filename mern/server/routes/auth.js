@@ -168,10 +168,17 @@ router.post("/request-password-reset", async (req, res) => {
 router.post("/verify-confirmation-code", async (req, res) => {
     console.log(req.body.confirmationCode);
 
-    // TODO: Confirm verification code is valid
-    res.status(200).send({
-        message: "Confirmation code is valid",
-    });
+    // TODO: Confirm verification code is valid. For now, let 12345 be default code
+    if (req.body.confirmationCode=="12345"){
+        res.status(200).send({
+            message: "Confirmation code is valid",
+        });
+    } else {
+        res.status(500).send({
+            message: "Incorrect verification code",
+        });
+    }
+    
 });
 
 // Password reset endpoint
