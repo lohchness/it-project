@@ -13,7 +13,7 @@
   left: 5px;
   width: 736px;
   height: 1px;
-  z-index: 1;
+  z-index: 0;
 }
 .headerChild {
   position: absolute;
@@ -56,7 +56,7 @@
   left: 5px;
   width: 727px;
   height: 24.45px;
-  z-index: 2;
+  z-index: 0;
 }
 .date,
 .description,
@@ -99,6 +99,7 @@
   font-size: var(--font-size-sm);
   color: var(--color-gray-500);
   font-family: var(--font-poppins);
+  z-index: 0;
 }
 .upcomingEventsSection {
   border-radius: var(--br-3xs);
@@ -113,4 +114,5 @@
   font-size: var(--font-size-smi);
   color: var(--color-gray-600);
   font-family: var(--font-open-sans);
+  z-index: 0;
 }

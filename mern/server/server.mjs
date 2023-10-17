@@ -8,6 +8,7 @@ import notes from "./routes/note.js";
 import auth from "./routes/auth.js";
 import experience from "./routes/experience.js";
 import user from "./routes/user.js";
+import profile from "./routes/profile.js";
 
 const PORT = 5050;
 const app = express();
@@ -34,6 +35,7 @@ app.use("/task", tasks);
 app.use("/note", notes);
 app.use("/auth", auth);
 app.use("/experience", experience);
+app.use("/profile", profile);
 app.use("/user", user)
 
 // start the Express server

@@ -6,22 +6,18 @@ import styles from "./NoteSectionContainer.module.css";
 import { SERVER_URL } from "../../index.js";
 
 const Note = (props) => (
-  //<div className = "row-wrapper">
-   <tr height = "30px">
-    <td>{props.note.header}
-    <td width = "80%">{props.note.description}</td>
-     <td>
-       <button className="delete-button"
-         onClick={() => {
-           props.deleteNote(props.note._id);
-          }}
-        >
-         <img className={"delete-icon"} alt="" src="/DeleteIcon.png" />
-        </button>
-      </td>
+  <tr>
+    <td>
+      <b>{props.note.header}</b>
+      <br />
+      <div style={{ marginLeft: '20px' }}>{props.note.description}</div>
+    </td>
+    <td>
+      <button className="delete-button" onClick={() => props.deleteNote(props.note._id)}>
+        <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+      </button>
     </td>
   </tr>
-  //</div>
 );
 
 ////////////////////////////
@@ -41,6 +37,7 @@ export default function NoteContainer() {
 useEffect(() => {
   async function getNotes() {
     const response = await fetch(SERVER_URL + `/note/`);
+
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
