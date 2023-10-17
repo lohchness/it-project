@@ -18,7 +18,7 @@ const ConnectionsForm = () => {
         <img
           className="interface-calendar-blank-cale-icon1"
           alt=""
-          src="/undefined7.png"
+          src="/calendar-icon.png"
         />
         <div className="show-more3" onClick={onShowMoreTextClick}>
           Show More

@@ -43,13 +43,7 @@ export default function AddActivityForm() {
           <div className="heading">Add Activity</div>
         </div>
         <div className="activity-type">
-          <div className="event">Type:</div>
-          <div className="event-button">
-            <div className="event">Event</div>
-          </div>
-          <div className="task-button">
-            <div className="event">Task</div>
-          </div>
+          Description:
         </div>
       <form onSubmit={onSubmit}>  
         <textarea 
@@ -63,7 +57,7 @@ export default function AddActivityForm() {
           <input 
             className="ddmmyy" 
             placeholder="dd/mm/yyyy" 
-            type="text"
+            type="date"
             value={form.date}
             onChange={(e) => updateForm({date: e.target.value})}
            />

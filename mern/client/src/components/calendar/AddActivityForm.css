@@ -65,11 +65,12 @@
   justify-content: flex-start;
 }
 .activity-type {
-  top: 50px;
+  top: 55px;
   left: 15px;
   align-items: center;
   gap: var(--gap-xs);
   z-index: 2;
+  font-size: var(--font-size-base);
 }
 .add-activity textarea,
 .location-wrapper textarea{

@@ -2,6 +2,8 @@ import express from "express";
 import {db} from "../db/conn.mjs";
 import { ObjectId } from "mongodb";
 
+import Task from "../models/Task.js"
+
 const router = express.Router();
 
 // This section will help you get a list of all the records.
