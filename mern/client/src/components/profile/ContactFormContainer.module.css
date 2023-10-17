@@ -34,6 +34,8 @@
 .contactNameButton {
     cursor: pointer;
     border: 0;
+    top: 450px;
+    left: 125px;
     padding: var(--padding-2xs) var(--padding-9xl);
     background-color: var(--color-lightseagreen);
     display: flex;
