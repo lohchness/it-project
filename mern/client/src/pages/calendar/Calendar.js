@@ -27,11 +27,11 @@ const Calendar = () => {
             <>
                 <Navbar />
                 <div className="calendar">
-                    <div className="calendar-crm-container">
+                    {/* <div className="calendar-crm-container">
                         <span>Calendar</span>
                         <span className="span">{` `}</span>
                         <span className="crm">{`> CRM`}</span>
-                    </div>
+                    </div> */}
                     <CalendarContainer />
                     <AddActivityForm />
                 </div>

@@ -17,12 +17,13 @@ const ContactFormContainer = () => {
           nameLastName="Name LastName"
           jobPosition="Job position"
         />
-      </div>
-      <ContactInfo
+        <ContactInfo
           email="blah@email.com"
           phoneNumber="+12 34567890"
           address="house, street, city"
         />
+      </div>
+      
       <div className={styles.aboutMeWrapper}>
         <AboutMe mainApp="MAIN APP" />
       </div>

@@ -34,6 +34,7 @@
     width: 100%;
     height: 50px;
     margin-top: -20px;
+    vertical-align: middle;
     text-align: left;
     font-size: var(--font-size-lg);
 }
@@ -70,7 +71,7 @@
 }
 
 .background {
-    margin-top: 18px;
+    margin-top: 3%;
     position: relative;
     width: 90%;
     height: 850px;
@@ -87,7 +88,7 @@
 .bar {
     background-color: transparent;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 15px;
     margin-left: 100px;
 }
 
@@ -124,6 +125,7 @@
     padding-top: 5px;
     width: 100%;
     height: 100%;
+    vertical-align: middle;
 }
 
 .sortBy {
@@ -131,7 +133,7 @@
 }
 
 .sortByContainer {
-    top: 4px;
+    top: 10px;
     left: 55px;
     line-height: 150%;
 }
@@ -143,7 +145,7 @@
 }
 
 .filters1 {
-    top: 0;
+    top: 8px;
     left: 0;
     border-radius: var(--br-8xs);
     background-color: var(--color-lightseagreen);
@@ -152,7 +154,7 @@
 }
 
 .all {
-    top: 3.24px;
+    top: 10px;
     left: 21.21px;
     font-size: var(--font-size-sm);
     font-family: var(--font-inter);
@@ -186,7 +188,7 @@
 
 .registered {
     position: absolute;
-    top: 3px;
+    top: 10px;
     left: 7px;
     font-size: var(--font-size-sm);
     font-family: var(--font-inter);
@@ -214,6 +216,7 @@
 }
 
 .filters3 {
+    top: 8px;
     left: 0;
     border-radius: var(--br-8xs);
     background-color: #444360;
@@ -221,7 +224,7 @@
 
 .madeUp {
     position: absolute;
-    top: 3px;
+    top: 10px;
     left: 9px;
     font-size: var(--font-size-sm);
     font-family: var(--font-inter);
@@ -256,7 +259,7 @@
 
 .filter {
     position: absolute;
-    top: 4px;
+    top: 10px;
     left: 258px;
     line-height: 150%;
     font-weight: 500;

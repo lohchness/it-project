@@ -18,7 +18,7 @@
 
 .headerChild {
     border-radius: var(--br-3xs);
-    background-color: transparent;
+    background-color: var(--color-div-heading);
     width: 727px;
     height: 24.45px;
     mix-blend-mode: normal;
@@ -56,10 +56,11 @@
     margin: 0 !important;
     top: 6.85px;
     left: 5px;
-    width: 100%;
+    width: 99%;
     height: 24.45px;
     z-index: 2;
     background-color: var(--color-div-heading);
+    border-radius: var(--br-3xs);
 }
 
 .date,

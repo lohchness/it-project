@@ -64,7 +64,7 @@
     text-align: center;
     font-family: var(--font-poppins);
     float: right;
-    margin: 10px;
+    margin: -5px 10px;
     cursor: pointer;
     background-color: var(--color-lightseagreen);
     border-radius: 5px;

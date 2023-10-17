@@ -336,8 +336,8 @@
 }
 .calendar1 {
   position: absolute;
-  top: 137px;
-  left: 146px;
+  top: 100px;
+  left: 80px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

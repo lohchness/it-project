@@ -29,10 +29,10 @@ const Dashboard = () => {
             <>
                 <Navbar />
                 <div className="dashboard">
-                    <div className="dashboard-crm-container">
+                    {/* <div className="dashboard-crm-container">
                         <span className="span">{` Dashboard `}</span>
                         <span className="crm">{`> CRM`}</span>
-                    </div>
+                    </div> */}
                     <div className="dashboard-content-container">
                         <ConnectionsContainer />
                         <div className="connection-stats-container">

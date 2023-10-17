@@ -58,7 +58,8 @@
   width: 171px;
 }
 .headerChild {
-  left: 0;
+  position: relative;
+  width: 100%;
   border-radius: var(--br-3xs);
   background-color: var(--color-div-heading);
   width: 181px;

@@ -10,11 +10,14 @@ body {
     color: var(--color-white);
     text-align: center;
     background-color: var(--color-lavender-200);
-    background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255));
-    background-size:auto,cover;
-background-position:top left, center;
-background-attachment:scroll,fixed;
     overflow-x: hidden;
+}
+
+html {
+    /* background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255)); */
+    background-size: cover;
+    background-position: top left, center;
+    background-attachment: scroll, fixed;
 }
 
 html,
