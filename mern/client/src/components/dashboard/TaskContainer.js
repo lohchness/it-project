@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
 import AddTaskPopUp from "./AddTaskPopUp";
 import PortalPopup from "../PortalPopup";
-import "./TaskContainer.css";
 import { SERVER_URL } from "../../index.js";
+
+import "./TaskContainer.css";
+import "../../pages/dashboard/Dashboard.css";
 
 const Task = (props) => (
  <div className = "row-wrapper">
@@ -79,18 +81,12 @@ export default function TaskContainer() {
 }
   // This following section will display the table with the records of individuals.
   return (
-    <div>
-      <div className="tasks">
-        <div className="tasks-heading">
-          <div className="my-tasks">My Tasks</div>
-        </div>
+    <div className="tasks dashboard-widget">
+        <div className="widget-heading">My Tasks</div>
         <table>
           <tbody>{TaskContainer()}</tbody>
         </table>
-        <button className="add-task-container" onClick={openAddTaskPopUp}>
-          <div className="add-task">+ Add Task</div>
-        </button>
-      </div>
+        <button className="add-task" onClick={openAddTaskPopUp}>+ Add Task</button>
       {isAddTaskPopUpOpen && (
         <PortalPopup
           overlayColor="rgba(113, 113, 113, 0.4)"

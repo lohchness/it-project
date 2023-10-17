@@ -1,8 +1,8 @@
 .nav-bar-wrapper {
-    position: absolute;
-    left: 0;
-    background-color: #4A547B;
-    width: 100%;
+    position: relative;
+    background-color: #3d4973;
+    width: 100vw;
+    height: 5%;
     padding: 14px 178px;
 }
 
@@ -46,7 +46,6 @@
     border: none;
     color: var(--color-snow);
     margin-left: auto;
-    padding-left: 50px;
 }
 
 .logout-button :hover {

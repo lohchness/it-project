@@ -3,9 +3,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap");
 
+html {
+    max-height:100vh;
+  overflow:hidden;
+}
 body {
     margin: 0;
     line-height: normal;
+    height: 100%;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 * {
@@ -14,8 +27,8 @@ body {
 }
 
 root {
-    width: 100%;
-    height: 100%;
+    width: 100vh;
+    height: 100vw;
     box-sizing: content-box;
 }
 
@@ -44,7 +57,7 @@ root {
 
     /* Colors */
     --color-lavender-100: #dddeec;
-    --color-lavender-200: rgba(221, 222, 236, 0.5);
+    --color-lavender-200: rgb(245, 245, 255);
     --color-lightseagreen: #1cbabd;
     --color-darkcyan: #0a9fa1;
     --color-white: #fff;
@@ -61,6 +74,11 @@ root {
     --color-gray-600: rgba(255, 255, 255, 0.82);
     --color-steelblue: #6a76a3;
     --color-silver: #bcbec0;
+
+    --color-div-background: #8a95bd;
+    --color-div-heading: #6975a2;
+    --color-text-highlight: #1cbabd;
+    --color-button: #1cbabd;
 
     /* Gaps */
     --gap-3xs: 0.5rem;
