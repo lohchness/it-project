@@ -3,16 +3,17 @@ import AboutMeEditPopUp from "./AboutMeEditPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./ProfilePic.module.css";
 
-const ProfilePic = ({ profilePic, nameLastName, jobPosition }) => {
+export default function ProfilePic({ profilePic, nameLastName, jobPosition }) {
   const [isAboutMeEditPopUpOpen, setAboutMeEditPopUpOpen] = useState(false);
 
   const openAboutMeEditPopUp = useCallback(() => {
-    setAboutMeEditPopUpOpen(true);
+    //setAboutMeEditPopUpOpen(true);
   }, []);
 
   const closeAboutMeEditPopUp = useCallback(() => {
-    setAboutMeEditPopUpOpen(false);
+    //setAboutMeEditPopUpOpen(false);
   }, []);
+
 
   return (
     <>
@@ -60,5 +61,3 @@ const ProfilePic = ({ profilePic, nameLastName, jobPosition }) => {
     </>
   );
 };
-
-export default ProfilePic;

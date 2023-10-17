@@ -23,7 +23,23 @@ const UserSchema = new mongoose.Schema({
     },
     phoneNumber: {
         type: Number,
+    },
+    address: {
+        type: String,
+    },
+    mainApp: {
+        type: String,
+    },
+    position: {
+        type: String,
+    },
+    emailChange: {
+        type: String,
+    },
+    picture: {
+        type: String,
     }
+
 })
 
 const User = mongoose.model("users", UserSchema)

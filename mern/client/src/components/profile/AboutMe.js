@@ -9,9 +9,14 @@ const AboutMe = ({ aboutMeMore, aboutMe1, mainApp }) => {
       </div>
       <div className={styles.aboutMeDescriptionContainer}>
         Some text about me
+        <p className={styles.iAdmD}>
+          {aboutMe1}
+        </p>
       </div>
       <div className={styles.mainApp}>
-        <div className={styles.mainApp1}>{mainApp}</div>
+        <div className={styles.mainApp1}>
+          <b>MainApp: </b> {mainApp}
+        </div>
         <img className={styles.iconCall} alt="" src="/-icon-call1.svg" />
       </div>
     </div>

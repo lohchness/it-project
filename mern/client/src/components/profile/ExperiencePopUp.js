@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./ExperiencePopUp.module.css";
+import stylesNote from "./NotesPopUp.module.css";
 
 import { SERVER_URL } from "../../index.js";
 
@@ -43,43 +44,43 @@ export default function ExperiencePopUp({ onClose }) {
         window.location.reload();
     }
 
-    return (
-        <div className={styles.experiencePopup}>
-            <form onSubmit={onSubmit}>
-                <div className="popup experience-popup" >
-                    <input
-                        className={styles.experience}
-                        placeholder="Experience header"
-                        type="text"
-                        id="position"
-                        value={form.header}
-                        onChange={(e) => updateForm({ header: e.target.value })}
-                        required
-                    />
-                    <div className="description-wrapper">
-                        <textarea
-                            name="description"
-                            placeholder="Description"
-                            type="text"
-                            id="position"
-                            value={form.description}
-                            onChange={(e) => updateForm({ description: e.target.value })}
-                            required
-                        />
-                    </div>
-                    <div className="confirm-button">
-                        <input
-                            type="submit"
-                            value="Confirm"
-                            className="confirm-control"
-                        />
-                    </div>
-                    <button className="cancel-button" onClick={onClose}>
-                        <div className="cancel">Cancel</div>
-                    </button>
-                </div>
-            </form>
+return (
+  <div className={stylesNote.NotesPopUp}>
+      <form onSubmit={onSubmit}>
+        <div className="popup">
+        <input 
+          className={stylesNote.notes}
+          placeholder="Experience header" 
+          type="text" 
+          id="position"
+          value={form.experienceHeader}
+          onChange={(e) => updateForm({experienceHeader: e.target.value})}
+          required
+          />
+        <div className = "description-wrapper">
+          <textarea 
+           name="description" 
+           placeholder="Description" 
+           type="text"
+           id="position"
+           value={form.description}
+           onChange={(e) => updateForm({description: e.target.value })}
+           required
+          />
         </div>
-    );
+        <div className="confirm-button">
+          <input
+           type="submit"
+           value="Confirm"
+           className="confirm-control"
+         />
+        </div>
+        <button className="cancel-button" onClick={onClose}>
+          <div className="cancel">Cancel</div>
+        </button>
+        </div>
+      </form>
+    </div>
+  );
 };
 

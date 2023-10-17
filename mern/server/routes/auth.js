@@ -82,7 +82,9 @@ router.post("/register-additional-info", async (req, res) => {
     // Find user in database and update with additional info
     await User.findOneAndUpdate(
         { email: req.body.email },
-        { phoneNumber: req.body.phoneNumber, about: req.body.about }
+        { phoneNumber: req.body.phoneNumber, about: req.body.about, address: req.body.address,
+          mainApp: req.body.mainApp, position: req.body.position, emailChange: req.body.emailChange,
+          picture: req.body.picture}
     ).then(
         res.status(200).send({
             message: "User info updated",

@@ -18,6 +18,11 @@ const SignUp = () => {
     const [password, setPassword] = useState("");
     const [about, setAbout] = useState("");
     const [phoneNumber, setPhoneNumber] = useState(null);
+    const [picture, setPicture] = useState("");
+    const [position, setPosition ] = useState("");
+    const [address, setAddress] = useState("");
+    const [mainApp, setMainApp] = useState("");
+    const [emailChange, setEmailChange] = useState("");
     const [signUpError, setSignUpError] = useState(null);
     const [signUpStep, setSignUpStep] = useState(1);
 
@@ -77,7 +82,12 @@ const SignUp = () => {
                 data: {
                     email,
                     about,
-                    phoneNumber
+                    phoneNumber,
+                    position,
+                    address,
+                    mainApp,
+                    emailChange,
+                    picture
                 },
             };
 

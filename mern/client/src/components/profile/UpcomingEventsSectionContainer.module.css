@@ -13,7 +13,7 @@
     left: 5px;
     width: 736px;
     height: 1px;
-    z-index: 1;
+    z-index: 0;
 }
 
 .headerChild {
