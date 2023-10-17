@@ -5,6 +5,8 @@ import AboutMe from "./AboutMe";
 import styles from "./ContactFormContainer.module.css";
 import AboutMeEditPopUp from "./AboutMeEditPopUp.js"
 import { useEffect, useState } from "react";
+import Cookies from "universal-cookie";
+//import User from "../models/User.js"
 
 export default function ContactFormContainer() {
   const [profile, setProfile] = useState([]); 
@@ -14,23 +16,51 @@ export default function ContactFormContainer() {
     // Please sync "Messaging" to the project
   }, []);
 
+  const cookies = new Cookies(); 
+  const tokenValue = cookies.get("token"); 
+
   // This method fetches the records from the database.
   useEffect(() => {
-
-    const profileID = "12345"; // random now until u get profile id
-
     async function getProfile() {
       try {
-        //const response = await fetch(`http://localhost:5050/profile/${profileId}`);
-        const response = await fetch(`http://localhost:5050/profile`);
+        //const profileID = await fetch(`http://localhost:5050/user/get-current-user`);
+        //console.log(profileID);
+
+        //const cookies = new Cookies(); 
+        //const tokenValue = cookies.get("token"); 
+
+        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${tokenValue}`
+          }
+        });  
+
+        const emailData = await email.json();
+        const userEmail = emailData.user.userEmail;
+        console.log("get-current-user response json:", emailData.user.userEmail); 
+        console.log("current email", userEmail); 
+
+        const response = await fetch(`http://localhost:5050/user/get-user-by-email?email=${userEmail}`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${tokenValue}`, // Include the JWT token for authentication
+          },
+        });
+
+        //const response = await User.findOne({ email: IDnEmail.email });
+    
+        //const response = await fetch(`http://localhost:5050/user/${profileID}`);
+        //const response = await fetch(`http://localhost:5050/profile`);
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;
           window.alert(message);
           return;
         }
 
-        const profileData = await response.json();
-        setProfile(profileData);
+          const profileData = await response.json();
+          console.log("profile data", profileData); 
+          setProfile(profileData.user);
       } catch (error) {
         console.error("Error fetching profile:", error);
       }
@@ -39,27 +69,32 @@ export default function ContactFormContainer() {
     getProfile();
     //getProfile2();
     // return;
-  }, []);
+  }, [tokenValue]);
 
   const handleSave = async (updatedData) => {
+
     try {
-      const response = await fetch(`http://localhost:5050/profile/${profile._id}`, {
+
+        const response = await fetch(`http://localhost:5050/user/update`, {
         method: "PATCH", // Use the appropriate HTTP method (e.g., PATCH) for updating data
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json", 'Authorization': `Bearer ${tokenValue}`
         },
         body: JSON.stringify(updatedData),
       });
+      
   
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
         window.alert(message);
         return;
       }
-  
+      
+      console.log("handle testing:", response);
       // Assuming your server responds with the updated profile data, you can update your state with it.
-      const updatedProfileData = await response.json();
-      setProfile(updatedProfileData);
+      //const updatedProfileData = await response.json();
+      //setProfile(updatedProfileData);
+      window.location.reload();
     } catch (error) {
       console.error("Error saving profile data:", error);
     }
@@ -74,8 +109,8 @@ export default function ContactFormContainer() {
         {profile && (
           <ProfilePic
             profilePic={profile.profilePic}
-            nameLastName={profile.lastName}
-            jobPosition={profile.jobPosition}
+            nameLastName={profile.firstName + ' ' + profile.lastName}
+            jobPosition={profile.position}
           />
         )}
         {profile && (
@@ -94,7 +129,7 @@ export default function ContactFormContainer() {
       </div>
 
       <div className={styles.aboutMeWrapper}>
-        {profile && <AboutMe mainApp={profile.mainApp} />}
+        {profile && <AboutMe aboutMe1 = {profile.about} mainApp={profile.mainApp} />}
       </div>
 
       {isEditPopupOpen && (

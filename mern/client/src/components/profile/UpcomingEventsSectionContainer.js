@@ -27,7 +27,7 @@ export default function UpcomingEventsSectionContainer() {
       setEvents(events);
     }
   
-    getEvents();
+    //getEvents();
     return;
   }, [events.length]);
 

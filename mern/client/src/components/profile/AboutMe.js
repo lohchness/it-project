@@ -11,18 +11,11 @@ const AboutMe = ({ aboutMeMore, aboutMe1, mainApp }) => {
         <p className={styles.iAdmD}>
           {aboutMe1}
         </p>
-        <p className={styles.iAdmD}>&nbsp;</p>
-        <p className={styles.iAdmD}>{aboutMe1}</p>
-        <p className={styles.iAdmD}>&nbsp;</p>
-        <p className={styles.iAdmD}>
-          {aboutMe1}
-        </p>
-        <p className={styles.iAdmD}>
-          {aboutMe1}
-        </p>
       </div>
       <div className={styles.mainApp}>
-        <div className={styles.mainApp1}>{mainApp}</div>
+        <div className={styles.mainApp1}>
+          <b>MainApp: </b> {mainApp}
+        </div>
         <img className={styles.iconCall} alt="" src="/-icon-call1.svg" />
       </div>
     </div>

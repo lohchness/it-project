@@ -45,26 +45,26 @@ export default function AboutMeEditPopUp({ onClose, currentData, onSave }) {
       />
       <input
         className={styles.email}
-        placeholder="Email"
+        placeholder="Job Position"
         type="text"
-        name="email"
-        value={formData.email}
+        name="position"
+        value={formData.position}
         onChange={handleInputChange}
       />
       <input
         className={styles.mainContact}
         placeholder="Main Contact"
         type="text"
-        name="mainContact"
-        value={formData.mainContact}
+        name="mainApp"
+        value={formData.mainApp}
         onChange={handleInputChange}
       />
       <input
         className={styles.aboutMe}
         placeholder="About Me"
         type="text"
-        name="aboutMe"
-        value={formData.aboutMe}
+        name="about"
+        value={formData.about}
         onChange={handleInputChange}
       />
     </div>
