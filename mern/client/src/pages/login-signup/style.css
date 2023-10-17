@@ -95,7 +95,6 @@ form {
 
 .forgot-password-link {
     text-align: right;
-    font-size: 0.6rem;
     margin: 0.5rem;
     margin-top: 0.2rem;
     cursor: pointer;
@@ -140,6 +139,22 @@ button {
 
 .reset-password-button {
     width: 140px;
+}
+
+.didnt-get-email-note {
+    margin: 0.7rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #dddeec;
+
+}
+
+.resend-code-button {
+    background-color: transparent;
+    border: none;
+    color: #1bdcd2cf;
+    text-decoration: underline;
+    font-size: 0.8rem;
 }
 
 .login-button:hover, .sign-up-button:hover, .continue-button:hover, .reset-password-button:hover {

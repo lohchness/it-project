@@ -132,7 +132,10 @@ const ForgotPassword = () => {
                                 value={confirmationCode}
                                 onChange={(e) => { setConfirmationCode(e.target.value); setError(false) }}
                                 required />
-                            {error && <label className="form-input-error-text">Confirmation code is not valid</label>}
+                            {error && <label className="form-input-error-text">Incorrect confirmation code</label>}
+                            <div className="didnt-get-email-note">Didn't get an email? Check your spam folder or  <button className="resend-code-button">resend.</button> </div> 
+                            <div className="didnt-get-email-note">(Note: Receiving the confirmation code by email is currently not yet implemented, use default code 12345)</div>
+                            
                             <button className="continue-button" type="submit">Continue</button>
                         </form>
                     </>
