@@ -8,18 +8,19 @@ import styles from "./NoteSectionContainer.module.css";
 const Experience = (props) => (
   //<div className = "row-wrapper">
     <tr height = "30px">
+      <td>{props.experience.experienceHeader}
       <td width = "80%">{props.experience.description}</td>
-      <td>{props.experience.experienceHeader}</td>
-      <td>
-        <button className="delete-button"
-          onClick={() => {
-            props.deleteExperience(props.experience._id);
-           }}
-         >
-         <img className="delete-icon" alt="" src="/DeleteIcon.png" />
-         </button>
-       </td>
-     </tr>
+        <td>
+          <button className="delete-button"
+            onClick={() => {
+              props.deleteExperience(props.experience._id);
+            }}
+          >
+            <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+          </button>
+        </td>
+      </td>
+    </tr>
    //</div>
  );
 

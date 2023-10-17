@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./ExperiencePopUp.module.css";
+import stylesNote from "./NotesPopUp.module.css";
 
 
 
@@ -44,16 +45,16 @@ export default function ExperiencePopUp({ onClose }) {
 }
 
 return (
-  <div className={styles.experiencePopup}>
+  <div className={stylesNote.NotesPopUp}>
       <form onSubmit={onSubmit}>
         <div className="popup">
         <input 
-          className={styles.experiences}
-          placeholder="header" 
+          className={stylesNote.notes}
+          placeholder="Experience header" 
           type="text" 
           id="position"
-          value={form.header}
-          onChange={(e) => updateForm({header: e.target.value})}
+          value={form.experienceHeader}
+          onChange={(e) => updateForm({experienceHeader: e.target.value})}
           required
           />
         <div className = "description-wrapper">
