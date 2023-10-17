@@ -1,7 +1,7 @@
 .tasks {
     position: relative;
-    height: 63%;
-    width: 31%;
+    height: 60%;
+    width: 35%;
     align-items: flex-start;
     font-size: var(--font-size-sm);
     color: var(--color-gray-200);

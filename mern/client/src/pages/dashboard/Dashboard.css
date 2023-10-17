@@ -10,12 +10,12 @@
     color: var(--color-white);
     font-family: var(--font-poppins);
     background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255));
+    background-repeat: no-repeat;
 }
 
 .dashboard-widget {
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
-    background-repeat: no-repeat;
     border-radius: 7px;
 }
 
@@ -67,8 +67,8 @@
 }
 
 .connection-stats-container {
-    width: 16%;
-    height: 65%;
+    width: 15%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,18 +105,13 @@
 
 TaskContainer {
     position: relative;
-    height: 56.3%;
-    width: 28%;
 }
 
-ConnectionsForm {
+ConnectionsContainer {
     position: relative;
-    height: 56.3%;
 
 }
 
 UpcomingEventsContainer {
     position: relative;
-    top: 70%;
-    left: 20%;
 }

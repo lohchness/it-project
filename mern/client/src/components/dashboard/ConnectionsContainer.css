@@ -1,8 +1,8 @@
 .connections-container {
     position: relative;
     text-align: center;
-    height: 63%;
-    width: 31%;
+    height: 60%;
+    width: 35%;
     text-align: left;
     font-size: var(--font-size-2xs);
     background-color: var(--color-div-background);
