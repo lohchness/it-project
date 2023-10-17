@@ -1,116 +1,128 @@
 .eveBackground {
-  position: relative;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-lightslategray);
-  width: 741px;
-  height: 178px;
-  z-index: 0;
+    position: relative;
+    border-radius: var(--br-3xs);
+    width: 741px;
+    height: 178px;
+    z-index: 0;
 }
+
 .dividerIcon {
-  position: absolute;
-  margin: 0 !important;
-  top: 110.02px;
-  left: 5px;
-  width: 736px;
-  height: 1px;
-  z-index: 1;
+    position: absolute;
+    margin: 0 !important;
+    top: 110.02px;
+    left: 5px;
+    width: 736px;
+    height: 1px;
+    z-index: 1;
 }
+
 .headerChild {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-slategray);
-  width: 727px;
-  height: 24.45px;
-  mix-blend-mode: normal;
+    border-radius: var(--br-3xs);
+    background-color: transparent;
+    width: 727px;
+    height: 24.45px;
+    mix-blend-mode: normal;
 }
+
 .headingText {
-  position: absolute;
-  top: 3.91px;
-  left: calc(50% - 350.5px);
-  display: inline-block;
-  width: 112px;
-  height: 17.6px;
+    position: absolute;
+    top: 3.91px;
+    left: calc(50% - 350.5px);
+    display: inline-block;
+    width: 112px;
+    height: 17.6px;
 }
+
 .groupIcon {
-  position: relative;
-  width: 14px;
-  height: 10.78px;
+    position: relative;
+    width: 14px;
+    height: 10.78px;
 }
+
 .eventsButton {
-  position: absolute;
-  top: 4.89px;
-  left: 702px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-11xs) var(--padding-12xs);
-  align-items: center;
-  justify-content: center;
+    position: absolute;
+    top: 4.89px;
+    left: 702px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-11xs) var(--padding-12xs);
+    align-items: center;
+    justify-content: center;
 }
+
 .header {
-  position: absolute;
-  margin: 0 !important;
-  top: 6.85px;
-  left: 5px;
-  width: 727px;
-  height: 24.45px;
-  z-index: 2;
+    position: absolute;
+    margin: 0 !important;
+    top: 6.85px;
+    left: 5px;
+    width: 100%;
+    height: 24.45px;
+    z-index: 2;
+    background-color: var(--color-div-heading);
 }
+
 .date,
 .description,
 .location,
 .time {
-  position: absolute;
-  top: 1.96px;
-  left: 0;
-  line-height: 150%;
-  font-weight: 500;
-  display: inline-block;
-  width: 39px;
-  height: 20.54px;
+    position: absolute;
+    top: 1.96px;
+    left: 0;
+    line-height: 150%;
+    font-weight: 500;
+    display: inline-block;
+    width: 39px;
+    height: 20.54px;
 }
+
 .description,
 .location,
 .time {
-  left: 90px;
-  width: 86px;
+    left: 90px;
+    width: 86px;
 }
+
 .location,
 .time {
-  left: 361px;
-  width: 40px;
+    left: 361px;
+    width: 40px;
 }
+
 .location {
-  top: 0;
-  left: 538px;
-  width: 72px;
+    top: 0;
+    left: 538px;
+    width: 72px;
 }
+
 .detailBar {
-  position: absolute;
-  margin: 0 !important;
-  top: 31.3px;
-  left: 5px;
-  width: 610px;
-  height: 22.49px;
-  z-index: 5;
-  text-align: center;
-  font-size: var(--font-size-sm);
-  color: var(--color-gray-500);
-  font-family: var(--font-poppins);
+    position: absolute;
+    margin: 0 !important;
+    top: 31.3px;
+    left: 5px;
+    width: 610px;
+    height: 22.49px;
+    z-index: 5;
+    text-align: center;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    font-family: var(--font-poppins);
 }
+
 .upcomingEventsSection {
-  border-radius: var(--br-3xs);
-  background-color: var(--color-lightslategray);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  position: relative;
-  gap: var(--gap-3xs);
-  text-align: left;
-  font-size: var(--font-size-smi);
-  color: var(--color-gray-600);
-  font-family: var(--font-open-sans);
+    border-radius: var(--br-3xs);
+    background-color: var(--color-lightslategray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    gap: var(--gap-3xs);
+    text-align: left;
+    font-size: var(--font-size-smi);
+    color: var(--color-gray-600);
+    width: 95%;
+    font-family: var(--font-open-sans);
+    box-shadow: 2px 3px 8px #26314d44;
+    background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
 }

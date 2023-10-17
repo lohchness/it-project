@@ -17,23 +17,15 @@ const ContactFormContainer = () => {
           nameLastName="Name LastName"
           jobPosition="Job position"
         />
-        <ContactInfo
+      </div>
+      <ContactInfo
           email="blah@email.com"
           phoneNumber="+12 34567890"
           address="house, street, city"
         />
-      </div>
       <div className={styles.aboutMeWrapper}>
         <AboutMe mainApp="MAIN APP" />
       </div>
-      <button
-        className={styles.contactNameButton}
-        autoFocus={true}
-        disabled={false}
-        onClick={onContactNameButtonClick}
-      >
-        <b className={styles.contactName}>Contact ...Name</b>
-      </button>
     </div>
   );
 };

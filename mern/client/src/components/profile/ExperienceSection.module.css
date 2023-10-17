@@ -41,7 +41,7 @@
   top: 8px;
   left: 5px;
   border-radius: var(--br-3xs);
-  background-color: var(--color-slategray);
+  background-color: var(--color-div-heading);
   flex-direction: row;
   padding: var(--padding-12xs) var(--padding-5xs);
   justify-content: flex-start;

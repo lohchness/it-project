@@ -72,7 +72,7 @@
 .background {
     margin-top: 18px;
     position: relative;
-    width: 70%;
+    width: 90%;
     height: 850px;
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);

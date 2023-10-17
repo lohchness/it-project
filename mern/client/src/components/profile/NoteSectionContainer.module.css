@@ -1,6 +1,6 @@
 .header {
   position: relative;
-  background-color: var(--color-slategray);
+  background-color: var(--color-div-heading);
   padding:2px;
   border-radius: 10px;
 }
@@ -9,7 +9,7 @@
   height:80%;
   border-spacing: 10px 10px;
   display: block;
-  overflow:scroll;
+  overflow-y: scroll;
 }
 .notes {
   margin-left:5px;
@@ -24,12 +24,12 @@
   top: 0;
   left: 0;
   border-radius: var(--br-3xs);
-  background-color: var(--color-lightslategray);
+  background-color: var(--color-div-heading);
   width: 359px;
   height: 406px;
 }
 .headerBackground {
-  background-color: var(--color-slategray);
+    background-color: var(--color-div-heading);
   width: 350px;
   height: 24px;
   mix-blend-mode: normal;
@@ -81,13 +81,16 @@
 }
 .noteSection {
   position: relative;
-  width: 344px;
-  height: 386px;
+  width: 45%;
+  height: 50%;
   text-align: left;
   font-size: var(--font-size-smi);
   color: var(--color-gray-600);
   font-family: var(--font-open-sans);
   margin: 10px;
+  border-radius: 7px;
+  box-shadow: 2px 3px 8px #26314d44;
+    background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
 }
 
 .deleteIcon {

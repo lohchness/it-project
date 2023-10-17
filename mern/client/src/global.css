@@ -3,22 +3,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap");
 
-html {
-    max-height:100vh;
-  overflow:hidden;
-}
 body {
-    margin: 0;
-    line-height: normal;
-    height: 100%;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-family: var(--font-inter);
+    color: var(--color-white);
+    text-align: center;
+    background-color: var(--color-lavender-200);
+    background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255));
 }
 
-html, body {
-    height: 100vh;
-    width: 100vw;
+html,
+body {
+    height: 100%;
+    width: 100%;
     margin: 0px;
     padding: 0px;
-    overflow-x: hidden; 
 }
 
 * {
@@ -27,8 +27,8 @@ html, body {
 }
 
 root {
-    width: 100vh;
-    height: 100vw;
+    width: 100%;
+    height: 100%;
     box-sizing: content-box;
 }
 
