@@ -4,7 +4,7 @@ import PageNumBox from "../../components/connections/Page1";
 import ConnectionComponent from "../../components/connections/ConnectionComponent";
 
 import styles from "./Connections.module.css";
-import Header from "../../components/Header";
+import Header from "../../components/Navbar";
 
 const Connections = () => {
 

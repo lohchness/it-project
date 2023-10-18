@@ -55,7 +55,6 @@ router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates =  {
     $set: {
-
       description: req.body.description,
       duedate: req.body.duedate
     }

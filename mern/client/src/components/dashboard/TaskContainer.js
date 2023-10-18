@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
 import AddTaskPopUp from "./AddTaskPopUp";
 import PortalPopup from "../PortalPopup";
-import { SERVER_URL } from "../../index.js";
-import Cookies from "universal-cookie";
 import "./TaskContainer.css";
 import "../../pages/dashboard/Dashboard.css";
+
+import { SERVER_URL } from "../../index.js";
+import Cookies from "universal-cookie";
 
 const Task = (props) => (
  <div className = "row-wrapper">

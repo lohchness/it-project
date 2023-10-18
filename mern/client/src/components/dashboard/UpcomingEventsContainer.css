@@ -68,26 +68,26 @@
   justify-content: flex-start;
 }
 .event-header {
-  top: 1.5%;
-  left: 0.5%;
-  width:99%;
+  width:100%;
+  padding: 7px 15px;
   border-radius: var(--br-3xs);
-  background-color: var(--color-slategray);
-  padding: var(--padding-12xs) var(--padding-sm);
+  background-color: var( --color-div-heading); 
   box-sizing: border-box;
   font-size: var(--font-size-lg);
   font-family: var(--font-poppins);
+  color: var(--color-white);
 }
 .upcoming-events {
   top: 77%;
-  left: 10.5%;
+  left: 6%;
   height: 42%;
-  width: 80.5%;
+  width: 87%;
   gap: var(--gap-3xs);
   font-size: var(--font-size-base);
-  background-color: var(--color-lightslategray);
-  border-radius: 15px;
+  background-color: var(--color-div-background);
+  border-radius: 7px;
   font-family: var(--font-inter);
+  box-shadow: 2px 3px 8px #26314d44;
 }
 
 

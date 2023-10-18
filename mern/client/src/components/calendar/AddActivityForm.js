@@ -1,5 +1,7 @@
 import "./AddActivityForm.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { SERVER_URL } from "../../index.js";
+import Cookies from "universal-cookie";
 
 export default function AddActivityForm() {
 
@@ -9,7 +11,33 @@ export default function AddActivityForm() {
     fromTime: "",
     toTime: "",
     location: "",
+    email:"",
   })
+
+  useEffect(() => {
+    // Fetch the user's email when the component mounts
+    const cookies = new Cookies();
+    const tokenValue = cookies.get("token");
+
+    fetch(`http://localhost:5050/user/get-current-user`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${tokenValue}`
+      }
+    })
+      .then((response) => response.json())
+      .then((emailData) => {
+        const userEmail = emailData.user.userEmail;
+        // Set the email address in the state
+        setForm((prevForm) => ({
+          ...prevForm,
+          email: userEmail,
+        }));
+      })
+      .catch((error) => {
+        console.error("Error fetching email:", error);
+      });
+  }, []); // The empty dependency array ensures this effect runs once when the component mounts
 
   function updateForm(value) {
     return setForm((prev) => {
@@ -21,7 +49,7 @@ export default function AddActivityForm() {
     e.preventDefault();
     const newEvent = {...form};
 
-    await fetch("http://localhost:5050/event", {
+    await fetch(SERVER_URL +"/event", {
       method: "POST",
       headers: {
         "Content-Type" : "application/json",
@@ -33,7 +61,7 @@ export default function AddActivityForm() {
       return;
     });
 
-    setForm({description:"", date:"", fromTime:"",toTime:"",location:""});
+    setForm({description:"", date:"", fromTime:"",toTime:"",location:"", email: form.email});
     window.location.reload();
   }
 
