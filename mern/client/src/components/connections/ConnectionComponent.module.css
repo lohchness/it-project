@@ -97,10 +97,14 @@
 }
 .connection2 {
   position: relative;
-  width: 923px;
+  width: 100%;
   height: 56px;
   text-align: center;
   font-size: var(--font-size-base);
   color: var(--color-white-100);
   font-family: var(--font-inter);
+}
+
+.connection2 > div {
+    padding: 0px 20px;
 }

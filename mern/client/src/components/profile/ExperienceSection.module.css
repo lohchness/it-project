@@ -41,7 +41,7 @@
   top: 8px;
   left: 5px;
   border-radius: var(--br-3xs);
-  background-color: var(--color-slategray);
+  background-color: var(--color-div-heading);
   flex-direction: row;
   padding: var(--padding-12xs) var(--padding-5xs);
   justify-content: flex-start;
@@ -81,6 +81,6 @@
   text-align: left;
   font-size: var(--font-size-smi);
   color: var(--color-gray-600);
-  font-family: var(--font-open-sans);
+  font-family: var(--font-poppins);
   margin-left: 10px;
 }

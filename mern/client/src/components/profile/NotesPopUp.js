@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./NotesPopUp.module.css";
 
+import { SERVER_URL } from "../../index.js";
+
 export default function NotesPopUp({ onClose }) {
 
   const [form, setForm] = useState({
@@ -23,7 +25,7 @@ export default function NotesPopUp({ onClose }) {
     // When a post request is sent to the create url, we'll add a new record to the database.
     const newNote = { ...form };
   
-    await fetch("http://localhost:5050/note", {
+    await fetch(SERVER_URL + "/note", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +45,7 @@ export default function NotesPopUp({ onClose }) {
   return (
     <div className={styles.NotesPopUp}>
       <form onSubmit={onSubmit}>
-        <div className="popup">
+        <div className="popup notes-popup">
         <input 
           className={styles.notes}
           placeholder="Note header" 

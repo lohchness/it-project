@@ -87,7 +87,7 @@ export default function AddActivityForm() {
         <div className="location-wrapper">
           <div style={{marginTop:"15px"}}>Location:</div>
           <textarea  
-           placeholder="location"
+           placeholder="Location"
            type="text"
            value={form.location}
            onChange={(e) => updateForm({location: e.target.value})}

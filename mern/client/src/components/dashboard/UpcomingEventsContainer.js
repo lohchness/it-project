@@ -1,6 +1,9 @@
 import { useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import "./UpcomingEventsContainer.css";
+
+import "../../pages/dashboard/Dashboard.css";
 
 const Event = (props) => (
   <div className = "event-row">
@@ -15,10 +18,10 @@ const Event = (props) => (
 export default function EventContainer() {
   const [events, setEvents] = useState([]);
 
-  const navigate = useNavigate();
-  const onShowMoreTextClick = useCallback(() => {
-    navigate("/calendar");
-  }, [navigate]);
+    const navigate = useNavigate();
+    const onShowMoreTextClick = useCallback(() => {
+        navigate("/calendar");
+    }, [navigate]);
 
   useEffect(() => {
     async function getEvents() {
