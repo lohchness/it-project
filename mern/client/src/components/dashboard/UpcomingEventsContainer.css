@@ -43,6 +43,7 @@
 }
 .event-bar{
   display: grid;
+  text-align: left;
   position: relative;
   width:100%;
   grid-template-columns: 10% 35% 18% 20%;

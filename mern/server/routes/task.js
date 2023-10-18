@@ -9,11 +9,11 @@ router.get("/", async (req, res) => {
   const userEmail = req.query.email; // Get the userEmail from the query parameter
 
   if (!userEmail) {
-    res.status(400).send("Missing email query parameter");
+    res.status(400).send("Email is required to fetch tasks.");
     return;
   }
   let collection = await db.collection("tasks");
-  let results = await collection.find({}).toArray();
+  let results = await collection.find({ email: userEmail}).toArray();
   res.send(results).status(200);
 });
 
