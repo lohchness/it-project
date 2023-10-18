@@ -19,7 +19,7 @@
 .contactHistory {
     position: absolute;
     top: 3px;
-    margin-left: 10px;
+    left: calc(50% - 351px);
     display: inline-block;
     width: 100%;
     height: 22px;

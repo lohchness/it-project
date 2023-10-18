@@ -6,6 +6,7 @@ import styles from "./ContactFormContainer.module.css";
 import AboutMeEditPopUp from "./AboutMeEditPopUp.js"
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
+//import User from "../models/User.js"
 
 export default function ContactFormContainer() {
   const [profile, setProfile] = useState([]); 
@@ -34,8 +35,11 @@ export default function ContactFormContainer() {
             'Authorization': `Bearer ${tokenValue}`
           }
         });  
+
         const emailData = await email.json();
         const userEmail = emailData.user.userEmail;
+        console.log("get-current-user response json:", emailData.user.userEmail); 
+        console.log("current email", userEmail); 
 
         const response = await fetch(`http://localhost:5050/user/get-user-by-email?email=${userEmail}`, {
           method: 'GET',
@@ -55,6 +59,7 @@ export default function ContactFormContainer() {
         }
 
           const profileData = await response.json();
+          console.log("profile data", profileData); 
           setProfile(profileData.user);
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -115,13 +120,13 @@ export default function ContactFormContainer() {
             address={profile.address}
           />
         )}
-      </div>
-      <button
+        <button
           className={styles.editButton}
           onClick={() => setEditPopupOpen(true)}
         >
           Edit
         </button>
+      </div>
       <div className={styles.aboutMeWrapper}>
         {profile && <AboutMe aboutMe1 = {profile.about} mainApp={profile.mainApp} />}
       </div>

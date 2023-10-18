@@ -1,105 +1,85 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import styles from "./ExperiencePopUp.module.css";
+import stylesNote from "./NotesPopUp.module.css";
+
 import { SERVER_URL } from "../../index.js";
-import Cookies from "universal-cookie";
 
 export default function ExperiencePopUp({ onClose }) {
-  const [form, setForm] = useState({
-    description: "",
-    experienceHeader: "",
-    email: "", // Initialize email as an empty string
-  });
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    // Fetch the user's email when the component mounts
-    const cookies = new Cookies();
-    const tokenValue = cookies.get("token");
-
-    fetch(`http://localhost:5050/user/get-current-user`, {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${tokenValue}`
-      }
-    })
-      .then((response) => response.json())
-      .then((emailData) => {
-        const userEmail = emailData.user.userEmail;
-        // Set the email address in the state
-        setForm((prevForm) => ({
-          ...prevForm,
-          email: userEmail,
-        }));
-      })
-      .catch((error) => {
-        console.error("Error fetching email:", error);
-      });
-  }, []); // The empty dependency array ensures this effect runs once when the component mounts
-
-  function updateForm(value) {
-    return setForm((prev) => {
-      return { ...prev, ...value };
+    const [form, setForm] = useState({
+        description: "",
+        experienceHeader: "",
     });
-  }
+    const navigate = useNavigate();
 
-  async function onSubmit(e) {
-    e.preventDefault();
-    const newExperience = { ...form };
-
-    const response = await fetch(SERVER_URL + "/experience", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newExperience),
-    });
-
-    if (!response.ok) {
-      window.alert("Error creating a new experience.");
-      return;
+    // These methods will update the state properties.
+    function updateForm(value) {
+        return setForm((prev) => {
+            return { ...prev, ...value };
+        });
     }
 
-    setForm({ description: "", experienceHeader: "", email: form.email }); // Reset form, keeping the email
-    window.location.reload();
-  }
+    // This function will handle the submission.
+    async function onSubmit(e) {
+        e.preventDefault();
 
-  return (
-    <div className={styles.experiencePopup}>
-      <form onSubmit={onSubmit}>
-        <div className="popup experience-popup">
-          <input
-            className={styles.experience}
-            placeholder="Experience header"
-            type="text"
-            id="position"
-            value={form.experienceHeader}
-            onChange={(e) => updateForm({ experienceHeader: e.target.value })}
-            required
-          />
-          <div className="description-wrapper">
-            <textarea
-              name="description"
-              placeholder="Description"
-              type="text"
-              id="position"
-              value={form.description}
-              onChange={(e) => updateForm({ description: e.target.value })}
-              required
-            />
-          </div>
-          <div className="confirm-button">
-            <input
-              type="submit"
-              value="Confirm"
-              className="confirm-control"
-            />
-          </div>
-          <button className="cancel-button" onClick={onClose}>
-            <div className="cancel">Cancel</div>
-          </button>
+        // When a post request is sent to the create url, we'll add a new record to the database.
+        const newExperience = { ...form };
+
+        await fetch(SERVER_URL + "/experience", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newExperience),
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
+
+        setForm({ description: "", experienceHeader: "" });
+        //navigate("/");
+        window.location.reload();
+    }
+    return (
+        <div className={styles.experiencePopup}>
+            <form onSubmit={onSubmit}>
+                <div className="popup experience-popup" >
+                    <input
+                        className={styles.experience}
+                        placeholder="Experience header"
+                        type="text"
+                        id="position"
+                        value={form.header}
+                        onChange={(e) => updateForm({ header: e.target.value })}
+                        required
+                    />
+                    <div className="description-wrapper">
+                        <textarea
+                            name="description"
+                            placeholder="Description"
+                            type="text"
+                            id="position"
+                            value={form.description}
+                            onChange={(e) => updateForm({ description: e.target.value })}
+                            required
+                        />
+                    </div>
+                    <div className="confirm-button">
+                        <input
+                            type="submit"
+                            value="Confirm"
+                            className="confirm-control"
+                        />
+                    </div>
+                    <button className="cancel-button" onClick={onClose}>
+                        <div className="cancel">Cancel</div>
+                    </button>
+                </div>
+            </form>
         </div>
-      </form>
-    </div>
-  );
-}
+    );
+};
+

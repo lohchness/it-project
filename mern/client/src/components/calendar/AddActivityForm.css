@@ -1,6 +1,6 @@
 .add-activity {
     top: 100px;
-    left: 980px;
+    left: 950px;
     align-items: flex-start;
     justify-content: flex-start;
     gap: var(--gap-3xs);
@@ -130,7 +130,6 @@
 }
 
 .ddmmyy {
-    color: white;
     border: 0;
     font-family: var(--font-poppins);
     font-size: var(--font-size-sm);
@@ -169,7 +168,6 @@
 }
 
 .time-input {
-    color: white;
     margin: 8px;
     top: 9px;
     border: none;

@@ -16,19 +16,18 @@
 }
 
 .calendar Header {
-    height: 10%;
+  height:10%;
 }
-
 .calendar-crm-container {
     position: relative;
     text-align: right;
     color: var(--color-lightseagreen);
-    position: relative;
-    top: 10%;
-    right: 10%;
-    line-height: 150%;
-    text-align: right;
-    color: var(--color-lightseagreen);
+  position: relative;
+  top: 10%;
+  right:10%;
+  line-height: 150%;
+  text-align: right;
+  color: var(--color-lightseagreen);
 }
 
 .calendar-crm-container .span {
@@ -37,9 +36,4 @@
 
 .calendar-crm-container .crm {
     color: var(--color-slategray);
-}
-
-.calendar-activity-form-container {
-    position: relative;
-    margin: 0 20%;
 }

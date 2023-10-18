@@ -75,7 +75,7 @@
 .blah {
   left: calc(50% - 73.5px);
   display: inline-block;
-  width: 200px;
+  width: 85px;
   height: 19px;
 }
 .header {

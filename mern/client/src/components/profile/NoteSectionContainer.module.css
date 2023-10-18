@@ -3,7 +3,7 @@
     background-color: var(--color-div-heading);
     padding: 2px;
     border-radius: 10px;
-    height: 30px;
+    height: 25px;
 }
 
 .noteSection table {
@@ -16,8 +16,7 @@
 
 .notes {
     margin-left: 5px;
-    top: 5px;
-    position: relative;
+    font-weight: bold;
 }
 
 .noteTable {
@@ -49,10 +48,9 @@
 }
 
 .addNoteButton {
-    color: white;
     position: relative;
     float: right;
-    height: 25px;
+    height: 20px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -61,11 +59,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    background-color: var(--color-lightseagreen);
-    border: none;
-    padding:  0px 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
 }
 
 .individualNotes {

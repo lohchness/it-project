@@ -21,14 +21,14 @@
     background-color: var(--color-div-heading);
     width: 100%;
     margin-top: -1%;
-    height: 35px;
+    height: 30px;
     mix-blend-mode: normal;
 }
 
 .headingText {
     position: absolute;
     top: 3px;
-    margin-left: 10px;
+    left: calc(50% - 350.5px);
     display: inline-block;
     height: 17.6px;
 }
@@ -100,7 +100,7 @@
 .detailBar {
     position: absolute;
     margin: 0 !important;
-    top: 42px;
+    top: 31.3px;
     left: 5px;
     width: 610px;
     height: 22.49px;

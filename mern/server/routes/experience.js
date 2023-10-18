@@ -6,16 +6,8 @@ const router = express.Router();
 
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
-  const userEmail = req.query.email; // Get the userEmail from the query parameter
-
-  if (!userEmail) {
-    res.status(400).send("Missing email query parameter");
-    return;
-  }
-
   let collection = await db.collection("experiences");
-  let results = await collection.find({ email: userEmail }).toArray();
-
+  let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
 
@@ -32,7 +24,6 @@ router.get("/:id", async (req, res) => {
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
   let newDocument = {
-    email: req.body.email,
     description: req.body.description,
     experienceHeader: req.body.experienceHeader,
   };
@@ -46,7 +37,6 @@ router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates =  {
     $set: {
-      email: req.body.email,
       description: req.body.description,
       experienceHeader: req.body.experienceHeader
     }

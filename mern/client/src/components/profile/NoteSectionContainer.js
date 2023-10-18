@@ -4,8 +4,6 @@ import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
 import { SERVER_URL } from "../../index.js";
-import Cookies from "universal-cookie";
-
 
 const Note = (props) => (
   <tr>
@@ -35,63 +33,48 @@ export default function NoteContainer() {
     setNotesPopUpOpen(false);
   }, []);
 
-  const cookies = new Cookies(); 
-  const tokenValue = cookies.get("token"); 
-
 // This method fetches the records from the database.
 useEffect(() => {
   async function getNotes() {
-    try {
-      const email = await fetch(`http://localhost:5050/user/get-current-user`, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${tokenValue}`
-        }
-      }); 
-      const emailData = await email.json();
-      const userEmail = emailData.user.userEmail;
+    const response = await fetch(SERVER_URL + `/note/`);
 
-      const response = await fetch(SERVER_URL + `/note?email=${userEmail}`); // Add a query parameter for the user's email
 
-      if (!response.ok) {
-        const message = `An error occurred: ${response.statusText}`;
-        window.alert(message);
-        return;
-      }
-
-      const notes = await response.json();
-      setNotes(notes);
-    } catch (error) {
-      console.error("Error fetching notes:", error);
+    if (!response.ok) {
+      const message = `An error occurred: ${response.statusText}`;
+      window.alert(message);
+      return;
     }
+
+    const notes = await response.json();
+    setNotes(notes);
   }
 
   getNotes();
   return;
-}, [tokenValue]);
+}, [notes.length]);
 
-  // This method will delete a record
-  async function deleteNote(id) {
-    await fetch(SERVER_URL + `/note/${id}`, {
-      method: "DELETE"
-    });
+ // This method will delete a record
+ async function deleteNote(id) {
+  await fetch(SERVER_URL + `/note/${id}`, {
+    method: "DELETE"
+  });
 
-    const newNotes = notes.filter((el) => el._id !== id);
-    setNotes(newNotes);
-  }
+  const newNotes = notes.filter((el) => el._id !== id);
+  setNotes(newNotes);
+}
 
-  // This method will map out the records on the table
-  function NoteContainer() {
-    return notes.map((note) => {
-      return (
-        <Note
-          note={note}
-          deleteNote={() => deleteNote(note._id)}
-          key={note._id}
-        />
-      );
-    });
-  }
+// This method will map out the records on the table
+function NoteContainer() {
+  return notes.map((note) => {
+    return (
+      <Note
+        note={note}
+        deleteNote={() => deleteNote(note._id)}
+        key={note._id}
+      />
+    );
+  });
+}
   
   return (
     <>

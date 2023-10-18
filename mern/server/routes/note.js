@@ -6,15 +6,8 @@ const router = express.Router();
 
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
-  const userEmail = req.query.email; // Get the email from the query parameters
-
-  if (!userEmail) {
-    return res.status(400).send("Email is required to fetch notes.");
-  }
-
   let collection = await db.collection("notes");
-  let results = await collection.find({ email: userEmail }).toArray();
-  console.log("Filtered Notes for Email:", results); // Add this line for debugging
+  let results = await collection.find({}).toArray();
   res.send(results).status(200);
 });
 
@@ -31,7 +24,6 @@ router.get("/:id", async (req, res) => {
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
   let newDocument = {
-    email: req.body.email,
     description: req.body.description,
     header: req.body.header,
   };
@@ -45,7 +37,7 @@ router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates =  {
     $set: {
-      email: req.body.email,
+
       description: req.body.description,
       header: req.body.header
     }

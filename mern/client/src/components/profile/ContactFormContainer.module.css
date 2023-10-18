@@ -22,7 +22,6 @@
     font-size: var(--font-size-mini);
     color: var(--color-gray-600);
     text-align: left;
-    border: none;
 }
 
 .contactNameButton,
@@ -33,11 +32,9 @@
 
 .contactNameButton {
     cursor: pointer;
-    position: absolute;
-    border: none;
-    top: 550px;
-    left: 120px;
-    width: 100px;
+    border: 0;
+    top: 570px;
+    left: 125px;
     padding: var(--padding-2xs) var(--padding-9xl);
     background-color: var(--color-lightseagreen);
     display: flex;
@@ -62,26 +59,10 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    height: 80%;
+    height: 90%;
     font-family: var(--font-poppins);
-    flex-grow: 1;
 }
 
 .frameParent > div {
     margin: 5%;
-}
-
-
-.editButton {
-    font-family: var(--font-poppins);
-    background-color: var(--color-lightseagreen);
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    border-radius: var(--br-3xs);
-    margin-left: auto;
-    width: 30px;
-    font-size: 12px;
-    position: absolute;
-    left: 300px;
 }
