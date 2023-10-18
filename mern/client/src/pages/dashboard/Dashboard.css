@@ -33,7 +33,6 @@
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
-    align-items: center;
 }
 
 .dashboard-content-container {
@@ -70,10 +69,8 @@
     height: 61%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: right;
 }
-
-
 .connection-stats {
     height: 50%;
     width: 100%;
@@ -86,15 +83,15 @@
     box-sizing: border-box;
     align-items: flex-start;
     justify-content: flex-start;
+    text-align: right;
 }
 
 .total-connect {
+    text-align: right;
     position: relative;
     font-size: var(--font-size-45xl);
     font-family: var(--font-inter);
     color: #38cdd0;
-    display: inline-block;
-    flex-shrink: 0;
 }
 .monthly-connections {
   position: absolute;

@@ -13,7 +13,7 @@ const ConnectionsContainer = () => {
 
     return (
         <div className="connections-container dashboard-widget">
-            <h2 className="widget-heading">Connections <input className="search-bar" placeholder="search..." type="text" /></h2>
+            <h2 className="widget-heading">Connections</h2>
 
             <div className="connection-fields">
                 <div className="name-field">Name</div>
@@ -25,17 +25,6 @@ const ConnectionsContainer = () => {
                 <div className="tag-field">
                     Tag 
                     <img className="interface-page-controller-scro-icon" src="/undefined10.png"/>
-                </div>
-            </div>
-
-            <div className="connections">
-                <div className="connection">
-                    <div className="name">Name</div>
-                    <div className="last-contact">16/08/2022</div>
-                    <div className="touch-status">In touch</div>
-                    <div className="tag-wrapper">
-                        <div className="tag">Student</div>
-                    </div>
                 </div>
             </div>
 

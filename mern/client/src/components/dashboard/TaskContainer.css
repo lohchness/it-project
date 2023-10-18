@@ -12,6 +12,7 @@
 }
 
 .tasks table {
+    text-align: left;
     position: relative;
     height: 80%;
     border-spacing: 10px 10px;
