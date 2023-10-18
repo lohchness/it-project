@@ -22,10 +22,10 @@ const UpcomingEventsContainer = () => {
             </div>
             <div className="events-container">
                 <div className="event">
-                    <div className="date">26 Aug</div>
-                    <div className="location">Alan Gilbert Building G01</div>
-                    <div className="time">4:00pm - 4:30pm</div>
-                    <div className="description">Room Tour with Aiden Tang</div>
+                    <div className="event-date">26 Aug</div>
+                    <div className="event-location">Alan Gilbert Building G01</div>
+                    <div className="event-time">4:00pm - 4:30pm</div>
+                    <div className="event-description">Room Tour with Aiden Tang</div>
                 </div>
             </div>
             <img className="line-break" src="/undefined8.png" />

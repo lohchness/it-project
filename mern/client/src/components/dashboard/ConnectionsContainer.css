@@ -34,6 +34,7 @@
     text-align: center;
     cursor: pointer;
     text-decoration: none;
+    top: 10px;
     position: relative;
     font-size: var(--font-size-smi);
     color: inherit;
