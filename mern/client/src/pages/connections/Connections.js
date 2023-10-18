@@ -1,4 +1,3 @@
-import { React, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 
@@ -10,17 +9,50 @@ import ConnectionComponent from "../../components/connections/ConnectionComponen
 import styles from "./Connections.module.css";
 import Navbar from "../../components/Navbar";
 
+import { React, useEffect, useState } from "react";
+import { SERVER_URL } from "../../index.js";
+
+
 const Connections = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
+    const [connections, setConnections] = useState([]);
 
-    // If token does not exist, redirect to login page
     useEffect(() => {
         if (!tokenValue) {
             navigate("/login");
         }
-    }, []);
+        async function getConnections() {
+            const response = await fetch(SERVER_URL + `/connection`);
+
+            if (!response.ok) {
+                const message = `An error occured: ${response.statusText}`;
+                window.alert(message);
+                return;
+            }
+
+            const connections = await response.json();
+            console.log("connections");
+            setConnections(connections);
+        }
+
+        getConnections();
+
+        return;
+    }, [connections.length]);
+
+    // This method will delete a record
+    async function deleteConnection(id) {
+        await fetch(SERVER_URL + `/connection/${id}`, {
+            method: "DELETE"
+        });
+
+        const newConnections = connections.filter((el) => el._id !== id);
+        setConnections(newConnections);
+    }
+    
+
 
     // Check to see if JWT token exists before laoding page
     if (!tokenValue) {
@@ -69,15 +101,15 @@ const Connections = () => {
                             <button className={styles.tag}>Tag</button>
                         </div>
 
-
+                    
                         <ShowResults
-                            showingResultsNum="Showing 8 out of 254 Results"
-                            showing8OutTop="782px"
+                            // showingResultsNum="Showing 8 out of 254 Results"
+                            showing8OutTop="530px"
                             showing8OutLeft="87px"
                         />
                         <AddNewConnection
-                            addNewConnectionTop="730px"
-                            addNewConnectionLeft="138px"
+                            addNewConnectionTop="500px"
+                            addNewConnectionLeft="87px"
                             vector="/add-icon.svg"
                             vectorIconHeight="20px"
                             vectorIconWidth="20px"
@@ -89,85 +121,17 @@ const Connections = () => {
                             vectorIconMaxHeight="unset"
                             vectorIconObjectFit="unset"
                         />
-                        <div className={styles.pages}>
-                            <PageNumBox
-                                pageNum="1"
-                                page1Left="0px"
-                                rectangleDivBackgroundColor="#1cbabd"
-                                rectangleDivBorder="unset"
-                                rectangleDivBoxSizing="unset"
-                                divLeft="13px"
-                            />
-                            <PageNumBox
-                                pageNum="2"
-                                page1Left="36px"
-                                rectangleDivBackgroundColor="unset"
-                                rectangleDivBorder="1px solid var(--color-white-100)"
-                                rectangleDivBoxSizing="border-box"
-                                divLeft="11px"
-                            />
-                            <PageNumBox
-                                pageNum="..."
-                                page1Left="72px"
-                                rectangleDivBackgroundColor="unset"
-                                rectangleDivBorder="1px solid var(--color-white-100)"
-                                rectangleDivBoxSizing="border-box"
-                                divLeft="11px"
-                            />
-                            <PageNumBox
-                                pageNum="31"
-                                page1Left="108px"
-                                rectangleDivBackgroundColor="unset"
-                                rectangleDivBorder="1px solid var(--color-white-100)"
-                                rectangleDivBoxSizing="border-box"
-                                divLeft="9px"
-                            />
-                            <PageNumBox
-                                pageNum="32"
-                                page1Left="144px"
-                                rectangleDivBackgroundColor="unset"
-                                rectangleDivBorder="1px solid var(--color-white-100)"
-                                rectangleDivBoxSizing="border-box"
-                                divLeft="7px"
-                            />
-                        </div>
 
                         <div className={styles.backgroundChild} />
 
                         <div className={styles.connectionlist}>
-                            <ConnectionComponent
-                                connectionName="Oreo McFlurry"
-                                lastContact="3rd Dec, 2022"
-                                touchStatus="Losing Touch"
-                                tagName="Landlord"
-                                avatar="/undefined2.png"
-                                lastContactLeft="251px"
-                                deleteTop="12.5%"
-                                deleteBottom="48.75%"
-                                connectionLeft="0px"
-                                connectionWidth="927px"
-                                losingTouchLeft="483px"
-                                landlordLeft="743px"
-                                deleteWidth="2.16%"
-                                deleteLeft="97.84%"
-                                vectorIconBottom="-2.3%"
-                                deleteHeight="38.75%"
-                                connection2Position="absolute"
-                                connection2Top="20px"
-                                nameTextDecoration="unset"
-                                nameCursor="pointer"
-                                nameBorder="none"
-                                namePadding="0"
-                                nameBackgroundColor="transparent"
-                                vector2="/vector-2.svg"
-                                vectorIconObjectFit="unset"
-                                vector="/vector.svg"
-                                vectorIconObjectFit1="unset"
-                                vector1="/vector4.svg"
-                                vectorIconObjectFit2="unset"
-                                vector3="/vectore2.svg"
-                                vectorIconObjectFit3="unset"
-                            />
+                            {connections.map((connection) => (
+                                <ConnectionComponent
+                                    key={connection._id.$oid}
+                                    // connection={connection}
+                                    {...connection}
+                                />
+                            ))}
                         </div>
                     </div>
 
@@ -175,6 +139,6 @@ const Connections = () => {
             </>
         );
     }
-};
+    };
 
 export default Connections;

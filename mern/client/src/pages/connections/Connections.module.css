@@ -73,16 +73,21 @@
 .background {
     margin-top: 3%;
     position: relative;
-    width: 90%;
-    height: 850px;
+    width: 75%;
+    /* height: 200%; */
+    height: 580px;
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
     border-radius: 15px;
 }
 
 .connectionlist {
+    max-height:390px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     margin-left: 50px;
     position: absolute;
+    /* margin-bottom: 10px; */
 }
 
 .bar {
