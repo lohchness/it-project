@@ -42,7 +42,7 @@ export default function AddActivityForm() {
       <div className="heading-wrapper">
           <div className="heading">Add Activity</div>
         </div>
-        <div className="activity-type">
+        <div className="description">
           Description:
         </div>
       <form onSubmit={onSubmit}>  
