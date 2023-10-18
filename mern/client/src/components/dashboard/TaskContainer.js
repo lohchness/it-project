@@ -50,6 +50,7 @@ export default function TaskContainer() {
 
     const tasks = await response.json();
     setTasks(tasks);
+    console.log(tasks);
   }
 
   getTasks();
@@ -63,6 +64,7 @@ export default function TaskContainer() {
     method: "DELETE"
   });
 
+  console.log("deleted");
   const newTasks = tasks.filter((el) => el._id !== id);
   setTasks(newTasks);
 }

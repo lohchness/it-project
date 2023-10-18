@@ -82,7 +82,7 @@
     max-height: 100%;
 }
 
-.vector-icon4,
+/* .vector-icon4,
 .vector-icon5 {
     height: 4.61%;
     width: 105%;
@@ -99,7 +99,7 @@
     right: 27%;
     bottom: 74.65%;
     left: 26.33%;
-}
+} */
 
 .delete {
     cursor: pointer;
@@ -112,7 +112,7 @@
     top: 18.52%;
     right: 0;
     bottom: 41.3%;
-    left: 97.83%;
+    left: 93.83%;
 }
 
 .connectionitem {
@@ -144,4 +144,10 @@
     font-size: var(--font-size-base);
     color: gray;
     font-family: var(--font-inter); */
+}
+.del-button {
+    position: relative;
+    width: 13px;
+    height: 14.02px;
+    object-fit: cover;
 }

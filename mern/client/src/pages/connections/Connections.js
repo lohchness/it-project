@@ -34,6 +34,9 @@ const Connections = () => {
 
             const connections = await response.json();
             console.log("connections");
+            if (connections.registered_user == true) {
+                
+            }
             setConnections(connections);
         }
 
