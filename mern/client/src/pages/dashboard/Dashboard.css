@@ -75,7 +75,6 @@
 
 
 .connection-stats {
-    height: 50%;
     width: 100%;
     position: relative;
     background-color: #8891B4;
@@ -86,6 +85,7 @@
     box-sizing: border-box;
     align-items: flex-start;
     justify-content: flex-start;
+    flex-grow: 1;
 }
 
 .total-connect {
