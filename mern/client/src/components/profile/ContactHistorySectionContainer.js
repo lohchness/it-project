@@ -1,22 +1,68 @@
 import ContactHistoryInfo from "./ContactHistoryInfo";
 import styles from "./ContactHistorySectionContainer.module.css";
+import Cookies from "universal-cookie";
+import { SERVER_URL } from "../../index.js";
+import React, { useEffect, useState, useCallback } from "react";
 
-const ContactHistorySectionContainer = () => {
+export default function ContactHistorySectionContainer() {
+  const [histories, setHistories] = useState([]);
+
+
+  const cookies = new Cookies(); 
+  const tokenValue = cookies.get("token"); 
+
+  useEffect(() => {
+    async function getHistories() {
+      try {
+        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${tokenValue}`
+          }
+        }); 
+        const emailData = await email.json();
+        const userEmail = emailData.user.userEmail;
+        console.log("userEmail", userEmail)
+  
+        const response = await fetch(SERVER_URL + `/history?email=${userEmail}`);
+  
+        if (response.status === 200) {
+          const histories = await response.json();
+          setHistories(histories);
+        } else if (response.status === 404) {
+          // No records found, set histories to an empty array or handle it as needed.
+          setHistories([]);
+        } else {
+          const message = `An error occurred: ${response.statusText}`;
+          window.alert(message);
+        }
+      } catch (error) {
+        console.error("Error fetching histories:", error);
+      }
+    }
+  
+    getHistories();
+  }, [tokenValue]);
+
+  function HistoryContainer() {
+    return histories.map((history) => {
+      return (
+        <ContactHistoryInfo
+        date={history.data}
+        contactType={history.type}
+        description={history.description}
+        />
+      );
+    });
+  }
+
+
   return (
     <div className={styles.contactHistorySection}>
       <div className={styles.contactHistorySectionChild} />
-      <ContactHistoryInfo
-        date="16/08/2022"
-        contactType="Planned Meeting "
-        description="Assign pages that the group members must individual design. "
-      />
-      <ContactHistoryInfo
-        date="17/08/2022"
-        contactType="Assign task "
-        description="Assign task: design profile page UI."
-        contactHistory1Top="123px"
-        contactHistory1ZIndex="2"
-      />
+      <table>
+        <tbody>{HistoryContainer()}</tbody>
+      </table>
       <div className={styles.header}>
         <div className={styles.headerChild} />
         <b className={styles.contactHistory}>Contact History</b>
@@ -32,5 +78,3 @@ const ContactHistorySectionContainer = () => {
     </div>
   );
 };
-
-export default ContactHistorySectionContainer;

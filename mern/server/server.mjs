@@ -11,6 +11,7 @@ import user from "./routes/user.js";
 import profile from "./routes/profile.js";
 import events from "./routes/event.js";
 import connection from "./routes/connection.js"
+import history from "./routes/history.js"
 
 
 const PORT = 5050;
@@ -43,6 +44,7 @@ app.use("/user", user)
 app.use("/event", events);
 app.use("/experience", experience);
 app.use("/connection", connection);
+app.use("/history", history);
 
 
 // start the Express server
