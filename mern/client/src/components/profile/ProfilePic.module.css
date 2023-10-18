@@ -41,6 +41,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: inherit;
 }
 .vectorIcon1 {
   position: relative;
@@ -79,6 +80,7 @@
   justify-content: center;
   position: relative;
   gap: var(--gap-3xs);
+  background-color: inherit;
 }
 .vectorIcon4 {
   position: relative;
@@ -91,7 +93,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-7xl);
+  gap: 15px
 }
 .frameParent {
   position: absolute;
