@@ -35,6 +35,9 @@ const Navbar = () => {
                     <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/calendar" >
                         Calendar
                     </NavLink>
+                    <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/messaging" >
+                        Messaging
+                    </NavLink>
                 </nav>
                 <button className="logout-button" onClick={onLogoutClick}>
                     <img src="/logout-icon.png" height="25px" width="25px"/>

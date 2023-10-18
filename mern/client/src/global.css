@@ -143,4 +143,33 @@ root {
     --br-xl: 20px;
     --br-6xl: 25px;
     --br-21xl: 40px;
+
+
+      /* fonts */
+  --font-roboto: Roboto;
+  --font-poppins: Poppins;
+
+  /* font sizes */
+  --font-size-base: 16px;
+  --font-size-xl: 20px;
+  --font-size-11xl: 30px;
+  --font-size-7xl: 26px;
+  --font-size-lg: 18px;
+
+  /* Colors */
+  --color-white: #fff;
+  --color-darkgray: rgba(180, 171, 171, 0.66);
+  --color-gray-100: #7c7c7c;
+  --color-gray-200: #000001;
+  --color-darkslategray-100: #303030;
+  --color-dimgray: #707070;
+  --color-lightseagreen: #1cbabd;
+  --color-gainsboro: #e7e7e7;
+  --color-snow: #fffcf8;
+
+  /* Gaps */
+  --gap-11xl: 30px;
+
+  /* Border radiuses */
+  --br-6xl: 25px;
 }
