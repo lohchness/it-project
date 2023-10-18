@@ -39,7 +39,7 @@ const Profile = () => {
                     </div>
                 </div> */}
                 <div className={styles.profileContentContainer}>
-                    <div className={styles.right}>
+                    <div className={styles.left}>
                         <ContactFormContainer />
                     </div>
                     <div className={styles.right}>

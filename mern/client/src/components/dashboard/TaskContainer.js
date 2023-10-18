@@ -82,7 +82,7 @@ export default function TaskContainer() {
   // This following section will display the table with the records of individuals.
   return (
     <div className="tasks dashboard-widget">
-        <div className="widget-heading">My Tasks <button className="add-task" onClick={openAddTaskPopUp}>+ Add Task</button></div>
+        <div className="widget-heading">My Tasks <button className="add-task" onClick={openAddTaskPopUp}>+</button></div>
         <table>
           <tbody>{TaskContainer()}</tbody>
         </table>

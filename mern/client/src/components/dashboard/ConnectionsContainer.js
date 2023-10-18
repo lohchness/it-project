@@ -39,7 +39,7 @@ const ConnectionsContainer = () => {
                 </div>
             </div>
 
-            <a className="show-more-button" onClick={onShowMoreTextClick}>Show More</a>
+            <a className="show-more-button" onClick={onShowMoreTextClick}>+ Show More</a>
         </div>
     );
 };
