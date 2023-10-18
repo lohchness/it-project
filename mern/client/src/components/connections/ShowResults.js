@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import styles from "./ShowResults.module.css";
 
 const ShowResults = ({
-  showingResultsNum = "Showing 0 out of 0 results",
+  showingResultsNum = "0 Total connections",
   showing8OutTop,
   showing8OutLeft,
 }) => {

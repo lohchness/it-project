@@ -59,7 +59,7 @@
     left: 4%;
     width: 92%;
     max-height: 72%;
-    overflow: scroll;
+    overflow: auto;
   }
   
   .event-header,

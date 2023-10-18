@@ -18,7 +18,8 @@
   font-size: var(--font-size-base);
   line-height: 150%;
   font-family: var(--font-inter);
-  color: var(--color-gainsboro);
+  /* color: var(--color-gainsboro); */
+  color: white;
   text-align: left;
 }
 .addNewConnection {
