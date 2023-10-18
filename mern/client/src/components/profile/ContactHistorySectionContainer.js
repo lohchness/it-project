@@ -2,7 +2,7 @@ import ContactHistoryInfo from "./ContactHistoryInfo";
 import styles from "./ContactHistorySectionContainer.module.css";
 import Cookies from "universal-cookie";
 import { SERVER_URL } from "../../index.js";
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function ContactHistorySectionContainer() {
   const [histories, setHistories] = useState([]);
@@ -71,9 +71,9 @@ export default function ContactHistorySectionContainer() {
         </div> */}
       </div>
       <div className={styles.detailBar}>
-        <b className={styles.type}>Type</b>
-        <b className={styles.description}>Description</b>
-        <b className={styles.date}>Date</b>
+        <div className={styles.type}>Type</div>
+        <div className={styles.description}>Description</div>
+        <div className={styles.date}>Date</div>
       </div>
     </div>
   );
