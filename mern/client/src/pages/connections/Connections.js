@@ -12,6 +12,7 @@ const Connections = () => {
     
     <div className="connections">
       <Header/>
+      
       <div className={styles.connectionsCrmContainer}>
           <span className={styles.sortBy}>Connections</span>
           <span className={styles.crm}>
