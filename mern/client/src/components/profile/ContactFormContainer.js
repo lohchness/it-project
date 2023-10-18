@@ -115,13 +115,13 @@ export default function ContactFormContainer() {
             address={profile.address}
           />
         )}
-        <button
+      </div>
+      <button
           className={styles.editButton}
           onClick={() => setEditPopupOpen(true)}
         >
           Edit
         </button>
-      </div>
       <div className={styles.aboutMeWrapper}>
         {profile && <AboutMe aboutMe1 = {profile.about} mainApp={profile.mainApp} />}
       </div>

@@ -98,11 +98,10 @@
 .tag {
     cursor: pointer;
     border: 0;
-    color: white;
     background-color: transparent;
     font-size: var(--font-size-sm);
     font-family: var(--font-poppins);
-    color: var(--color-gray-200);
+    color: rgba(255, 255, 255, 0.814);
     border: none;
 }
 
@@ -111,11 +110,11 @@
 }
 
 .touch {
-    margin-left: 200px;
+    margin-left: 150px;
 }
 
 .tag {
-    margin-left: 200px;
+    margin-left: 210px;
 }
 
 .headingChild {
@@ -183,7 +182,7 @@
 
 .filters2 {
     border-radius: var(--br-8xs);
-    background-color: rgba(162, 0, 38, 0.823);
+    background-color: rgba(110, 215, 137, 0.823);
     top: 8px;
 }
 
@@ -220,7 +219,7 @@
     top: 8px;
     left: 0;
     border-radius: var(--br-8xs);
-    background-color: #4843cf;
+    background-color: #eeb868;
 }
 
 .madeUp {

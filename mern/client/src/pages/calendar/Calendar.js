@@ -32,8 +32,10 @@ const Calendar = () => {
                         <span className="span">{` `}</span>
                         <span className="crm">{`> CRM`}</span>
                     </div> */}
-                    <CalendarContainer />
-                    <AddActivityForm />
+                    <div className="calendar-activity-form-container">
+                        <CalendarContainer />
+                        <AddActivityForm />
+                    </div>
                 </div>
             </>
 
