@@ -20,7 +20,6 @@
 .contactName {
     position: relative;
     font-size: var(--font-size-mini);
-    font-family: var(--font-open-sans);
     color: var(--color-gray-600);
     text-align: left;
 }
@@ -34,7 +33,7 @@
 .contactNameButton {
     cursor: pointer;
     border: 0;
-    top: 450px;
+    top: 570px;
     left: 125px;
     padding: var(--padding-2xs) var(--padding-9xl);
     background-color: var(--color-lightseagreen);
@@ -42,6 +41,7 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-start;
+    font-family: var(--font-poppins);
 }
 
 .contactNameButton:hover {
@@ -59,7 +59,8 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    height: 70%;
+    height: 90%;
+    font-family: var(--font-poppins);
 }
 
 .frameParent > div {

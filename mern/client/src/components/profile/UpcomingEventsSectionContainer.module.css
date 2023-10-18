@@ -19,17 +19,17 @@
 .headerChild {
     border-radius: var(--br-3xs);
     background-color: var(--color-div-heading);
-    width: 727px;
-    height: 24.45px;
+    width: 100%;
+    margin-top: -1%;
+    height: 30px;
     mix-blend-mode: normal;
 }
 
 .headingText {
     position: absolute;
-    top: 3.91px;
+    top: 3px;
     left: calc(50% - 350.5px);
     display: inline-block;
-    width: 112px;
     height: 17.6px;
 }
 
@@ -55,10 +55,11 @@
     position: absolute;
     margin: 0 !important;
     top: 6.85px;
-    left: 5px;
-    width: 99%;
+    left: 0px;
+    width: 100%;
     height: 24.45px;
     z-index: 2;
+    margin-top: -1%;
     background-color: var(--color-div-heading);
     border-radius: var(--br-3xs);
 }
@@ -123,7 +124,7 @@
     font-size: var(--font-size-smi);
     color: var(--color-gray-600);
     width: 95%;
-    font-family: var(--font-open-sans);
+    font-family: var(--font-poppins);
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
 }

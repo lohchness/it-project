@@ -22,9 +22,7 @@
 }
 .calendar-heading {
   position:relative;
-  top: 5px;
-  left: 5px;
-  width: 96%;
+  width: 98%;
   border-radius: var(--br-3xs);
   background-color: var(--color-div-heading);
   display: flex;

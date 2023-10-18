@@ -48,7 +48,7 @@ form {
 }
 
 .form-field {
-    border: 3px solid var(--color-lavender-200);
+    border: 3px solid #dddeec73;
     border-radius: 5px;
     width: 85%;
     text-align: left;

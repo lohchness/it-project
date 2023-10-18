@@ -1,85 +1,93 @@
 .notePopBackground {
-  position: relative;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-white);
-  width: 224px;
-  height: 255px;
-  z-index: 0;
+    position: relative;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-white);
+    width: 224px;
+    height: 255px;
+    z-index: 0;
 }
+
 .description,
 .notes {
-  border: 0;
-  font-family: var(--font-inter);
-  font-size: var(--font-size-sm);
-  background-color: var(--color-gainsboro);
-  margin: 0 !important;
-  position: absolute;
-  top: 6px;
-  left: 6px;
-  border-radius: var(--br-3xs);
-  width: 208px;
-  display: flex;
-  flex-direction: row;
-  padding: var(--padding-11xs) var(--padding-6xs);
-  box-sizing: border-box;
-  align-items: center;
-  justify-content: flex-start;
-  z-index: 1;
+    border: 0;
+    font-family: var(--font-inter);
+    font-size: var(--font-size-sm);
+    background-color: var(--color-gainsboro);
+    margin: 0 !important;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    border-radius: var(--br-3xs);
+    width: 208px;
+    display: flex;
+    flex-direction: row;
+    padding: var(--padding-11xs) var(--padding-6xs);
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
 }
+
 .description {
-  top: 53px;
-  height: 133px;
-  flex-direction: column;
-  padding: 0 var(--padding-6xs);
-  align-items: flex-start;
-  z-index: 2;
+    top: 53px;
+    height: 133px;
+    flex-direction: column;
+    padding: 0 var(--padding-6xs);
+    align-items: flex-start;
+    z-index: 2;
 }
+
 .confirm {
-  position: relative;
-  line-height: 150%;
+    position: relative;
+    line-height: 150%;
 }
+
 .confirmExperienceButton {
-  margin: 0 !important;
-  position: absolute;
-  top: 206px;
-  left: 139px;
-  border-radius: var(--br-8xs);
-  background-color: var(--color-lightseagreen);
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-11xs) var(--padding-4xs);
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 3;
+    margin: 0 !important;
+    position: absolute;
+    top: 206px;
+    left: 139px;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-lightseagreen);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-11xs) var(--padding-4xs);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
 }
+
 .cancel {
-  position: relative;
-  font-size: var(--font-size-sm);
-  line-height: 150%;
-  font-family: var(--font-poppins);
-  color: var(--color-white);
-  text-align: right;
+    position: relative;
+    font-size: var(--font-size-sm);
+    line-height: 150%;
+    font-family: var(--font-poppins);
+    color: var(--color-white);
+    text-align: right;
 }
+
 .cancelExperienceButton,
 .notesPopup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
+
 .cancelExperienceButton {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-11xs) var(--padding-smi);
-  background-color: var(--color-lightseagreen);
-  margin: 0 !important;
-  position: absolute;
-  top: 206px;
-  left: 6px;
-  border-radius: var(--br-8xs);
-  z-index: 4;
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-11xs) var(--padding-smi);
+    background-color: var(--color-lightseagreen);
+    margin: 0 !important;
+    position: absolute;
+    top: 206px;
+    left: 6px;
+    border-radius: var(--br-8xs);
+    z-index: 4;
 }
+
 .notesPopup {
     border-radius: var(--br-3xs);
     background-color: var(--color-white);

@@ -89,7 +89,7 @@
     background-color: transparent;
     text-align: left;
     margin-top: 15px;
-    margin-left: 100px;
+    margin-left: 70px;
 }
 
 .name,
@@ -183,7 +183,8 @@
 
 .filters2 {
     border-radius: var(--br-8xs);
-    background-color: var(--color-indianred);
+    background-color: rgba(162, 0, 38, 0.823);
+    top: 8px;
 }
 
 .registered {
@@ -219,7 +220,7 @@
     top: 8px;
     left: 0;
     border-radius: var(--br-8xs);
-    background-color: #444360;
+    background-color: #4843cf;
 }
 
 .madeUp {

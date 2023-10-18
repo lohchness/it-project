@@ -89,13 +89,13 @@
 
 .noteSection {
     position: relative;
-    width: 45%;
-    height: 50%;
+    width: 47%;
+    height: 83%;
     text-align: left;
     font-size: var(--font-size-smi);
     color: var(--color-gray-600);
-    font-family: var(--font-open-sans);
-    margin: 10px;
+    font-family: var(--font-poppins);
+    margin: 10px 10px 0px 0px;
     border-radius: 7px;
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
