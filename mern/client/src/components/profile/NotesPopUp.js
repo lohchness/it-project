@@ -1,16 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
 import styles from "./NotesPopUp.module.css";
 
 import { SERVER_URL } from "../../index.js";
+import Cookies from "universal-cookie";
 
 export default function NotesPopUp({ onClose }) {
-
   const [form, setForm] = useState({
     description: "",
     header: "",
+    email: "", // Initialize email as an empty string
   });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch the user's email when the component mounts
+    const cookies = new Cookies();
+    const tokenValue = cookies.get("token");
+
+    fetch(`http://localhost:5050/user/get-current-user`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${tokenValue}`
+      }
+    })
+      .then((response) => response.json())
+      .then((emailData) => {
+        const userEmail = emailData.user.userEmail;
+        // Set the email address in the state
+        setForm((prevForm) => ({
+          ...prevForm,
+          email: userEmail,
+        }));
+      })
+      .catch((error) => {
+        console.error("Error fetching email:", error);
+      });
+  }, []); // The empty dependency array ensures this effect runs once when the component mounts
 
   function updateForm(value) {
     return setForm((prev) => {
@@ -18,67 +44,63 @@ export default function NotesPopUp({ onClose }) {
     });
   }
 
-  // This function will handle the submission.
   async function onSubmit(e) {
     e.preventDefault();
-  
-    // When a post request is sent to the create url, we'll add a new record to the database.
     const newNote = { ...form };
-  
-    await fetch(SERVER_URL + "/note", {
+
+    const response = await fetch(SERVER_URL + "/note", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newNote),
-    })
-    .catch(error => {
-      window.alert(error);
-      return;
     });
-  
-    setForm({  description: "", header: "" });
-    //navigate("/");
-    window.location.reload(); 
+
+    if (!response.ok) {
+      window.alert("Error creating a new note.");
+      return;
+    }
+
+    setForm({ description: "", header: "", email: form.email }); // Reset form, keeping the email
+    window.location.reload();
   }
 
   return (
     <div className={styles.NotesPopUp}>
       <form onSubmit={onSubmit}>
         <div className="popup notes-popup">
-        <input 
-          className={styles.notes}
-          placeholder="Note header" 
-          type="text" 
-          id="position"
-          value={form.header}
-          onChange={(e) => updateForm({header: e.target.value})}
-          required
-          />
-        <div className = "description-wrapper">
-          <textarea 
-           name="description" 
-           placeholder="Description" 
-           type="text"
-           id="position"
-           value={form.description}
-           onChange={(e) => updateForm({description: e.target.value })}
-           required
-          />
-        </div>
-        <div className="confirm-button">
           <input
-           type="submit"
-           value="Confirm"
-           className="confirm-control"
-         />
-        </div>
-        <button className="cancel-button" onClick={onClose}>
-          <div className="cancel">Cancel</div>
-        </button>
+            className={styles.notes}
+            placeholder="Note header"
+            type="text"
+            id="position"
+            value={form.header}
+            onChange={(e) => updateForm({ header: e.target.value })}
+            required
+          />
+          <div className="description-wrapper">
+            <textarea
+              name="description"
+              placeholder="Description"
+              type="text"
+              id="position"
+              value={form.description}
+              onChange={(e) => updateForm({ description: e.target.value })}
+              required
+            />
+          </div>
+          <div className="confirm-button">
+            <input
+              type="submit"
+              value="Confirm"
+              className="confirm-control"
+            />
+          </div>
+          <button className="cancel-button" onClick={onClose}>
+            <div className="cancel">Cancel</div>
+          </button>
         </div>
       </form>
     </div>
   );
 }
-
