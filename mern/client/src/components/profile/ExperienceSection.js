@@ -1,29 +1,9 @@
 import React, { useState, useEffect, useCallback } from "react";
 import ExperiencePopUp from "./ExperiencePopUp";
 import PortalPopup from "../PortalPopup";
-//import Experience from "./Experience";
-//import styles from "./ExperienceSection.module.css";
 import styles from "./NoteSectionContainer.module.css";
 import { SERVER_URL } from "../../index.js";
-
-// const Experience = (props) => (
-//   //<div className = "row-wrapper">
-//     <tr height = "30px">
-//       <td>{props.experience.experienceHeader}
-//       <td width = "80%">{props.experience.description}</td>
-//         <td>
-//           <button className="delete-button"
-//             onClick={() => {
-//               props.deleteExperience(props.experience._id);
-//             }}
-//           >
-//             <img className="delete-icon" alt="" src="/DeleteIcon.png" />
-//           </button>
-//         </td>
-//       </td>
-//     </tr>
-//    //</div>
-//  );
+import Cookies from "universal-cookie";
 
 const Experience = (props) => (
   <tr>
@@ -40,8 +20,7 @@ const Experience = (props) => (
   </tr>
 );
 
-////////////////////////////
- export default function ExperienceSection() {
+export default function ExperienceSection() {
   const [experiences, setExperiences] = useState([]);
   const [isExperiencePopUpOpen, setExperiencePopUpOpen] = useState(false);
 
@@ -53,71 +32,82 @@ const Experience = (props) => (
     setExperiencePopUpOpen(false);
   }, []);
 
-  // This method fetches the records from the database.
+  const cookies = new Cookies(); 
+  const tokenValue = cookies.get("token"); 
+
   useEffect(() => {
     async function getExperiences() {
-      const response = await fetch(SERVER_URL + `/experience/`);
-  
-      if (!response.ok) {
-        const message = `An error occurred: ${response.statusText}`;
-        window.alert(message);
-        return;
+      try {
+        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${tokenValue}`
+          }
+        }); 
+        const emailData = await email.json();
+        const userEmail = emailData.user.userEmail;
+
+        const response = await fetch(SERVER_URL + `/experience?email=${userEmail}`);
+    
+        if (!response.ok) {
+          const message = `An error occurred: ${response.statusText}`;
+          window.alert(message);
+          return;
+        }
+    
+        const experiences = await response.json();
+        setExperiences(experiences);
+      } catch (error) { // Added error parameter
+        console.error("Error fetching experiences:", error); // Updated error message
       }
-  
-      const experiences = await response.json();
-      setExperiences(experiences);
     }
   
     getExperiences();
-    return;
-  }, [experiences.length]);
+  }, [tokenValue]);
 
- // This method will delete a record
- async function deleteExperience(id) {
-  await fetch(SERVER_URL + `/experience/${id}`, {
-    method: "DELETE"
-  });
+  async function deleteExperience(id) {
+    await fetch(SERVER_URL + `/experience/${id}`, {
+      method: "DELETE"
+    });
 
-  const newExperiences = experiences.filter((el) => el._id !== id);
-  setExperiences(newExperiences);
-}
+    const newExperiences = experiences.filter((el) => el._id !== id);
+    setExperiences(newExperiences);
+  }
 
- // This method will map out the records on the table
- function ExperienceContainer() {
-  return experiences.map((experience) => {
-    return (
-      <Experience
-        experience={experience}
-        deleteExperience={() => deleteExperience(experience._id)}
-        key={experience._id}
-      />
-    );
-  });
-}
+  function ExperienceContainer() {
+    return experiences.map((experience) => {
+      return (
+        <Experience
+          experience={experience}
+          deleteExperience={() => deleteExperience(experience._id)}
+          key={experience._id}
+        />
+      );
+    });
+  }
 
-return (
-  <>
-    <div className={styles.noteSection}>
+  return (
+    <>
+      <div className={styles.noteSection}>
         <div className={styles.header}>
           <b className={styles.notes}>Experience</b>
           <button className={styles.addNoteButton} onClick={openExperiencePopUp}>
             <div className={styles.groupIcon}>+</div>
           </button>
-         </div>
+        </div>
         <table>
           <tbody>{ExperienceContainer()}</tbody>
         </table>
       </div>
-    {isExperiencePopUpOpen && (
-      <PortalPopup
-        overlayColor="rgba(113, 113, 113, 0.3)"
-        placement="Centered"
-        onOutsideClick={closeExperiencePopUp}
-      >
-        <ExperiencePopUp onClose={closeExperiencePopUp} />
-      </PortalPopup>
-    )}
-  </>
-);
-};
-
+      {isExperiencePopUpOpen && (
+        <PortalPopup
+          overlayColor="rgba(113, 113, 113, 0.3)"
+          placement="Centered"
+          onOutsideClick={closeExperiencePopUp}
+        >
+          <ExperiencePopUp onClose={closeExperiencePopUp} />
+        </PortalPopup>
+      )}
+    </>
+  );
+}
