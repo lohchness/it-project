@@ -1,9 +1,9 @@
 .calendar-wrapper {
   position: absolute;
-  top: 137px;
-  left: 146px;
+  top: 100px;
+  left: 60px;
   width: 863px;
-  height: 776px;
+  height: 730px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -11,7 +11,7 @@
   gap: var(--gap-3xs);
   text-align: left;
   font-size: var(--font-size-5xl);
-  background-color: var(--color-lightslategray);
+  background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
   border-radius: 15px;
   font-family: var(--font-poppins);
 }
@@ -22,11 +22,9 @@
 }
 .calendar-heading {
   position:relative;
-  top: 5px;
-  left: 5px;
-  width: 96%;
+  width: 98%;
   border-radius: var(--br-3xs);
-  background-color: #656C86;
+  background-color: var(--color-div-heading);
   display: flex;
   flex-direction: row;
   padding: 0 var(--padding-4xs);

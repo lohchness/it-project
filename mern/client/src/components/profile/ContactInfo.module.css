@@ -58,9 +58,10 @@
   width: 171px;
 }
 .headerChild {
-  left: 0;
+  position: relative;
+  width: 100%;
   border-radius: var(--br-3xs);
-  background-color: var(--color-slategray);
+  background-color: var(--color-div-heading);
   width: 181px;
   height: 20px;
   mix-blend-mode: normal;
@@ -90,5 +91,5 @@
   text-align: left;
   font-size: var(--font-size-3xs);
   color: var(--color-white);
-  font-family: var(--font-open-sans);
+  font-family: var(--font-poppins);
 }

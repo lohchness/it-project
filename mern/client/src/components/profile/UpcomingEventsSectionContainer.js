@@ -1,8 +1,10 @@
-import { useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import EventInfo from "./EventInfo";
 import styles from "./UpcomingEventsSectionContainer.module.css";
 
-const UpcomingEventsSectionContainer = () => {
+export default function UpcomingEventsSectionContainer() {
+  const [events, setEvents] = useState([]);
+
   const onEventButton2Click = useCallback(() => {
     // Please sync "Calendar" to the project
   }, []);
@@ -11,6 +13,40 @@ const UpcomingEventsSectionContainer = () => {
     // Please sync "Calendar" to the project
   }, []);
 
+  useEffect(() => {
+    async function getEvents() {
+      const response = await fetch(`http://localhost:5050/events/`);
+  
+      if (!response.ok) {
+        const message = `An error occurred: ${response.statusText}`;
+        window.alert(message);
+        return;
+      }
+  
+      const events = await response.json();
+      setEvents(events);
+    }
+  
+    //getEvents();
+    return;
+  }, [events.length]);
+
+    // This method will map out the records on the table
+  function EventContainer() {
+    return events.map((event) => {
+      return (
+        <EventInfo
+          dateDay={event.date.slice(0,2)} 
+          dateMonth={event.data.slice(3,5)}
+          description1={event.description}
+          time1={event.fromTime + event.toTime}
+          location1={event.location}
+          onEventButton2Click={onEventButton2Click}
+        />
+      );
+    });
+  }
+
   return (
     <div className={styles.upcomingEventsSection}>
       <div className={styles.eveBackground} />
@@ -18,28 +54,13 @@ const UpcomingEventsSectionContainer = () => {
       <div className={styles.header}>
         <div className={styles.headerChild} />
         <b className={styles.headingText}>{`Upcoming Events `}</b>
-        <div className={styles.eventsButton}>
+        {/* <div className={styles.eventsButton}>
           <img className={styles.groupIcon} alt="" src="/group4.svg" />
-        </div>
+        </div> */}
       </div>
-      <EventInfo
-        dateDay="26"
-        dateMonth="Aug"
-        description1="Room Tour with Aiden Tang"
-        time1="4:00pm - 4:30pm"
-        location1="Alan Gilbert Building G02"
-        onEventButton2Click={onEventButton2Click}
-      />
-      <EventInfo
-        dateDay="27"
-        dateMonth="Aug"
-        description1="Assign task"
-        time1="2pm - 3pm"
-        location1="Alan Gilbert Building G01"
-        event2Top="115.41px"
-        event2ZIndex="4"
-        onEventButton2Click={onEventButton3Click}
-      />
+      <table>
+        <tbody>{EventContainer()}</tbody>
+      </table> 
       <div className={styles.detailBar}>
         <div className={styles.date}>Date</div>
         <div className={styles.description}>Description</div>
@@ -49,5 +70,3 @@ const UpcomingEventsSectionContainer = () => {
     </div>
   );
 };
-
-export default UpcomingEventsSectionContainer;

@@ -1,27 +1,44 @@
-import React, { usExperiencePopUpeEffect, useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import ExperiencePopUp from "./ExperiencePopUp";
 import PortalPopup from "../PortalPopup";
 //import Experience from "./Experience";
-import styles from "./ExperienceSection.module.css";
+//import styles from "./ExperienceSection.module.css";
+import styles from "./NoteSectionContainer.module.css";
+import { SERVER_URL } from "../../index.js";
+
+// const Experience = (props) => (
+//   //<div className = "row-wrapper">
+//     <tr height = "30px">
+//       <td>{props.experience.experienceHeader}
+//       <td width = "80%">{props.experience.description}</td>
+//         <td>
+//           <button className="delete-button"
+//             onClick={() => {
+//               props.deleteExperience(props.experience._id);
+//             }}
+//           >
+//             <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+//           </button>
+//         </td>
+//       </td>
+//     </tr>
+//    //</div>
+//  );
 
 const Experience = (props) => (
-  <div className = "row-wrapper">
-    <tr height = "30px">
-      <img className="tick-task-done" alt="" src="/GreenTick.png" />
-      <td width = "80%">{props.experience.description}</td>
-      <td>{props.experience.experienceHeader}</td>
-      <td>
-        <button className="delete-button"
-          onClick={() => {
-            props.deleteExperience(props.experience._id);
-           }}
-         >
-         <img className="delete-icon" alt="" src="/DeleteIcon.png" />
-         </button>
-       </td>
-     </tr>
-   </div>
- );
+  <tr>
+    <td>
+      <b>{props.experience.experienceHeader}</b>
+      <br />
+      <div style={{ marginLeft: '20px' }}>{props.experience.description}</div>
+    </td>
+    <td>
+      <button className="delete-button" onClick={() => props.deleteExperience(props.experience._id)}>
+        <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+      </button>
+    </td>
+  </tr>
+);
 
 ////////////////////////////
  export default function ExperienceSection() {
@@ -39,7 +56,7 @@ const Experience = (props) => (
   // This method fetches the records from the database.
   useEffect(() => {
     async function getExperiences() {
-      const response = await fetch(`http://localhost:5050/experience/`);
+      const response = await fetch(SERVER_URL + `/experience/`);
   
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
@@ -57,7 +74,7 @@ const Experience = (props) => (
 
  // This method will delete a record
  async function deleteExperience(id) {
-  await fetch(`http://localhost:5050/experience/${id}`, {
+  await fetch(SERVER_URL + `/experience/${id}`, {
     method: "DELETE"
   });
 
@@ -78,29 +95,29 @@ const Experience = (props) => (
   });
 }
 
-  return (
-    <>
-      <div className={styles.experienceSection}>
-      <div className={styles.header}>
-          <div className={styles.experiences}>My Experiences</div>
-        </div>
+return (
+  <>
+    <div className={styles.noteSection}>
+        <div className={styles.header}>
+          <b className={styles.notes}>Experience</b>
+          <button className={styles.addNoteButton} onClick={openExperiencePopUp}>
+            <div className={styles.groupIcon}>+</div>
+          </button>
+         </div>
         <table>
           <tbody>{ExperienceContainer()}</tbody>
         </table>
-        <button className={styles.addExperienceButton} onClick={openExperiencePopUp}>
-          <div className={styles.groupIcon}>+ Add Experience</div>
-        </button>
       </div>
-      {isExperiencePopUpOpen && (
-        <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.3)"
-          placement="Centered"
-          onOutsideClick={closeExperiencePopUp}
-        >
-          <ExperiencePopUp onClose={closeExperiencePopUp} />
-        </PortalPopup>
-      )}
-    </>
-  );
+    {isExperiencePopUpOpen && (
+      <PortalPopup
+        overlayColor="rgba(113, 113, 113, 0.3)"
+        placement="Centered"
+        onOutsideClick={closeExperiencePopUp}
+      >
+        <ExperiencePopUp onClose={closeExperiencePopUp} />
+      </PortalPopup>
+    )}
+  </>
+);
 };
 

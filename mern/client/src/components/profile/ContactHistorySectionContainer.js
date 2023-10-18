@@ -20,9 +20,9 @@ const ContactHistorySectionContainer = () => {
       <div className={styles.header}>
         <div className={styles.headerChild} />
         <b className={styles.contactHistory}>Contact History</b>
-        <div className={styles.historyButton}>
+        {/* <div className={styles.historyButton}>
           <img className={styles.groupIcon} alt="" src="/group1.svg" />
-        </div>
+        </div> */}
       </div>
       <div className={styles.detailBar}>
         <b className={styles.type}>Type</b>

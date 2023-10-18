@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useCallback } from "react";
 import AddTaskPopUp from "./AddTaskPopUp";
 import PortalPopup from "../PortalPopup";
+import { SERVER_URL } from "../../index.js";
+
 import "./TaskContainer.css";
+import "../../pages/dashboard/Dashboard.css";
 
 const Task = (props) => (
  <div className = "row-wrapper">
@@ -37,7 +40,7 @@ export default function TaskContainer() {
  // This method fetches the records from the database.
  useEffect(() => {
   async function getTasks() {
-    const response = await fetch(`http://localhost:5050/task/`);
+    const response = await fetch(SERVER_URL + "/task/");
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -56,7 +59,7 @@ export default function TaskContainer() {
 
  // This method will delete a record
  async function deleteTask(id) {
-  await fetch(`http://localhost:5050/task/${id}`, {
+  await fetch(SERVER_URL + `/task/${id}`, {
     method: "DELETE"
   });
 
@@ -78,21 +81,14 @@ export default function TaskContainer() {
 }
   // This following section will display the table with the records of individuals.
   return (
-    <div>
-      <div className="tasks">
-        <div className="tasks-heading">
-          <div className="my-tasks">My Tasks</div>
-        </div>
+    <div className="tasks dashboard-widget">
+        <div className="widget-heading">My Tasks <button className="add-task" onClick={openAddTaskPopUp}>+ Add Task</button></div>
         <table>
           <tbody>{TaskContainer()}</tbody>
         </table>
-        <button className="add-task-container" onClick={openAddTaskPopUp}>
-          <div className="add-task">+ Add Task</div>
-        </button>
-      </div>
       {isAddTaskPopUpOpen && (
         <PortalPopup
-          overlayColor="rgba(113, 113, 113, 0.4)"
+          overlayColor="rgba(0, 0, 0, 0)"
           placement="Centered"
           onOutsideClick={closeAddTaskPopUp}
         >

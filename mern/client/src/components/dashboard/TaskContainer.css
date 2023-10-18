@@ -1,95 +1,74 @@
 .tasks {
-  position: absolute;
-  top: 17.2%;
-  left: 63%;
-  height: 56.3%;
-  width: 28%;
-  align-items: flex-start;
-  font-size: var(--font-size-sm);
-  color: var(--color-gray-200);
-  font-family: var(--font-inter);
-  background-color: var(--color-lightslategray);
-  border-radius: 15px;
-}
-
-.tasks-heading {
-  position: relative;
-  margin: 7px;
-  border-radius: var(--br-3xs);
-  background-color: #656C86;
-  padding: var(--padding-11xs) var(--padding-mid);
-  box-sizing: border-box;
-  font-size: var(--font-size-lg);
-  color: var(--color-gray-400);
-  font-family: var(--font-poppins);
-}
-
-.my-tasks {
-  color:white;
-  position: relative;
-  line-height: 150%;
-  font-weight: 500;
+    position: relative;
+    height: 60%;
+    width: 35%;
+    align-items: flex-start;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-200);
+    font-family: var(--font-inter);
+    background-color: var(--color-lightslategray);
+    border-radius: 15px;
+    overflow-y: scroll;
 }
 
 .tasks table {
-  position: relative;
-  height:80%;
-  border-spacing: 10px 10px;
-  display: block;
-  overflow:scroll;
+    position: relative;
+    height: 80%;
+    border-spacing: 10px 10px;
+    display: block;
 }
 
-.row-wrapper{
-  position:relative;
-  width: 100%;
-  background-color: white;
-  border-radius: 15px;
-  margin-bottom: 8px;
-  vertical-align: middle;
+.row-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 0.5rem 0rem;
+    background-color: white;
+    border-radius: 15px;
+    vertical-align: middle;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 .tick-task-done {
-  position: relative;
-  top: 8px;
-  width: 13px;
-  height: 13px;
-  object-fit: cover;
+    position: relative;
+    top: 8px;
+    width: 13px;
+    height: 13px;
+    object-fit: cover;
 }
 
 .delete-icon {
-  position: relative;
-  width: 13px;
-  height: 14.02px;
-  object-fit: cover;
+    position: relative;
+    width: 13px;
+    height: 14.02px;
+    object-fit: cover;
 }
+
 .delete-button {
-  background-color: white;
-  border:none;
+    background-color: white;
+    border: none;
 }
 
 .tasks tbody {
-  position: relative;
-  padding: var(--padding-xxs);
-  align-items: center;
-  color: black;
+    position: relative;
+    padding: var(--padding-xxs);
+    align-items: center;
+    color: black;
+
 }
 
 .add-task {
-  position: relative;
-  font-size: var(--font-size-sm);
-  line-height: 150%;
-  color: var(--color-white);
-  text-align:center;
-  font-family: var(--font-poppins);
-}
-
-.add-task-container {
-  margin-top: 5px;
-  margin-left: 10px;
-  position: relative;
-  cursor: pointer;
-  background-color: var(--color-lightseagreen);
-  border-radius: 5px;
-  border:none;
-  z-index: 3;
+    position: relative;
+    font-size: var(--font-size-sm);
+    padding: 5px;
+    color: var(--color-white);
+    text-align: center;
+    font-family: var(--font-poppins);
+    float: right;
+    margin: -5px 10px;
+    cursor: pointer;
+    background-color: var(--color-lightseagreen);
+    border-radius: 5px;
+    border: none;
+    float: right;
+    margin-left: 55%;
 }

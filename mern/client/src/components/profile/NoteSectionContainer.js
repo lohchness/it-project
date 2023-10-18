@@ -3,24 +3,21 @@ import React, { useEffect, useState, useCallback } from "react";
 import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
+import { SERVER_URL } from "../../index.js";
 
 const Note = (props) => (
-  <div className = "note-row-wrapper">
-   <tr height = "30px">
-     <img className="tick-task-done" alt="" src="/GreenTick.png" />
-     <td width = "80%">{props.note.description}</td>
-     <td>{props.note.header}</td>
-     <td>
-       <button className="delete-button"
-         onClick={() => {
-           props.deleteNote(props.note._id);
-          }}
-        >
+  <tr>
+    <td>
+      <b>{props.note.header}</b>
+      <br />
+      <div style={{ marginLeft: '20px' }}>{props.note.description}</div>
+    </td>
+    <td>
+      <button className="delete-button" onClick={() => props.deleteNote(props.note._id)}>
         <img className="delete-icon" alt="" src="/DeleteIcon.png" />
-        </button>
-      </td>
-    </tr>
-  </div>
+      </button>
+    </td>
+  </tr>
 );
 
 ////////////////////////////
@@ -39,7 +36,8 @@ export default function NoteContainer() {
 // This method fetches the records from the database.
 useEffect(() => {
   async function getNotes() {
-    const response = await fetch(`http://localhost:5050/note/`);
+    const response = await fetch(SERVER_URL + `/note/`);
+
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -57,7 +55,7 @@ useEffect(() => {
 
  // This method will delete a record
  async function deleteNote(id) {
-  await fetch(`http://localhost:5050/note/${id}`, {
+  await fetch(SERVER_URL + `/note/${id}`, {
     method: "DELETE"
   });
 
@@ -81,15 +79,15 @@ function NoteContainer() {
   return (
     <>
       <div className={styles.noteSection}>
-      <div className={styles.header}>
-          <div className={styles.notes}>My Notes</div>
-        </div>
+        <div className={styles.header}>
+          <b className={styles.notes}>Notes</b>
+          <button className={styles.addNoteButton} onClick={openNotesPopUp}>
+            <div className={styles.groupIcon}>+</div>
+          </button>
+         </div>
         <table>
           <tbody>{NoteContainer()}</tbody>
         </table>
-        <button className={styles.addNoteButton} onClick={openNotesPopUp}>
-          <div className={styles.groupIcon}>+ Add Note</div>
-        </button>
       </div>
       {isNotesPopUpOpen && (
         <PortalPopup
