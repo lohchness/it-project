@@ -1,248 +1,269 @@
 .connections {
-  background-color: #dddeec;
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  text-align: center;
-  font-size: var(--font-size-sm);
-  color: var(--color-gray-200);
-  font-family: var(--font-poppins);
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: var(--color-lavender);
+    width: 100vw;
+    height: 100vh;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+    font-family: var(--font-poppins);
+    background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255));
 }
+
 .span {
-  color: var(--color-white-100);
+    color: var(--color-white-100);
 }
+
 .crm {
-  color: #677092;
+    color: #677092;
 }
+
 .connectionsCrmContainer {
-  position: relative;
-  margin-top: 7%;
-  font-size: var(--font-size-xl);
-  line-height: 150%;
-  text-align: right;
-  color: var(--color-lightseagreen);
+    position: relative;
+    margin-top: 2%;
+    margin-left: 50%;
+    font-size: var(--font-size-xl);
+    text-align: right;
+    color: var(--color-lightseagreen);
 }
+
 .heading {
-  position:relative;
-  margin-left: 5px;
-  margin-top: -12px;
-  width: 90%;
-  height: 41px;
-  text-align: left;
-  font-size: var(--font-size-lg);
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin-top: -20px;
+    vertical-align: middle;
+    text-align: left;
+    font-size: var(--font-size-lg);
 }
+
 .searchBar {
-  border: 0;
-  font-family: var(--font-inter);
-  font-size: var(--font-size-sm);
-  background-color: white;
-  position: absolute;
-  left: 900px;
-  top:8px;
-  border-radius: var(--br-xl);
-  width: 222px;
-  height: 25px;
-  z-index:2;
+    border: 0;
+    font-family: var(--font-inter);
+    font-size: var(--font-size-sm);
+    background-color: white;
+    position: absolute;
+    left: 900px;
+    top: 8px;
+    border-radius: var(--br-xl);
+    width: 222px;
+    height: 25px;
+    z-index: 2;
 }
+
 .pages {
-  position: absolute;
-  top: 773px;
-  left: 836px;
-  width: 174px;
-  height: 30px;
+    position: absolute;
+    top: 773px;
+    left: 836px;
+    width: 174px;
+    height: 30px;
 }
 
 .backgroundChild {
-  position: absolute;
-  top: 2px;
-  left: 22px;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
+    position: absolute;
+    top: 2px;
+    left: 22px;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
 }
+
 .background {
-  margin-top:18px;
-  position: relative;
-  width: 1146px;
-  height: 837px;
-  background-color: #8891B4;
-  border-radius: 15px;
+    margin-top: 3%;
+    position: relative;
+    width: 90%;
+    height: 850px;
+    box-shadow: 2px 3px 8px #26314d44;
+    background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
+    border-radius: 15px;
 }
 
 .connectionlist {
-  margin-left:50px;
-  position: absolute;
+    margin-left: 50px;
+    position: absolute;
 }
+
 .bar {
-  background-color: transparent;
-  text-align: left;
-  margin-top: 10px;
-  margin-left: 100px;
+    background-color: transparent;
+    text-align: left;
+    margin-top: 15px;
+    margin-left: 70px;
 }
+
 .name,
 .lastContact,
 .touch,
 .tag {
-  cursor: pointer;
-  border: 0;
-  color: white;
-  background-color: transparent;
-  font-size: var(--font-size-sm);
-  font-family: var(--font-poppins);
-  color: var(--color-gray-200);
-  border: none;
+    cursor: pointer;
+    border: 0;
+    color: white;
+    background-color: transparent;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-poppins);
+    color: var(--color-gray-200);
+    border: none;
 }
+
 .lastContact {
-  margin-left: 200px;
+    margin-left: 200px;
 }
+
 .touch {
-  margin-left: 200px;
+    margin-left: 200px;
 }
+
 .tag {
-  margin-left: 200px;
+    margin-left: 200px;
 }
+
 .headingChild {
-  position: absolute;
-  top: 191px;
-  left: 326px;
-  width: 742px;
-  height: 23px;
+    margin: 0px !important;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-div-heading);
+    padding-top: 5px;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
 }
-.headingChild {
-  top: 0;
-  left: 0;
-  border-radius: var(--br-3xs);
-  background-color: #656c86;
-  width: 1135px;
-  height: 41px;
-  mix-blend-mode: normal;
-}
+
 .sortBy {
-  font-weight: 500;
+    font-weight: 500;
 }
+
 .sortByContainer {
-  top: 4px;
-  left: 55px;
-  line-height: 150%;
+    top: 10px;
+    left: 55px;
+    line-height: 150%;
 }
+
 .all,
 .filters1,
 .sortByContainer {
-  position: absolute;
+    position: absolute;
 }
+
 .filters1 {
-  top: 0;
-  left: 0;
-  border-radius: var(--br-8xs);
-  background-color: var(--color-lightseagreen);
-  width: 104px;
-  height: 23.92px;
+    top: 8px;
+    left: 0;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-lightseagreen);
+    width: 104px;
+    height: 23.92px;
 }
+
 .all {
-  top: 3.24px;
-  left: 21.21px;
-  font-size: var(--font-size-sm);
-  font-family: var(--font-inter);
-  color: var(--color-white-100);
-  text-align: center;
-  display: inline-block;
-  width: 61.57px;
-  height: 14.56px;
+    top: 10px;
+    left: 21.21px;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-inter);
+    color: var(--color-white-100);
+    text-align: center;
+    display: inline-block;
+    width: 61.57px;
+    height: 14.56px;
 }
+
 .filterAll,
 .filters2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 104px;
-  height: 23.92px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 104px;
+    height: 23.92px;
 }
+
 .filterAll {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
 }
+
 .filters2 {
-  border-radius: var(--br-8xs);
-  background-color: var(--color-indianred);
+    border-radius: var(--br-8xs);
+    background-color: rgba(162, 0, 38, 0.823);
+    top: 8px;
 }
+
 .registered {
-  position: absolute;
-  top: 3px;
-  left: 7px;
-  font-size: var(--font-size-sm);
-  font-family: var(--font-inter);
-  color: var(--color-white-100);
-  text-align: center;
-  display: inline-block;
-  width: 91px;
-  height: 12px;
+    position: absolute;
+    top: 10px;
+    left: 7px;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-inter);
+    color: var(--color-white-100);
+    text-align: center;
+    display: inline-block;
+    width: 91px;
+    height: 12px;
 }
+
 .filterRegistered,
 .filters3 {
-  position: absolute;
-  top: 0;
-  width: 104px;
-  height: 23.92px;
+    position: absolute;
+    top: 0;
+    width: 104px;
+    height: 23.92px;
 }
+
 .filterRegistered {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  left: 169px;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    left: 169px;
 }
+
 .filters3 {
-  left: 0;
-  border-radius: var(--br-8xs);
-  background-color: #444360;
+    top: 8px;
+    left: 0;
+    border-radius: var(--br-8xs);
+    background-color: #4843cf;
 }
+
 .madeUp {
-  position: absolute;
-  top: 3px;
-  left: 9px;
-  font-size: var(--font-size-sm);
-  font-family: var(--font-inter);
-  color: var(--color-white-100);
-  text-align: center;
-  display: inline-block;
-  width: 83.64px;
-  height: 19.09px;
+    position: absolute;
+    top: 10px;
+    left: 9px;
+    font-size: var(--font-size-sm);
+    font-family: var(--font-inter);
+    color: var(--color-white-100);
+    text-align: center;
+    display: inline-block;
+    width: 83.64px;
+    height: 19.09px;
 }
+
 .filterMadeup,
 .filters {
-  position: absolute;
-  height: 23.92px;
+    position: absolute;
+    height: 23.92px;
 }
+
 .filterMadeup {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  top: 0;
-  left: 338px;
-  width: 104px;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    top: 0;
+    left: 338px;
+    width: 104px;
 }
+
 .filters {
-  top: 6px;
-  left: 361px;
-  width: 442px;
+    top: 6px;
+    left: 361px;
+    width: 442px;
 }
+
 .filter {
-  position: absolute;
-  top: 4px;
-  left: 258px;
-  line-height: 150%;
-  font-weight: 500;
-  display: inline-block;
-  width: 62px;
-}
-
-
-@media screen and (max-width: 960px) {
-  .hamburgermenu,
-  .pages1 {
-    display: flex;
-  }
+    position: absolute;
+    top: 10px;
+    left: 258px;
+    line-height: 150%;
+    font-weight: 500;
+    display: inline-block;
+    width: 62px;
 }

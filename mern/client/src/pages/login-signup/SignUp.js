@@ -110,6 +110,7 @@ const SignUp = () => {
         navigate("/dashboard");
     } else {
         return (
+            <div className="page">
             <div className="sign-up-container">
                 <h1 className="title sign-up">Sign up</h1>
 
@@ -220,6 +221,7 @@ const SignUp = () => {
                         </form>
                     </>
                 )}
+            </div>
             </div>
         );
     }

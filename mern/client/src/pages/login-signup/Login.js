@@ -68,6 +68,7 @@ const Login = () => {
         navigate("/dashboard");
     } else {
         return (
+            <div className="page">
             <div className="login-container">
                 <h1 className="title log-in">Log in</h1>
                 <form className="login-form" method="post" onSubmit={handleSubmit(onSubmit)}>
@@ -128,6 +129,8 @@ const Login = () => {
                     </Link>
                 </div>
             </div>
+            </div>
+            
         )
     }
 

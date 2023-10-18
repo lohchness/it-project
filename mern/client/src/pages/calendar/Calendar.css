@@ -1,109 +1,39 @@
 .calendar {
-  position: relative;
-  background-color: var(--color-lavender);
-  width: 100%;
-  height: 1024px;
-  overflow: hidden;
-  text-align: right;
-  font-size: var(--font-size-xl);
-  color: var(--color-lightseagreen);
-  font-family: var(--font-poppins);
+    position: relative;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-lavender);
+    width: 100vw;
+    height: 100vh;
+    text-align: left;
+    font-size: var(--font-size-xl);
+    color: var(--color-white);
+    font-family: var(--font-poppins);
+    background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255));
+}
+
+.calendar Header {
+  height:10%;
 }
 .calendar-crm-container {
-  position: absolute;
-  top: 80px;
-  left: 1100px;
+    position: relative;
+    text-align: right;
+    color: var(--color-lightseagreen);
+  position: relative;
+  top: 10%;
+  right:10%;
   line-height: 150%;
   text-align: right;
   color: var(--color-lightseagreen);
 }
+
 .calendar-crm-container .span {
-  color: var(--color-white);
-}
-.calendar-crm-container .crm {
-  color: var(--color-slategray);
-}
-.vector-icon18,
-.vector-icon19,
-.vector-icon20 {
-  position: absolute;
-  height: 6.67%;
-  width: 105%;
-  top: -3.33%;
-  right: -2.5%;
-  bottom: 96.67%;
-  left: -2.5%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: cover;
-}
-.vector-icon19,
-.vector-icon20 {
-  top: 46.67%;
-  bottom: 46.67%;
-}
-.vector-icon20 {
-  top: 96.67%;
-  bottom: -3.33%;
-}
-.hamburgermenu3 {
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  width: 20px;
-  height: 15px;
-}
-.dashboard4,
-.hamburgermenu3 {
-  position: relative;
-  cursor: pointer;
-}
-.calender3,
-.messenger3 {
-  position: relative;
-  color: var(--color-lightseagreen);
-}
-.messenger3 {
-  color: var(--color-white);
-  cursor: pointer;
-}
-.nav3,
-.pages4 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-11xl);
-}
-.pages4 {
-  margin: 0;
-  text-align: center;
-  font-size: var(--font-size-lg);
-  color: var(--color-snow);
-  font-family: var(--font-poppins);
-}
-.nav3 {
-  align-self: stretch;
-}
-.nav-frame3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: var(--color-steelblue);
-  width: 1440px;
-  height: 55px;
-  display: flex;
-  flex-direction: column;
-  padding: var(--padding-sm) var(--padding-159xl);
-  box-sizing: border-box;
-  align-items: flex-start;
-  justify-content: center;
+    color: var(--color-white);
 }
 
-@media screen and (max-width: 960px) {
-  .hamburgermenu3,
-  .pages4 {
-    display: flex;
-  }
+.calendar-crm-container .crm {
+    color: var(--color-slategray);
 }

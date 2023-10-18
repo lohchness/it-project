@@ -1,14 +1,7 @@
-body {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-    font-family: var(--font-inter);
-    color: var(--color-white);
-    background-color: var(--color-lavender-100);
-    text-align: center;
-    width: 100%;
-    height: 100%;
+.page {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom right, #3d4973, var(--color-steelblue), #3d4973);
 }
 
 a {
@@ -21,23 +14,30 @@ a:hover {
 
 .login-container, .sign-up-container, .forgot-password-container {
     margin: 1rem auto;
-    padding: 0.5rem 3rem;
-    width: 40%;
+    padding: 3rem 4rem;
+    width: 50%;
     border-radius: var(--br-3xs);
     background-color: var(--color-steelblue);
     justify-content: center;
+    align-items: center;
     margin: 0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 2px 5px 30px #3a476c;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #1CBABD;
     font-weight: 400;
     margin: 20px;
+}
+
+.app-header {
+    font-size: 3rem;
+    margin-bottom: 40px;
 }
 
 form {
@@ -48,7 +48,7 @@ form {
 }
 
 .form-field {
-    border: 3px solid var(--color-lavender-200);
+    border: 3px solid #dddeec73;
     border-radius: 5px;
     width: 85%;
     text-align: left;

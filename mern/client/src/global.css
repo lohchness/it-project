@@ -4,8 +4,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap");
 
 body {
-    margin: 0;
-    line-height: normal;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-family: var(--font-inter);
+    color: var(--color-white);
+    text-align: center;
+    background-color: var(--color-lavender-200);
+    overflow-x: hidden;
+}
+
+html {
+    /* background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255)); */
+    background-size: cover;
+    background-position: top left, center;
+    background-attachment: scroll, fixed;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 
 * {
@@ -44,7 +64,7 @@ root {
 
     /* Colors */
     --color-lavender-100: #dddeec;
-    --color-lavender-200: rgba(221, 222, 236, 0.5);
+    --color-lavender-200: rgb(245, 245, 255);
     --color-lightseagreen: #1cbabd;
     --color-darkcyan: #0a9fa1;
     --color-white: #fff;
@@ -61,6 +81,11 @@ root {
     --color-gray-600: rgba(255, 255, 255, 0.82);
     --color-steelblue: #6a76a3;
     --color-silver: #bcbec0;
+
+    --color-div-background: #8a95bd;
+    --color-div-heading: #6975a2;
+    --color-text-highlight: #1cbabd;
+    --color-button: #1cbabd;
 
     /* Gaps */
     --gap-3xs: 0.5rem;

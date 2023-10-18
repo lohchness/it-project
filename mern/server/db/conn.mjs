@@ -34,4 +34,4 @@ try {
     console.error(e);
 }
 
-export const db = conn.db("sample_training");
+export const db = conn.db("CRM");

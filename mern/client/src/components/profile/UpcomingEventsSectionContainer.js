@@ -54,9 +54,9 @@ export default function UpcomingEventsSectionContainer() {
       <div className={styles.header}>
         <div className={styles.headerChild} />
         <b className={styles.headingText}>{`Upcoming Events `}</b>
-        <div className={styles.eventsButton}>
+        {/* <div className={styles.eventsButton}>
           <img className={styles.groupIcon} alt="" src="/group4.svg" />
-        </div>
+        </div> */}
       </div>
       <table>
         <tbody>{EventContainer()}</tbody>

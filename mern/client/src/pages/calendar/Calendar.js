@@ -24,16 +24,19 @@ const Calendar = () => {
         navigate("/login");
     } else {
         return (
-            <div className="calendar">
-                <div className="calendar-crm-container">
-                    <span>Calendar</span>
-                    <span className="span">{` `}</span>
-                    <span className="crm">{`> CRM`}</span>
-                </div>
-                <CalendarContainer />
-                <AddActivityForm />
+            <>
                 <Navbar />
-            </div>
+                <div className="calendar">
+                    {/* <div className="calendar-crm-container">
+                        <span>Calendar</span>
+                        <span className="span">{` `}</span>
+                        <span className="crm">{`> CRM`}</span>
+                    </div> */}
+                    <CalendarContainer />
+                    <AddActivityForm />
+                </div>
+            </>
+
         );
     }
 };

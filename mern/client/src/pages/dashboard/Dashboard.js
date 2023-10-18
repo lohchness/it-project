@@ -4,7 +4,7 @@ import Cookies from "universal-cookie";
 
 import TaskContainer from "../../components/dashboard/TaskContainer";
 import UpcomingEventsContainer from "../../components/dashboard/UpcomingEventsContainer";
-import ConnectionsForm from "../../components/dashboard/ConnectionsForm";
+import ConnectionsContainer from "../../components/dashboard/ConnectionsContainer";
 
 import Navbar from "../../components/Navbar";
 import "./Dashboard.css";
@@ -26,24 +26,32 @@ const Dashboard = () => {
         navigate("/login");
     } else {
         return (
-            <div className="dashboard">
+            <>
                 <Navbar />
-                <div className="dashboard-crm-container">
-                    <span className="span">{` Dashboard `}</span>
-                    <span className="crm">{`> CRM`}</span>
+                <div className="dashboard">
+                    {/* <div className="dashboard-crm-container">
+                        <span className="span">{` Dashboard `}</span>
+                        <span className="crm">{`> CRM`}</span>
+                    </div> */}
+                    <div className="dashboard-content-container">
+                        <ConnectionsContainer />
+                        <div className="connection-stats-container">
+                            <div className="connection-stats dashboard-widget">
+                                <div className="connections-made-this">Total connections</div>
+                                <div className="total-connect">254</div>
+                            </div>
+                            <div className="connection-stats dashboard-widget">
+                                <div className="connections-made-this">Connections made this month</div>
+                                <div className="monthly-connect">22</div>
+                            </div>
+                        </div>
+                        <TaskContainer />
+
+                        <UpcomingEventsContainer />
+                    </div>
                 </div>
-                <TaskContainer />
-                <div className="total-connections">
-                    <div className="connections-made-this">Total connections</div>
-                    <div className="total-connect">254</div>
-                </div>
-                <div className="monthly-connections">
-                    <div className="connections-made-this">Connections made this month</div>
-                    <div className="monthly-connect">22</div>
-                </div>
-                <UpcomingEventsContainer />
-                <ConnectionsForm />
-            </div>
+            </>
+
         );
     }
 };

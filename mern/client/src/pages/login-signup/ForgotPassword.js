@@ -98,6 +98,7 @@ const ForgotPassword = () => {
         navigate("/dashboard");
     } else {
         return (
+            <div className="page">
             <div className="forgot-password-container">
                 <h1 className="forgot-password">Forgot password?</h1>
 
@@ -183,6 +184,7 @@ const ForgotPassword = () => {
                         </form>
                     </>
                 )}
+            </div>
             </div>
         );
     }

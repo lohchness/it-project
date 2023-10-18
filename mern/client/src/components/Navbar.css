@@ -1,13 +1,13 @@
 .nav-bar-wrapper {
-    position: absolute;
-    left: 0;
-    background-color: #4A547B;
-    width: 100%;
+    position: relative;
+    background-color: #3d4973;
+    width: 100vw;
+    height: 5%;
     padding: 14px 178px;
 }
 
 .pages-wrapper {
-    margin: 0;
+    margin: 0% -5%;
     text-align: center;
     font-size: var(--font-size-lg);
     color: var(--color-snow);
@@ -46,7 +46,8 @@
     border: none;
     color: var(--color-snow);
     margin-left: auto;
-    padding-left: 50px;
+    margin-right: 20%;
+    float: right;
 }
 
 .logout-button :hover {
