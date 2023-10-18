@@ -14,7 +14,6 @@ router.get("/", async (req, res) => {
 
   let collection = await db.collection("notes");
   let results = await collection.find({ email: userEmail }).toArray();
-  console.log("Filtered Notes for Email:", results); // Add this line for debugging
   res.send(results).status(200);
 });
 
