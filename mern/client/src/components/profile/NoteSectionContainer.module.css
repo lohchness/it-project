@@ -90,7 +90,7 @@
 .noteSection {
     position: relative;
     width: 47%;
-    height: 83%;
+    height: 100%;
     text-align: left;
     font-size: var(--font-size-smi);
     color: var(--color-gray-600);

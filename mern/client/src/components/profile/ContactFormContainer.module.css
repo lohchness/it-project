@@ -32,9 +32,11 @@
 
 .contactNameButton {
     cursor: pointer;
-    border: 0;
-    top: 570px;
-    left: 125px;
+    position: absolute;
+    border: none;
+    bottom: 20px;
+    left: 120px;
+    width: 100px;
     padding: var(--padding-2xs) var(--padding-9xl);
     background-color: var(--color-lightseagreen);
     display: flex;

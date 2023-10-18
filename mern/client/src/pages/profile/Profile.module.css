@@ -28,7 +28,8 @@
     display: flex;
     flex-direction: column;
     margin-left: 2%;
-    height: 100vh;
+    height: 70%;
+    flex-grow: 1;
 }
 
 .lowerRight {
@@ -36,7 +37,9 @@
     display: flex;
     flex-direction: row;
     height: 50%;
+    flex-grow: 1;
 }
+
 
 /* .vectorIcon,
 .vectorIcon1,
