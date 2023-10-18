@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import AddTaskPopUp from "./AddTaskPopUp";
 import PortalPopup from "../PortalPopup";
+import { SERVER_URL } from "../../index.js";
+import Cookies from "universal-cookie";
 import "./TaskContainer.css";
 
 const Task = (props) => (
@@ -34,10 +36,24 @@ export default function TaskContainer() {
     setAddTaskPopUpOpen(false);
   }, []);
 
+  const cookies = new Cookies(); 
+  const tokenValue = cookies.get("token"); 
+
  // This method fetches the records from the database.
  useEffect(() => {
   async function getTasks() {
-    const response = await fetch(`http://localhost:5050/task/`);
+    try{
+      const email = await fetch(`http://localhost:5050/user/get-current-user`,{
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${tokenValue}`
+        }
+      });
+
+    const emailData = await email.json();
+    const userEmail = emailData.user.userEmail;
+    
+    const response = await fetch(SERVER_URL + `/task?email=${userEmail}`); // Add a query parameter for the user's email
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -47,16 +63,18 @@ export default function TaskContainer() {
 
     const tasks = await response.json();
     setTasks(tasks);
+  }catch (error) {
+      console.error("Error fetching notes:", error);
+    }
   }
-
   getTasks();
 
   return;
-}, [tasks.length]);
+}, [tokenValue]);
 
  // This method will delete a record
  async function deleteTask(id) {
-  await fetch(`http://localhost:5050/task/${id}`, {
+  await fetch(SERVER_URL + `/task/${id}`, {
     method: "DELETE"
   });
 

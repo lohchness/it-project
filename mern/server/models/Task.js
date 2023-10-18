@@ -6,11 +6,11 @@ const TaskSchema = new mongoose.Schema({
         required: true,
     },
     duedate: {
-        type: Date,
+        type: String,
         required: true,
     }
 })
 
-const Task = mongoose.model("taks", TaskSchema)
+const Task = mongoose.model("newtasks", TaskSchema);
 
 export default Task;
