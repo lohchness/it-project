@@ -1,71 +1,56 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import "./AddTaskPopUp.css";
+import "./AddConnectionPopUp.css";
 
 import { SERVER_URL } from "../../index.js";
 
-export default function AddTask({ onClose }) {
+export default function AddConnection({ onClose }) {
 
     const [form, setForm] = useState({
-        description: "",
-        duedate: "",
-    });
+        ConnectionId: "",
+    })
     const navigate = useNavigate();
 
-    // These methods will update the state properties.
     function updateForm(value) {
         return setForm((prev) => {
             return { ...prev, ...value };
         });
     }
 
-    // This function will handle the submission.
     async function onSubmit(e) {
         e.preventDefault();
 
-        // When a post request is sent to the create url, we'll add a new record to the database.
-        const newTask = { ...form };
+        const newConnection = { ...form };
 
-        await fetch(SERVER_URL + "/task", {
+        await fetch(SERVER_URL + "/connection", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(newTask),
+            body: JSON.stringify(newConnection),
         })
             .catch(error => {
                 window.alert(error);
                 return;
             });
 
-        setForm({ description: "", duedate: "" });
-        //navigate("/");
+        setForm({ ConnectionId: "" });
         window.location.reload();
     }
+
     return (
-        <div className="add-task-popup">
+        <div className="add-connection-popup">
             <form onSubmit={onSubmit}>
-                <div className="popup">
+                <div className="conn-popup">
                     <input
-                        className="duedate"
-                        placeholder="Due Date"
+                        className="conn-id"
+                        placeholder="Connection ID"
                         type="text"
                         id="position"
-                        value={form.duedate}
-                        onChange={(e) => updateForm({ duedate: e.target.value })}
+                        value={form.ConnectionId}
+                        onChange={(e) => updateForm({ ConnectionId: e.target.value })}
                         required
                     />
-                    <div className="description-wrapper">
-                        <textarea
-                            name="description"
-                            placeholder="Description"
-                            type="text"
-                            id="position"
-                            value={form.description}
-                            onChange={(e) => updateForm({ description: e.target.value })}
-                            required
-                        />
-                    </div>
                     <div className="confirm-button">
                         <input
                             type="submit"
@@ -77,8 +62,8 @@ export default function AddTask({ onClose }) {
                         <div className="cancel">Cancel</div>
                     </button>
                 </div>
+
             </form>
         </div>
-    );
-
+    )
 }
