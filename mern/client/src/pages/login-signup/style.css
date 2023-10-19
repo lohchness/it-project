@@ -123,6 +123,7 @@ button {
     margin-bottom: 0.7rem;
     border-radius: 10px;
     text-align: center;
+    color: white;
 }
 
 .login-button {
