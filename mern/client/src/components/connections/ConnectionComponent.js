@@ -17,9 +17,10 @@ const ConnectionComponent = (connection) => {
             {/* <img className="mask-group-icon" alt="" src="/undefined2.png" /> */}
             <img className="connection1-item" alt="" src="/vector-2.svg" />
             <button className="delete">
-                <img className="vector-icon3" alt="" src="/vector.svg" />
+                <img className="del-button" alt="" src="/DeleteIcon.png"/>
+                {/* <img className="vector-icon3" alt="" src="/vector.svg" />
                 <img className="vector-icon4" alt="" src="/vector1.svg" />
-                <img className="vector-icon5" alt="" src="/vector2.svg" />
+                <img className="vector-icon5" alt="" src="/vector2.svg" /> */}
             </button>
         </div>
     );

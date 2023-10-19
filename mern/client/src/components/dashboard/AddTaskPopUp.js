@@ -5,7 +5,8 @@ import "./AddTaskPopUp.css";
 import { SERVER_URL } from "../../index.js";
 import Cookies from "universal-cookie";
 
-export default function AddTask({onClose}) {
+export default function AddTask({ onClose }) {
+
 
   const [form, setForm] = useState({
     description: "",
@@ -51,17 +52,17 @@ export default function AddTask({onClose}) {
   e.preventDefault();
   const newTask = { ...form };
 
-  await fetch(SERVER_URL + "/task", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newTask),
-  })
-  .catch(error => {
-    window.alert(error);
-    return;
-  });
+        await fetch(SERVER_URL + "/task", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newTask),
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
 
   setForm({  description: "", duedate: "",email: form.email });
   //navigate("/");
@@ -91,19 +92,6 @@ export default function AddTask({onClose}) {
            required
           />
         </div>
-        <div className="confirm-button">
-          <input
-           type="submit"
-           value="Confirm"
-           className="confirm-control"
-         />
-        </div>
-        <button className="cancel-button" onClick={onClose}>
-          <div className="cancel">Cancel</div>
-        </button>
-        </div>
-      </form>
-    </div>
-  );
+    );
 
 }
