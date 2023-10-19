@@ -65,6 +65,7 @@ export default function TaskContainer() {
 
     const tasks = await response.json();
     setTasks(tasks);
+
   }catch (error) {
       console.error("Error fetching tasks:", error);
     }
@@ -80,6 +81,7 @@ export default function TaskContainer() {
     method: "DELETE"
   });
 
+  console.log("deleted");
   const newTasks = tasks.filter((el) => el._id !== id);
   setTasks(newTasks);
 }

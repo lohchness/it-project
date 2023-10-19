@@ -5,7 +5,8 @@ import "./AddTaskPopUp.css";
 import { SERVER_URL } from "../../index.js";
 import Cookies from "universal-cookie";
 
-export default function AddTask({onClose}) {
+export default function AddTask({ onClose }) {
+
 
   const [form, setForm] = useState({
     description: "",
@@ -51,59 +52,50 @@ export default function AddTask({onClose}) {
   e.preventDefault();
   const newTask = { ...form };
 
-  await fetch(SERVER_URL + "/task", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(newTask),
-  })
-  .catch(error => {
-    window.alert(error);
-    return;
-  });
+        await fetch(SERVER_URL + "/task", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newTask),
+        })
+            .catch(error => {
+                window.alert(error);
+                return;
+            });
 
   setForm({  description: "", duedate: "",email: form.email });
   //navigate("/");
   window.location.reload(); 
 }
-  return (
-    <div className="add-task-popup">
-      <form onSubmit={onSubmit}>
-        <div className="popup">
-        <input 
-          className="duedate" 
-          placeholder="Due Date" 
-          type="text" 
+return (
+  <div className="add-task-popup">
+    <form onSubmit={onSubmit}>
+      <div className="popup">
+        <input
+          className="duedate"
+          placeholder="Due Date"
+          type="text"
           id="position"
           value={form.duedate}
-          onChange={(e) => updateForm({duedate: e.target.value })}
+          onChange={(e) => updateForm({ duedate: e.target.value })}
           required
+        />
+        <div className="description-wrapper">
+          <textarea
+            name="description"
+            placeholder="Description"
+            type="text"
+            id="position"
+            value={form.description}
+            onChange={(e) => updateForm({ description: e.target.value })}
+            required
           />
-        <div className = "description-wrapper">
-          <textarea 
-           name="description" 
-           placeholder="Description" 
-           type="text"
-           id="position"
-           value={form.description}
-           onChange={(e) => updateForm({description: e.target.value })}
-           required
-          />
         </div>
-        <div className="confirm-button">
-          <input
-           type="submit"
-           value="Confirm"
-           className="confirm-control"
-         />
-        </div>
-        <button className="cancel-button" onClick={onClose}>
-          <div className="cancel">Cancel</div>
-        </button>
-        </div>
-      </form>
-    </div>
-  );
+      </div>
+      {/* Rest of your form */}
+    </form>
+  </div>
+);
 
 }

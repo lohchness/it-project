@@ -25,7 +25,7 @@ router.post("/", async (req, res) => {
       email: req.body.email,
       description: req.body.description,
       date: req.body.date,
-      location: req.body.location,
+      type: req.body.type,
     };
     let collection = await db.collection("histories");
     let result = await collection.insertOne(newDocument);
