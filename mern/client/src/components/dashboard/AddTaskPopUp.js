@@ -68,30 +68,34 @@ export default function AddTask({ onClose }) {
   //navigate("/");
   window.location.reload(); 
 }
-  return (
-    <div className="add-task-popup">
-      <form onSubmit={onSubmit}>
-        <div className="popup">
-        <input 
-          className="duedate" 
-          placeholder="Due Date" 
-          type="text" 
+return (
+  <div className="add-task-popup">
+    <form onSubmit={onSubmit}>
+      <div className="popup">
+        <input
+          className="duedate"
+          placeholder="Due Date"
+          type="text"
           id="position"
           value={form.duedate}
-          onChange={(e) => updateForm({duedate: e.target.value })}
+          onChange={(e) => updateForm({ duedate: e.target.value })}
           required
-          />
-        <div className = "description-wrapper">
-          <textarea 
-           name="description" 
-           placeholder="Description" 
-           type="text"
-           id="position"
-           value={form.description}
-           onChange={(e) => updateForm({description: e.target.value })}
-           required
+        />
+        <div className="description-wrapper">
+          <textarea
+            name="description"
+            placeholder="Description"
+            type="text"
+            id="position"
+            value={form.description}
+            onChange={(e) => updateForm({ description: e.target.value })}
+            required
           />
         </div>
-    );
+      </div>
+      {/* Rest of your form */}
+    </form>
+  </div>
+);
 
 }
