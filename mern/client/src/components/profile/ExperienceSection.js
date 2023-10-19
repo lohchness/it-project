@@ -13,7 +13,7 @@ const Experience = (props) => (
       <div style={{ marginLeft: '20px' }}>{props.experience.description}</div>
     </td>
     <td>
-      <button className="delete-button" onClick={() => props.deleteExperience(props.experience._id)}>
+      <button className={styles.deleteButton} onClick={() => props.deleteExperience(props.experience._id)}>
         <img className="delete-icon" alt="" src="/DeleteIcon.png" />
       </button>
     </td>

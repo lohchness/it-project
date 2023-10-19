@@ -15,7 +15,7 @@ const Note = (props) => (
       <div style={{ marginLeft: '20px' }}>{props.note.description}</div>
     </td>
     <td>
-      <button className="delete-button" onClick={() => props.deleteNote(props.note._id)}>
+      <button className={styles.deleteButton} onClick={() => props.deleteNote(props.note._id)}>
         <img className="delete-icon" alt="" src="/DeleteIcon.png" />
       </button>
     </td>

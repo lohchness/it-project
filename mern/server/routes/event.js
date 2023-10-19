@@ -6,8 +6,14 @@ const router = express.Router();
 
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
+  const userEmail = req.query.email;
+  if (!userEmail) {
+    res.status(400).send("Missing email query parameter");
+    return;
+  }
+
   let collection = await db.collection("events");
-  let results = await collection.find({}).toArray();
+  let results = await collection.find({email: userEmail}).toArray();
   res.send(results).status(200);
 });
 
@@ -24,6 +30,7 @@ router.get("/:id", async (req, res) => {
 // This section will help you create a new record.
 router.post("/", async (req, res) => {
   let newDocument = {
+    email: req.body.email,
     description: req.body.description,
     date: req.body.date,
     fromTime: req.body.fromTime,

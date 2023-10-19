@@ -97,7 +97,7 @@
 .noteSection {
     position: relative;
     width: 47%;
-    height: 83%;
+    height: 100%;
     text-align: left;
     font-size: var(--font-size-smi);
     color: var(--color-gray-600);
@@ -113,4 +113,9 @@
     width: 13px;
     height: 14.02px;
     object-fit: cover;
+}
+
+.deleteButton {
+    background-color: inherit;
+    border: none;
 }

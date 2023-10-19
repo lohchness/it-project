@@ -8,6 +8,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import Calendar from "./pages/calendar/Calendar";
 import Profile from "./pages/profile/Profile";
 import Connections from "./pages/connections/Connections";
+import Messaging from "./pages/messenger/Messaging";
 
 const App = () => {
   return (
@@ -22,7 +23,8 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/calendar" element={<Calendar/>}/>
         <Route path="/profile" element={<Profile/>}/>
-        <Route path="/connections" element={<Connections/>}/>
+          <Route path="/connections" element={<Connections />} />
+          <Route path="/messaging" element={<Messaging />} />
       </Routes>
   );
 };

@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useCallback } from "react";
 import AddTaskPopUp from "./AddTaskPopUp";
 import PortalPopup from "../PortalPopup";
-import { SERVER_URL } from "../../index.js";
-
 import "./TaskContainer.css";
 import "../../pages/dashboard/Dashboard.css";
+
+import { SERVER_URL } from "../../index.js";
+import Cookies from "universal-cookie";
 
 const Task = (props) => (
  <div className = "row-wrapper">
@@ -37,10 +38,24 @@ export default function TaskContainer() {
     setAddTaskPopUpOpen(false);
   }, []);
 
+  const cookies = new Cookies(); 
+  const tokenValue = cookies.get("token"); 
+
  // This method fetches the records from the database.
  useEffect(() => {
   async function getTasks() {
-    const response = await fetch(SERVER_URL + "/task/");
+    try{
+      const email = await fetch(`http://localhost:5050/user/get-current-user`,{
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${tokenValue}`
+        }
+      });
+
+    const emailData = await email.json();
+    const userEmail = emailData.user.userEmail;
+    
+    const response = await fetch(SERVER_URL + `/task?email=${userEmail}`); // Add a query parameter for the user's email
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -50,13 +65,15 @@ export default function TaskContainer() {
 
     const tasks = await response.json();
     setTasks(tasks);
-    console.log(tasks);
-  }
 
+  }catch (error) {
+      console.error("Error fetching tasks:", error);
+    }
+  }
   getTasks();
 
   return;
-}, [tasks.length]);
+}, [tokenValue]);
 
  // This method will delete a record
  async function deleteTask(id) {
@@ -84,7 +101,7 @@ export default function TaskContainer() {
   // This following section will display the table with the records of individuals.
   return (
     <div className="tasks dashboard-widget">
-        <div className="widget-heading">My Tasks <button className="add-task" onClick={openAddTaskPopUp}>+</button></div>
+        <div className="widget-heading">My Tasks <button className="add-task" onClick={openAddTaskPopUp}>+ Add Task</button></div>
         <table>
           <tbody>{TaskContainer()}</tbody>
         </table>
@@ -100,5 +117,3 @@ export default function TaskContainer() {
     </div>
   );
 };
-
-//export default TaskContainer;

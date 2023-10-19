@@ -14,6 +14,24 @@ export default function ProfilePic({ profilePic, nameLastName, jobPosition }) {
     //setAboutMeEditPopUpOpen(false);
   }, []);
 
+  const linkFacebookProfile = () => {
+    // Replace 'your-facebook-url' with the actual URL of your Facebook profile or page.
+    const facebookUrl = 'https://www.facebook.com';
+    // Open Facebook in a new tab or window.
+    window.open(facebookUrl, '_blank');
+  };
+
+  const linkInstagramProfile = () => {
+    const instaURL = 'https://www.instagram.com'
+    window.open(instaURL, 'blank_')
+  };
+
+  const linkTwitterProfile = () => {
+    const twiiterURL = 'https://twitter.com/i/flow/login'
+    window.open(twiiterURL, 'blank_')
+  };
+
+  
 
   return (
     <>
@@ -27,17 +45,17 @@ export default function ProfilePic({ profilePic, nameLastName, jobPosition }) {
             </div>
           </div>
           <div className={styles.facebookButtonParent}>
-            <div className={styles.facebookButton}>
-              <img className={styles.vectorIcon} alt="" src="/vector3.svg" />
-            </div>
-            <div className={styles.instagramButton}>
+            <button className={styles.facebookButton} onClick={linkFacebookProfile}>
+                <img className={styles.vectorIcon} alt="Facebook" src="/vector3.svg" />
+            </button>
+            <button className={styles.instagramButton} onClick={linkInstagramProfile}>
               <img className={styles.vectorIcon1} alt="" src="/vector4.svg" />
               <img className={styles.vectorIcon2} alt="" src="/vector5.svg" />
               <img className={styles.vectorIcon3} alt="" src="/vector6.svg" />
-            </div>
-            <div className={styles.facebookButton}>
+            </button>
+            <button className={styles.instagramButton} onClick={linkTwitterProfile}>
               <img className={styles.vectorIcon4} alt="" src="/vector7.svg" />
-            </div>
+            </button>
           </div>
         </div>
         <button

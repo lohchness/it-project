@@ -1,9 +1,9 @@
 .calendar-wrapper {
   position: absolute;
-  top: 100px;
-  left: 90px;
-  width: 863px;
-  height: 730px;
+  top: 13.3%;
+  left: 7%;
+  width: 60%;
+  height: 92%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -84,3 +84,8 @@
   font-family: var(--font-poppins);
   margin-left: 10px;
 }
+
+.deleteButton {
+  background-color: inherit;
+  border: none;
+}

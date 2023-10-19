@@ -87,10 +87,14 @@
 
 .detailBar {
     margin: 0 !important;
+    position: absolute;
     top: 44px;
     left: 62px;
     width: 444px;
     z-index: 4;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-500);
+    font-family: var(--font-poppins);
 }
 
 .contactHistorySection {
