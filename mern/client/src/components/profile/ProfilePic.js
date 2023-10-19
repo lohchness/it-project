@@ -7,6 +7,7 @@ export default function ProfilePic({ profilePic, nameLastName, jobPosition }) {
   const [isAboutMeEditPopUpOpen, setAboutMeEditPopUpOpen] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const fileInputRef = useRef(null); // Create a ref for the file input element
+  const [imageTimestamp, setImageTimestamp] = useState(Date.now()); // Add a timestamp
 
   const openAboutMeEditPopUp = useCallback(() => {
     //setAboutMeEditPopUpOpen(true);
@@ -36,6 +37,7 @@ export default function ProfilePic({ profilePic, nameLastName, jobPosition }) {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
+    setImageTimestamp(Date.now()); 
   };
 
   const handleEditProfileClick = () => {
@@ -48,8 +50,11 @@ export default function ProfilePic({ profilePic, nameLastName, jobPosition }) {
       <div className={styles.profilePic}>
         <div className={styles.frameParent}>
           <div className={styles.maskGroupParent}>
-            <img className={styles.maskGroupIcon} alt="" src={profilePic} />
-            <div className={styles.nameLastnameParent}>
+          <img
+              className={styles.maskGroupIcon}
+              alt=""
+              src={`${selectedFile}?${imageTimestamp}`}
+            />            <div className={styles.nameLastnameParent}>
               <div className={styles.nameLastname}>{nameLastName}</div>
               <div className={styles.jobPosition}>{jobPosition}</div>
             </div>
