@@ -21,7 +21,7 @@ const Messaging = () => {
             <img className={styles.inputChild} alt="" src="/group-2213.svg" />
             <div className={styles.typeYourMessageHereParent}>
               <div className={styles.typeYourMessage}>
-                Type your message here...
+                Type your message...
               </div>
               <img
                 className={styles.fluentcamera24RegularIcon}
