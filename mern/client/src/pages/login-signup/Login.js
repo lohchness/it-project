@@ -70,7 +70,7 @@ const Login = () => {
         return (
             <div className="page">
             <div className="login-container">
-                <h1 className="title log-in">Log in</h1>
+                <h1 className="title log-in">LOGIN</h1>
                 <form className="login-form" method="post" onSubmit={handleSubmit(onSubmit)}>
                     <input
                         className={`form-field ${errors.email ? 'error-form-field' : ''}`}
@@ -103,8 +103,8 @@ const Login = () => {
     
                     {loginError && <div className="form-input-error-text login-error">Incorrect email address or password</div>}
     
-                    <button className="login-button" type="submit">
-                        Login
+                    <button className="login-button" type="submit" color="white">
+                        Login 
                     </button>
                 </form>
                 {/* <div className="third-party-login-container">
