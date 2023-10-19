@@ -34,6 +34,9 @@ const Connections = () => {
 
             const connections = await response.json();
             console.log("connections");
+            if (connections.registered_user == true) {
+                
+            }
             setConnections(connections);
         }
 
@@ -52,7 +55,20 @@ const Connections = () => {
         setConnections(newConnections);
     }
     
-
+    const handleAddConnection = (newConnection) => {
+        fetch(SERVER_URL + `/connection`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(newConnection),
+        })
+        .then(response => response.json())
+        .then(data => {
+          // The new connection has been added, now add it to the state
+          setConnections(prevConnections => [...prevConnections, data]);
+        });
+      };
 
     // Check to see if JWT token exists before laoding page
     if (!tokenValue) {
@@ -107,6 +123,7 @@ const Connections = () => {
                             showing8OutTop="530px"
                             showing8OutLeft="87px"
                         />
+                        
                         <AddNewConnection
                             addNewConnectionTop="500px"
                             addNewConnectionLeft="87px"
