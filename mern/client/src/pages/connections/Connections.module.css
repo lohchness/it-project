@@ -45,7 +45,7 @@
     font-size: var(--font-size-sm);
     background-color: white;
     position: absolute;
-    left: 900px;
+    right: 10px;
     top: 8px;
     border-radius: var(--br-xl);
     width: 222px;
@@ -87,6 +87,7 @@
     overflow-y: scroll;
     margin-left: 50px;
     position: absolute;
+    width: 95%;
     /* margin-bottom: 10px; */
 }
 
@@ -252,15 +253,16 @@
     padding: 0;
     background-color: transparent;
     top: 0;
-    left: 338px;
+    left: 350px;
     width: 104px;
 }
 
 .filters {
     top: 6px;
-    left: 361px;
+    left: 330px;
     width: 442px;
 }
+
 
 .filter {
     position: absolute;

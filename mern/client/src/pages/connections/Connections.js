@@ -127,7 +127,7 @@ const Connections = () => {
                         <AddNewConnection
                             addNewConnectionTop="500px"
                             addNewConnectionLeft="87px"
-                            vector="/add-icon.svg"
+                            vector="/public/add-icon.svg"
                             vectorIconHeight="20px"
                             vectorIconWidth="20px"
                             vectorIconTop="2px"

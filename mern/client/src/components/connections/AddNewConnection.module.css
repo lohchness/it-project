@@ -12,6 +12,7 @@
   object-fit: cover;
 }
 .addNewConnection1 {
+    cursor: pointer;
   position: absolute;
   top: 0;
   left: 29.29px;
@@ -30,7 +31,7 @@
   position: absolute;
   top: 810px;
   left: 286.71px;
-  width: 190.29px;
+  width: 400px;
   height: 24px;
 }
 .addconnection {
