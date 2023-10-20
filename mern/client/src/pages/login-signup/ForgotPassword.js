@@ -156,12 +156,12 @@ const ForgotPassword = () => {
                                 placeholder="New password"
                                 type="password"
                                 {...register("password", {
-                                    required: true, minLength: 5
+                                    required: true, minLength: 7
                                 })}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required />
-                            {errors.password && <label className="form-input-error-text">Password is too short (minimum 5 characters)</label>}
+                            {errors.password && <label className="form-input-error-text">Password is too short (minimum 7 characters)</label>}
 
                             <input
                                 className={`form-field ${errors.confirmPassword ? 'error-form-field' : ''}`}
