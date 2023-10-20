@@ -45,8 +45,8 @@
 .confirmExperienceButton {
     margin: 0 !important;
     position: absolute;
-    top: 206px;
-    left: 139px;
+    top: 215px;
+    left: 150px;
     border-radius: var(--br-8xs);
     background-color: var(--color-lightseagreen);
     display: flex;
@@ -83,7 +83,7 @@
     margin: 0 !important;
     position: absolute;
     top: 206px;
-    left: 6px;
+    left: 20px;
     border-radius: var(--br-8xs);
     z-index: 4;
 }
