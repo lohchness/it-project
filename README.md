@@ -5,6 +5,8 @@ This is the repository for our [Personal CRM web app](https://group101-it-projec
 To implement this app, we have decided to use the MERN (MongoDB, Express, React and Node.js) tech stack, due to its ease of use, speed of development, scalability and flexibility. We also utilise various tools in the development process including Figma for creating a UI prototype, Github for storing code, Slack and Discord for internal communication between team members, and Jira for managing tasks.
 
 ## How to use
+Note: At the moment it sometimes takes a long time to login to the deployed application. If it is taking too long please refresh the page and try again or click the login button a couple of times until login is successful.  
+
 __Test credentials__  
 Username: testuser@test.com  
 Password: testpassword
