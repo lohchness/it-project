@@ -100,7 +100,7 @@ const ForgotPassword = () => {
         return (
             <div className="page">
             <div className="forgot-password-container">
-                <h1 className="forgot-password">Forgot password?</h1>
+                <h1 className="forgot-password">FORGOT PASSWORD</h1>
 
                 {passwordResetStep == 1 && (
                     <>

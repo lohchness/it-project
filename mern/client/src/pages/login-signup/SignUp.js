@@ -112,7 +112,7 @@ const SignUp = () => {
         return (
             <div className="page">
             <div className="sign-up-container">
-                <h1 className="title sign-up">Sign up</h1>
+                <h1 className="title sign-up">SIGN UP</h1>
 
                 {signUpStep == 1 && (
                     <>
