@@ -4,13 +4,6 @@ This is the repository for our [Personal CRM web app](https://group101-it-projec
 
 To implement this app, we have decided to use the MERN (MongoDB, Express, React and Node.js) tech stack, due to its ease of use, speed of development, scalability and flexibility. We also utilise various tools in the development process including Figma for creating a UI prototype, Github for storing code, Slack and Discord for internal communication between team members, and Jira for managing tasks.
 
-## Team
-- Fox Corby - Lead Developer
-- Natasha Chiorsac - Frontend Developer
-- David Cheng - Scrum Master & Lead Tester
-- Lok Chow - Product Owner & Backend Developer
-- Sophie Su - Backend Developer
-
 ## How to use
 __Test credentials__  
 Username: testuser@test.com  
