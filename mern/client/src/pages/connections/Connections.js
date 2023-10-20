@@ -24,7 +24,7 @@ const Connections = () => {
             navigate("/login");
         }
         async function getConnections() {
-            const response = await fetch(SERVER_URL + `/connection`);
+            const response = await fetch(`${SERVER_URL}/connection`);
 
             if (!response.ok) {
                 const message = `An error occured: ${response.statusText}`;
@@ -56,7 +56,7 @@ const Connections = () => {
     }
     
     const handleAddConnection = (newConnection) => {
-        fetch(SERVER_URL + `/connection`, {
+        fetch(`${SERVER_URL}/connection`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

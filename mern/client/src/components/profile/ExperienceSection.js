@@ -38,7 +38,7 @@ export default function ExperienceSection() {
   useEffect(() => {
     async function getExperiences() {
       try {
-        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+        const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokenValue}`
@@ -47,7 +47,7 @@ export default function ExperienceSection() {
         const emailData = await email.json();
         const userEmail = emailData.user.userEmail;
 
-        const response = await fetch(SERVER_URL + `/experience?email=${userEmail}`);
+        const response = await fetch(`${SERVER_URL}/experience?email=${userEmail}`);
     
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;

@@ -17,7 +17,7 @@ export default function ExperiencePopUp({ onClose }) {
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
 
-    fetch(`http://localhost:5050/user/get-current-user`, {
+    fetch(`${SERVER_URL}/user/get-current-user`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${tokenValue}`

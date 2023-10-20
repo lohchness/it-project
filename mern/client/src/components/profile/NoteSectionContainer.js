@@ -42,7 +42,7 @@ export default function NoteContainer() {
 useEffect(() => {
   async function getNotes() {
     try {
-      const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+      const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${tokenValue}`
@@ -51,7 +51,7 @@ useEffect(() => {
       const emailData = await email.json();
       const userEmail = emailData.user.userEmail;
 
-      const response = await fetch(SERVER_URL + `/note?email=${userEmail}`); // Add a query parameter for the user's email
+      const response = await fetch(`${SERVER_URL}/note?email=${userEmail}`); // Add a query parameter for the user's email
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;

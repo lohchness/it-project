@@ -7,6 +7,8 @@ import AboutMeEditPopUp from "./AboutMeEditPopUp.js"
 import { useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 
+import { SERVER_URL } from "../../index.js";
+
 export default function ContactFormContainer() {
   const [profile, setProfile] = useState([]); 
   const [isEditPopupOpen, setEditPopupOpen] = useState(false);
@@ -22,13 +24,12 @@ export default function ContactFormContainer() {
   useEffect(() => {
     async function getProfile() {
       try {
-        //const profileID = await fetch(`http://localhost:5050/user/get-current-user`);
         //console.log(profileID);
 
         //const cookies = new Cookies(); 
         //const tokenValue = cookies.get("token"); 
 
-        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+        const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokenValue}`
@@ -37,7 +38,7 @@ export default function ContactFormContainer() {
         const emailData = await email.json();
         const userEmail = emailData.user.userEmail;
 
-        const response = await fetch(`http://localhost:5050/user/get-user-by-email?email=${userEmail}`, {
+        const response = await fetch(`${SERVER_URL}/user/get-user-by-email?email=${userEmail}`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokenValue}`, // Include the JWT token for authentication
@@ -46,8 +47,6 @@ export default function ContactFormContainer() {
 
         //const response = await User.findOne({ email: IDnEmail.email });
     
-        //const response = await fetch(`http://localhost:5050/user/${profileID}`);
-        //const response = await fetch(`http://localhost:5050/profile`);
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;
           window.alert(message);
@@ -70,7 +69,7 @@ export default function ContactFormContainer() {
 
     try {
 
-        const response = await fetch(`http://localhost:5050/user/update`, {
+        const response = await fetch(`${SERVER_URL}/user/update`, {
         method: "PATCH", // Use the appropriate HTTP method (e.g., PATCH) for updating data
         headers: {
           "Content-Type": "application/json", 'Authorization': `Bearer ${tokenValue}`

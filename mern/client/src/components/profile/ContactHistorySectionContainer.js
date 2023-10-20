@@ -14,7 +14,7 @@ export default function ContactHistorySectionContainer() {
   useEffect(() => {
     async function getHistories() {
       try {
-        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+        const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokenValue}`
@@ -24,7 +24,7 @@ export default function ContactHistorySectionContainer() {
         const userEmail = emailData.user.userEmail;
         console.log("userEmail", userEmail)
   
-        const response = await fetch(SERVER_URL + `/history?email=${userEmail}`);
+        const response = await fetch(`${SERVER_URL}/history?email=${userEmail}`);
   
         if (response.status === 200) {
           const histories = await response.json();

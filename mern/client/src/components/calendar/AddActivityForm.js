@@ -2,6 +2,8 @@ import "./AddActivityForm.css";
 import React, { useState, useEffect } from "react";
 import Cookies from "universal-cookie";
 
+import { SERVER_URL } from "../../index.js";
+
 
 export default function AddActivityForm() {
   const [form, setForm] = useState({
@@ -19,7 +21,7 @@ export default function AddActivityForm() {
       const cookies = new Cookies(); 
       const tokenValue = cookies.get("token"); 
       try {
-        const email = await fetch("http://localhost:5050/user/get-current-user", {
+        const email = await fetch(SERVER_URL + "/user/get-current-user", {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokenValue}`
@@ -57,7 +59,7 @@ export default function AddActivityForm() {
       return;
     }
 
-    await fetch("http://localhost:5050/event", {
+    await fetch(SERVER_URL + "/event", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

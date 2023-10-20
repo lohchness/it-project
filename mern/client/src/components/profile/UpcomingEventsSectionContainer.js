@@ -23,7 +23,7 @@ export default function UpcomingEventsSectionContainer() {
     async function getEvents() {
       try {
 
-        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
+        const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${tokenValue}`
@@ -33,7 +33,7 @@ export default function UpcomingEventsSectionContainer() {
         const userEmail = emailData.user.userEmail;
         console.log("userEmail", userEmail)
 
-        const response = await fetch(SERVER_URL + `/event?email=${userEmail}`); // Add a query parameter for the user's email    
+        const response = await fetch(`${SERVER_URL}/event?email=${userEmail}`); // Add a query parameter for the user's email    
 
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;
