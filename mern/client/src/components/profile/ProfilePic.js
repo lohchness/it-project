@@ -65,7 +65,6 @@ export default function ProfilePic({ profilePic, nameLastName, jobPosition }) {
             </button>
             <button className={styles.instagramButton} onClick={linkInstagramProfile}>
               <img className={styles.vectorIcon1} alt="" src="/vector4.svg" />
-              <img className={styles.vectorIcon2} alt="" src="/vector5.svg" />
               <img className={styles.vectorIcon3} alt="" src="/vector6.svg" />
             </button>
             <button className={styles.instagramButton} onClick={linkTwitterProfile}>

@@ -1,9 +1,19 @@
 .header {
-    position: relative;
+    margin: 0 !important;
+    border-radius: 7px;
     background-color: var(--color-div-heading);
-    padding: 2px;
-    border-radius: 10px;
-    height: 30px;
+    width: 100%;
+    padding: 7px 15px;
+    margin: 1rem;
+    text-align: right;
+    font-size: 15px;
+    color: var(--color-white);
+    font-family: var(--font-poppins);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
 }
 
 .noteSection table {
@@ -12,6 +22,7 @@
     border-spacing: 10px 10px;
     display: block;
     overflow-y: scroll;
+    color: white;
 }
 
 .notes {
@@ -24,24 +35,6 @@
     position: relative;
 }
 
-.headerBackground,
-.noteBackground {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border-radius: var(--br-3xs);
-    background-color: var(--color-div-heading);
-    width: 359px;
-    height: 406px;
-}
-
-.headerBackground {
-    background-color: var(--color-div-heading);
-    width: 350px;
-    height: 24px;
-    mix-blend-mode: normal;
-}
-
 .groupIcon {
     position: relative;
     width: 14px;
@@ -50,11 +43,8 @@
 
 .addNoteButton {
     color: white;
-    position: relative;
-    float: right;
-    height: 25px;
-    overflow: hidden;
-    display: flex;
+    position: absolute;
+    right: 5px;
     flex-direction: column;
     padding: 0 var(--padding-12xs);
     box-sizing: border-box;
@@ -63,8 +53,7 @@
     cursor: pointer;
     background-color: var(--color-lightseagreen);
     border: none;
-    padding:  0px 5px;
-    padding-bottom: 5px;
+    padding: 5px 7px;
     border-radius: 5px;
 }
 

@@ -97,10 +97,8 @@ useEffect(() => {
     <>
       <div className={styles.noteSection}>
         <div className={styles.header}>
-          <b className={styles.notes}>Notes</b>
-          <button className={styles.addNoteButton} onClick={openNotesPopUp}>
-            <div className={styles.groupIcon}>+</div>
-          </button>
+          Notes
+          <button className={styles.addNoteButton} onClick={openNotesPopUp}>+</button>
          </div>
         <table>
           <tbody>{NoteContainer()}</tbody>

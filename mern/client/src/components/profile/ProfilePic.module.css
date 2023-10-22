@@ -8,12 +8,12 @@
 .nameLastname {
   position: relative;
   font-weight: 600;
+  color: white;
+  font-family: var(--font-poppins);
 }
 .jobPosition {
   font-size: var(--font-size-3xs);
   font-weight: 300;
-  font-family: var(--font-inter);
-  color: var(--color-whitesmoke);
 }
 .maskGroupParent,
 .nameLastnameParent {
@@ -49,7 +49,7 @@
   height: 16px;
   z-index: 0;
 }
-.vectorIcon2,
+
 .vectorIcon3 {
   position: absolute;
   margin: 0 !important;
@@ -65,12 +65,10 @@
   z-index: 1;
 }
 .vectorIcon3 {
-  height: 50%;
-  width: 50%;
-  top: 25%;
-  right: 25%;
-  bottom: 25%;
-  left: 25%;
+  height: 40%;
+  width: 40%;
+  top:30%;
+  left: 30%;
   z-index: 2;
 }
 .instagramButton {
@@ -155,6 +153,18 @@
   height: 177px;
   text-align: left;
   font-size: var(--font-size-xs);
-  color: var(--color-gray-100);
   font-family: var(--font-open-sans);
+}
+
+.instagramButton, .facebookButton {
+    background-color: var(--color-div-heading);
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.instagramButton div, .facebookButton div {
+    cursor: pointer;
 }

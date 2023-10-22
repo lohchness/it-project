@@ -1,11 +1,3 @@
-.eveBackground {
-    position: relative;
-    border-radius: var(--br-3xs);
-    width: 741px;
-    height: 178px;
-    z-index: 0;
-}
-
 .dividerIcon {
     position: absolute;
     margin: 0 !important;
@@ -14,23 +6,6 @@
     width: 736px;
     height: 1px;
     z-index: 0;
-}
-
-.headerChild {
-    border-radius: var(--br-3xs);
-    background-color: var(--color-div-heading);
-    width: 100%;
-    margin-top: -1%;
-    height: 35px;
-    mix-blend-mode: normal;
-}
-
-.headingText {
-    position: absolute;
-    top: 3px;
-    margin-left: 10px;
-    display: inline-block;
-    height: 17.6px;
 }
 
 .groupIcon {
@@ -52,22 +27,27 @@
 }
 
 .header {
-    position: absolute;
     margin: 0 !important;
-    top: 6.85px;
-    left: 0px;
-    width: 100%;
-    height: 24.45px;
-    z-index: 2;
-    margin-top: -1%;
+    border-radius: 7px;
     background-color: var(--color-div-heading);
-    border-radius: var(--br-3xs);
+    width: 100%;
+    padding: 7px 15px;
+    margin: 1rem;
+    text-align: right;
+    font-size: 15px;
+    color: var(--color-white);
+    font-family: var(--font-poppins);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    align-items: center;
 }
 
-.date,
-.description,
-.location,
-.time {
+.dateHeader,
+.descriptionHeader,
+.locationHeader,
+.timeHeader {
     position: absolute;
     top: 1.96px;
     left: 0;
@@ -78,20 +58,20 @@
     height: 20.54px;
 }
 
-.description,
-.location,
-.time {
+.descriptionHeader,
+.locationHeader,
+.timeHeader {
     left: 90px;
     width: 86px;
 }
 
-.location,
-.time {
+.locationHeader,
+.timeHeader {
     left: 361px;
     width: 40px;
 }
 
-.location {
+.locationHeader {
     top: 0;
     left: 538px;
     width: 72px;
@@ -100,8 +80,8 @@
 .detailBar {
     position: absolute;
     margin: 0 !important;
-    top: 42px;
-    left: 5px;
+    top: 50px;
+    left: 10px;
     width: 610px;
     height: 22.49px;
     z-index: 5;
@@ -124,7 +104,14 @@
     font-size: var(--font-size-smi);
     color: var(--color-gray-600);
     width: 95%;
+    height: 25%;
     font-family: var(--font-poppins);
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
+}
+
+.eventContainer {
+    top: 10px;
+    margin: 20px;
+    font-size: var(--font-size-smi);
 }
