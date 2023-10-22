@@ -1,14 +1,3 @@
-.span {
-    color: var(--color-white);
-}
-
-.crm {
-    color: var(--color-slategray);
-}
-
-.profilecrmFrame {
-    justify-content: left;
-}
 
 .profileContentContainer {
     display: flex;
@@ -18,26 +7,30 @@
     height: 100%;
 }
 
+.profileContentContainer > div {
+    margin: 0% 30px;
+}
+
 .left {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    width: 25%;
+    height: 80%;
 }
 
 .right {
     display: flex;
     flex-direction: column;
     margin-left: 2%;
-    height: 70%;
-    flex-grow: 1;
+    height: 100%;
+    width: 55%;
 }
 
 .lowerRight {
     margin-top: 1%;
     display: flex;
     flex-direction: row;
-    height: 50%;
-    flex-grow: 1;
+    height: 30%;
 }
 
 
@@ -51,10 +44,10 @@
 } */
 
 .profile {
-    margin: 2% 10%;
+    margin: 3% auto;
     background-color: transparent;
-    width: 80%;
-    height: 80%;
+    width: 100vw;
+    height: 100vh;
     text-align: left;
     font-size: 20px;
     color: var(--color-lightseagreen);

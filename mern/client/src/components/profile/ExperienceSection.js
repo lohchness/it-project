@@ -89,11 +89,8 @@ export default function ExperienceSection() {
   return (
     <>
       <div className={styles.noteSection}>
-        <div className={styles.header}>
-          <b className={styles.notes}>Experience</b>
-          <button className={styles.addNoteButton} onClick={openExperiencePopUp}>
-            <div className={styles.groupIcon}>+</div>
-          </button>
+        <div className={styles.header}>Experience
+          <button className={styles.addNoteButton} onClick={openExperiencePopUp}>+</button>
         </div>
         <table>
           <tbody>{ExperienceContainer()}</tbody>

@@ -16,7 +16,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--gap-xs);
-    z-index: 1;
+
     text-align: left;
     font-size: var(--font-size-smi);
     font-family: var(--font-open-sans);
@@ -50,7 +50,7 @@
     font-family: var(--font-poppins);
     font-size: var(--font-size-base);
     font-weight: 600;
-    margin-top: 15px;
+    margin-top: 30px;
     margin-bottom: 20px;
   }
   .event-container {
@@ -79,9 +79,8 @@
     color: var(--color-white);
   }
   .upcoming-events {
-    top: 75%;
-    left: 6%;
-    height: 50%;
+    position: relative;
+    height: 40%;
     width: 87%;
     gap: var(--gap-3xs);
     font-size: var(--font-size-base);
@@ -97,7 +96,7 @@
   .event-location,
   .event-time {
       position: absolute;
-      top: 30px;
+      top: 50px;
       left: 0;
       line-height: 150%;
       font-weight: 500;

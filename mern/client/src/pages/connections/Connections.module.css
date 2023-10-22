@@ -12,23 +12,6 @@
     background: linear-gradient(to bottom right, rgb(220, 228, 255), #ffffff, rgb(220, 228, 255));
 }
 
-.span {
-    color: var(--color-white-100);
-}
-
-.crm {
-    color: #677092;
-}
-
-.connectionsCrmContainer {
-    position: relative;
-    margin-top: 2%;
-    margin-left: 50%;
-    font-size: var(--font-size-xl);
-    text-align: right;
-    color: var(--color-lightseagreen);
-}
-
 .heading {
     position: relative;
     width: 100%;
@@ -53,28 +36,10 @@
     z-index: 2;
 }
 
-.pages {
-    position: absolute;
-    top: 773px;
-    left: 836px;
-    width: 174px;
-    height: 30px;
-}
-
-.backgroundChild {
-    position: absolute;
-    top: 2px;
-    left: 22px;
-    width: 100px;
-    height: 100px;
-    overflow: hidden;
-}
-
 .background {
     margin-top: 3%;
     position: relative;
-    width: 75%;
-    /* height: 200%; */
+    width: 85%;
     height: 580px;
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
