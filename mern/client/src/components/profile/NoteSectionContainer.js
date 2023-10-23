@@ -16,7 +16,7 @@ const Note = (props) => (
     </td>
     <td>
       <button className={styles.deleteButton} onClick={() => props.deleteNote(props.note._id)}>
-        <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+        <img className={styles.deleteIcon} alt="" src="/DeleteIcon.png" />
       </button>
     </td>
   </tr>

@@ -9,7 +9,6 @@ body {
     font-family: var(--font-inter);
     color: var(--color-white);
     text-align: center;
-    background-color: var(--color-lavender-200);
     overflow-x: hidden;
 }
 
@@ -18,14 +17,36 @@ html {
     background-size: cover;
     background-position: top left, center;
     background-attachment: scroll, fixed;
+    background-color: var(--color-lavender-200);
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
+
     margin: 0px;
     padding: 0px;
+}
+
+/* Works on Firefox */
+* {
+    scrollbar-color: #6975a2 transparent;
+}
+
+*::-webkit-scrollbar {
+    /* The height is only seen on horizontal scrolling */
+    background-color: transparent;
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #6975a2;
+    border-radius: 20px;
+    border: 3px solid transparent;
+
 }
 
 * {
@@ -144,31 +165,31 @@ root {
     --br-6xl: 25px;
     --br-21xl: 40px;
 
-          /* fonts */
-  --font-roboto: Roboto;
-  --font-poppins: Poppins;
+    /* fonts */
+    --font-roboto: Roboto;
+    --font-poppins: Poppins;
 
-  /* font sizes */
-  --font-size-base: 16px;
-  --font-size-xl: 20px;
-  --font-size-11xl: 30px;
-  --font-size-7xl: 26px;
-  --font-size-lg: 18px;
+    /* font sizes */
+    --font-size-base: 16px;
+    --font-size-xl: 20px;
+    --font-size-11xl: 30px;
+    --font-size-7xl: 26px;
+    --font-size-lg: 18px;
 
-  /* Colors */
-  --color-white: #fff;
-  --color-darkgray: rgba(180, 171, 171, 0.66);
-  --color-gray-100: #7c7c7c;
+    /* Colors */
+    --color-white: #fff;
+    --color-darkgray: rgba(180, 171, 171, 0.66);
+    --color-gray-100: #7c7c7c;
 
-  --color-darkslategray-100: #303030;
-  --color-dimgray: #707070;
-  --color-lightseagreen: #1cbabd;
-  --color-gainsboro: #e7e7e7;
-  --color-snow: #fffcf8;
+    --color-darkslategray-100: #303030;
+    --color-dimgray: #707070;
+    --color-lightseagreen: #1cbabd;
+    --color-gainsboro: #e7e7e7;
+    --color-snow: #fffcf8;
 
-  /* Gaps */
-  --gap-11xl: 30px;
+    /* Gaps */
+    --gap-11xl: 30px;
 
-  /* Border radiuses */
-  --br-6xl: 25px;
+    /* Border radiuses */
+    --br-6xl: 25px;
 }

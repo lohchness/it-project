@@ -104,7 +104,7 @@
     font-size: var(--font-size-smi);
     color: var(--color-gray-600);
     width: 95%;
-    height: 25%;
+    height: 35%;
     font-family: var(--font-poppins);
     box-shadow: 2px 3px 8px #26314d44;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);

@@ -3,84 +3,72 @@
     width: 20px;
     height: 20px;
     overflow: hidden;
-    flex-shrink: 0;
     object-fit: cover;
-  }
-  
-  .show-more {
-    position: absolute;
-    top: 340px;
-    left: 31px;
+}
+
+.show-more {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: var(--gap-xs);
-
     text-align: left;
     font-size: var(--font-size-smi);
     font-family: var(--font-open-sans);
-  }
-  .event-row {
+    cursor: default;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-top: -20px;
+}
+
+.show-more-text {
+    cursor: pointer;
+}
+
+.event-row {
     text-align: left;
     display: grid;
     grid-template-columns: 10% 35% 8% 8% 30%;
     grid-column-gap: 2%;
     border-bottom-style: dashed;
-    border-color:#A0A7C3;
+    border-color: #A0A7C3;
     height: 42px;
-    margin-bottom: 10px;
-  }
-  .event-text{
-    overflow: hidden;
-  }
-  .event-date{
-    background-color:#A0A7C3;
+    margin: 5px 10px;
+}
+
+
+.event-date {
+    background-color: #A0A7C3;
     padding-top: 8px;
     text-align: center;
     border-radius: 5px;
     margin-bottom: 10px;
-  }
-  .event-bar{
+}
+
+.event-bar {
     display: grid;
     position: relative;
-    width:100%;
+    width: 100%;
     grid-template-columns: 10% 35% 18% 20%;
     grid-column-gap: 2%;
     font-family: var(--font-poppins);
     font-size: var(--font-size-base);
     font-weight: 600;
-    margin-top: 30px;
     margin-bottom: 20px;
-  }
-  .event-container {
+    margin-left: 10px;
+}
+
+.event-container {
     position: relative;
-    top: 10%;
-    left: 4%;
-    width: 92%;
-    max-height: 72%;
-    overflow: auto;
-  }
-  
-  .event-header,
-  .upcoming-events {
-    position: absolute;
-    display: flex;
-    justify-content: flex-start;
-  }
-  .event-header {
-    width:100%;
-    padding: 7px 15px;
-    border-radius: var(--br-3xs);
-    background-color: var( --color-div-heading); 
-    box-sizing: border-box;
-    font-size: var(--font-size-lg);
-    font-family: var(--font-poppins);
-    color: var(--color-white);
-  }
-  .upcoming-events {
+    height: 70%;
+    margin-left: 10px;
+}
+
+
+.upcoming-events {
     position: relative;
-    height: 40%;
+    height: 50%;
     width: 87%;
     gap: var(--gap-3xs);
     font-size: var(--font-size-base);
@@ -88,59 +76,67 @@
     border-radius: 7px;
     font-family: var(--font-inter);
     box-shadow: 2px 3px 8px #26314d44;
-  }
-  
-  
-  .event-date,
-  .event-description,
-  .event-location,
-  .event-time {
-      position: absolute;
-      top: 50px;
-      left: 0;
-      line-height: 150%;
-      font-weight: 500;
-      display: inline-block;
-  }
-  
-  .date-field {
-      position: absolute;
-      left: 0px;
-  }
-  
-  .description-field {
-      position: absolute;
-      left: 140px;
-  }
-  
-  .time-field {
-      position: absolute;
-      left: 450px;
-  }
-  
-  .event-description,
-  .event-location,
-  .event-time {
-      width: 300px;
-      left: 90px;
-      height: 20.54px;
-  }
-  
-  .location-field {
-      position: absolute;
-      left: 610px;
-  }
-  
-  .event-location,
-  .event-time {
-      left: 361px;
-  }
-  
-  .event-location {
-      left: 550px;
-  }
-  
-  .line-break {
-      position: absolute;
-      top: 170px;
-  }
+    display: flex;
+    flex-direction: column;
+}
+
+
+.event-date,
+.event-description,
+.event-location,
+.event-time {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    line-height: 150%;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.date-field {
+    position: absolute;
+    left: 0px;
+}
+
+.description-field {
+    position: absolute;
+    left: 140px;
+}
+
+.time-field {
+    position: absolute;
+    left: 450px;
+}
+
+.event-description,
+.event-location,
+.event-time {
+    width: 300px;
+    left: 90px;
+    height: 20.54px;
+}
+
+.location-field {
+    position: absolute;
+    left: 610px;
+}
+
+.event-location,
+.event-time {
+    left: 361px;
+}
+
+.event-location {
+    left: 550px;
+}
+
+.line-break {
+    position: absolute;
+    top: 170px;
+}
+
+.events {
+    overflow-y: scroll;
+    height: 60%;
+    width: 100%;
+}
