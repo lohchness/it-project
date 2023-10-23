@@ -68,25 +68,26 @@ export default function UpcomingEventsSectionContainer() {
       });
     }
 
-  return (
-    <div className={styles.upcomingEventsSection}>
-      <div className={styles.eveBackground} />
-      <div className={styles.header}>
-        <div className={styles.headerChild} />
-        <b className={styles.headingText}>{`Upcoming Events `}</b>
-        {/* <div className={styles.eventsButton}>
-          <img className={styles.groupIcon} alt="" src="/group4.svg" />
-        </div> */}
+    return (
+      <div className={styles.upcomingEventsSection}>
+        <div className={styles.eveBackground} />
+        <div className={styles.header}>
+          <div className={styles.headerChild} />
+          <b className={styles.headingText}>{`Upcoming Events`}</b>
+        </div>
+        <div className={styles.eventsTable}>
+          <table>
+            <thead>
+              <tr className={styles.detailBar}>
+                <th className={styles.date}>Date</th>
+                <th className={styles.description}>Description</th>
+                <th className={styles.time}>Time</th>
+                <th className={styles.location}>Location</th>
+              </tr>
+            </thead>
+            <tbody>{EventContainer()}</tbody>
+          </table>
+        </div>
       </div>
-      <table>
-        <tbody>{EventContainer()}</tbody>
-      </table> 
-      <div className={styles.detailBar}>
-        <div className={styles.date}>Date</div>
-        <div className={styles.description}>Description</div>
-        <div className={styles.time}>Time</div>
-        <div className={styles.location}>Location</div>
-      </div>
-    </div>
-  );
+    );
 };
