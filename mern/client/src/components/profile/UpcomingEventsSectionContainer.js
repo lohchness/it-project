@@ -5,52 +5,49 @@ import Cookies from "universal-cookie";
 import { SERVER_URL } from "../../index.js";
 
 export default function UpcomingEventsSectionContainer() {
-    const [events, setEvents] = useState([]);
+  const [events, setEvents] = useState([]);
 
-    const onEventButton2Click = useCallback(() => {
-        // Please sync "Calendar" to the project
-    }, []);
-
-    // const onEventButton3Click = useCallback(() => {
-    //   // Please sync "Calendar" to the project
-    // }, []);
+  const onEventButton2Click = useCallback(() => {
+    // Please sync "Calendar" to the project
+  }, []);
 
 
-    const cookies = new Cookies();
-    const tokenValue = cookies.get("token");
 
-    useEffect(() => {
-        async function getEvents() {
-            try {
+  const cookies = new Cookies(); 
+  const tokenValue = cookies.get("token"); 
 
-                const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${tokenValue}`
-                    }
-                });
-                const emailData = await email.json();
-                const userEmail = emailData.user.userEmail;
-                console.log("userEmail", userEmail)
+  useEffect(() => {
+    async function getEvents() {
+      try {
 
-                const response = await fetch(`${SERVER_URL}/event?email=${userEmail}`); // Add a query parameter for the user's email    
+        const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${tokenValue}`
+          }
+        }); 
+        const emailData = await email.json();
+        const userEmail = emailData.user.userEmail;
+        console.log("userEmail", userEmail)
 
-                if (!response.ok) {
-                    const message = `An error occurred: ${response.statusText}`;
-                    window.alert(message);
-                    return;
-                }
+        const response = await fetch(`${SERVER_URL}/event?email=${userEmail}`); // Add a query parameter for the user's email    
 
-                const events = await response.json();
-                setEvents(events);
-            } catch (error) {
-                console.error("Error fetching notes:", error);
-            }
+        if (!response.ok) {
+          const message = `An error occurred: ${response.statusText}`;
+          window.alert(message);
+          return;
         }
-
-        getEvents();
-        return;
-    }, [tokenValue]);
+    
+        const events = await response.json();
+        setEvents(events);
+      } catch (error) {
+        console.error("Error fetching notes:", error);
+      }
+    }
+  
+    getEvents();
+    return;
+  }, [tokenValue]);
 
     // This method will map out the records on the table
     function EventContainer() {
@@ -69,7 +66,6 @@ export default function UpcomingEventsSectionContainer() {
     }
 
     return (
-<<<<<<< HEAD
       <div className={styles.upcomingEventsSection}>
         <div className={styles.eveBackground} />
         <div className={styles.header}>
@@ -90,21 +86,5 @@ export default function UpcomingEventsSectionContainer() {
           </table>
         </div>
       </div>
-=======
-        <div className={styles.upcomingEventsSection}>
-            <div className={styles.header}>Upcoming Events</div>
-            <div className={styles.upcomingEventsContainer}>
-                <div className={styles.detailBar}>
-                    <div className={styles.dateHeader}>Date</div>
-                    <div className={styles.descriptionHeader}>Description</div>
-                    <div className={styles.timeHeader}>Time</div>
-                    <div className={styles.locationHeader}>Location</div>
-                </div>
-                <table>
-                    <tbody className={styles.eventContainer}>{EventContainer()}</tbody>
-                </table>
-            </div>
-        </div>
->>>>>>> 5ea27318cf247309d47e5b85c661464e3de43358
     );
 };
