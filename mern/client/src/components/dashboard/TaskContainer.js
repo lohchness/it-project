@@ -103,7 +103,7 @@ export default function TaskContainer() {
     <div className="tasks dashboard-widget">
         <div className="widget-heading">My Tasks <button className="add-task" onClick={openAddTaskPopUp}>+ Add Task</button></div>
         <table>
-          <tbody>{TaskContainer()}</tbody>
+          <tbody className="task-container">{TaskContainer()}</tbody>
         </table>
       {isAddTaskPopUpOpen && (
         <PortalPopup

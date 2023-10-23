@@ -7,9 +7,9 @@ import { SERVER_URL } from "../../index.js";
 export default function UpcomingEventsSectionContainer() {
   const [events, setEvents] = useState([]);
 
-  const onEventButton2Click = useCallback(() => {
-    // Please sync "Calendar" to the project
-  }, []);
+    const onEventButtonClick = useCallback(() => {
+        // Please sync "Calendar" to the project
+    }, []);
 
 
 
@@ -54,37 +54,30 @@ export default function UpcomingEventsSectionContainer() {
         return events.map((event) => {
             return (
                 <EventInfo
+                    className={styles.eventInfo}
                     dateDay={event.date.slice(0, 2)}  // Use event.date here
                     dateMonth={event.date.slice(3, 5)}  // Use event.date here
-                    description1={event.description}
-                    time1={event.fromTime + '-' + event.toTime}
-                    location1={event.location}
-                    onEventButton2Click={onEventButton2Click}
+                    description={event.description}
+                    time={event.fromTime + '-' + event.toTime}
+                    location={event.location}
+                    onEventButtonClick={onEventButtonClick}
                 />
             );
         });
     }
 
     return (
-      <div className={styles.upcomingEventsSection}>
-        <div className={styles.eveBackground} />
-        <div className={styles.header}>
-          <div className={styles.headerChild} />
-          <b className={styles.headingText}>{`Upcoming Events`}</b>
+        <div className={styles.upcomingEventsSection}>
+            <div className={styles.header}>Upcoming Events</div>
+            <div className={styles.upcomingEventsContainer}>
+                <div className={styles.detailBar}>
+                    <div className={styles.dateHeader}>Date</div>
+                    <div className={styles.descriptionHeader}>Description</div>
+                    <div className={styles.timeHeader}>Time</div>
+                    <div className={styles.locationHeader}>Location</div>
+                </div>
+                <div className={styles.eventContainer}>{EventContainer()}</div>
+            </div>
         </div>
-        <div className={styles.eventsTable}>
-          <table>
-            <thead>
-              <tr className={styles.detailBar}>
-                <th className={styles.date}>Date</th>
-                <th className={styles.description}>Description</th>
-                <th className={styles.time}>Time</th>
-                <th className={styles.location}>Location</th>
-              </tr>
-            </thead>
-            <tbody>{EventContainer()}</tbody>
-          </table>
-        </div>
-      </div>
     );
 };
