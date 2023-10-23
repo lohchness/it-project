@@ -69,7 +69,7 @@
     top: 37px;
     left: 0;
     border-radius: var(--br-3xs);
-    width: 359px;
+    width: 100%;
     height: 369px;
     display: flex;
     flex-direction: column;
@@ -102,9 +102,12 @@
     width: 13px;
     height: 14.02px;
     object-fit: cover;
+    color: white;
+    cursor: pointer;
 }
 
 .deleteButton {
     background-color: inherit;
     border: none;
+    float: right;
 }

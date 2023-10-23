@@ -15,7 +15,6 @@ export default function UpcomingEventsSectionContainer() {
     //   // Please sync "Calendar" to the project
     // }, []);
 
-
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
 
