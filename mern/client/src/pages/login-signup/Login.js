@@ -18,6 +18,12 @@ const Login = () => {
 
     const { register, watch, handleSubmit, formState: { errors } } = useForm({ mode: "onSubmit" });
 
+    const isValidEmail = email =>
+    // eslint-disable-next-line no-useless-escape
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+        email
+    );
+
     // If token exists, redirect to home page
      useEffect(() => {
         if (tokenValue) {
@@ -78,6 +84,7 @@ const Login = () => {
                         type="email"
                         {...register("email", {
                             required: true,
+                            validate: isValidEmail
                         })}
                         value={email}
                         onChange={(e) => {setEmail(e.target.value); setLoginError(false)}}
@@ -87,9 +94,6 @@ const Login = () => {
                         className={`form-field ${errors.password ? 'error-form-field' : ''}`}
                         placeholder="Password"
                         type="password"
-                        {...register("password", {
-                            required: true,
-                        })}
                         value={password}
                         onChange={(e) => {setPassword(e.target.value); setLoginError(false)}}
                         required />

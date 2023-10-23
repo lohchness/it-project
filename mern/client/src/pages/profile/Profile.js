@@ -31,13 +31,6 @@ const Profile = () => {
         <>
             <Navbar />
             <div className={styles.profile}>
-                {/* <div className={styles.profilecrmFrame}>
-                    <div className={styles.profileCrmContainer}>
-                        <span>Profile</span>
-                        <span className={styles.span}>{` `}</span>
-                        <span className={styles.crm}>{`> CRM`}</span>
-                    </div>
-                </div> */}
                 <div className={styles.profileContentContainer}>
                     <div className={styles.left}>
                         <ContactFormContainer />

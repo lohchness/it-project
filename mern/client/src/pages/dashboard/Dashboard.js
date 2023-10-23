@@ -29,24 +29,19 @@ const Dashboard = () => {
             <>
                 <Navbar />
                 <div className="dashboard">
-                    {/* <div className="dashboard-crm-container">
-                        <span className="span">{` Dashboard `}</span>
-                        <span className="crm">{`> CRM`}</span>
-                    </div> */}
                     <div className="dashboard-content-container">
                         <ConnectionsContainer />
                         <div className="connection-stats-container">
                             <div className="connection-stats dashboard-widget">
                                 <div className="connections-made-this">Total connections</div>
-                                <div className="total-connect">254</div>
+                                <div className="total-connect">10</div>
                             </div>
                             <div className="connection-stats dashboard-widget">
                                 <div className="connections-made-this">Connections made this month</div>
-                                <div className="monthly-connect">22</div>
+                                <div className="monthly-connect">2</div>
                             </div>
                         </div>
                         <TaskContainer />
-
                         <UpcomingEventsContainer />
                     </div>
                 </div>

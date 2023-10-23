@@ -78,13 +78,6 @@ const Connections = () => {
             <>
                 <Navbar />
                 <div className="connections" >
-                    {/* <div className={styles.connectionsCrmContainer}>
-                        <span className={styles.sortBy}>Connections</span>
-                        <span className={styles.crm}>
-                            <span className={styles.span}>{` `}</span>
-                            <span>{`> CRM`}</span>
-                        </span>
-                    </div> */}
                     <div className={styles.background}>
                         <img className={styles.backgroundIcon} alt="" src="/background.svg" />
                         <div className={styles.heading}>

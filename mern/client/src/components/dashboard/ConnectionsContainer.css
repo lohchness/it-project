@@ -8,10 +8,9 @@
     background-color: var(--color-div-background);
     border-radius: var(--br-3xs);
     font-family: var(--font-inter);
-
 }
 
-.search-bar {
+.connections-container .search-bar {
     margin-left: 20%;
     position: relative;
     display: flex;
@@ -30,7 +29,7 @@
     padding: 0 var(--padding-7xs);
 }
 
-.show-more-button {
+.connections-container .show-more-button {
     text-align: center;
     cursor: pointer;
     text-decoration: none;
@@ -42,7 +41,7 @@
     margin: 0.3rem 0.5rem;
 }
 
-.connection-fields {
+.connections-container .connection-fields {
     width: 100%;
     position: relative;
     display: flex;
@@ -55,7 +54,7 @@
     font-family: var(--font-poppins);
 }
 
-.connection-fields > div {
+.connections-container .connection-fields > div {
     color: white;
     opacity: 0.8;
     position: relative;
@@ -73,22 +72,6 @@
     overflow: hidden;
     flex-shrink: 0;
     object-fit: cover;
-}
-
-.connection {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 95%;
-    margin: 0.5rem 0rem;
-    padding: 0.2rem;
-    background-color: white;
-    vertical-align: middle;
-    border-radius: var(--br-3xs);
-    height: 45px;
-    
-    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
 .tag-wrapper {
@@ -111,7 +94,7 @@
     align-items: center;
 }
 
-.connection {
+.connections-container .connection {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -130,6 +113,14 @@
     box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
 }
 
-.connection > div {
-    margin: 3%;
+.connections-container .connection > div {
+    margin: 0% 3%;
+}
+
+.connections-container .connection .name {
+    position: relative;
+    margin: 0% 3%;
+    top: 7px;
+    left: 0px;
+    width: 60px;
 }

@@ -6,6 +6,7 @@ import jwt from "jsonwebtoken";
 
 import { connectToDB } from "../db/conn.mjs";
 import User from "../models/User.js"
+import sendVerificationCodeEmail from "../email.js";
 
 const router = express.Router();
 connectToDB();
@@ -159,7 +160,7 @@ router.post("/request-password-reset", async (req, res) => {
                     message: "Email not found",
                 });
             } else {
-                // TODO: Send email containing verification code
+                sendVerificationCodeEmail(req.body.email);
                 res.status(200).send({
                     message: "Password reset email sent",
                 });
