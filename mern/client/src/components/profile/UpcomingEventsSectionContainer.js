@@ -7,7 +7,7 @@ import { SERVER_URL } from "../../index.js";
 export default function UpcomingEventsSectionContainer() {
     const [events, setEvents] = useState([]);
 
-    const onEventButton2Click = useCallback(() => {
+    const onEventButtonClick = useCallback(() => {
         // Please sync "Calendar" to the project
     }, []);
 
@@ -57,12 +57,13 @@ export default function UpcomingEventsSectionContainer() {
         return events.map((event) => {
             return (
                 <EventInfo
+                    className={styles.eventInfo}
                     dateDay={event.date.slice(0, 2)}  // Use event.date here
                     dateMonth={event.date.slice(3, 5)}  // Use event.date here
-                    description1={event.description}
-                    time1={event.fromTime + '-' + event.toTime}
-                    location1={event.location}
-                    onEventButton2Click={onEventButton2Click}
+                    description={event.description}
+                    time={event.fromTime + '-' + event.toTime}
+                    location={event.location}
+                    onEventButtonClick={onEventButtonClick}
                 />
             );
         });
@@ -78,9 +79,7 @@ export default function UpcomingEventsSectionContainer() {
                     <div className={styles.timeHeader}>Time</div>
                     <div className={styles.locationHeader}>Location</div>
                 </div>
-                <table>
-                    <tbody className={styles.eventContainer}>{EventContainer()}</tbody>
-                </table>
+                <div className={styles.eventContainer}>{EventContainer()}</div>
             </div>
         </div>
     );

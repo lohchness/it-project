@@ -44,7 +44,9 @@
     align-items: flex-end;
     justify-content: flex-start;
     font-family: var(--font-poppins);
+    outline: none;
 }
+
 
 .contactNameButton:hover {
     background-color: var(--color-darkcyan);

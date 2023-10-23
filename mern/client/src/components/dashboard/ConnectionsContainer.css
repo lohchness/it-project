@@ -38,7 +38,7 @@
     font-size: var(--font-size-smi);
     color: inherit;
     font-family: var(--font-open-sans);
-    margin: 0.3rem 0.5rem;
+    margin: 15px;
 }
 
 .connections-container .connection-fields {

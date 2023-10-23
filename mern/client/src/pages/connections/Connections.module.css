@@ -4,7 +4,7 @@
     margin: auto;
     background-color: var(--color-lavender);
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     text-align: left;
     font-size: var(--font-size-xl);
     color: var(--color-white);
@@ -37,7 +37,7 @@
 }
 
 .background {
-    margin-top: 3%;
+    margin-top: 2%;
     position: relative;
     width: 85%;
     height: 580px;
