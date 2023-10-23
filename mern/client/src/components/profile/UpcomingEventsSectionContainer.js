@@ -66,25 +66,17 @@ export default function UpcomingEventsSectionContainer() {
     }
 
     return (
-      <div className={styles.upcomingEventsSection}>
-        <div className={styles.eveBackground} />
-        <div className={styles.header}>
-          <div className={styles.headerChild} />
-          <b className={styles.headingText}>{`Upcoming Events`}</b>
-        </div>
-        <div className={styles.eventsTable}>
-          <table>
-            <thead>
-              <tr className={styles.detailBar}>
-                <th className={styles.date}>Date</th>
-                <th className={styles.description}>Description</th>
-                <th className={styles.time}>Time</th>
-                <th className={styles.location}>Location</th>
-              </tr>
-            </thead>
-            <tbody>{EventContainer()}</tbody>
-          </table>
-        </div>
+      <div className={styles.event}>
+          <div className={styles.eventDate}>
+              <b>{dateDay}</b>
+              <div>{dateMonth}</div>
+          </div>
+          <div className={styles.eventDescription}>{description}</div>
+          <div className={styles.eventTime}>{time}</div>
+          <div className={styles.eventLocation}>{location}</div>
+          <div className={styles.eventButton} onClick={onEventButtonClick}>
+              <img className={styles.groupIcon} alt="" src="/group5.svg" />
+          </div>
       </div>
     );
 };
