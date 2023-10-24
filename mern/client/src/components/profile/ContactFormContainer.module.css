@@ -18,10 +18,9 @@
 }
 
 .contactName {
-    position: relative;
+    text-align: center;
     font-size: var(--font-size-mini);
     color: var(--color-gray-600);
-    text-align: left;
     border: none;
 }
 
@@ -34,10 +33,10 @@
 .contactNameButton {
     cursor: pointer;
     border: none;
-    bottom: 20px;
-    margin: 0 25%;
-    width: 100px;
-    padding: var(--padding-2xs) var(--padding-9xl);
+    margin: 0;
+    bottom: 2%;
+    font-size: 13px;
+    padding: 10px 15px;
     background-color: var(--color-lightseagreen);
     display: flex;
     flex-direction: row;
@@ -45,6 +44,7 @@
     justify-content: flex-start;
     font-family: var(--font-poppins);
     outline: none;
+    align-self: center;
 }
 
 
@@ -62,11 +62,10 @@
     font-family: var(--font-open-sans);
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 5%;
     height: 100%;
     width: 100%;
     font-family: var(--font-poppins);
-    flex-grow: 1;
 }
 
 .frameParent > div {

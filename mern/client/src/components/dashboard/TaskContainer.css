@@ -44,12 +44,14 @@
     width: 13px;
     height: 14.02px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .delete-button {
     background-color: white;
     border: none;
     right: 10px;
+    cursor: pointer;
 }
 
 .tasks tbody {

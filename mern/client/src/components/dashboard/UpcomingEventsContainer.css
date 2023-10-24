@@ -29,12 +29,12 @@
 .event-row {
     text-align: left;
     display: grid;
-    grid-template-columns: 10% 35% 8% 8% 30%;
+    grid-template-columns: 15.5% 36.5% 18.5% 8%;
     grid-column-gap: 2%;
     border-bottom-style: dashed;
     border-color: #A0A7C3;
-    height: 42px;
-    margin: 5px 10px;
+    padding: 15px 0px;
+    margin: 0px 10px;
 }
 
 
@@ -50,12 +50,12 @@
     display: grid;
     position: relative;
     width: 100%;
-    grid-template-columns: 10% 35% 18% 20%;
+    grid-template-columns: 15% 35% 18% 20%;
     grid-column-gap: 2%;
     font-family: var(--font-poppins);
     font-size: var(--font-size-base);
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 3px;
     margin-left: 10px;
     font-size: 13px;
     color: white;
@@ -83,58 +83,6 @@
     flex-direction: column;
 }
 
-
-.event-date,
-.event-description,
-.event-location,
-.event-time {
-    position: absolute;
-    top: 50px;
-    left: 0;
-    display: inline-block;
-}
-
-.date-field {
-    position: absolute;
-    left: 0px;
-}
-
-.description-field {
-    position: absolute;
-    left: 170px;
-}
-
-.time-field {
-    position: absolute;
-    left: 450px;
-}
-
-.location-field {
-    position: absolute;
-    left: 610px;
-}
-
-.event-description,
-.event-location,
-.event-time {
-    width: 300px;
-    left: 120px;
-    height: 20.54px;
-}
-
-.event-location,
-.event-time {
-    left: 361px;
-}
-
-.event-location {
-    left: 550px;
-}
-
-.line-break {
-    position: absolute;
-    top: 170px;
-}
 
 .events {
     overflow-y: scroll;

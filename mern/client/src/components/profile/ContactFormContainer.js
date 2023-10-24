@@ -135,8 +135,6 @@ export default function ContactFormContainer() {
 
             <button
                 className={styles.contactNameButton}
-                autoFocus={true}
-                disabled={false}
                 onClick={onContactNameButtonClick}
             >
                 {profile && (
