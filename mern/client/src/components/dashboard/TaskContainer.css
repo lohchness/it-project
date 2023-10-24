@@ -1,5 +1,6 @@
 .tasks {
     position: relative;
+    min-width: 20rem;
     height: 70%;
     width: 32%;
     align-items: flex-start;
@@ -8,7 +9,6 @@
     font-family: var(--font-inter);
     background-color: var(--color-lightslategray);
     border-radius: 15px;
-
 }
 
 
@@ -83,4 +83,11 @@
 
 .task-container {
     width: 100%;
+}
+
+@media (max-width: 900px) {
+    .tasks {
+        width: 80%;
+        margin-top: 2%;
+    }
 }

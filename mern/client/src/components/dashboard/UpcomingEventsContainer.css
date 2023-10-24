@@ -70,6 +70,7 @@
 
 
 .upcoming-events {
+    margin-top: 1%;
     position: relative;
     height: 50%;
     width: 87%;
@@ -88,4 +89,26 @@
     overflow-y: scroll;
     height: 60%;
     width: 100%;
+}
+
+@media (max-width: 900px) {
+    .upcoming-events {
+        width: 80%;
+        margin-top: 2%;
+    }
+
+    .event-row {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 600px) {
+    .upcoming-events {
+        width: 80%;
+        margin-top: 2%;
+    }
+
+    .event-row {
+        font-size: 10px;
+    }
 }
