@@ -1,4 +1,4 @@
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 
@@ -7,6 +7,7 @@ import "./Navbar.css";
 const Navbar = () => {
     const navigate = useNavigate();
     const cookies = new Cookies();
+    const [navMenuVisible, setNavMenuVisible] = useState(false);
 
     const onLogoutClick = useCallback(() => {
         // clear jwt token
@@ -14,15 +15,22 @@ const Navbar = () => {
         navigate("/login");
     }, [navigate]);
 
+    const onHamburgerMenuClick = () => {
+        if (navMenuVisible) {
+            setNavMenuVisible(false);
+        } else {
+            setNavMenuVisible(true);
+        }
+    }
+
     return (
         <div className="nav-bar-wrapper">
             <div className="nav-bar">
-                {/* only needed when page is resized to be very narrow
-                <div className="hamburgermenu">
+                <div className="hamburgermenu" onClick={onHamburgerMenuClick}>
                     <img src="/Vector.png" height="17px" width="17px"/>
                 </div> 
-                */}
-                <nav className="pages-wrapper">
+               
+                <nav className={`pages-wrapper ${navMenuVisible ? 'visible' : ''}`}>
                     <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/dashboard" >
                         Dashboard
                     </NavLink>
