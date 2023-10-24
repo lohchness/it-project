@@ -47,11 +47,11 @@
 
 .connection-stats-container {
     width: 17%;
-    height: 72%;
+    height: 74%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0px 15px 15px;
+    margin: -10px 15px 10px 15px;
 }
 
 
@@ -63,15 +63,16 @@
     display: flex;
     flex-direction: column;
     padding: var(--padding-smi) var(--padding-base);
-    margin: 0.5rem;
+    margin: 7px;
     box-sizing: border-box;
     align-items: flex-start;
     justify-content: flex-start;
+    font-size: 15px;
 }
 
 .total-connect {
     position: relative;
-    font-size: var(--font-size-45xl);
+    font-size: 55px;
     font-family: var(--font-inter);
     color: #38cdd0;
     display: inline-block;
@@ -89,13 +90,13 @@
 
 .connections-made-this,
 .monthly-connect {
-    font-size: var(--font-size-base);
+    font-size: 15px;
     position: relative;
     display: inline-block;
 }
 
 .monthly-connect {
-    font-size: var(--font-size-45xl);
+    font-size: 55px;
     font-family: var(--font-inter);
 }
 

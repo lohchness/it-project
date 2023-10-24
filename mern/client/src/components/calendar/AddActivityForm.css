@@ -1,6 +1,6 @@
 .add-activity {
-    top: 13.3%;
-    left: 69%;
+    margin-top: -10%;
+    margin-left: 2%;
     align-items: flex-start;
     justify-content: flex-start;
     gap: var(--gap-3xs);
@@ -9,33 +9,25 @@
     color: var(--color-white);
     font-family: var(--font-poppins);
     box-shadow: 2px 3px 8px #26314d44;
-    width: 20%;
-    height: 92%;
+    width: 25%;
+    height: 85vh;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
     border-radius: var(--br-3xs);
-}
-
-.add-activity,
-.submit-button {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .heading {
     position: relative;
-    line-height: 150%;
     font-weight: 500;
 }
 .activity-type{
     position: relative;
-    top: 8%;
-    left: 5%;
+    margin-left: 15px;
 }
 
 .heading-wrapper {
-    margin: 0 !important;
-    position: absolute;
+    position: relative;
     border-radius: var(--br-3xs);
     background-color: var(--color-div-heading);
     width: 100%;
@@ -45,7 +37,6 @@
     box-sizing: border-box;
     align-items: center;
     justify-content: flex-start;
-    z-index: 1;
     font-size: var(--font-size-xl);
 }
 
@@ -61,14 +52,13 @@
     outline: none;
     resize: none;
     font-family: var(--font-inter);
+    width: 90%;
+    height: 15vh;
 }
 
 .add-activity textarea {
-    position: absolute;
-    top: 90px;
-    left: 5%;
+    position: relative;
     width: 90%;
-    height: 155px;
 }
 
 .add-activity textarea::placeholder {
@@ -77,38 +67,34 @@
 }
 
 .date-wrapper {
-    margin: 0 !important;
-    position: absolute;
-    top: 271px;
-    left: 15px;
+    position: relative;
     gap: var(--gap-xs);
-    z-index: 4;
 }
 
 .date-wrapper,
 .ddmmyy {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: flex-start;
 }
 
 .date {
     position: relative;
-    line-height: 150%;
     display: inline-block;
     width: 37px;
-    flex-shrink: 0;
+    margin-top: 10px;
+    margin-left: 15px;
 }
 
 .ddmmyy {
+    margin-top: 10px;
     color: white;
     border: 0;
     font-family: var(--font-poppins);
     font-size: var(--font-size-sm);
     background-color: var(--color-div-heading);
     border-radius: var(--br-8xs);
-    width: 70%;
+    width: 50%;
     overflow: hidden;
     flex-shrink: 0;
     padding: var(--padding-11xs) var(--padding-2xs);
@@ -122,17 +108,17 @@
 }
 
 .time-wrapper {
-    margin: 0 !important;
-    position: absolute;
-    top: 315px;
-    left: 15px;
+    margin-top: 10px;
+    text-align: left;
+    position: relative;
     gap: var(--gap-11xs);
+    width: 90%;
 }
 
 .input-wrapper {
-    top: 5px;
+    margin-top: 10px;
     height: 89px;
-    width: 240px;
+    width: 80%;
     padding: 0px -2px;
     text-align: right;
     position: relative;
@@ -143,42 +129,38 @@
 .time-input {
     color: white;
     margin: 8px;
-    top: 9px;
     border: none;
     background-color: #515e90;
     border-radius: var(--br-8xs);
-    width: 170px;
+    width: 50%;
     height: 26px;
     outline: none;
 }
 
 .location-wrapper {
-    margin: 0 !important;
-    position: absolute;
-    top: 434px;
-    left: 15px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-left: 10%;
     gap: var(--gap-9xs);
+    width: 100%;
 }
 
 .location-wrapper textarea {
-    position: absolute;
-    top: 40px;
-    left: -2px;
-    height: 155px;
-    width: 240px;
+    position: relative;
+    height: 15vh;
+    width: 90%;
 }
 
 .submit {
     position: relative;
     font-size: var(--font-size-sm);
-    line-height: 150%;
     font-family: var(--font-poppins);
     color: var(--color-white);
     text-align: left;
+    cursor: pointer;
 }
 
 .submit-button {
@@ -186,11 +168,6 @@
     border: 0;
     padding: var(--padding-11xs) var(--padding-3xs);
     background-color: var(--color-lightseagreen);
-    margin: 0 !important;
-    top: 650px;
-    left: 180px;
     border-radius: var(--br-8xs);
-    align-items: center;
-    justify-content: center;
-    z-index: 7;
+    margin: 15px;
 }
