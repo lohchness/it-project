@@ -44,9 +44,9 @@
     outline: none;
     border: none;
     color: var(--color-snow);
-    right: 3%;
-    top: 2%;
-    position: fixed;
+    right: 5%;
+    top: 15px;
+    position:absolute;
 }
 
 .logout-button :hover {

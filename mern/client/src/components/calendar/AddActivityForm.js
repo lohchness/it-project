@@ -87,8 +87,8 @@ export default function AddActivityForm() {
       <div className="heading-wrapper">
         <div className="heading">Add Activity</div>
       </div>
-      <div className="activity-type">Description:</div>
       <form onSubmit={onSubmit}>
+      <div className="activity-type">Description:</div>
         <textarea
           placeholder="Description"
           type="text"
