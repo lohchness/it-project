@@ -1,72 +1,67 @@
-.in_touch,
-.last_contact {
-    position: absolute;
-    top: 15px;
-    left: 260px;
-    line-height: 150%;
-}
-
-.in_touch {
-    top: 15px;
-    left: 501px;
-    /* color:black; */
-
-    /* text-align: center; */
-}
 
 .name {
     cursor: pointer;
     border: 0;
     padding: 0;
     background-color: transparent;
-    position: absolute;
-    top: 9px;
-    left: 47px;
-    font-size: var(--font-size-base);
     font-family: var(--font-inter);
     color: var(--color-white-100);
     text-align: left;
-    display: inline-block;
-    width: 211px;
+    width: 90%;
     height: 32px;
 }
 
-.connection-child {
-    position: absolute;
-    top: 8px;
-    left: 718px;
-    border-radius: var(--br-8xs);
-    /* margin-bottom: 10px; */
-    border: 1px solid var(--color-white-100);
-    box-sizing: border-box;
-    width: 118px;
-    height: 25px;
+.delete {
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    height: 40.19%;
+    width: 2.17%;
 }
 
-.tags {
-    position: absolute;
-    top: 15px;
-    left: 750px;
+.connectionitem {
+    position: relative;
+    gap: var(--gap-3xs);
+    color: #656C86;
+    font-size: var(--font-size-sm);
+    justify-content: center;
+    align-items: center;
+    width: 99%;
+    margin: 0.5rem 0rem;
+    padding: 0.2rem;
+    background-color: white;
+    vertical-align: middle;
+    border-radius: var(--br-3xs);
+    height: 45px;
+    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
+    display: grid;
+    grid-template-columns: 25% 20% 20% 20% 5%;
     text-align: left;
 }
+.del-button {
+    position: relative;
+    width: 13px;
+    height: 14.02px;
+    object-fit: cover;
+    cursor: pointer;
+}
 
-.mask-group-icon {
+@media (max-width: 500px) {
+    .connectionitem, .name {
+        font-size: 12px;
+    }
+}
+
+/* .mask-group-icon {
     position: absolute;
     top: 0;
     left: 0;
     width: 40px;
     height: 40px;
     object-fit: cover;
-}
-
-.connection1-item {
-    position: absolute;
-    top: 55.5px;
-    left: 0;
-    width: 855px;
-    height: 1px;
-}
-
+} */
+/* 
 .vector-icon3,
 .vector-icon4,
 .vector-icon5 {
@@ -80,7 +75,7 @@
     max-width: 100%;
     overflow: hidden;
     max-height: 100%;
-}
+} */
 
 /* .vector-icon4,
 .vector-icon5 {
@@ -100,54 +95,3 @@
     bottom: 74.65%;
     left: 26.33%;
 } */
-
-.delete {
-    cursor: pointer;
-    border: 0;
-    padding: 0;
-    background-color: transparent;
-    position: absolute;
-    height: 40.19%;
-    width: 2.17%;
-    top: 18.52%;
-    right: 0;
-    bottom: 41.3%;
-    left: 93.83%;
-}
-
-.connectionitem {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: var(--gap-3xs);
-    color: #656C86;
-    font-size: var(--font-size-sm);
-    justify-content: center;
-    align-items: center;
-    left: 15px;
-    width: 95%;
-    /* width: 95%; */
-    margin: 0.5rem 0rem;
-    padding: 0.2rem;
-    background-color: white;
-    vertical-align: middle;
-    border-radius: var(--br-3xs);
-    height: 45px;
-    box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
-    /* margin-bottom: 10px;
-    position: absolute;
-    top: 0;
-    left: 4px;
-    width: 923px;
-    height: 54px;
-    text-align: center;
-    font-size: var(--font-size-base);
-    color: gray;
-    font-family: var(--font-inter); */
-}
-.del-button {
-    position: relative;
-    width: 13px;
-    height: 14.02px;
-    object-fit: cover;
-}

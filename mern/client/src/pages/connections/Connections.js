@@ -35,7 +35,7 @@ const Connections = () => {
             const connections = await response.json();
             console.log("connections");
             if (connections.registered_user == true) {
-                
+
             }
             setConnections(connections);
         }
@@ -54,21 +54,21 @@ const Connections = () => {
         const newConnections = connections.filter((el) => el._id !== id);
         setConnections(newConnections);
     }
-    
+
     const handleAddConnection = (newConnection) => {
         fetch(`${SERVER_URL}/connection`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(newConnection),
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newConnection),
         })
-        .then(response => response.json())
-        .then(data => {
-          // The new connection has been added, now add it to the state
-          setConnections(prevConnections => [...prevConnections, data]);
-        });
-      };
+            .then(response => response.json())
+            .then(data => {
+                // The new connection has been added, now add it to the state
+                setConnections(prevConnections => [...prevConnections, data]);
+            });
+    };
 
     // Check to see if JWT token exists before laoding page
     if (!tokenValue) {
@@ -78,30 +78,21 @@ const Connections = () => {
             <>
                 <Navbar />
                 <div className="connections" >
-                    <div className={styles.background}>
-                        <img className={styles.backgroundIcon} alt="" src="/background.svg" />
+                    <div className={styles.connectionsContainer}>
                         <div className={styles.heading}>
-                            <input className={styles.searchBar} placeholder="search..." type="text" />
-                            <div className={styles.headingChild} />
                             <div className={styles.sortByContainer}>
                                 <span className={styles.sortBy}>{`Sort by `}</span>
                                 <span>▼</span>
                             </div>
-                            <div className={styles.filters}>
-                                <button className={styles.filterAll}>
-                                    <div className={styles.filters1} />
-                                    <div className={styles.all}>ALL</div>
-                                </button>
-                                <button className={styles.filterRegistered}>
-                                    <div className={styles.filters2} />
-                                    <div className={styles.registered}>REGISTERED</div>
-                                </button>
-                                <button className={styles.filterMadeup}>
-                                    <div className={styles.filters3} />
-                                    <div className={styles.madeUp}>MADE UP</div>
-                                </button>
+                            <div className={styles.filterContainer}>
+                                <div className={styles.filter}>Filter:</div>
+                                <div className={styles.filters}>
+                                    <button className={styles.filterAll}>ALL</button>
+                                    <button className={styles.filterRegistered}>REGISTERED</button>
+                                    <button className={styles.filterMadeup}>MADE UP</button>
+                                </div>
                             </div>
-                            <div className={styles.filter}>Filter :</div>
+                            <input className={styles.searchBar} placeholder="search..." type="text" />
                         </div>
                         <div className={styles.bar}>
                             <button className={styles.name}>Name</button>
@@ -110,29 +101,6 @@ const Connections = () => {
                             <button className={styles.tag}>Tag</button>
                         </div>
 
-                    
-                        <ShowResults
-                            // showingResultsNum="Showing 8 out of 254 Results"
-                            showing8OutTop="530px"
-                            showing8OutLeft="87px"
-                        />
-                        
-                        <AddNewConnection
-                            addNewConnectionTop="500px"
-                            addNewConnectionLeft="87px"
-                            vector="/public/add-icon.svg"
-                            vectorIconHeight="20px"
-                            vectorIconWidth="20px"
-                            vectorIconTop="2px"
-                            vectorIconRight="unset"
-                            vectorIconBottom="unset"
-                            vectorIconLeft="0px"
-                            vectorIconMaxWidth="unset"
-                            vectorIconMaxHeight="unset"
-                            vectorIconObjectFit="unset"
-                        />
-
-                        <div className={styles.backgroundChild} />
 
                         <div className={styles.connectionlist}>
                             {connections.map((connection) => (
@@ -143,12 +111,36 @@ const Connections = () => {
                                 />
                             ))}
                         </div>
+
+                        <div className={styles.connectionsFooter}>
+                            <ShowResults
+                                // showingResultsNum="Showing 8 out of 254 Results"
+                                showing8OutTop="530px"
+                                showing8OutLeft="87px"
+                            />
+
+                            <AddNewConnection
+                                addNewConnectionTop="500px"
+                                addNewConnectionLeft="87px"
+                                vector="/public/add-icon.svg"
+                                vectorIconHeight="20px"
+                                vectorIconWidth="20px"
+                                vectorIconTop="2px"
+                                vectorIconRight="unset"
+                                vectorIconBottom="unset"
+                                vectorIconLeft="0px"
+                                vectorIconMaxWidth="unset"
+                                vectorIconMaxHeight="unset"
+                                vectorIconObjectFit="unset"
+                            />
+                        </div>
+
                     </div>
 
                 </div>
             </>
         );
     }
-    };
+};
 
 export default Connections;
