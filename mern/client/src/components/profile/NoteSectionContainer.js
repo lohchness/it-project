@@ -1,11 +1,9 @@
 import React, { useEffect, useState, useCallback } from "react";
-//import { link } from "react-router-dom";
 import NotesPopUp from "./NotesPopUp";
 import PortalPopup from "../PortalPopup";
 import styles from "./NoteSectionContainer.module.css";
 import { SERVER_URL } from "../../index.js";
 import Cookies from "universal-cookie";
-
 
 const Note = (props) => (
   <tr>
@@ -22,8 +20,7 @@ const Note = (props) => (
   </tr>
 );
 
-////////////////////////////
-export default function NoteContainer() {
+export default function NoteSectionContainer({ userData }) {
   const [notes, setNotes] = useState([]);
   const [isNotesPopUpOpen, setNotesPopUpOpen] = useState(false);
 
@@ -35,71 +32,64 @@ export default function NoteContainer() {
     setNotesPopUpOpen(false);
   }, []);
 
-  const cookies = new Cookies(); 
-  const tokenValue = cookies.get("token"); 
+  const cookies = new Cookies();
+  const tokenValue = cookies.get("token");
 
-// This method fetches the records from the database.
-useEffect(() => {
-  async function getNotes() {
-    try {
-      const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${tokenValue}`
+  useEffect(() => {
+    async function getNotes() {
+      try {
+        if (!userData) {
+          return; // Return early if userData is not available
         }
-      }); 
-      const emailData = await email.json();
-      const userEmail = emailData.user.userEmail;
 
-      const response = await fetch(`${SERVER_URL}/note?email=${userEmail}`); // Add a query parameter for the user's email
+        const userEmail = userData.email;
 
-      if (!response.ok) {
-        const message = `An error occurred: ${response.statusText}`;
-        window.alert(message);
-        return;
+        const response = await fetch(`${SERVER_URL}/note?email=${userEmail}`);
+
+        if (!response.ok) {
+          const message = `An error occurred: ${response.statusText}`;
+          window.alert(message);
+          return;
+        }
+
+        const notes = await response.json();
+        setNotes(notes);
+      } catch (error) {
+        console.error("Error fetching notes:", error);
       }
-
-      const notes = await response.json();
-      setNotes(notes);
-    } catch (error) {
-      console.error("Error fetching notes:", error);
     }
-  }
 
-  getNotes();
-  return;
-}, [tokenValue]);
+    getNotes();
+  }, [userData]);
 
-  // This method will delete a record
   async function deleteNote(id) {
     await fetch(SERVER_URL + `/note/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
     });
 
     const newNotes = notes.filter((el) => el._id !== id);
     setNotes(newNotes);
   }
 
-  // This method will map out the records on the table
   function NoteContainer() {
-    return notes.map((note) => {
-      return (
-        <Note
-          note={note}
-          deleteNote={() => deleteNote(note._id)}
-          key={note._id}
-        />
-      );
-    });
+    return notes.map((note) => (
+      <Note
+        note={note}
+        deleteNote={() => deleteNote(note._id)}
+        key={note._id}
+      />
+    ));
   }
-  
+
   return (
     <>
       <div className={styles.noteSection}>
         <div className={styles.header}>
           Notes
-          <button className={styles.addNoteButton} onClick={openNotesPopUp}>+</button>
-         </div>
+          <button className={styles.addNoteButton} onClick={openNotesPopUp}>
+            +
+          </button>
+        </div>
         <table>
           <tbody>{NoteContainer()}</tbody>
         </table>
@@ -115,5 +105,4 @@ useEffect(() => {
       )}
     </>
   );
-};
-
+}

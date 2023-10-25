@@ -62,7 +62,7 @@ export default function NotesPopUp({ onClose }) {
     }
 
     setForm({ description: "", header: "", email: form.email }); // Reset form, keeping the email
-    window.location.reload();
+    navigate("/dashBoard");
   }
 
   return (

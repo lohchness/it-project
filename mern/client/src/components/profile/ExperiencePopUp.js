@@ -61,7 +61,7 @@ export default function ExperiencePopUp({ onClose }) {
     }
 
     setForm({ description: "", experienceHeader: "", email: form.email }); // Reset form, keeping the email
-    window.location.reload();
+    navigate("/dashBoard");
   }
 
   return (

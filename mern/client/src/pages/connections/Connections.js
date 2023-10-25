@@ -13,7 +13,7 @@ import { React, useEffect, useState } from "react";
 import { SERVER_URL } from "../../index.js";
 
 
-const Connections = () => {
+const Connections = ({ setProfileUserEmail }) => {
     const navigate = useNavigate();
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
@@ -151,8 +151,8 @@ const Connections = () => {
                             {connections.map((connection) => (
                                 <ConnectionComponent
                                     key={connection._id.$oid}
-                                    // connection={connection}
-                                    {...connection}
+                                    connection={connection}
+                                    setProfileUserEmail={setProfileUserEmail}
                                 />
                             ))}
                         </div>

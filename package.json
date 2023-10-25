@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "nodemailer": "^6.9.7",
+    "universal-cookie": "^6.1.1"
+  }
+}
