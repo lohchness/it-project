@@ -1,6 +1,7 @@
 .connections-container {
     position: relative;
     text-align: center;
+    min-width: 20rem;
     height: 70%;
     width: 35%;
     text-align: left;
@@ -123,4 +124,16 @@
     top: 7px;
     left: 0px;
     width: 60px;
+}
+
+@media (max-width: 900px) {
+    .connections-container {
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px) {
+    .connections-container {
+        width: 80%;
+    }
 }

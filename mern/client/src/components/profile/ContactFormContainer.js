@@ -62,7 +62,7 @@ export default function ContactFormContainer({ userData, setProfileUserEmail }) 
 
     return (
         <div className={styles.frameParent}>
-            <div className={styles.profilePicParent}>
+            <div className={styles.profilePicAndContactInfo}>
                 {profile && (
                     <ProfilePic
                         profilePic={profile.profilePic}

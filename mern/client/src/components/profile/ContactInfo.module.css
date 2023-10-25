@@ -44,3 +44,27 @@
     color: var(--color-white);
     font-family: var(--font-poppins);
 }
+
+@media (max-width: 1000px) {
+    .contactInfo {
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+}
+
+@media (max-width: 750px) {
+    .contactInfo {
+        margin-left: 0;
+        width: 70%;
+        margin-bottom: 0%;
+    }
+}
+
+@media (max-width: 400px) {
+    .contactInfo {
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+}

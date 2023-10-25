@@ -6,76 +6,78 @@ import { SERVER_URL } from "../index.js";
 
 
 const Navbar = () => {
-  const cookies = new Cookies();
-  const navigate = useNavigate();
-  const [userEmail, setUserEmail] = useState(null);
+    const cookies = new Cookies();
+    const navigate = useNavigate();
+    const [userEmail, setUserEmail] = useState(null);
+    const [navMenuVisible, setNavMenuVisible] = useState(false);
 
-  const onLogoutClick = useCallback(() => {
-    const tokenValue = cookies.get("token");
-    if (tokenValue) {
-      cookies.remove("token");
-    }
-    navigate("/login");
-  }, [navigate]);
-
-//   const onConnectionsClick = () => {
-//     // Set userEmail to null when navigating to "Connections"
-//     setUserEmail(null);
-//     navigate("/connections");
-//   };
-
-//   const onProfileClick = () => {
-//     // Set userEmail to the current user's email when navigating to "Profile"
-//     fetchUserEmail();
-//   };
-
-  const fetchUserEmail = async () => {
-    const tokenValue = cookies.get("token");
-    if (tokenValue) {
-      cookies.remove("token");
-    }
-    try {
-        
-      const emailResponse = await fetch(`${SERVER_URL}/user/get-current-user`, {
-        method: 'GET',
-        headers: {
-          'Authorization': `Bearer ${tokenValue}`
+    const onLogoutClick = useCallback(() => {
+        const tokenValue = cookies.get("token");
+        if (tokenValue) {
+            cookies.remove("token");
         }
-      });
-      const emailData = await emailResponse.json();
-      const userEmail_tmp = emailData.user.userEmail;
-      setUserEmail(userEmail_tmp);
-    } catch (error) {
-      console.error("Error fetching user email:", error);
-    }
-  };
+        navigate("/login");
+    }, [navigate]);
 
-  return (
-    <div className="nav-bar-wrapper">
-      <div className="nav-bar">
-        <nav className="pages-wrapper">
-          <NavLink to="/dashboard" className="page-link" end>
-            Dashboard
-          </NavLink>
-          <NavLink to="/connections" className="page-link" end>
-            Connections
-          </NavLink>
-          <NavLink to="/profile" className="page-link" end>
-            Profile
-          </NavLink>
-          <NavLink to="/calendar" className="page-link" end>
-            Calendar
-          </NavLink>
-          <NavLink to="/messaging" className="page-link" end>
-            Messaging
-          </NavLink>
-        </nav>
-        <button className="logout-button" onClick={onLogoutClick}>
-          Log Out
-        </button>
-      </div>
-    </div>
-  );
+    const fetchUserEmail = async () => {
+        const tokenValue = cookies.get("token");
+        if (tokenValue) {
+          cookies.remove("token");
+        }
+        try {
+            
+          const emailResponse = await fetch(`${SERVER_URL}/user/get-current-user`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${tokenValue}`
+            }
+          });
+          const emailData = await emailResponse.json();
+          const userEmail_tmp = emailData.user.userEmail;
+          setUserEmail(userEmail_tmp);
+        } catch (error) {
+          console.error("Error fetching user email:", error);
+        }
+      };
+
+    const onHamburgerMenuClick = () => {
+        if (navMenuVisible) {
+            setNavMenuVisible(false);
+        } else {
+            setNavMenuVisible(true);
+        }
+    }
+
+    return (
+        <div className="nav-bar-wrapper">
+            <div className="nav-bar">
+                <div className="hamburgermenu" onClick={onHamburgerMenuClick}>
+                    <img src="/Vector.png" height="17px" width="17px" />
+                </div>
+
+                <nav className={`pages-wrapper ${navMenuVisible ? 'visible' : ''}`}>
+                    <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/dashboard" >
+                        Dashboard
+                    </NavLink>
+                    <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/connections" >
+                        Connections
+                    </NavLink>
+                    <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/profile" >
+                        Profile
+                    </NavLink>
+                    <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/calendar" >
+                        Calendar
+                    </NavLink>
+                    <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/messaging" >
+                        Messaging
+                    </NavLink>
+                </nav>
+                <button className="logout-button" onClick={onLogoutClick}>
+                    <img src="/logout-icon.png" height="25px" width="25px" />
+                </button>
+            </div>
+        </div>
+    );
 };
 
 export default Navbar;

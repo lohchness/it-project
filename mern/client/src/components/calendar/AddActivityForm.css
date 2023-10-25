@@ -10,6 +10,7 @@
     font-family: var(--font-poppins);
     box-shadow: 2px 3px 8px #26314d44;
     width: 25%;
+    min-width: 10rem;
     height: 85vh;
     background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
     border-radius: var(--br-3xs);
@@ -23,7 +24,9 @@
 }
 .activity-type{
     position: relative;
-    margin-left: 15px;
+    margin-left: 20px;
+    width: 100%;
+    text-align: left;
 }
 
 .heading-wrapper {
@@ -170,4 +173,11 @@
     background-color: var(--color-lightseagreen);
     border-radius: var(--br-8xs);
     margin: 15px;
+}
+
+@media (max-width: 700px) {
+    .add-activity {
+        margin-top: 2%;
+        width: 50%;
+    }
 }

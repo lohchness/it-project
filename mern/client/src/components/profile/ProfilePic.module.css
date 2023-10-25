@@ -173,3 +173,24 @@
 .instagramButton div, .facebookButton div {
     cursor: pointer;
 }
+
+@media (max-width: 1000px) {
+    .profilePic {
+        margin: 0 auto;
+        margin-bottom: 15%;
+    }
+}
+
+@media (max-width: 750px) {
+    .profilePic {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .profilePic {
+        margin: 0 auto;
+        margin-bottom: 15%;
+    }
+}

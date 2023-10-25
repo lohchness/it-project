@@ -18,7 +18,7 @@ export default function AboutMeEditPopUp({ onClose, currentData, onSave }) {
     // Call the onSave function and pass the updated data to it
     onSave(formData);
     onClose();
-    navigate("/dashBoard");
+    navigate("/dashboard");
   };
 
   return (
