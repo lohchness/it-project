@@ -24,7 +24,18 @@ const Connections = () => {
             navigate("/login");
         }
         async function getConnections() {
-            const response = await fetch(`${SERVER_URL}/connection`);
+
+            const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
+                method: 'GET',
+                headers: {
+                  'Authorization': `Bearer ${tokenValue}`
+                }
+            });
+            const emailData = await email.json();
+            const userEmail = emailData.user.userEmail;      
+
+
+            const response = await fetch(`${SERVER_URL}/connection?email=${userEmail}`);
 
             if (!response.ok) {
                 const message = `An error occured: ${response.statusText}`;
