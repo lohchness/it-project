@@ -118,15 +118,15 @@ const Connections = ({ setProfileUserEmail }) => {
                             {connections.map((connection) => (
                                 <ConnectionComponent
                                     key={connection._id.$oid}
-                                    // connection={connection}
-                                    {...connection}
+                                    connection={connection}
+                                    setProfileUserEmail={setProfileUserEmail}
                                 />
                             ))}
                         </div>
 
                         <div className={styles.connectionsFooter}>
                             <ShowResults
-                                // showingResultsNum="Showing 8 out of 254 Results"
+                                showingResultsNum={`Showing ${connectionsCount} connections`}
                                 showing8OutTop="530px"
                                 showing8OutLeft="87px"
                             />
