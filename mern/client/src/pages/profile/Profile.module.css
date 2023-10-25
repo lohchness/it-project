@@ -1,36 +1,36 @@
 
 .profileContentContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     width: 100%;
     height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
 }
 
-.profileContentContainer > div {
-    margin: 0% 30px;
-}
 
 .left {
-    display: flex;
+    margin-right: 5%;
+    display: inline-flex;
     flex-direction: column;
-    width: 25%;
+    width: 27%;
+    min-width: 17rem;
     height: 100%;
+    vertical-align: top;
 }
 
 .right {
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    margin-left: 2%;
     height: 100%;
     width: 55%;
+    min-width: 20rem;
+    vertical-align: top;
 }
 
 .lowerRight {
     margin-top: 1%;
-    display: flex;
-    flex-direction: row;
     height: 40%;
+    min-width: 10rem;
 }
 
 
@@ -53,4 +53,19 @@
     font-size: 20px;
     color: var(--color-lightseagreen);
     font-family: var(--font-poppins);
+}
+
+@media (max-width: 700px) {
+    .profileContentContainer {
+        display: inline;
+    }
+    .left {
+        width: 70%;
+        margin: 0 10%;
+    }
+
+    .right {
+        margin: 3% 10%;
+        width: 80%;
+    }
 }

@@ -85,6 +85,7 @@
 
 .noteSection {
     position: relative;
+    display: inline-block;
     width: 47%;
     height: 100%;
     text-align: left;
@@ -110,4 +111,11 @@
     background-color: inherit;
     border: none;
     float: right;
+}
+
+@media (max-width: 500px) {
+    .noteSection {
+        display: block;
+        width: 95%;
+    }
 }
