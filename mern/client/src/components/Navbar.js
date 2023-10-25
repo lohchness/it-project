@@ -1,19 +1,23 @@
-import { useCallback, useState } from "react";
+import React, { useCallback, useState, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-
 import "./Navbar.css";
+import { SERVER_URL } from "../index.js";
+
 
 const Navbar = () => {
-    const navigate = useNavigate();
-    const cookies = new Cookies();
+  const cookies = new Cookies();
+  const navigate = useNavigate();
+  const [userEmail, setUserEmail] = useState(null);
     const [navMenuVisible, setNavMenuVisible] = useState(false);
 
-    const onLogoutClick = useCallback(() => {
-        // clear jwt token
-        cookies.remove("token");
-        navigate("/login");
-    }, [navigate]);
+  const onLogoutClick = useCallback(() => {
+    const tokenValue = cookies.get("token");
+    if (tokenValue) {
+      cookies.remove("token");
+    }
+    navigate("/login");
+  }, [navigate]);
 
     const onHamburgerMenuClick = () => {
         if (navMenuVisible) {

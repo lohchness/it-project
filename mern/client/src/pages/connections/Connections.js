@@ -13,18 +13,29 @@ import { React, useEffect, useState } from "react";
 import { SERVER_URL } from "../../index.js";
 
 
-const Connections = () => {
+const Connections = ({ setProfileUserEmail }) => {
     const navigate = useNavigate();
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
     const [connections, setConnections] = useState([]);
+    const [connectionsCount, setConnectionsCount] = useState(0);
 
     useEffect(() => {
         if (!tokenValue) {
             navigate("/login");
         }
         async function getConnections() {
-            const response = await fetch(`${SERVER_URL}/connection`);
+
+            const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
+                method: 'GET',
+                headers: {
+                  'Authorization': `Bearer ${tokenValue}`
+                }
+            });
+            const emailData = await email.json();
+            const userEmail = emailData.user.userEmail;      
+
+            const response = await fetch(`${SERVER_URL}/connection?email=${userEmail}`);
 
             if (!response.ok) {
                 const message = `An error occured: ${response.statusText}`;
@@ -37,6 +48,7 @@ const Connections = () => {
             if (connections.registered_user == true) {
 
             }
+            setConnectionsCount(connections.length); // set the count
             setConnections(connections);
         }
 

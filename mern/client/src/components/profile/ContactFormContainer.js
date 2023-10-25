@@ -9,7 +9,7 @@ import Cookies from "universal-cookie";
 
 import { SERVER_URL } from "../../index.js";
 
-export default function ContactFormContainer() {
+export default function ContactFormContainer({ userData, setProfileUserEmail }) {
     const [profile, setProfile] = useState([]);
     const [isEditPopupOpen, setEditPopupOpen] = useState(false);
 
@@ -22,48 +22,10 @@ export default function ContactFormContainer() {
 
     // This method fetches the records from the database.
     useEffect(() => {
-        async function getProfile() {
-            try {
-                //console.log(profileID);
-
-                //const cookies = new Cookies(); 
-                //const tokenValue = cookies.get("token"); 
-
-                const email = await fetch(`${SERVER_URL}/user/get-current-user`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${tokenValue}`
-                    }
-                });
-                const emailData = await email.json();
-                const userEmail = emailData.user.userEmail;
-
-                const response = await fetch(`${SERVER_URL}/user/get-user-by-email?email=${userEmail}`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${tokenValue}`, // Include the JWT token for authentication
-                    },
-                });
-
-                //const response = await User.findOne({ email: IDnEmail.email });
-
-                if (!response.ok) {
-                    const message = `An error occurred: ${response.statusText}`;
-                    window.alert(message);
-                    return;
-                }
-
-                const profileData = await response.json();
-                setProfile(profileData.user);
-            } catch (error) {
-                console.error("Error fetching profile:", error);
-            }
+        if (userData) {
+            setProfile(userData);
         }
-
-        getProfile();
-        //getProfile2();
-        // return;
-    }, [tokenValue]);
+    }, [tokenValue, userData]);
 
     const handleSave = async (updatedData) => {
 
@@ -88,6 +50,7 @@ export default function ContactFormContainer() {
             // Assuming your server responds with the updated profile data, you can update your state with it.
             //const updatedProfileData = await response.json();
             //setProfile(updatedProfileData);
+            //setProfileUserEmail(updatedData);
             window.location.reload();
         } catch (error) {
             console.error("Error saving profile data:", error);
