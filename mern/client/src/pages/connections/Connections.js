@@ -18,6 +18,7 @@ const Connections = () => {
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
     const [connections, setConnections] = useState([]);
+    const [connectionsCount, setConnectionsCount] = useState(0);
 
     useEffect(() => {
         if (!tokenValue) {
@@ -34,7 +35,6 @@ const Connections = () => {
             const emailData = await email.json();
             const userEmail = emailData.user.userEmail;      
 
-
             const response = await fetch(`${SERVER_URL}/connection?email=${userEmail}`);
 
             if (!response.ok) {
@@ -48,6 +48,7 @@ const Connections = () => {
             if (connections.registered_user == true) {
                 
             }
+            setConnectionsCount(connections.length); // set the count
             setConnections(connections);
         }
 
@@ -124,6 +125,7 @@ const Connections = () => {
                     
                         <ShowResults
                             // showingResultsNum="Showing 8 out of 254 Results"
+                            showingResultsNum={`Showing ${connectionsCount} connections`}
                             showing8OutTop="530px"
                             showing8OutLeft="87px"
                         />
