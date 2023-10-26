@@ -35,7 +35,7 @@ router.post("/", async (req, res) => {
     registered_user: req.body.registered_user,
     made_up_name: req.body.made_up_name,
     current_user_id: req.body.current_user_id,
-    friend_user_id: friend_user_id,
+    friend_user_id: req.body.friend_user_id,
     last_contact: req.body.last_contact,
     tags: req.body.tags,
     touch_status: req.body.touch_status,

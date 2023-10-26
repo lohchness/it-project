@@ -19,6 +19,7 @@ const Connections = ({ setProfileUserEmail }) => {
     const tokenValue = cookies.get("token");
     const [connections, setConnections] = useState([]);
     const [connectionsCount, setConnectionsCount] = useState(0);
+    const [sortResults, setSortResults] = useState(''); 
 
     useEffect(() => {
         if (!tokenValue) {
