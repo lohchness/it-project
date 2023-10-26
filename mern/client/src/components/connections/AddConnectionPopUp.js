@@ -55,7 +55,7 @@ export default function AddConnection({ onClose }) {
         newConnection.current_user_id = userEmail;
         newConnection.last_contact = new Date();
         newConnection.made_up_name = `${newConnectionUserData.user.firstName} ${newConnectionUserData.user.lastName}`
-        newConnection.tags = "";
+        // newConnection.tags = "";
 
         await fetch(SERVER_URL + "/connection", {
             method: "POST",
@@ -112,9 +112,17 @@ export default function AddConnection({ onClose }) {
                         placeholder="Connection E-mail"
                         type="text"
                         id="position"
-                        value={form.ConnectionId}
+                        value={form.friend_user_id}
                         onChange={(e) => updateForm({ friend_user_id: e.target.value })}
                         required
+                    />
+                    <input
+                        className="conn-tag"
+                        placeholder="Connection Tag(s)"
+                        type="text"
+                        id="position"
+                        value={form.tags}
+                        onChange={(e) => updateForm({ tags: e.target.value })}
                     />
                     <div className="confirm-button">
                         <input
