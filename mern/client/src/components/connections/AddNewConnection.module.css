@@ -1,51 +1,30 @@
-.vectorIcon {
-  position: absolute;
-  height: 81.55%;
-  width: 10.29%;
-  top: 9.23%;
-  right: 89.98%;
-  bottom: 9.23%;
-  left: -0.26%;
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
-  object-fit: cover;
-}
 .addNewConnection1 {
-  position: absolute;
-  top: 0;
-  left: 29.29px;
-  font-size: var(--font-size-base);
-  line-height: 150%;
-  font-family: var(--font-inter);
-  /* color: var(--color-gainsboro); */
-  color: white;
-  text-align: left;
+    cursor: pointer;
+    font-size: var(--font-size-base);
+    font-family: var(--font-poppins);
+    color: white;
+    text-align: left;
+    font-size: 15px;
 }
+
 .addNewConnection {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  position: absolute;
-  top: 810px;
-  left: 286.71px;
-  width: 190.29px;
-  height: 24px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+    display: block;
+    background-color: var(--color-lightseagreen);
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 180px;
+    margin: 0.5rem 0;
 }
+
 .addconnection {
-    position: absolute;
-    right: 0px;
     font-size: var(--font-size-sm);
     padding: 5px 10px;
     color: var(--color-white);
     text-align: center;
     font-family: var(--font-poppins);
-    float: right;
-    margin: -3px 10px;
+    margin: 10px;
     cursor: pointer;
-    background-color: var(--color-lightseagreen);
-    border-radius: 5px;
-    border: none;
-    float: right;
 }

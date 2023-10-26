@@ -2,6 +2,7 @@ import express from "express";
 
 import { decodeToken } from "./auth.js";
 import User from "../models/User.js"
+import { MongoClient } from 'mongodb';
 
 const router = express.Router();
 
@@ -28,6 +29,25 @@ router.get("/get-user-by-email", async (req, res) => {
       return res.status(200).json({ user });
     } catch (error) {
       console.error("Error fetching user by email:", error);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  });
+
+  router.get("/get-user-by-id", async (req, res) => {
+    try {
+      const userID = req.query._id; // Get the id from the query parameters
+      console.log(`Searching for user with _id: ${userID}`);
+
+      // Find the user in the database based on the provided id
+      const user = await User.findOne({ _id: userID });
+  
+      if (!user) {
+        return res.status(404).json({ message: "User not found" });
+      }
+  
+      return res.status(200).json({ user });
+    } catch (error) {
+      console.error("Error fetching user by id:", error);
       return res.status(500).json({ error: "Internal Server Error" });
     }
   });

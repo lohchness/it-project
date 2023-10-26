@@ -18,7 +18,7 @@ export default function NotesPopUp({ onClose }) {
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
 
-    fetch(`http://localhost:5050/user/get-current-user`, {
+    fetch(`${SERVER_URL}/user/get-current-user`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${tokenValue}`
@@ -62,7 +62,7 @@ export default function NotesPopUp({ onClose }) {
     }
 
     setForm({ description: "", header: "", email: form.email }); // Reset form, keeping the email
-    window.location.reload();
+    navigate("/dashBoard");
   }
 
   return (
@@ -89,14 +89,14 @@ export default function NotesPopUp({ onClose }) {
               required
             />
           </div>
-          <div className="confirm-button">
+          <div className={styles.confirmExperienceButton}>
             <input
               type="submit"
               value="Confirm"
               className="confirm-control"
             />
           </div>
-          <button className="cancel-button" onClick={onClose}>
+          <button className={styles.cancelExperienceButton} onClick={onClose}>
             <div className="cancel">Cancel</div>
           </button>
         </div>

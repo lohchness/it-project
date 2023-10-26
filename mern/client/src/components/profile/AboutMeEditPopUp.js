@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import styles from "./AboutMeEditPopUp.module.css";
+import { useNavigate } from "react-router-dom";
 
 export default function AboutMeEditPopUp({ onClose, currentData, onSave }) {
   const [formData, setFormData] = useState(currentData);
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -16,6 +18,7 @@ export default function AboutMeEditPopUp({ onClose, currentData, onSave }) {
     // Call the onSave function and pass the updated data to it
     onSave(formData);
     onClose();
+    navigate("/dashboard");
   };
 
   return (

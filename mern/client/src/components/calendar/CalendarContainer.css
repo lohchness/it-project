@@ -1,53 +1,77 @@
 .calendar-wrapper {
-  position: absolute;
-  top: 13.3%;
-  left: 7%;
-  width: 60%;
-  height: 92%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-  text-align: left;
-  font-size: var(--font-size-5xl);
-  background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
-  border-radius: 15px;
-  font-family: var(--font-poppins);
-}
-.calendar-heading .heading {
-  width:100%;
-  position: relative;
-  font-weight: 500;
-}
-.calendar-heading {
-  position:relative;
-  width: 98%;
-  border-radius: var(--br-3xs);
-  background-color: var(--color-div-heading);
-  display: flex;
-  flex-direction: row;
-  padding: 0 var(--padding-4xs);
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-317xl);
-  z-index: 1;
-  font-size: var(--font-size-xl);
+    margin-top: 2%;
+    width: 60%;
+    min-width: 20rem;
+    height: 85vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-3xs);
+    text-align: left;
+    font-size: var(--font-size-5xl);
+    background: linear-gradient(to bottom right, var(--color-div-background), var(--color-div-background), #7683b0);
+    border-radius: 15px;
+    font-family: var(--font-poppins);
+    display:inline-flex;
 }
 
-.grid-wrapper{
-  position:relative;
-  width:90%;
-  left: 5%;
-  top: 10px;
-  display: grid;
-  text-align: center;
-  grid-template-columns: repeat(7, 1fr);
-  grid-template-rows: 50px repeat(5, 120px);
-  font-size: var(--font-size-lg);
+.calendar-heading .heading {
+    width: 93%;
+    position: relative;
+    font-weight: 500;
+    text-align: center;
 }
-.cell{
-  padding: 5px;
-  text-align: right;
-  border: 2px solid;
+
+.arrow-button {
+    cursor: pointer;
+}
+
+.calendar-heading {
+    margin-top: -25px;
+    position: relative;
+    width: 100%;
+    border-radius: var(--br-3xs);
+    background-color: var(--color-div-heading);
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+}
+
+.days-of-week {
+    margin: 0px auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(7, 1fr);
+    font-size: 15px;
+}
+
+.grid-wrapper {
+    margin: 5px auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 11.5vh);
+    font-size: var(--font-size-lg);
+}
+
+.cell {
+    padding: 5px;
+    text-align: right;
+    border: 2px solid;
+}
+
+
+@media (max-width: 700px) {
+    .calendar-wrapper {
+        margin-top: 3%;
+        width: 80%;
+    }
 }

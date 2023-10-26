@@ -20,7 +20,7 @@ const Experience = (props) => (
   </tr>
 );
 
-export default function ExperienceSection() {
+export default function ExperienceSection({ userData }) {
   const [experiences, setExperiences] = useState([]);
   const [isExperiencePopUpOpen, setExperiencePopUpOpen] = useState(false);
 
@@ -32,38 +32,34 @@ export default function ExperienceSection() {
     setExperiencePopUpOpen(false);
   }, []);
 
-  const cookies = new Cookies(); 
-  const tokenValue = cookies.get("token"); 
+  const cookies = new Cookies();
+  const tokenValue = cookies.get("token");
 
   useEffect(() => {
     async function getExperiences() {
       try {
-        const email = await fetch(`http://localhost:5050/user/get-current-user`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${tokenValue}`
-          }
-        }); 
-        const emailData = await email.json();
-        const userEmail = emailData.user.userEmail;
+        if (!userData) {
+          return; // Return early if userData is not available
+        }
+        const userEmail = userData.email;
 
-        const response = await fetch(SERVER_URL + `/experience?email=${userEmail}`);
-    
+        const response = await fetch(`${SERVER_URL}/experience?email=${userEmail}`);
+
         if (!response.ok) {
           const message = `An error occurred: ${response.statusText}`;
           window.alert(message);
           return;
         }
-    
+
         const experiences = await response.json();
         setExperiences(experiences);
-      } catch (error) { // Added error parameter
-        console.error("Error fetching experiences:", error); // Updated error message
+      } catch (error) {
+        console.error("Error fetching experiences:", error);
       }
     }
-  
+
     getExperiences();
-  }, [tokenValue]);
+  }, [tokenValue, userData]); // Add userData as a dependency
 
   async function deleteExperience(id) {
     await fetch(SERVER_URL + `/experience/${id}`, {
@@ -89,11 +85,8 @@ export default function ExperienceSection() {
   return (
     <>
       <div className={styles.noteSection}>
-        <div className={styles.header}>
-          <b className={styles.notes}>Experience</b>
-          <button className={styles.addNoteButton} onClick={openExperiencePopUp}>
-            <div className={styles.groupIcon}>+</div>
-          </button>
+        <div className={styles.header}>Experience
+          <button className={styles.addNoteButton} onClick={openExperiencePopUp}>+</button>
         </div>
         <table>
           <tbody>{ExperienceContainer()}</tbody>

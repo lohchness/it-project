@@ -7,7 +7,7 @@
     justify-content: center;
     background-color: var(--color-lavender);
     width: 100vw;
-    height: 100vh;
+    height: 85vh;
     text-align: left;
     font-size: var(--font-size-xl);
     color: var(--color-white);
@@ -19,27 +19,11 @@
     height: 10%;
 }
 
-.calendar-crm-container {
-    position: relative;
-    text-align: right;
-    color: var(--color-lightseagreen);
-    position: relative;
-    top: 10%;
-    right: 10%;
-    line-height: 150%;
-    text-align: right;
-    color: var(--color-lightseagreen);
-}
-
-.calendar-crm-container .span {
-    color: var(--color-white);
-}
-
-.calendar-crm-container .crm {
-    color: var(--color-slategray);
-}
-
 .calendar-activity-form-container {
     position: relative;
-    margin: 0 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
 }

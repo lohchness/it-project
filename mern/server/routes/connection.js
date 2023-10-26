@@ -6,9 +6,17 @@ const router = express.Router();
 
 // This section will help you get a list of all the records.
 router.get("/", async (req, res) => {
-  let collection = await db.collection("collections");
-  let results = await collection.find({}).toArray();
-  res.send(results).status(200);
+    const userEmail = req.query.email;
+
+    if (!userEmail) {
+        res.status(400).send("Missing email query parameter");
+        return;
+    }
+
+
+    let collection = await db.collection("collections");
+    let results = await collection.find({current_user_id : userEmail}).toArray();
+    res.send(results).status(200);
 });
 
 // This section will help you get a single record by id

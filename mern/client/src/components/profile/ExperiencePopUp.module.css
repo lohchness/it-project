@@ -58,18 +58,7 @@
   color: var(--color-white);
   text-align: right;
 }
-.confirmExperienceButton {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-11xs) var(--padding-4xs);
-  background-color: var(--color-lightseagreen);
-  margin: 0 !important;
-  position: absolute;
-  top: 206px;
-  left: 139px;
-  border-radius: var(--br-8xs);
-  z-index: 3;
-}
+
 .cancelExperienceButton,
 .confirmExperienceButton,
 .experiencePopup {
@@ -78,17 +67,33 @@
   align-items: center;
   justify-content: center;
 }
+.confirmExperienceButton {
+    margin: 0 !important;
+    position: absolute;
+    top: 215px;
+    left: 150px;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-lightseagreen);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-11xs) var(--padding-4xs);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+}
+
 .cancelExperienceButton {
-  cursor: pointer;
-  border: 0;
-  padding: var(--padding-11xs) var(--padding-smi);
-  background-color: var(--color-lightseagreen);
-  margin: 0 !important;
-  position: absolute;
-  top: 206px;
-  left: 6px;
-  border-radius: var(--br-8xs);
-  z-index: 4;
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-11xs) var(--padding-smi);
+    background-color: var(--color-lightseagreen);
+    margin: 0 !important;
+    position: absolute;
+    top: 206px;
+    left: 20px;
+    border-radius: var(--br-8xs);
+    z-index: 4;
 }
 .experiencePopup {
   border-radius: var(--br-3xs);

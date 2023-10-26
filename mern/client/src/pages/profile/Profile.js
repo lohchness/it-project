@@ -1,4 +1,4 @@
-import { React, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 
@@ -11,49 +11,83 @@ import ContactFormContainer from "../../components/profile/ContactFormContainer"
 import Navbar from "../../components/Navbar";
 import styles from "./Profile.module.css";
 
-const Profile = () => {
+import { SERVER_URL } from "../../index.js";
+
+const Profile = ({ userEmail, setProfileUserEmail }) => {
+    const [profileData, setProfileData] = useState([]);
+    console.log("66666");
+
     const navigate = useNavigate();
     const cookies = new Cookies();
     const tokenValue = cookies.get("token");
 
-    // If token does not exist, redirect to login page
-    useEffect(() => {
-        if (!tokenValue) {
-            navigate("/login");
+    // Define a function to fetch user data
+    async function fetchUserData() {
+        try {
+            if (!userEmail) {
+                return; // Return early if userData is not available
+            }
+
+            const userResponse = await fetch(`${SERVER_URL}/user/get-user-by-email?email=${userEmail}`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${tokenValue}`
+                }
+            });
+
+            if (!userResponse.ok) {
+                const message = `An error occurred: ${userResponse.statusText}`;
+                window.alert(message);
+                return;
+            }
+
+            const userData = await userResponse.json();
+            setProfileData(userData.user);
+        } catch (error) {
+            console.error("Error fetching user data:", error);
         }
+    }
+
+    // Load data when the component mounts
+    useEffect(() => {
+        // Fetch user's email and user data
+        if (tokenValue) {
+            fetchUserData();
+        }
+    }, [tokenValue]);
+
+    // Listen for the window's beforeunload event
+    useEffect(() => {
+        window.addEventListener("beforeunload", fetchUserData);
+
+        // Cleanup the event listener when the component unmounts
+        return () => {
+            window.removeEventListener("beforeunload", fetchUserData);
+        };
     }, []);
 
-    // Check to see if JWT token exists before laoding page
+    // Check to see if JWT token exists before loading page
     if (!tokenValue) {
         navigate("/login");
     }
+
     return (
         <>
             <Navbar />
             <div className={styles.profile}>
-                {/* <div className={styles.profilecrmFrame}>
-                    <div className={styles.profileCrmContainer}>
-                        <span>Profile</span>
-                        <span className={styles.span}>{` `}</span>
-                        <span className={styles.crm}>{`> CRM`}</span>
-                    </div>
-                </div> */}
                 <div className={styles.profileContentContainer}>
                     <div className={styles.left}>
-                        <ContactFormContainer />
+                        <ContactFormContainer userData={profileData} setProfileUserEmail={setProfileUserEmail}/>
                     </div>
                     <div className={styles.right}>
                         <ContactHistorySectionContainer />
-                        <UpcomingEventsSectionContainer />
+                        <UpcomingEventsSectionContainer userData={profileData}/>
                         <div className={styles.lowerRight}>
-                            <ExperienceSection />
-                            <NoteSectionContainer />
+                            <ExperienceSection userData={profileData}/>
+                            <NoteSectionContainer userData={profileData}/>
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </>
     );

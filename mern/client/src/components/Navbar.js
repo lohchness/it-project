@@ -1,28 +1,61 @@
-import { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
-
 import "./Navbar.css";
+import { SERVER_URL } from "../index.js";
+
 
 const Navbar = () => {
-    const navigate = useNavigate();
     const cookies = new Cookies();
+    const navigate = useNavigate();
+    const [userEmail, setUserEmail] = useState(null);
+    const [navMenuVisible, setNavMenuVisible] = useState(false);
 
     const onLogoutClick = useCallback(() => {
-        // clear jwt token
-        cookies.remove("token");
+        const tokenValue = cookies.get("token");
+        if (tokenValue) {
+            cookies.remove("token");
+        }
         navigate("/login");
     }, [navigate]);
+
+    const fetchUserEmail = async () => {
+        const tokenValue = cookies.get("token");
+        if (tokenValue) {
+          cookies.remove("token");
+        }
+        try {
+            
+          const emailResponse = await fetch(`${SERVER_URL}/user/get-current-user`, {
+            method: 'GET',
+            headers: {
+              'Authorization': `Bearer ${tokenValue}`
+            }
+          });
+          const emailData = await emailResponse.json();
+          const userEmail_tmp = emailData.user.userEmail;
+          setUserEmail(userEmail_tmp);
+        } catch (error) {
+          console.error("Error fetching user email:", error);
+        }
+      };
+
+    const onHamburgerMenuClick = () => {
+        if (navMenuVisible) {
+            setNavMenuVisible(false);
+        } else {
+            setNavMenuVisible(true);
+        }
+    }
 
     return (
         <div className="nav-bar-wrapper">
             <div className="nav-bar">
-                {/* only needed when page is resized to be very narrow
-                <div className="hamburgermenu">
-                    <img src="/Vector.png" height="17px" width="17px"/>
-                </div> 
-                */}
-                <nav className="pages-wrapper">
+                <div className="hamburgermenu" onClick={onHamburgerMenuClick}>
+                    <img src="/Vector.png" height="17px" width="17px" />
+                </div>
+
+                <nav className={`pages-wrapper ${navMenuVisible ? 'visible' : ''}`}>
                     <NavLink className={nav => (nav.isActive ? "page-link current-page" : "page-link")} to="/dashboard" >
                         Dashboard
                     </NavLink>
@@ -40,7 +73,7 @@ const Navbar = () => {
                     </NavLink>
                 </nav>
                 <button className="logout-button" onClick={onLogoutClick}>
-                    <img src="/logout-icon.png" height="25px" width="25px"/>
+                    <img src="/logout-icon.png" height="25px" width="25px" />
                 </button>
             </div>
         </div>

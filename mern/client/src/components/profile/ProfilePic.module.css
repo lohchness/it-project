@@ -8,12 +8,12 @@
 .nameLastname {
   position: relative;
   font-weight: 600;
+  color: white;
+  font-family: var(--font-poppins);
 }
 .jobPosition {
   font-size: var(--font-size-3xs);
   font-weight: 300;
-  font-family: var(--font-inter);
-  color: var(--color-whitesmoke);
 }
 .maskGroupParent,
 .nameLastnameParent {
@@ -35,6 +35,7 @@
   position: relative;
   width: 16px;
   height: 15.9px;
+  cursor: pointer;
 }
 .facebookButton {
   display: flex;
@@ -48,8 +49,9 @@
   width: 16px;
   height: 16px;
   z-index: 0;
+  cursor: pointer;
 }
-.vectorIcon2,
+
 .vectorIcon3 {
   position: absolute;
   margin: 0 !important;
@@ -62,16 +64,12 @@
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
-  z-index: 1;
-}
-.vectorIcon3 {
-  height: 50%;
-  width: 50%;
-  top: 25%;
-  right: 25%;
-  bottom: 25%;
-  left: 25%;
+  height: 40%;
+  width: 40%;
+  top:30%;
+  left: 30%;
   z-index: 2;
+  cursor: pointer;
 }
 .instagramButton {
   display: flex;
@@ -81,11 +79,13 @@
   position: relative;
   gap: var(--gap-3xs);
   background-color: inherit;
+  cursor: pointer;
 }
 .vectorIcon4 {
   position: relative;
   width: 16px;
   height: 13.6px;
+  cursor: pointer;
 }
 .facebookButtonParent,
 .frameParent {
@@ -109,6 +109,7 @@
   width: 27px;
   height: 27px;
   z-index: 0;
+  cursor: pointer;
 }
 .vectorIcon6,
 .vectorIcon7 {
@@ -124,6 +125,7 @@
   overflow: hidden;
   max-height: 100%;
   z-index: 1;
+  cursor: pointer;
 }
 .vectorIcon7 {
   height: 22.3%;
@@ -133,6 +135,7 @@
   bottom: 10.38%;
   left: 15.23%;
   z-index: 2;
+  cursor: pointer;
 }
 .editProfileButton {
   cursor: pointer;
@@ -155,6 +158,39 @@
   height: 177px;
   text-align: left;
   font-size: var(--font-size-xs);
-  color: var(--color-gray-100);
   font-family: var(--font-open-sans);
+}
+
+.instagramButton, .facebookButton {
+    background-color: var(--color-div-heading);
+    outline: none;
+    border: none;
+    padding: 5px;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.instagramButton div, .facebookButton div {
+    cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+    .profilePic {
+        margin: 0 auto;
+        margin-bottom: 15%;
+    }
+}
+
+@media (max-width: 750px) {
+    .profilePic {
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 400px) {
+    .profilePic {
+        margin: 0 auto;
+        margin-bottom: 15%;
+    }
 }

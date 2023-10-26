@@ -6,7 +6,7 @@
     "main": "server.mjs",
     "scripts": {
         "start": "node server.mjs",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "NODE_ENV=test jest --testTimeout=5000"
     },
     "keywords": [],
     "author": "",
@@ -20,6 +20,10 @@
         "jsonwebtoken": "^9.0.2",
         "mongodb": "^5.8.1",
         "mongoose": "^7.5.3",
+        "nodemailer": "^6.9.7",
         "nodemon": "^3.0.1"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
     }
 }

@@ -19,9 +19,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "NODE_ENV=production react-scripts build",
+    "test": "NODE_ENV=test jest --testTimeout=5000",
+    "eject": "NODE_ENV=eject react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "eslint": "^8.49.0",
-    "eslint-plugin-react": "^7.33.2"
+    "eslint-plugin-react": "^7.33.2",
+    "jest": "^27.5.1"
   }
 }

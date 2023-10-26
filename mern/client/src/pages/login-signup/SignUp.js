@@ -112,7 +112,7 @@ const SignUp = () => {
         return (
             <div className="page">
             <div className="sign-up-container">
-                <h1 className="title sign-up">Sign up</h1>
+                <h1 className="title sign-up">SIGN UP</h1>
 
                 {signUpStep == 1 && (
                     <>
@@ -164,12 +164,12 @@ const SignUp = () => {
                                 placeholder="Password"
                                 type="password"
                                 {...register("password", {
-                                    required: true, minLength: 5
+                                    required: true, minLength: 7
                                 })}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required />
-                            {errors.password && <label className="form-input-error-text">Password is too short (minimum 5 characters)</label>}
+                            {errors.password && <label className="form-input-error-text">Password is too short (minimum 7 characters)</label>}
 
                             <input
                                 className={`form-field ${errors.confirmPassword ? 'error-form-field' : ''}`}

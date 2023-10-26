@@ -59,14 +59,8 @@ const AddNewConnection = ({
     }, []);
 
     return (
-        <button className={styles.addNewConnection} style={addNewConnectionStyle} onClick={openConnectionPopUp}>+
-            <img
-                className={styles.vectorIcon}
-                alt=""
-                src={vector}
-                style={vectorIcon4Style}
-            />
-            <div className={styles.addNewConnection1}>Add New Connection</div>
+        <button className={styles.addNewConnection} style={addNewConnectionStyle} onClick={openConnectionPopUp}>
+            <div className={styles.addNewConnection1}>+ Add New Connection</div>
             {isPopUpOpen && (
                 <PortalPopup
                 overlayColor="rgba(0, 0, 0, 0)"

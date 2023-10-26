@@ -11,7 +11,7 @@
 
 .popup {
     position: absolute;
-    top: -600px;
+    top: -500px;
     background-color: var(--color-white);
     border: none;
     border-radius: var(--br-3xs);
@@ -74,10 +74,31 @@
 .confirm-control {
     position: absolute;
     line-height: 150%;
-    background-color: #1CBABD;
+    background-color: transparent;
     color: white;
     border: none;
+    padding: var(--padding-11xs) var(--padding-4xs);
     font-family: var(--font-poppins);
+    border-radius: var(--br-8xs);
+}
+
+.add-task-confirm-button {
+    margin: 0 !important;
+    position: absolute;
+    top: 206px;
+    left: 130px;
+    width: 56px;
+    height: 22px;
+    border-radius: var(--br-8xs);
+    background-color: var(--color-lightseagreen);
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding-11xs) var(--padding-4xs);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 3;
+    line-height: 150%;
 }
 
 .confirm-button {
@@ -121,6 +142,20 @@
     position: absolute;
     top: 90%;
     left: 2%;
+    border: 0;
+    padding: var(--padding-11xs) var(--padding-smi);
+    background-color: var(--color-lightseagreen);
+    margin: 0 !important;
+    position: relative;
+    border-radius: var(--br-8xs);
+    z-index: 4;
+}
+
+.add-task-cancel-button {
+    cursor: pointer;
+    position: absolute;
+    top: 206px;
+    left: -50px;
     border: 0;
     padding: var(--padding-11xs) var(--padding-smi);
     background-color: var(--color-lightseagreen);

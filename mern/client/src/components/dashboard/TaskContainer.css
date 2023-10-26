@@ -1,21 +1,24 @@
 .tasks {
     position: relative;
-    height: 60%;
-    width: 35%;
+    min-width: 20rem;
+    height: 70%;
+    width: 32%;
     align-items: flex-start;
     font-size: var(--font-size-sm);
     color: var(--color-gray-200);
     font-family: var(--font-inter);
     background-color: var(--color-lightslategray);
     border-radius: 15px;
-    overflow-y: auto;
 }
+
 
 .tasks table {
     position: relative;
-    height: 80%;
+    height: 85%;
+    width: 100%;
     border-spacing: 10px 10px;
     display: block;
+    overflow-y: auto;
 }
 
 .row-wrapper {
@@ -41,11 +44,14 @@
     width: 13px;
     height: 14.02px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .delete-button {
     background-color: white;
     border: none;
+    right: 10px;
+    cursor: pointer;
 }
 .task-checkbox {
     background-color: white;
@@ -57,6 +63,7 @@
     padding: var(--padding-xxs);
     align-items: center;
     color: black;
+    width: 100%;
 
 }
 
@@ -76,4 +83,15 @@
     border: none;
     float: right;
     
+}
+
+.task-container {
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .tasks {
+        width: 80%;
+        margin-top: 2%;
+    }
 }

@@ -51,7 +51,7 @@ export default function TaskContainer() {
  useEffect(() => {
   async function getTasks() {
     try{
-      const email = await fetch(`http://localhost:5050/user/get-current-user`,{
+      const email = await fetch(`${SERVER_URL}/user/get-current-user`,{
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${tokenValue}`
@@ -61,7 +61,7 @@ export default function TaskContainer() {
     const emailData = await email.json();
     const userEmail = emailData.user.userEmail;
     
-    const response = await fetch(SERVER_URL + `/task?email=${userEmail}`); // Add a query parameter for the user's email
+    const response = await fetch(`${SERVER_URL}/task?email=${userEmail}`); // Add a query parameter for the user's email
 
     if (!response.ok) {
       const message = `An error occurred: ${response.statusText}`;
@@ -83,7 +83,7 @@ export default function TaskContainer() {
 
  // This method will delete a record
  async function deleteTask(id) {
-  await fetch(SERVER_URL + `/task/${id}`, {
+  await fetch(`${SERVER_URL}/task/${id}`, {
     method: "DELETE"
   });
 
@@ -124,7 +124,7 @@ async function updateTask(id){
     <div className="tasks dashboard-widget">
         <div className="widget-heading">My Tasks <button className="add-task" onClick={openAddTaskPopUp}>+ Add Task</button></div>
         <table>
-          <tbody>{TaskContainer()}</tbody>
+          <tbody className="task-container">{TaskContainer()}</tbody>
         </table>
       {isAddTaskPopUpOpen && (
         <PortalPopup

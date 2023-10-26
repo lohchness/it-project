@@ -92,6 +92,27 @@ const ForgotPassword = () => {
 
         }
     }
+
+
+    const onClickResend = () => {
+        const configuration = {
+            method: "post",
+            url: SERVER_URL + "/auth/request-password-reset",
+            data: {
+                email
+            },
+        };
+
+        // make the API call
+        axios(configuration)
+        .then((result) => {
+            console.log(result);
+        })
+        .catch((error) => {
+            setError(true);
+            console.log(error);
+        });
+    }
     
     // Check to see if JWT token exists before laoding page
     if (tokenValue) {
@@ -100,7 +121,7 @@ const ForgotPassword = () => {
         return (
             <div className="page">
             <div className="forgot-password-container">
-                <h1 className="forgot-password">Forgot password?</h1>
+                <h1 className="forgot-password">FORGOT PASSWORD</h1>
 
                 {passwordResetStep == 1 && (
                     <>
@@ -134,8 +155,7 @@ const ForgotPassword = () => {
                                 onChange={(e) => { setConfirmationCode(e.target.value); setError(false) }}
                                 required />
                             {error && <label className="form-input-error-text">Incorrect confirmation code</label>}
-                            <div className="didnt-get-email-note">Didn't get an email? Check your spam folder or  <button className="resend-code-button">resend.</button> </div> 
-                            <div className="didnt-get-email-note">(Note: Receiving the confirmation code by email is currently not yet implemented, use default code 12345)</div>
+                            <div className="didnt-get-email-note">Didn't get an email? Check your spam folder or <button className="resend-code-button" onClick={onClickResend}>resend.</button> </div> 
                             
                             <button className="continue-button" type="submit">Continue</button>
                         </form>
@@ -156,12 +176,12 @@ const ForgotPassword = () => {
                                 placeholder="New password"
                                 type="password"
                                 {...register("password", {
-                                    required: true, minLength: 5
+                                    required: true, minLength: 7
                                 })}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required />
-                            {errors.password && <label className="form-input-error-text">Password is too short (minimum 5 characters)</label>}
+                            {errors.password && <label className="form-input-error-text">Password is too short (minimum 7 characters)</label>}
 
                             <input
                                 className={`form-field ${errors.confirmPassword ? 'error-form-field' : ''}`}

@@ -62,6 +62,7 @@
     z-index: 3;
     line-height: 150%;
 }
+
 .cancel {
     position: relative;
     font-size: var(--font-size-sm);

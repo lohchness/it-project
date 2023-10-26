@@ -16,12 +16,12 @@ const CalendarContainer = () => {
   return (
     <div className="calendar-wrapper">
       <div className="calendar-heading">
-        <div onClick={()=>setCurrentDate(subMonths(currentDate, 1))}>{`<`}</div>
+        <div className="arrow-button" onClick={()=>setCurrentDate(subMonths(currentDate, 1))}>{`<`}</div>
         <div className="heading">{currentDate.toLocaleDateString('en-us', { year:"numeric", month:"short"})}</div>
-        <div onClick={()=>setCurrentDate(addMonths(currentDate, 1))}>{`>`}</div>
+        <div className="arrow-button" onClick={()=>setCurrentDate(addMonths(currentDate, 1))}>{`>`}</div>
       </div>
+      <div className="days-of-week">{days.map((day) => <div >{day}</div>)}</div>
       <div className="grid-wrapper">
-        {days.map((day) => <div >{day}</div>)}
         {Array.from({length: startDay}).map((_) => ( <div className = "cell" />))}
         {Array.from({length: numDays}).map((_, index) => ( <div className="cell">{index+1}</div>))}
         {Array.from({length: endDay}).map((_) => ( <div className = "cell" />))}
