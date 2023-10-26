@@ -33,21 +33,12 @@ router.post("/", async (req, res) => {
     email: req.body.email,
     description: req.body.description,
     duedate: req.body.duedate,
+    status: req.body.status,
   };
   let collection = await db.collection("tasks");
   let result = await collection.insertOne(newDocument);
   res.send(result).status(204);
 });
-
-/*router.post("/", async (req, res) => {
-  let newDocument = {
-    description: req.body.description,
-    duedate: req.body.duedate,
-  };
-  let collection = await db.collection("tasks");
-  let result = await collection.insertOne(newDocument);
-  res.send(result).status(204);
-});*/
 
 
 // This section will help you update a record by id.
@@ -55,11 +46,9 @@ router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
   const updates =  {
     $set: {
-      description: req.body.description,
-      duedate: req.body.duedate
+      status: req.body
     }
   };
-
   let collection = await db.collection("tasks");
   let result = await collection.updateOne(query, updates);
 
@@ -74,10 +63,6 @@ router.delete("/:id", async (req, res) => {
   let result = await collection.deleteOne(query);
 
   res.send(result).status(200);
-  //const query = { _id: new ObjectId(req.params.id) };
-  //const collection = db.collection("Newtask");
-  //let result = await collection.deleteOne(query);
-  //res.send(result).status(200);
 });
 
 export default router;

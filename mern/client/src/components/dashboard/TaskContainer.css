@@ -47,6 +47,10 @@
     background-color: white;
     border: none;
 }
+.task-checkbox {
+    background-color: white;
+    border:none;
+}
 
 .tasks tbody {
     position: relative;

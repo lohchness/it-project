@@ -119,8 +119,8 @@
 .cancel-button {
     cursor: pointer;
     position: absolute;
-    top: 206px;
-    left: 20px;
+    top: 90%;
+    left: 2%;
     border: 0;
     padding: var(--padding-11xs) var(--padding-smi);
     background-color: var(--color-lightseagreen);

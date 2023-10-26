@@ -10,7 +10,13 @@ import Cookies from "universal-cookie";
 const Task = (props) => (
  <div className = "row-wrapper">
    <tr height = "30px">
-     <img className="tick-task-done" alt="" src="/GreenTick.png" />
+    <button className="task-checkbox"
+      onClick={() => {
+        props.updateTask(props.task._id);
+      }}
+      >
+      <img className="tick-task-done" alt="" src="/checkbox.png" / > 
+    </button>
      <td width = "80%">{props.task.description}</td>
      <td>{props.task.duedate}</td>
      <td>
@@ -81,9 +87,23 @@ export default function TaskContainer() {
     method: "DELETE"
   });
 
-  console.log("deleted");
+  console.log("task deleted");
   const newTasks = tasks.filter((el) => el._id !== id);
   setTasks(newTasks);
+}
+
+async function updateTask(id){
+  const data = { status: "Done" };
+
+  await fetch(SERVER_URL + `/task/${id}`,{
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+  console.log("task done");
+  
 }
 
  // This method will map out the records on the table
@@ -93,6 +113,7 @@ export default function TaskContainer() {
       <Task
         task={task}
         deleteTask={() => deleteTask(task._id)}
+        updateTask={() => updateTask(task._id)}
         key={task._id}
       />
     );

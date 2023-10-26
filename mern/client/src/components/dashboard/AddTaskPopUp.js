@@ -12,6 +12,7 @@ export default function AddTask({ onClose }) {
     description: "",
     duedate: "",
     email:"",
+    status:"",
   });
   const navigate = useNavigate();
 
@@ -64,7 +65,7 @@ export default function AddTask({ onClose }) {
                 return;
             });
 
-  setForm({  description: "", duedate: "",email: form.email });
+  setForm({  description: "", duedate: "",email: form.email, status:"inProgress" });
   //navigate("/");
   window.location.reload(); 
 }
@@ -93,7 +94,16 @@ return (
           />
         </div>
       </div>
-      {/* Rest of your form */}
+      <div className="confirm-button">
+            <input
+              type="submit"
+              value="Confirm"
+              className="confirm-control"
+            />
+          </div>
+          <button className="cancel-button" onClick={onClose}>
+            <div className="cancel">Cancel</div>
+          </button>
     </form>
   </div>
 );
