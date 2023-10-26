@@ -12,15 +12,9 @@ export default function AddTask({ onClose }) {
     description: "",
     duedate: "",
     email:"",
-    status:"",
+    status:"inProgress",
   });
-  const navigate = useNavigate();
-    const [form, setForm] = useState({
-        description: "",
-        duedate: "",
-        email: "",
-    });
-    const navigate = useNavigate();
+
 
     useEffect(() => {
         // Fetch the user's email when the component mounts
@@ -71,7 +65,7 @@ export default function AddTask({ onClose }) {
                 return;
             });
 
-        setForm({ description: "", duedate: "", email: form.email });
+        setForm({ description: "", duedate: "", email: form.email, status:"" });
         //navigate("/");
         window.location.reload();
     }
@@ -114,47 +108,4 @@ export default function AddTask({ onClose }) {
             </form>
         </div>
     );
-  setForm({  description: "", duedate: "",email: form.email, status:"inProgress" });
-  //navigate("/");
-  window.location.reload(); 
-}
-return (
-  <div className="add-task-popup">
-    <form onSubmit={onSubmit}>
-      <div className="popup">
-        <input
-          className="duedate"
-          placeholder="Due Date"
-          type="text"
-          id="position"
-          value={form.duedate}
-          onChange={(e) => updateForm({ duedate: e.target.value })}
-          required
-        />
-        <div className="description-wrapper">
-          <textarea
-            name="description"
-            placeholder="Description"
-            type="text"
-            id="position"
-            value={form.description}
-            onChange={(e) => updateForm({ description: e.target.value })}
-            required
-          />
-        </div>
-      </div>
-      <div className="confirm-button">
-            <input
-              type="submit"
-              value="Confirm"
-              className="confirm-control"
-            />
-          </div>
-          <button className="cancel-button" onClick={onClose}>
-            <div className="cancel">Cancel</div>
-          </button>
-    </form>
-  </div>
-);
-
 }

@@ -13,7 +13,7 @@ router.get("/", async (req, res) => {
     return;
   }
   let collection = await db.collection("tasks");
-  let results = await collection.find({email: userEmail}).toArray();
+  let results = await collection.find({email: userEmail}).sort({status: -1}).toArray();
   res.send(results).status(200);
 });
 
@@ -44,12 +44,18 @@ router.post("/", async (req, res) => {
 // This section will help you update a record by id.
 router.patch("/:id", async (req, res) => {
   const query = { _id: new ObjectId(req.params.id) };
+
+  let collection = await db.collection("tasks");
+  const task = await collection.findOne(query);
+    if (!task) {
+      return res.status(404).json({ error: 'Task not found' });
+    }
+  const newStatus = task.status === 'inProgress' ? 'Done' : 'inProgress';
   const updates =  {
     $set: {
-      status: req.body
+      status: newStatus,
     }
   };
-  let collection = await db.collection("tasks");
   let result = await collection.updateOne(query, updates);
 
   res.send(result).status(200);

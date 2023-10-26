@@ -7,30 +7,45 @@ import "../../pages/dashboard/Dashboard.css";
 import { SERVER_URL } from "../../index.js";
 import Cookies from "universal-cookie";
 
-const Task = (props) => (
- <div className = "row-wrapper">
-   <tr height = "30px">
-    <button className="task-checkbox"
-      onClick={() => {
-        props.updateTask(props.task._id);
-      }}
-      >
-      <img className="tick-task-done" alt="" src="/checkbox.png" / > 
-    </button>
-     <td width = "80%">{props.task.description}</td>
-     <td>{props.task.duedate}</td>
-     <td>
-       <button className="delete-button"
-         onClick={() => {
-           props.deleteTask(props.task._id);
-          }}
-        >
-        <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+const Task = (props) => {
+  const [isChecked, setIsChecked] = useState(props.task.status === "Done");
+  const handleTaskClick = () => {
+    setIsChecked(!isChecked); 
+    props.updateTask(props.task._id);
+    window.location.reload();
+  };
+
+  useEffect(() => {
+    // Set the initial checkbox state based on props.task.status
+    setIsChecked(props.task.status === 'Done');
+  }, [props.task.status]);
+
+
+  return (
+    <div className = "row-wrapper">
+      <tr height = "30px">
+        <button className="task-checkbox" onClick={handleTaskClick}>
+          <div className={`checkbox-box ${isChecked ? 'checked' : ''}`}>
+          <img className="tick-task-done"
+            src={isChecked ? '/GreenTick.png' : 'checkbox.png'}
+            alt=""
+          />
+          </div> 
         </button>
-      </td>
-    </tr>
-  </div>
-);
+        <td width = "80%">{props.task.description}</td>
+        <td>{props.task.duedate}</td>
+        <td>
+          <button className="delete-button"
+            onClick={() => {
+             props.deleteTask(props.task._id);
+            }}
+            >
+            <img className="delete-icon" alt="" src="/DeleteIcon.png" />
+          </button>
+        </td>
+      </tr>
+    </div>
+);};
 
 export default function TaskContainer() {
   const [tasks, setTasks] = useState([]);
@@ -93,14 +108,12 @@ export default function TaskContainer() {
 }
 
 async function updateTask(id){
-  const data = { status: "Done" };
 
-  await fetch(SERVER_URL + `/task/${id}`,{
+  await fetch(`${SERVER_URL}/task/${id}`,{
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
   });
   console.log("task done");
   
