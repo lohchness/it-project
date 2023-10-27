@@ -7,9 +7,15 @@ import Cookies from "universal-cookie";
 import "./UpcomingEventsContainer.css";
 import "../../pages/dashboard/Dashboard.css";
 
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+
 const Event = (props) => (
     <div className="event-row">
-        <div>{props.event.date}</div>
+        <div className = "event-date">
+          {months[Number(props.event.date.slice(3, 5))-1]} 
+          <b>{props.event.date.slice(0, 2)} </b>
+        </div>
         <div className="event-text">{props.event.description}</div>
         <div>{props.event.fromTime}-{props.event.toTime}</div>
         <div className="event-text">{props.event.location}</div>
@@ -56,7 +62,6 @@ export default function EventContainer() {
         }
 
         getEvents();
-
         return;
     }, [tokenValue]);
 

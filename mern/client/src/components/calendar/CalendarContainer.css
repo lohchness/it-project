@@ -57,7 +57,7 @@
     width: 90%;
     display: grid;
     text-align: center;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1.1fr);
     grid-template-rows: repeat(6, 11.5vh);
     font-size: var(--font-size-lg);
 }
@@ -66,7 +66,23 @@
     padding: 5px;
     text-align: right;
     border: 2px solid;
+    max-width: 12.2vh;
+    z-index: 0;
 }
+.calendar-event{
+    font-size: 12px;
+    background-color: #99a2c8;
+    border-radius: 5px;
+    padding:2px;
+    height: 15px;
+    overflow: hidden;
+    margin-bottom: 5px;
+    z-index: 2;
+}
+.calendar-event:hover {
+    overflow: visible; 
+    height: auto;
+  }
 
 
 @media (max-width: 700px) {
