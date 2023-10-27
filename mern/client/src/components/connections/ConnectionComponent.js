@@ -1,5 +1,7 @@
 import "./ConnectionComponent.css";
 import { useNavigate } from "react-router-dom";
+import { SERVER_URL } from "../../index.js";
+import { React, useEffect, useState } from "react";
 
 
 //import { useNavigate } from "react-router-dom";
@@ -12,6 +14,8 @@ const ConnectionComponent = ({connection, setProfileUserEmail}) => {
     var day = date.getDate();
     var month = date.getMonth();
     var year = date.getFullYear();
+    const [connections, setConnections] = useState([]);
+
     
     const navigate = useNavigate();
 
@@ -32,6 +36,18 @@ const ConnectionComponent = ({connection, setProfileUserEmail}) => {
 
     };
 
+
+    // This method will delete a record
+    async function deleteConnection(id) {
+        await fetch(SERVER_URL + `/connection/${id}`, {
+            method: "DELETE"
+        });
+
+        const newConnections = connections.filter((el) => el._id !== id);
+        setConnections(newConnections);
+        window.location.reload(false);
+    }
+
     return (
         <div className="connectionitem">
             <button className="name" onClick={handleToProfile}>
@@ -41,7 +57,14 @@ const ConnectionComponent = ({connection, setProfileUserEmail}) => {
             <div className="touch">{connection.touch_status}</div>
             <div className="tags">{connection.tags}</div>
             {/* <img className="mask-group-icon" alt="" src="/undefined2.png" /> */}
-            <button className="delete">
+            <button 
+                className="delete"
+                type="button"
+                onClick={() => {
+                    deleteConnection(connection._id);
+                }}
+                
+            >
                 <img className="del-button" alt="" src="/DeleteIcon.png" />
                 {/* <img className="vector-icon3" alt="" src="/vector.svg" />
                 <img className="vector-icon4" alt="" src="/vector1.svg" />
