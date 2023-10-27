@@ -19,6 +19,9 @@ const Event = (props) => (
         <div className="event-text">{props.event.description}</div>
         <div>{props.event.fromTime}-{props.event.toTime}</div>
         <div className="event-text">{props.event.location}</div>
+        <button className="event-delete-button" onClick={() => {props.deleteEvent(props.event._id);}}>
+            <img className="event-delete" alt="" src="/WhiteDeleteIcon.png" />
+        </button>
     </div>
 )
 
@@ -65,11 +68,22 @@ export default function EventContainer() {
         return;
     }, [tokenValue]);
 
+    async function deleteEvent(id) {
+        await fetch(`${SERVER_URL}/event/${id}`, {
+          method: "DELETE"
+        });
+      
+        console.log("event deleted");
+        const newEvents = events.filter((el) => el._id !== id);
+        setEvents(newEvents);
+      }
+
     function EventContainer() {
         return events.map((event) => {
             return (
                 <Event
                     event={event}
+                    deleteEvent={() => deleteEvent(event._id)}
                     key={event._id}
                 />
             );

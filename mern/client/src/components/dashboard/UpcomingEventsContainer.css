@@ -29,7 +29,7 @@
 .event-row {
     text-align: left;
     display: grid;
-    grid-template-columns: 8% 35% 18.5% 17%;
+    grid-template-columns: 8% 35% 18.5% 17% 2%;
     grid-column-gap: 2%;
     border-bottom-style: dashed;
     border-color: #A0A7C3;
@@ -91,7 +91,16 @@
     display: flex;
     flex-direction: column;
 }
+.event-delete {
+    width: 13px;
+    height: 14.04px;
+}
 
+.event-delete-button {
+    background-color:transparent;
+    border: none;
+    cursor: pointer;
+}
 
 .events {
     overflow-y: scroll;
