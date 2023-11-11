@@ -9,12 +9,12 @@ let transporter = nodemailer.createTransport({
 });
 
 // Send email
-function sendVerificationCodeEmail(email) {
+function sendVerificationCodeEmail(email, code) {
     let mailOptions = {
         from: `"Intentionally Blank" <${process.env.EMAIL}>`,
         to: email,
         subject: "Reset password",
-        text: "Your verification code is 12345.",   
+        text: `Your verification code is ${code}`,   
     };
 
     transporter.sendMail(mailOptions, function (err, data) {

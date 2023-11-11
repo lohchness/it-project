@@ -148,9 +148,16 @@ router.post("/login", async (req, res) => {
 
 });
 
+function generateCode(){
+    return Math.floor(10000 + Math.random() * 90000);
+}
+
+let code = generateCode();
+
 // Password reset request endpoint
 router.post("/request-password-reset", async (req, res) => {
     console.log(req.body.email);
+    console.log(code);
 
     // Check if email exists in the database
     User.findOne({ email: req.body.email })
@@ -160,7 +167,7 @@ router.post("/request-password-reset", async (req, res) => {
                     message: "Email not found",
                 });
             } else {
-                sendVerificationCodeEmail(req.body.email);
+                sendVerificationCodeEmail(req.body.email, code);
                 res.status(200).send({
                     message: "Password reset email sent",
                 });
@@ -173,7 +180,7 @@ router.post("/verify-confirmation-code", async (req, res) => {
     console.log(req.body.confirmationCode);
 
     // TODO: Confirm verification code is valid. For now, let 12345 be default code
-    if (req.body.confirmationCode=="12345"){
+    if (req.body.confirmationCode==code){
         res.status(200).send({
             message: "Confirmation code is valid",
         });
